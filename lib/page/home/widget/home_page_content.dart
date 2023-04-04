@@ -33,7 +33,7 @@ class _HomePageContentState extends State<HomePageContent> {
             Padding(
               padding: const EdgeInsets.all(32),
               child: RichText(
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.center,
                   text: const TextSpan(
                       style: TextStyle(
                         fontSize: 24,
@@ -41,7 +41,7 @@ class _HomePageContentState extends State<HomePageContent> {
                       children: [
                         TextSpan(
                             text:
-                                "A DEFINIR\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tortor ut quam rutrum bibendum. In pharetra eu nulla in placerat. Nam scelerisque dui massa. Sed pulvinar non ex in imperdiet. Nulla facilisi. Ut erat enim, interdum nec nunc sed, congue venenatis lectus. Sed vulputate vehicula aliquet.Nullam ultricies ac massa attincidunt. Quisque mollis turpisconsequat ultricies commodo. Praesentmaximus mi cursus sem sodales, eget facilisis massa interdu.Cras lorem ex, volutpat nec enim nec, efficitur ultricesnisi. Maecenas et ante dui. Cras in purus urna.Maecenastincidunt mauris sed velit tincidunt, eu pretiumdui rutrum. Curabitur aliquam hendrerit commodo. Proin velipsum urna. Quisque euismod auctor quam non malesuada.Etiam placerat sapien id facilisis mollis. Sed vitae elementummi.Aenean justo magna, pharetra quis urna at, consequatfacilisisnisl. Suspendisse vel consequat mauris. Etiam volutpat vestibulumante in bibendum."),
+                                "Située en Savoie, dans la vallée de la Maurienne au plus près de Foncouverte La Toussuire.\n White Forest vous offre la possibilité de vivre une expérience unique avec nos chiens de traineau !\nPour tous les âges, activité plus ou moins physique, ou simplement une visite du chenil!\nEn été comme en hiver et même au printemps ou en automne, venez rencontrer nos merveilleux compagnons de vie. \nSur la neige ou sur terre, Mel, Tom et son équipe vous accompagneront pour un moment inoubliable.                   ")
                       ])),
             )
           ]),
@@ -103,7 +103,7 @@ class _HomePageContentState extends State<HomePageContent> {
                       children: [
                         TextSpan(
                             text:
-                                "A DEFINIR\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tortor ut quam rutrum bibendum. In pharetra eu nulla in placerat. Nam scelerisque dui massa. Sed pulvinar non ex in imperdiet. Nulla facilisi. Ut erat enim, interdum nec nunc sed, congue venenatis lectus. Sed vulputate vehicula aliquet.Nullam ultricies ac massa attincidunt. Quisque mollis turpisconsequat ultricies commodo. Praesentmaximus mi cursus sem sodales, eget facilisis massa interdu.Cras lorem ex, volutpat nec enim nec, efficitur ultricesnisi. Maecenas et ante dui. Cras in purus urna.Maecenastincidunt mauris sed velit tincidunt, eu pretiumdui rutrum. Curabitur aliquam hendrerit commodo. Proin velipsum urna. Quisque euismod auctor quam non malesuada.Etiam placerat sapien id facilisis mollis. Sed vitae elementummi.Aenean justo magna, pharetra quis urna at, consequatfacilisisnisl. Suspendisse vel consequat mauris. Etiam volutpat vestibulumante in bibendum."),
+                                "Venez découvrir nos 80 chiens de traîneaux à travers différentes activités toute l’année !\nNos chiens viennent de différents horizons, la plupart ont été abandonnés et quelques-uns sont nés à la maison. Ils viennent parfois de la SPA, de 30 millions d’amis, de particuliers et parfois même d’autres structures de chiens de traineaux. \nL’objectif est de leur offrir une vie en adéquation avec leurs besoins et leurs envies. Après une intégration avec le reste du groupe, ils sont avec nous jusqu’à la fin de leur vie. \nLes sorties sont adaptées à chaque chien ! Ils sont tous friands de vos caresses et de sorties avec vous !\nVous aurez l’occasion de découvrir différentes races de chiens de traîneaux, des plus anciennes aux plus communes aujourd’hui. \nTout ceci dans un cadre magnifique au milieu de nos montagnes, que ce soit en balade ou directement chez nous dans un parc créé pour nos chiens face aux Aiguilles d’Arves !                     "),
                       ])),
             )
           ]),

@@ -13,21 +13,55 @@ class FooterContent extends StatelessWidget {
       'Réservation'
     ];
     return Container(
-      color: Colors.black,
+      color: Colors.grey.shade900,
+      width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          color: Colors.red,
-          child: ListView(
-            physics: const NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            children: [
-              FooterNavigationButton(navigationList[0]),
-              FooterNavigationButton(navigationList[0]),
-              FooterNavigationButton(navigationList[0]),
-              FooterNavigationButton(navigationList[0]),
-            ],
-          ),
+        padding: const EdgeInsets.symmetric(horizontal: 32,vertical: 16),
+        child: Row(
+          children: [
+            Expanded(
+              child: Container(
+                  color: Colors.red,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('PLAN DU SITE',style: TextStyle(fontSize: 18),),
+                      Text('Accueil'),
+                      Text('Activité'),
+                      Text('Le chenil'),
+                      Text("L'équipe"),
+                      Text('Contact'),
+                      Text('Réserver'),
+                    ],
+                  )),
+            ),
+            Expanded(
+              child: Container(
+                  color: Colors.blue,
+                  child: Column(
+                    children: [
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                    ],
+                  )),
+            ),
+            Expanded(
+              child: Container(
+                  color: Colors.green,
+                  child: Column(
+                    children: [
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                    ],
+                  )),
+            ),
+          ],
         ),
       ),
     );
