@@ -5,7 +5,7 @@ import 'package:whiteforest_website/provider/conf_provider.dart';
 class BaseApplication extends ConsumerWidget {
   final Widget child;
 
-  const BaseApplication({required this.child});
+  const BaseApplication({super.key, required this.child});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

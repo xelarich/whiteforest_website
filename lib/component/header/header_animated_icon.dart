@@ -15,7 +15,7 @@ class HeaderAnimatedIcon extends StatefulWidget {
 }
 
 class _HeaderAnimatedIconState extends State<HeaderAnimatedIcon>
-    with TickerProviderStateMixin {
+    with TickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late AnimationController _animationController;
   late Animation<double> animationRadiusIn;
   late Animation<double> animationRadiusOut;
@@ -53,7 +53,14 @@ class _HeaderAnimatedIconState extends State<HeaderAnimatedIcon>
   }
 
   @override
+  void dispose() {
+    _animationController.stop();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Transform.translate(
       offset: Offset(0, radius),
       child: Icon(
@@ -63,4 +70,7 @@ class _HeaderAnimatedIconState extends State<HeaderAnimatedIcon>
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
