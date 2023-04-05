@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               child: RichText(
                   textAlign: TextAlign.center,
                   text: const TextSpan(
-                      style: TextStyle(fontSize: 24, height: 1.5),
+                      style: TextStyle(fontSize: 24, height: 1.5, color: Colors.black),
                       children: [
                         TextSpan(
                             text:
