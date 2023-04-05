@@ -1,25 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:whiteforest_website/menu.dart';
+import 'package:whiteforest_website/provider/navigator_provider.dart';
 
-class TabText extends StatefulWidget {
-  TabText(this.text, {this.focusNode, required this.onHover, Key? key})
+class TabText extends ConsumerStatefulWidget {
+  TabText(this.text, {Key? key, required this.menu, required this.onTap})
       : super(key: key);
   final String text;
-  FocusNode? focusNode;
-  Function onHover;
+  final Menu menu;
+  Function onTap;
 
   @override
-  State<TabText> createState() => _TabTextState();
+  TabTextState createState() => TabTextState();
 }
 
-class _TabTextState extends State<TabText> {
+class TabTextState extends ConsumerState<TabText> {
   bool isHover = false;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final isSelected =
+        ref
+            .watch(navigatorProvider)
+            .selectedIndex + 1 == widget.menu.id;
+
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        widget.onTap();
+      },
       onHover: (value) {
-        widget.onHover();
         setState(() {
           isHover = value;
         });
@@ -42,7 +56,7 @@ class _TabTextState extends State<TabText> {
               maintainAnimation: true,
               maintainState: true,
               maintainSize: true,
-              visible: isHover,
+              visible: isHover || isSelected,
               child: Container(
                 height: 2,
                 width: 100,

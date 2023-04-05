@@ -11,14 +11,13 @@ class TopBarContents extends ConsumerStatefulWidget
   const TopBarContents(this.opacity, {super.key});
 
   @override
-  _TopBarContentsState createState() => _TopBarContentsState();
+  TopBarContentsState createState() => TopBarContentsState();
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(kToolbarHeight + 80);
 }
 
-class _TopBarContentsState extends ConsumerState<TopBarContents> {
+class TopBarContentsState extends ConsumerState<TopBarContents> {
   final GlobalKey _globalKey = GlobalKey();
   OverlayEntry? entry;
   bool _menuHover = false;
@@ -52,7 +51,7 @@ class _TopBarContentsState extends ConsumerState<TopBarContents> {
     return PreferredSize(
       preferredSize: Size(screenSize.width, 10),
       child: Container(
-        color: Colors.grey.shade900.withOpacity(widget.opacity),
+        color: Colors.brown.shade300.withOpacity(widget.opacity),
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
@@ -70,48 +69,32 @@ class _TopBarContentsState extends ConsumerState<TopBarContents> {
                     children: [
                       TabText(
                         'Accueil',
-                        onHover: () {},
+                        menu: ref.read(navigatorProvider).menuList[0],
+                        onTap: () => ref.read(navigatorProvider).onItemTapped(0),
                       ),
-                      MouseRegion(
-                        onEnter: (event) {
-                          debugPrint(
-                              'OnEnterHeader $_menuHover ${(entry != null)} ');
-                          if (allowAddEntry && !_menuHover) {
-                            _menuHover = true;
-                            _addOverlay(entry!);
-                          }
-                        },
-                        onExit: (event) {
-                          debugPrint(
-                              'OnExitHeader $_menuHover ${(entry != null)} ');
-                          _menuHover = false;
-                          Future.delayed(const Duration(milliseconds: 200), () {
-                            if (!_menuHover && entry != null) {
-                              if (!entry!.mounted) {
-                                return;
-                              } else {
-                                entry?.remove();
-                              }
-                            }
-                          });
-                        },
-                        child: TabText(
-                          'Activité',
-                          key: _globalKey,
-                          onHover: () {},
-                        ),
+                      TabText(
+                        'Activité',
+                        menu: ref.read(navigatorProvider).menuList[1],
+                        onTap: () => ref.read(navigatorProvider).onItemTapped(1),
+
                       ),
                       TabText(
                         'Le chenil',
-                        onHover: () {},
+                        menu: ref.read(navigatorProvider).menuList[2],
+                        onTap: () => ref.read(navigatorProvider).onItemTapped(2),
+
                       ),
                       TabText(
                         "L'équipe",
-                        onHover: () {},
+                        menu: ref.read(navigatorProvider).menuList[3],
+                        onTap: () => ref.read(navigatorProvider).onItemTapped(3),
+
                       ),
                       TabText(
                         'Contact',
-                        onHover: () {},
+                        menu: ref.read(navigatorProvider).menuList[4],
+                        onTap: () => ref.read(navigatorProvider).onItemTapped(4),
+
                       ),
                     ],
                   ),
