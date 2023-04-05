@@ -35,13 +35,23 @@ class _HomePageState extends State<HomePage> {
               child: RichText(
                   textAlign: TextAlign.center,
                   text: const TextSpan(
-                      style: TextStyle(
-                        fontSize: 24,
-                      ),
+                      style: TextStyle(fontSize: 24, height: 1.5),
                       children: [
                         TextSpan(
                             text:
-                                "Située en Savoie, dans la vallée de la Maurienne au plus près de Foncouverte La Toussuire.\n White Forest vous offre la possibilité de vivre une expérience unique avec nos chiens de traineau !\nPour tous les âges, activité plus ou moins physique, ou simplement une visite du chenil!\nEn été comme en hiver et même au printemps ou en automne, venez rencontrer nos merveilleux compagnons de vie. \nSur la neige ou sur terre, Mel, Tom et son équipe vous accompagneront pour un moment inoubliable.                   ")
+                                "Située en Savoie, dans la vallée de la Maurienne au plus près de Foncouverte La Toussuire.\n"),
+                        TextSpan(
+                            text:
+                                "White Forest vous offre la possibilité de vivre une expérience unique avec nos chiens de traineau !\n"),
+                        TextSpan(
+                            text:
+                                "Pour tous les âges, activité plus ou moins physique, ou simplement une visite du chenil !\n"),
+                        TextSpan(
+                            text:
+                                "En été comme en hiver et même au printemps ou en automne venez rencontrer nos merveilleux compagnons de vie.\n"),
+                        TextSpan(
+                            text:
+                                "Sur la neige ou sur terre, Mel, Tom et son équipe vous accompagneront pour un moment inoubliable.\n"),
                       ])),
             )
           ]),
@@ -97,13 +107,26 @@ class _HomePageState extends State<HomePage> {
               child: RichText(
                   textAlign: TextAlign.justify,
                   text: const TextSpan(
-                      style: TextStyle(
-                        fontSize: 24,
-                      ),
+                      style: TextStyle(fontSize: 24, height: 1.5),
                       children: [
                         TextSpan(
                             text:
-                                "Venez découvrir nos 80 chiens de traîneaux à travers différentes activités toute l’année !\nNos chiens viennent de différents horizons, la plupart ont été abandonnés et quelques-uns sont nés à la maison. Ils viennent parfois de la SPA, de 30 millions d’amis, de particuliers et parfois même d’autres structures de chiens de traineaux. \nL’objectif est de leur offrir une vie en adéquation avec leurs besoins et leurs envies. Après une intégration avec le reste du groupe, ils sont avec nous jusqu’à la fin de leur vie. \nLes sorties sont adaptées à chaque chien ! Ils sont tous friands de vos caresses et de sorties avec vous !\nVous aurez l’occasion de découvrir différentes races de chiens de traîneaux, des plus anciennes aux plus communes aujourd’hui. \nTout ceci dans un cadre magnifique au milieu de nos montagnes, que ce soit en balade ou directement chez nous dans un parc créé pour nos chiens face aux Aiguilles d’Arves !                     "),
+                                "Venez découvrir nos 80 chiens de traîneaux à travers différentes activités toute l’année !\n"),
+                        TextSpan(
+                            text:
+                                "Nos chiens viennent de différents horizons, la plupart ont été abandonnés et quelques-uns sont nés à la maison. Ils viennent parfois de la SPA, de 30 millions d’amis, de particuliers et parfois même d’autres structures de chiens de traineaux.\n"),
+                        TextSpan(
+                            text:
+                                "L’objectif est de leur offrir une vie en adéquation avec leurs besoins et leurs envies. Après une intégration avec le reste du groupe, ils sont avec nous jusqu’à la fin de leur vie.\n"),
+                        TextSpan(
+                            text:
+                                "Les sorties sont adaptées à chaque chien ! Ils sont tous friands de vos caresses et de sorties avec vous !\n"),
+                        TextSpan(
+                            text:
+                                "Vous aurez l’occasion de découvrir différentes races de chiens de traîneaux, des plus anciennes aux plus communes aujourd’hui.\n"),
+                        TextSpan(
+                            text:
+                                "Tout ceci dans un cadre magnifique au milieu de nos montagnes, que ce soit en balade ou directement chez nous dans un parc créé pour nos chiens face aux Aiguilles d’Arves !"),
                       ])),
             )
           ]),

@@ -6,6 +6,7 @@ class TeamPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: kToolbarHeight + 50),
       child: Center(
         child: Text("Page L'Équipe"),
       ),

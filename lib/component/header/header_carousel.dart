@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:whiteforest_website/component/header/header_animated_icon.dart';
 
 class HeaderCarousel extends StatefulWidget {
@@ -32,8 +33,7 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
   List<Widget> generateImageTiles(Size screenSize) {
     return images
         .map(
-          (element) =>
-          SizedBox(
+          (element) => SizedBox(
             width: screenSize.width,
             height: screenSize.height,
             child: Image.asset(
@@ -41,15 +41,13 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
               fit: BoxFit.fill,
             ),
           ),
-    )
+        )
         .toList();
   }
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery
-        .of(context)
-        .size;
+    var screenSize = MediaQuery.of(context).size;
     var imageSliders = generateImageTiles(screenSize);
 
     return Stack(
@@ -89,13 +87,14 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
                   ),
                   Flexible(
                       child: Text(
-                        "Préparez-vous \npour l'aventure".toUpperCase(),
-                        style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 96),
-                        maxLines: 2,
-                        textAlign: TextAlign.center,
-                      )),
+                    "Préparez-vous \npour l'aventure".toUpperCase(),
+                    textScaleFactor: 7,
+                    style: const TextStyle(
+                      color: Colors.black,
+                    ),
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                  )),
                   OutlinedButton(
                     style: OutlinedButton.styleFrom(
                         side: BorderSide.none,

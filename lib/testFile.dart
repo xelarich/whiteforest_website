@@ -30,8 +30,7 @@ class _MyMenuBarState extends State<MyMenuBar> {
           controller: _menuController,
           style: const MenuStyle(
               backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),
-              padding:
-                  MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(8))),
+              padding: MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(8))),
           menuChildren: _getMenus(),
           builder: (context, controller, child) {
             return TextButton(
@@ -39,8 +38,7 @@ class _MyMenuBarState extends State<MyMenuBar> {
                 onPressed: () {},
                 onHover: (_) {
                   if (controller.isOpen) {
-                    Future.delayed(const Duration(milliseconds: 200),
-                        () {
+                    Future.delayed(const Duration(milliseconds: 200), () {
                       controller.close();
                     });
                   } else {

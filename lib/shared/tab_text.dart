@@ -18,16 +18,9 @@ class TabTextState extends ConsumerState<TabText> {
   bool isHover = false;
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     final isSelected =
-        ref
-            .watch(navigatorProvider)
-            .selectedIndex + 1 == widget.menu.id;
+        ref.watch(navigatorProvider).selectedIndex + 1 == widget.menu.id;
 
     return InkWell(
       onTap: () {
@@ -48,7 +41,7 @@ class TabTextState extends ConsumerState<TabText> {
               widget.text.toUpperCase(),
               style: TextStyle(
                 fontSize: 16,
-                color: isHover ? Colors.black : Colors.white,
+                color: getColors(isSelected),
               ),
             ),
             const SizedBox(height: 12),
@@ -58,9 +51,9 @@ class TabTextState extends ConsumerState<TabText> {
               maintainSize: true,
               visible: isHover || isSelected,
               child: Container(
-                height: 2,
                 width: 100,
-                color: Colors.black,
+                height: 2,
+                color: getColors(isSelected),
               ),
             ),
           ],
@@ -68,4 +61,10 @@ class TabTextState extends ConsumerState<TabText> {
       ),
     );
   }
+
+  Color getColors(bool isSelected) => isSelected
+      ? Colors.black
+      : isHover
+          ? Colors.brown
+          : Colors.white;
 }

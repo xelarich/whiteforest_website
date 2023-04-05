@@ -14,7 +14,7 @@ class TopBarContents extends ConsumerStatefulWidget
   TopBarContentsState createState() => TopBarContentsState();
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 80);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 50);
 }
 
 class TopBarContentsState extends ConsumerState<TopBarContents> {
@@ -49,9 +49,9 @@ class TopBarContentsState extends ConsumerState<TopBarContents> {
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
-      preferredSize: Size(screenSize.width, 10),
+      preferredSize: Size(screenSize.width, 1),
       child: Container(
-        color: Colors.brown.shade300.withOpacity(widget.opacity),
+        color: Colors.brown.shade100.withOpacity(widget.opacity),
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Row(
@@ -60,7 +60,7 @@ class TopBarContentsState extends ConsumerState<TopBarContents> {
             children: [
               Image.asset(
                 'assets/images/white_forest_logo.png',
-                height: kToolbarHeight + 20,
+                height: kToolbarHeight + 10,
               ),
               Row(
                 children: [
@@ -70,31 +70,32 @@ class TopBarContentsState extends ConsumerState<TopBarContents> {
                       TabText(
                         'Accueil',
                         menu: ref.read(navigatorProvider).menuList[0],
-                        onTap: () => ref.read(navigatorProvider).onItemTapped(0),
+                        onTap: () =>
+                            ref.read(navigatorProvider).onItemTapped(0),
                       ),
                       TabText(
                         'Activité',
                         menu: ref.read(navigatorProvider).menuList[1],
-                        onTap: () => ref.read(navigatorProvider).onItemTapped(1),
-
+                        onTap: () =>
+                            ref.read(navigatorProvider).onItemTapped(1),
                       ),
                       TabText(
                         'Le chenil',
                         menu: ref.read(navigatorProvider).menuList[2],
-                        onTap: () => ref.read(navigatorProvider).onItemTapped(2),
-
+                        onTap: () =>
+                            ref.read(navigatorProvider).onItemTapped(2),
                       ),
                       TabText(
                         "L'équipe",
                         menu: ref.read(navigatorProvider).menuList[3],
-                        onTap: () => ref.read(navigatorProvider).onItemTapped(3),
-
+                        onTap: () =>
+                            ref.read(navigatorProvider).onItemTapped(3),
                       ),
                       TabText(
                         'Contact',
                         menu: ref.read(navigatorProvider).menuList[4],
-                        onTap: () => ref.read(navigatorProvider).onItemTapped(4),
-
+                        onTap: () =>
+                            ref.read(navigatorProvider).onItemTapped(4),
                       ),
                     ],
                   ),
