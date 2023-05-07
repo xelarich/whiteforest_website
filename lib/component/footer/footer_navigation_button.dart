@@ -15,7 +15,9 @@ class _FooterNavigationButtonState extends State<FooterNavigationButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      padding: const EdgeInsets.symmetric(
+        vertical: 6,
+      ),
       child: InkWell(
         onTap: () {
           setState(() {
@@ -24,8 +26,11 @@ class _FooterNavigationButtonState extends State<FooterNavigationButton> {
         },
         child: Text(
           widget.text,
-          style: TextStyle(
-              color: Colors.white, fontSize: 12, fontFamily: 'Roboto'),
+          style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.bold),
         ),
       ),
     );

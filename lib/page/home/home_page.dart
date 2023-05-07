@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:whiteforest_website/component/header/header_carousel.dart';
+import 'package:whiteforest_website/component/ramdon_grid/random_photo.dart';
 import 'package:whiteforest_website/shared/image_text.dart';
 
 class HomePage extends StatefulWidget {
@@ -131,6 +132,7 @@ class _HomePageState extends State<HomePage> {
             )
           ]),
         ),
+        //RandomPhotoGrid(),
         SizedBox(
           height: screenSize.height * 0.60,
           width: screenSize.width,
