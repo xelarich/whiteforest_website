@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:whiteforest_website/component/footer/footer_content.dart';
-import 'package:whiteforest_website/page/activity/activity_page.dart';
-import 'package:whiteforest_website/page/contact/contact_page.dart';
-import 'package:whiteforest_website/page/kennel/kennel_page.dart';
-import 'package:whiteforest_website/page/team/team_page.dart';
-import 'package:whiteforest_website/provider/conf_provider.dart';
-import 'package:whiteforest_website/menu.dart';
-import 'package:whiteforest_website/page/home/home_page.dart';
-import 'package:whiteforest_website/provider/navigator_provider.dart';
 import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
+import 'package:whiteforest_website/provider/conf_provider.dart';
+import 'package:whiteforest_website/provider/navigator_provider.dart';
 
 class MainPage extends ConsumerStatefulWidget {
   const MainPage({super.key});

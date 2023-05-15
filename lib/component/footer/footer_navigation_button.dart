@@ -28,7 +28,7 @@ class _FooterNavigationButtonState extends State<FooterNavigationButton> {
           widget.text,
           style: const TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: 12,
               fontFamily: 'Roboto',
               fontWeight: FontWeight.bold),
         ),

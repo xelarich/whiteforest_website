@@ -4,11 +4,11 @@ import 'package:whiteforest_website/menu.dart';
 import 'package:whiteforest_website/provider/navigator_provider.dart';
 
 class TabText extends ConsumerStatefulWidget {
-  TabText(this.text, {Key? key, required this.menu, required this.onTap})
+  const TabText(this.text, {Key? key, required this.menu, required this.onTap})
       : super(key: key);
   final String text;
   final Menu menu;
-  Function onTap;
+  final Function onTap;
 
   @override
   TabTextState createState() => TabTextState();

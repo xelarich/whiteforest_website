@@ -1,14 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:whiteforest_website/component/header/header_animated_icon.dart';
 
 class HeaderCarousel extends StatefulWidget {
+  const HeaderCarousel({super.key});
+
   @override
-  _HeaderCarouselState createState() => _HeaderCarouselState();
+  HeaderCarouselState createState() => HeaderCarouselState();
 }
 
-class _HeaderCarouselState extends State<HeaderCarousel> {
+class HeaderCarouselState extends State<HeaderCarousel> {
   final String imagePath = 'assets/images/';
 
   late CarouselController _carouselController;

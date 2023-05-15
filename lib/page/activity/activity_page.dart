@@ -6,8 +6,8 @@ class ActivityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: kToolbarHeight + 50),
-      child: Center(
+      padding: const EdgeInsets.only(top: kToolbarHeight + 50),
+      child: const Center(
         child: Text('Page Activité'),
       ),
     );

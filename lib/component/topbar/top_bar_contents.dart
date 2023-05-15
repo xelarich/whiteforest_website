@@ -300,10 +300,6 @@ class TopBarContentsState extends ConsumerState<TopBarContents> {
     return listItems;
   }*/
 
-  _addOverlay(OverlayEntry entry) {
-    Overlay.of(context)?.insert(entry);
-  }
-
   Offset _getPosition() {
     final renderBox =
         _globalKey.currentContext!.findRenderObject() as RenderBox;

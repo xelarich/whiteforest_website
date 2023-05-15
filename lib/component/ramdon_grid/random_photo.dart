@@ -4,17 +4,19 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class RandomPhotoGrid extends StatefulWidget {
+  const RandomPhotoGrid({super.key});
+
   @override
-  _RandomPhotoGridState createState() => _RandomPhotoGridState();
+  RandomPhotoGridState createState() => RandomPhotoGridState();
 }
 
-class _RandomPhotoGridState extends State<RandomPhotoGrid> {
-  List<String> _photoUrls = [
+class RandomPhotoGridState extends State<RandomPhotoGrid> {
+  final List<String> _photoUrls = [
     'assets/images/img1.jpeg',
     'assets/images/img2.jpeg',
     'assets/images/img3.jpeg',
   ];
-  List<bool> _visible = List.filled(3, true);
+  final List<bool> _visible = List.filled(3, true);
 
   @override
   void initState() {

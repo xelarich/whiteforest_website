@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:whiteforest_website/component/header/header_carousel.dart';
-import 'package:whiteforest_website/component/ramdon_grid/random_photo.dart';
 import 'package:whiteforest_website/shared/image_text.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,7 +17,7 @@ class _HomePageState extends State<HomePage> {
 
     return Column(
       children: [
-        HeaderCarousel(),
+        const HeaderCarousel(),
         Padding(
           padding: const EdgeInsets.all(32),
           child: Column(children: [
@@ -244,7 +243,7 @@ class _HomePageState extends State<HomePage> {
             'assets/icons/forest_line.svg',
             width: screenSize.width,
             fit: BoxFit.fitWidth,
-            color: Colors.white,
+            colorFilter:const ColorFilter.mode(Colors.white,BlendMode.srcIn ) ,
           ),
         ),
         Container(
