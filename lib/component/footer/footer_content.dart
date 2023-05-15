@@ -202,37 +202,24 @@ class FooterContent extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                         vertical: 6,
                       ),
-                      child: InkWell(
-                        onTap: () => MapsLauncher.launchQuery(
-                            'White forest la toussuire, Fontcouverte-la-Toussuire'),
-                        child: SizedBox(
-                          width: double.infinity,
-                          height: 100,
-                          child: Stack(
-                            children: [
-                              GoogleMap(
-                                mapType: MapType.hybrid,
-                                zoomControlsEnabled: false,
-                                initialCameraPosition: const CameraPosition(
-                                    target: LatLng(45.2549783, 6.2741655),
-                                    zoom: 13),
-                                markers: <Marker>{
-                                  Marker(
-                                      markerId: const MarkerId('0'),
-                                      position: const LatLng(45.2549783, 6.2741655),
-                                      consumeTapEvents: true,
-                                      onTap: () {
-                                        MapsLauncher.launchQuery(
-                                            'White forest la toussuire, Fontcouverte-la-Toussuire');
-                                      })
-                                },
-                              ),
-                              InkWell(
-                                onTap:() => MapsLauncher.launchQuery(
-                                    'White forest la toussuire, Fontcouverte-la-Toussuire'),
-                              )
-                            ],
-                          ),
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 100,
+                        child: GoogleMap(
+                          zoomControlsEnabled: false,
+                          initialCameraPosition: const CameraPosition(
+                              target: LatLng(45.2549783, 6.2741655),
+                              zoom: 13),
+                          markers: <Marker>{
+                            Marker(
+                                markerId: const MarkerId('0'),
+                                position: const LatLng(45.2549783, 6.2741655),
+                                consumeTapEvents: true,
+                                onTap: () {
+                                  MapsLauncher.launchQuery(
+                                      'White forest la toussuire, Fontcouverte-la-Toussuire');
+                                })
+                          },
                         ),
                       ),
                     ),
