@@ -5,6 +5,7 @@ import 'package:whiteforest_website/page/activity/activity_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
 import 'package:whiteforest_website/page/kennel/kennel_page.dart';
+import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
 import 'package:whiteforest_website/page/team/team_page.dart';
 
 final navigatorProvider =
@@ -13,7 +14,7 @@ final navigatorProvider =
 });
 
 class NavigatorProvider extends ChangeNotifier {
-  int selectedIndex = 0;
+  int selectedIndex = 5;
 
   final List<Menu> menuList = [
     Menu(
@@ -40,6 +41,11 @@ class NavigatorProvider extends ChangeNotifier {
       5,
       'Contact',
       body: const ContactPage(),
+    ),
+    Menu(
+      6,
+      'CGV',
+      body: const SalesConditionPage(),
     ),
   ];
 

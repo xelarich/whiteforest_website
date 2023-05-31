@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:whiteforest_website/page/activity/activity_page.dart';
+import 'package:whiteforest_website/page/contact/contact_page.dart';
+import 'package:whiteforest_website/page/home/home_page.dart';
+import 'package:whiteforest_website/page/kennel/kennel_page.dart';
+import 'package:whiteforest_website/page/team/team_page.dart';
 import 'package:whiteforest_website/provider/conf_provider.dart';
 import 'package:whiteforest_website/provider/navigator_provider.dart';
 import 'package:whiteforest_website/shared/tab_text.dart';
 
-class TopBarContents extends ConsumerStatefulWidget
+class TopBarContent extends ConsumerStatefulWidget
     implements PreferredSizeWidget {
   final double opacity;
+  final String routeSelected;
 
-  const TopBarContents(this.opacity, {super.key});
+  const TopBarContent(this.routeSelected, {this.opacity = 1, super.key});
 
   @override
   TopBarContentsState createState() => TopBarContentsState();
@@ -17,32 +24,12 @@ class TopBarContents extends ConsumerStatefulWidget
   Size get preferredSize => const Size.fromHeight(kToolbarHeight + 50);
 }
 
-class TopBarContentsState extends ConsumerState<TopBarContents> {
-  final GlobalKey _globalKey = GlobalKey();
-  OverlayEntry? entry;
-  bool _menuHover = false;
-  ScrollController controller = ScrollController();
-  bool allowAddEntry = true;
-
-  final List<String> menuList = [
-    'Accueil',
-    'Actualité',
-    'Activité',
-    "L'équipe",
-    'Le chenil',
-    'Contact'
-  ];
-
+class TopBarContentsState extends ConsumerState<TopBarContent> {
   late Size screenSize;
 
   @override
   void initState() {
     screenSize = ref.read(confProvider).screenSize;
-
-    entry = _overlayEntry();
-    entry?.addListener(() {
-      allowAddEntry = !allowAddEntry;
-    });
     super.initState();
   }
 
@@ -69,33 +56,35 @@ class TopBarContentsState extends ConsumerState<TopBarContents> {
                     children: [
                       TabText(
                         'Accueil',
-                        menu: ref.read(navigatorProvider).menuList[0],
-                        onTap: () =>
-                            ref.read(navigatorProvider).onItemTapped(0),
+                        isSelected: widget.routeSelected == HomePage.routeName,
+                        onTap: () => context.go(HomePage.routeName),
                       ),
                       TabText(
                         'Activité',
-                        menu: ref.read(navigatorProvider).menuList[1],
+                        isSelected:
+                            widget.routeSelected == ActivityPage.routeName,
                         onTap: () =>
-                            ref.read(navigatorProvider).onItemTapped(1),
+                            context.go(ActivityPage.routeName),
                       ),
                       TabText(
                         'Le chenil',
-                        menu: ref.read(navigatorProvider).menuList[2],
+                        isSelected:
+                            widget.routeSelected == KennelPage.routeName,
                         onTap: () =>
-                            ref.read(navigatorProvider).onItemTapped(2),
+                            context.go(KennelPage.routeName),
                       ),
                       TabText(
                         "L'équipe",
-                        menu: ref.read(navigatorProvider).menuList[3],
+                        isSelected: widget.routeSelected == TeamPage.routeName,
                         onTap: () =>
-                            ref.read(navigatorProvider).onItemTapped(3),
+                            context.go(TeamPage.routeName),
                       ),
                       TabText(
                         'Contact',
-                        menu: ref.read(navigatorProvider).menuList[4],
+                        isSelected:
+                            widget.routeSelected == ContactPage.routeName,
                         onTap: () =>
-                            ref.read(navigatorProvider).onItemTapped(4),
+                            context.go(ContactPage.routeName),
                       ),
                     ],
                   ),
@@ -109,8 +98,8 @@ class TopBarContentsState extends ConsumerState<TopBarContents> {
                         backgroundColor: Colors.black,
                         padding: const EdgeInsets.all(16),
                       ),
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Text(
                             "Réserver",
                             style:
@@ -135,178 +124,5 @@ class TopBarContentsState extends ConsumerState<TopBarContents> {
         ),
       ),
     );
-  }
-
-  OverlayEntry _overlayEntry() {
-    return OverlayEntry(builder: (BuildContext overlayContext) {
-      final offset = _getPosition();
-      return Positioned(
-        top: 108,
-        left: offset.dx - 10,
-        child: Material(
-          color: Colors.transparent,
-          child: MouseRegion(
-            onEnter: (_) {
-              _menuHover = true;
-              debugPrint('OnEnterTile $_menuHover ${(entry != null)} ');
-            },
-            onExit: (_) {
-              debugPrint('OnExitTile $_menuHover ${(entry != null)} ');
-              _menuHover = false;
-              Future.delayed(const Duration(milliseconds: 100), () {
-                if (!_menuHover && entry != null) {
-                  if (!entry!.mounted) {
-                    return;
-                  } else {
-                    entry?.remove();
-                  }
-                }
-              });
-            },
-            child: SizedBox(
-              height: 400,
-              child: Column(
-                children: [
-                  SizedBox(
-                    width: 200,
-                    child: Container(
-                      color: Colors.black,
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: const Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          "Hiver",
-                          textAlign: TextAlign.left,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 200,
-                    child: Container(
-                      color: Colors.black,
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: const Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          "Été",
-                          textAlign: TextAlign.left,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 200,
-                    child: Container(
-                      color: Colors.black,
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: const Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          "Intersaison",
-                          textAlign: TextAlign.left,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      );
-    });
-  }
-
-/*  List<Widget> _buildListItems() {
-    final listItems = <Widget>[];
-    for (int i = 0; i < widget.menuTiles.length; ++i) {
-      listItems.add(
-        FutureBuilder(
-            future: Future.delayed(Duration(milliseconds: (i * 200))),
-            builder: (context, value) {
-              if (value.connectionState == ConnectionState.done) {
-                return TweenAnimationBuilder(
-                  curve: Curves.fastOutSlowIn,
-                  duration: const Duration(milliseconds: 200),
-                  onEnd: () {
-                    if (entry != null && !_menuHover[widget.index]) {
-                      if (!entry!.mounted) {
-                        return;
-                      } else {
-                        entry!.remove();
-                      }
-                    }
-                  },
-                  tween: _menuHover[widget.index]
-                      ? Tween<double>(begin: 1, end: 0)
-                      : Tween<double>(begin: 0, end: 1),
-                  builder: (_, double value, _child) {
-                    return _defineAnimationType(
-                        widget.animationType, value, _child, i);
-                  },
-                  child: InkWell(
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text("You Tapped On ${widget.menuTiles[i]}"),
-                          duration: const Duration(milliseconds: 500)));
-                    },
-                    child: SizedBox(
-                      width: 200,
-                      child: Container(
-                        alignment: Alignment.center,
-                        decoration: widget.menuBoxDecoration,
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 2.0, horizontal: 10.0),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Text(
-                            widget.menuTiles[i].name ?? '',
-                            textAlign: TextAlign.left,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                fontSize: widget.menuTextSize,
-                                fontWeight: FontWeight.w500,
-                                color: widget.menuTextColor),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-              }
-              return Container();
-            }),
-      );
-    }
-    return listItems;
-  }*/
-
-  _addOverlay(OverlayEntry entry) {
-    Overlay.of(context)?.insert(entry);
-  }
-
-  Offset _getPosition() {
-    final renderBox =
-        _globalKey.currentContext!.findRenderObject() as RenderBox;
-    return renderBox.localToGlobal(Offset.zero);
   }
 }

@@ -4,11 +4,12 @@ import 'package:whiteforest_website/menu.dart';
 import 'package:whiteforest_website/provider/navigator_provider.dart';
 
 class TabText extends ConsumerStatefulWidget {
-  TabText(this.text, {Key? key, required this.menu, required this.onTap})
+  const TabText(this.text,
+      {Key? key, required this.isSelected, required this.onTap})
       : super(key: key);
   final String text;
-  final Menu menu;
-  Function onTap;
+  final bool isSelected;
+  final Function onTap;
 
   @override
   TabTextState createState() => TabTextState();
@@ -19,9 +20,6 @@ class TabTextState extends ConsumerState<TabText> {
 
   @override
   Widget build(BuildContext context) {
-    final isSelected =
-        ref.watch(navigatorProvider).selectedIndex + 1 == widget.menu.id;
-
     return InkWell(
       onTap: () {
         widget.onTap();
@@ -41,7 +39,7 @@ class TabTextState extends ConsumerState<TabText> {
               widget.text.toUpperCase(),
               style: TextStyle(
                 fontSize: 16,
-                color: getColors(isSelected),
+                color: getColors(widget.isSelected),
               ),
             ),
             const SizedBox(height: 12),
@@ -49,11 +47,11 @@ class TabTextState extends ConsumerState<TabText> {
               maintainAnimation: true,
               maintainState: true,
               maintainSize: true,
-              visible: isHover || isSelected,
+              visible: isHover || widget.isSelected,
               child: Container(
                 width: 100,
                 height: 2,
-                color: getColors(isSelected),
+                color: getColors(widget.isSelected),
               ),
             ),
           ],

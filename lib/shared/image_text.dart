@@ -42,7 +42,7 @@ class _ImageTextState extends ConsumerState<ImageText> {
                 alignment: Alignment.center,
                 child: Text(
                   widget.text.toUpperCase(),
-                  style: TextStyle(color: Colors.white, fontSize: 32),
+                  style: const TextStyle(color: Colors.white, fontSize: 32),
                 ),
               ))
             }
