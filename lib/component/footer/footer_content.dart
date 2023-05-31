@@ -1,77 +1,101 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:maps_launcher/maps_launcher.dart';
-import 'package:whiteforest_website/component/footer/widget/action_text.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:whiteforest_website/component/footer/widget/condition.dart';
 import 'package:whiteforest_website/component/footer/widget/contact_details.dart';
 import 'package:whiteforest_website/component/footer/widget/site_map.dart';
 
-class FooterContent extends StatelessWidget {
+class FooterContent extends ConsumerWidget {
   const FooterContent({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       color: Colors.grey.shade900,
       width: double.infinity,
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(32),
-            child: Image.asset(
-              'assets/images/white_forest_logo.png',
-              height: 200,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Container(
+              padding: const EdgeInsets.all(48),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.grey.shade50,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Image.asset(
+                  'assets/images/white_forest_logo.png',
+                  height: 125,
+                ),
+              ),
             ),
           ),
-          IntrinsicHeight(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                onPressed: _launchFacebookUrl,
+                iconSize: 32,
+                hoverColor: Colors.black,
+                icon: const Icon(
+                  LineAwesomeIcons.facebook_square,
+                  color: Colors.white,
+                ),
+              ),
+              IconButton(
+                onPressed: _launchTripadvisorUrl,
+                iconSize: 32,
+                hoverColor: Colors.black,
+                icon: const Icon(
+                  LineAwesomeIcons.tripadvisor,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+          const IntrinsicHeight(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SiteMap(),
-                const Padding(
+                SiteMap(),
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 16.0),
                   child: VerticalDivider(
                     thickness: 2,
                     color: Colors.white,
                   ),
                 ),
-                Expanded(
-                  flex: 2,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 32, horizontal: 32),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 8),
-                          child: Text(
-                            'CONDITION',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 6),
-                          child: ActionText('Conditions général de vente', onTap: () {}),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                const Padding(
+                Condition(),
+                Padding(
                   padding: EdgeInsets.symmetric(vertical: 16.0),
                   child: VerticalDivider(
                     thickness: 2,
                     color: Colors.white,
                   ),
                 ),
-                const ContactDetails(),
+                ContactDetails(),
               ],
             ),
           ),
         ],
       ),
     );
+  }
+
+  Future<void> _launchFacebookUrl() async {
+    Uri url = Uri.parse('https://www.facebook.com/profile.php?id=100088814902936');
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
+  Future<void> _launchTripadvisorUrl() async {
+    Uri url = Uri.parse('https://www.tripadvisor.fr/Attraction_Review-g657856-d3842026-Reviews-White_Forest-Fontcouverte_la_Toussuire_Savoie_Auvergne_Rhone_Alpes.html');
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
   }
 }
