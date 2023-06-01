@@ -71,6 +71,9 @@ class App extends ConsumerWidget {
       title: 'White Forest',
       theme: ThemeData(
         textTheme: GoogleFonts.carterOneTextTheme(),
+        tabBarTheme: TabBarTheme(
+            labelStyle: GoogleFonts.carterOne(),
+            unselectedLabelStyle: GoogleFonts.carterOne()),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routerConfig: _router,

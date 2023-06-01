@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:whiteforest_website/menu.dart';
-import 'package:whiteforest_website/provider/navigator_provider.dart';
 
 class TabText extends ConsumerStatefulWidget {
   const TabText(this.text,

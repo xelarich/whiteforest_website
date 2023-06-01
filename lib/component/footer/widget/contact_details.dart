@@ -79,7 +79,7 @@ class ContactDetails extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
-                    "example@gmail.com",
+                    "moretmeleanne@gmail.com",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,

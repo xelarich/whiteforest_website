@@ -56,6 +56,7 @@ class MainPageState extends ConsumerState<BasePage> {
         physics: const AlwaysScrollableScrollPhysics(),
         controller: _scrollController,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             widget.child,
             const FooterContent(),
