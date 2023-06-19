@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:whiteforest_website/component/footer/widget/condition.dart';
 import 'package:whiteforest_website/component/footer/widget/contact_details.dart';
-import 'package:whiteforest_website/component/footer/widget/site_map.dart';
 
 class FooterContent extends ConsumerWidget {
   const FooterContent({Key? key}) : super(key: key);
@@ -14,10 +11,12 @@ class FooterContent extends ConsumerWidget {
     return Container(
       color: Colors.grey.shade900,
       width: double.infinity,
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            padding: const EdgeInsets.only(top: 32, bottom: 16),
             child: Container(
               padding: const EdgeInsets.all(48),
               decoration: BoxDecoration(
@@ -33,69 +32,10 @@ class FooterContent extends ConsumerWidget {
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                onPressed: _launchFacebookUrl,
-                iconSize: 32,
-                hoverColor: Colors.black,
-                icon: const Icon(
-                  LineAwesomeIcons.facebook_square,
-                  color: Colors.white,
-                ),
-              ),
-              IconButton(
-                onPressed: _launchTripadvisorUrl,
-                iconSize: 32,
-                hoverColor: Colors.black,
-                icon: const Icon(
-                  LineAwesomeIcons.tripadvisor,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-          const IntrinsicHeight(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SiteMap(),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
-                  child: VerticalDivider(
-                    thickness: 2,
-                    color: Colors.white,
-                  ),
-                ),
-                Condition(),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 16.0),
-                  child: VerticalDivider(
-                    thickness: 2,
-                    color: Colors.white,
-                  ),
-                ),
-                ContactDetails(),
-              ],
-            ),
-          ),
+          const ContactDetails(),
+          const Condition(),
         ],
       ),
     );
-  }
-
-  Future<void> _launchFacebookUrl() async {
-    Uri url = Uri.parse('https://www.facebook.com/profile.php?id=100088814902936');
-    if (!await launchUrl(url)) {
-      throw Exception('Could not launch $url');
-    }
-  }
-
-  Future<void> _launchTripadvisorUrl() async {
-    Uri url = Uri.parse('https://www.tripadvisor.fr/Attraction_Review-g657856-d3842026-Reviews-White_Forest-Fontcouverte_la_Toussuire_Savoie_Auvergne_Rhone_Alpes.html');
-    if (!await launchUrl(url)) {
-      throw Exception('Could not launch $url');
-    }
   }
 }

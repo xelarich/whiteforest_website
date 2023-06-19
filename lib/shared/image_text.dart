@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:whiteforest_website/provider/conf_provider.dart';
 
 class ImageText extends ConsumerStatefulWidget {
   final String assetImage;
@@ -18,7 +17,7 @@ class _ImageTextState extends ConsumerState<ImageText> {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = ref.watch(confProvider).screenSize;
+    final screenSize = MediaQuery.of(context).size;
     return Container(
         color: Colors.black,
         child: InkWell(

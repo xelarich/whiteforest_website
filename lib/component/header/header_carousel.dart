@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:whiteforest_website/component/header/header_animated_icon.dart';
+import 'package:infinite_carousel/infinite_carousel.dart';
+import 'package:whiteforest_website/component/header/header_image.dart';
 
 class HeaderCarousel extends StatefulWidget {
   const HeaderCarousel({super.key});
@@ -10,115 +13,116 @@ class HeaderCarousel extends StatefulWidget {
 }
 
 class HeaderCarouselState extends State<HeaderCarousel> {
-  final String imagePath = 'assets/images/';
-
+  late InfiniteScrollController _controller;
   late CarouselController _carouselController;
+  late Timer _timer;
+
+  final List<Widget> images = [
+    const HeaderImage('assets/images/header/cover_summer.jpg'),
+    const HeaderImage('assets/images/header/cover_winter.jpg'),
+  ];
+
+  int imageIndex = 0;
 
   @override
   void initState() {
     super.initState();
+    _controller = InfiniteScrollController(initialItem: 0);
     _carouselController = CarouselController();
+    _timer = Timer.periodic(const Duration(seconds: 10), (timer) {
+      _controller.nextItem(
+          duration: const Duration(seconds: 2), curve: Curves.fastOutSlowIn);
+    });
   }
 
   @override
   void dispose() {
-    _carouselController.stopAutoPlay();
+    _controller.dispose();
+    _timer.cancel();
+
     super.dispose();
-  }
-
-  final List<String> images = [
-    'assets/images/header/cover_summer.jpg',
-    'assets/images/header/cover_winter.jpg'
-  ];
-
-  List<Widget> generateImageTiles(Size screenSize) {
-    return images
-        .map(
-          (element) => SizedBox(
-            width: screenSize.width,
-            height: screenSize.height,
-            child: Image.asset(
-              element,
-              fit: BoxFit.fill,
-            ),
-          ),
-        )
-        .toList();
   }
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    var imageSliders = generateImageTiles(screenSize);
-
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        CarouselSlider(
-          items: imageSliders,
-          options: CarouselOptions(
-            enlargeCenterPage: false,
-            viewportFraction: 1,
-            autoPlay: true,
-            autoPlayAnimationDuration: const Duration(seconds: 1),
-            autoPlayInterval: const Duration(seconds: 5),
-            scrollPhysics: const NeverScrollableScrollPhysics(),
-          ),
-          carouselController: _carouselController,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                        side: BorderSide.none,
-                        shape: const CircleBorder(),
-                        padding: const EdgeInsets.all(16)),
-                    onPressed: () => _carouselController.previousPage(),
-                    child: const Icon(
-                      Icons.arrow_back_ios_new,
-                      color: Colors.white70,
-                      size: 48,
-                    ),
-                  ),
-                  Flexible(
-                      child: Text(
-                    "Préparez-vous \npour l'aventure".toUpperCase(),
-                    textScaleFactor: 7,
-                    style: const TextStyle(
-                      color: Colors.black,
-                    ),
-                    maxLines: 2,
-                    textAlign: TextAlign.center,
-                  )),
-                  OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                        side: BorderSide.none,
-                        shape: const CircleBorder(),
-                        padding: const EdgeInsets.all(16)),
-                    onPressed: () => _carouselController.nextPage(),
-                    child: const Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white70,
-                      size: 48,
-                    ),
-                  ),
-                ],
+    return SizedBox(
+      width: screenSize.width,
+      height: screenSize.height - kTextTabBarHeight - 50,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: InfiniteCarousel.builder(
+                itemCount: images.length,
+                itemExtent: screenSize.width,
+                controller: _controller,
+                center: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, itemIndex, realIndex) {
+                  return images[itemIndex];
+                },
+                onIndexChanged: (value) {
+                  setState(() {
+                    imageIndex = value;
+                  });
+                },
               ),
-              const HeaderAnimatedIcon(
-                Icons.arrow_downward,
-                color: Colors.black,
-                size: 96,
-              )
-            ],
+            ),
           ),
-        ),
-      ],
+          const Positioned.fill(
+            child: Center(
+              child: Text(
+                "Préparez-vous pour l'aventure",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 64,
+                ),
+                maxLines: 2,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+          Positioned.fill(
+            top: screenSize.height * 0.75,
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: images.asMap().entries.map((entry) {
+                  return Container(
+                    width: 12.0,
+                    height: 12.0,
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 4.0),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: (Theme.of(context).brightness == Brightness.dark
+                                ? Colors.white
+                                : Colors.white)
+                            .withOpacity(imageIndex == entry.key ? 0.9 : 0.4)),
+                  );
+                }).toList(),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget getCaroussel(Size screenSize) {
+    return CarouselSlider(
+      items: images.toList(),
+      options: CarouselOptions(
+        height: screenSize.height - kTextTabBarHeight - 50,
+        autoPlayInterval: const Duration(seconds: 10),
+        autoPlayAnimationDuration: const Duration(seconds: 2),
+        viewportFraction: 1,
+        autoPlay: true,
+        scrollPhysics: const NeverScrollableScrollPhysics(),
+      ),
+      carouselController: _carouselController,
     );
   }
 }

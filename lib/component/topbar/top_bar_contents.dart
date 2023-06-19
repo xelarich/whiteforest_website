@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:whiteforest_website/page/activity/activity_page.dart';
+import 'package:whiteforest_website/menu.dart';
+import 'package:whiteforest_website/page/activity/group/activity_group_page.dart';
+import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
+import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
 import 'package:whiteforest_website/page/kennel/kennel_page.dart';
 import 'package:whiteforest_website/page/team/team_page.dart';
-import 'package:whiteforest_website/provider/conf_provider.dart';
-import 'package:whiteforest_website/provider/navigator_provider.dart';
 import 'package:whiteforest_website/shared/tab_text.dart';
 
 class TopBarContent extends ConsumerStatefulWidget
@@ -25,19 +26,11 @@ class TopBarContent extends ConsumerStatefulWidget
 }
 
 class TopBarContentsState extends ConsumerState<TopBarContent> {
-  late Size screenSize;
-
-  @override
-  void initState() {
-    screenSize = ref.read(confProvider).screenSize;
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.brown.shade100.withOpacity(widget.opacity),
+      color: Colors.brown.shade200.withOpacity(widget.opacity),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
@@ -60,9 +53,18 @@ class TopBarContentsState extends ConsumerState<TopBarContent> {
                     ),
                     TabText(
                       'Activité',
-                      isSelected:
-                          widget.routeSelected == ActivityPage.routeName,
-                      onTap: () => context.go(ActivityPage.routeName),
+                      isSelected: widget.routeSelected ==
+                              ActivityWinterPage.routeName ||
+                          widget.routeSelected ==
+                              ActivitySummerPage.routeName ||
+                          widget.routeSelected == ActivityGroupPage.routeName,
+                      children: [
+                        SubMenu(
+                            'Activités hiver', ActivityWinterPage.routeName),
+                        SubMenu('Activités été', ActivitySummerPage.routeName),
+                        SubMenu(
+                            'Activités groupe', ActivityGroupPage.routeName),
+                      ],
                     ),
                     TabText(
                       'Le chenil',
@@ -91,8 +93,8 @@ class TopBarContentsState extends ConsumerState<TopBarContent> {
                       backgroundColor: Colors.black,
                       padding: const EdgeInsets.all(16),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         Text(
                           "Réserver",
                           style: TextStyle(color: Colors.white70, fontSize: 22),
