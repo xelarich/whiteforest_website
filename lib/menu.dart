@@ -1,15 +1,7 @@
-import 'package:flutter/widgets.dart';
-
-class Menu {
-  int id;
+class SubMenu {
   String name;
-  bool selected;
-  Widget body;
+  String routeName;
+  int indexAnchor;
 
-  Menu(
-    this.id,
-    this.name, {
-    required this.body,
-    this.selected = false,
-  });
+  SubMenu(this.name, this.routeName, {this.indexAnchor = -1});
 }

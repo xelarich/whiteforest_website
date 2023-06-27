@@ -12,7 +12,7 @@ class RandomPhotoGrid extends StatefulWidget {
 
 class RandomPhotoGridState extends State<RandomPhotoGrid> {
   final List<String> _photoUrls = [
-    'assets/images/img1.jpeg',
+    'assets/images/conduite_attelage_1.jpeg',
     'assets/images/img2.jpeg',
     'assets/images/img3.jpeg',
   ];
