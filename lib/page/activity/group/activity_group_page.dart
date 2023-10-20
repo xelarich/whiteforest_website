@@ -7,7 +7,7 @@ class ActivityGroupPage extends StatefulWidget {
   static const indexAnchorKey = 'indexAnchorKey';
   final int? indexAnchor;
 
-  const ActivityGroupPage({this.indexAnchor, Key? key}) : super(key: key);
+  const ActivityGroupPage({this.indexAnchor, super.key});
 
   @override
   State<ActivityGroupPage> createState() => _ActivityGroupPageState();

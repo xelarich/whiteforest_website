@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SiteMap extends StatelessWidget {
-  const SiteMap({Key? key}) : super(key: key);
+  const SiteMap({super.key});
 
   @override
   Widget build(BuildContext context) {

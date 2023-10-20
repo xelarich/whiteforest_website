@@ -11,7 +11,7 @@ class ActivityWinterPage extends StatefulWidget {
   static const indexAnchorKey = 'indexAnchorKey';
   final int? indexAnchor;
 
-  const ActivityWinterPage({this.indexAnchor, Key? key}) : super(key: key);
+  const ActivityWinterPage({this.indexAnchor, super.key});
 
   @override
   State<ActivityWinterPage> createState() => _ActivityWinterPageState();
@@ -24,7 +24,10 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
   void initState() {
     super.initState();
     _scrollController = AnchorScrollController();
+  }
 
+  @override
+  Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         if (widget.indexAnchor != null) {
@@ -32,10 +35,7 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
         }
       },
     );
-  }
 
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TopBarContent(ActivityWinterPage.routeName),
       body: Column(

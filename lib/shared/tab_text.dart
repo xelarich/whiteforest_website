@@ -10,8 +10,8 @@ class TabText extends ConsumerStatefulWidget {
     required this.isSelected,
     this.onTap,
     this.children = const [],
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String name;
   final Function? onTap;
@@ -140,13 +140,12 @@ class _TabTextWidget extends StatelessWidget {
 
 class _ModalEntry extends StatelessWidget {
   const _ModalEntry({
-    Key? key,
     required this.menu,
     required this.visible,
     required this.menuAnchor,
     required this.childAnchor,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Widget menu;
   final bool visible;

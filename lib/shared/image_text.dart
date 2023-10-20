@@ -5,8 +5,7 @@ class ImageText extends ConsumerStatefulWidget {
   final String assetImage;
   final String text;
 
-  const ImageText(this.assetImage, {required this.text, Key? key})
-      : super(key: key);
+  const ImageText(this.assetImage, {required this.text, super.key});
 
   @override
   ConsumerState<ImageText> createState() => _ImageTextState();

@@ -59,6 +59,7 @@ class HomePageState extends ConsumerState<ConsumerStatefulWidget> {
               context: context,
               removeTop: true,
               child: ListView(
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 children: [
                   const HeaderCarousel(),

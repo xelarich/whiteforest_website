@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:whiteforest_website/component/indicator_difficulty/indicator_difficulty.dart';
 
 class SleighBaptism extends StatelessWidget {
-  const SleighBaptism(this._scrollController, {Key? key}) : super(key: key);
+  const SleighBaptism(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 

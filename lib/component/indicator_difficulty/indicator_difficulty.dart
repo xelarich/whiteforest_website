@@ -4,7 +4,7 @@ import 'package:whiteforest_website/shared/styles.dart';
 class IndicatorDifficulty extends StatelessWidget {
   final int difficulty;
 
-  const IndicatorDifficulty(this.difficulty, {Key? key}) : super(key: key);
+  const IndicatorDifficulty(this.difficulty, {super.key});
 
   @override
   Widget build(BuildContext context) {

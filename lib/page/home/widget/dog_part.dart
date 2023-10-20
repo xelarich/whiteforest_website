@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DogPart extends StatelessWidget {
-  const DogPart({Key? key}) : super(key: key);
+  const DogPart({super.key});
 
   @override
   Widget build(BuildContext context) {

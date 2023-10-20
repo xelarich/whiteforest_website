@@ -14,8 +14,7 @@ class ActionText extends StatefulWidget {
       this.size = 14,
       this.fontFamily = 'Roboto',
       this.fontWeight = FontWeight.normal,
-      Key? key})
-      : super(key: key);
+      super.key});
 
   @override
   State<ActionText> createState() => _ActionTextState();

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 class HeaderAnimatedIcon extends StatefulWidget {
   const HeaderAnimatedIcon(this.icons,
-      {required this.color, required this.size, Key? key})
-      : super(key: key);
+      {required this.color, required this.size, super.key});
 
   final IconData icons;
   final Color color;

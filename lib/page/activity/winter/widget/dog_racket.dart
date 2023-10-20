@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:whiteforest_website/component/indicator_difficulty/indicator_difficulty.dart';
 
 class DogRacket extends StatelessWidget {
-  const DogRacket(this._scrollController, {Key? key}) : super(key: key);
+  const DogRacket(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 

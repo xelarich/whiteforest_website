@@ -4,7 +4,7 @@ import 'package:maps_launcher/maps_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactDetails extends StatelessWidget {
-  const ContactDetails({Key? key}) : super(key: key);
+  const ContactDetails({super.key});
 
   @override
   Widget build(BuildContext context) {

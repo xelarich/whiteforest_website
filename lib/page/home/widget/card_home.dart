@@ -8,8 +8,7 @@ class CardHome extends StatelessWidget {
   final Function onTap;
 
   const CardHome(this.title, this.description, this.imagePath,
-      {required this.onTap, Key? key})
-      : super(key: key);
+      {required this.onTap, super.key});
 
   @override
   Widget build(BuildContext context) {

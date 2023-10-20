@@ -4,7 +4,7 @@ import 'package:whiteforest_website/page/activity/winter/activity_winter_page.da
 import 'package:whiteforest_website/page/home/widget/card_home.dart';
 
 class ActivityPart extends StatelessWidget {
-  const ActivityPart({Key? key}) : super(key: key);
+  const ActivityPart({super.key});
 
   @override
   Widget build(BuildContext context) {

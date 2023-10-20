@@ -4,7 +4,7 @@ import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
 class KennelPage extends StatelessWidget {
   static const routeName = '/kennel';
 
-  const KennelPage({Key? key}) : super(key: key);
+  const KennelPage({super.key});
 
   @override
   Widget build(BuildContext context) {

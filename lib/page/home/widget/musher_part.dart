@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MusherPart extends StatelessWidget {
-  const MusherPart({Key? key}) : super(key: key);
+  const MusherPart({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +42,10 @@ class MusherPart extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/images/profile/meleanne.jpeg',
+                      'assets/images/profile/meleanne.jpg',
+                      width: 300,
                       height: 300,
-                      fit: BoxFit.fill,
+                      fit: BoxFit.cover,
                     ),
                     const Padding(
                       padding: EdgeInsets.all(16.0),
@@ -65,7 +66,7 @@ class MusherPart extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/images/profile/thomas.jpg',
+                      'assets/images/profile/ANAELLE-min.jpg',
                       fit: BoxFit.cover,
                       alignment: Alignment.bottomCenter,
                       width: 300,
@@ -74,7 +75,7 @@ class MusherPart extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.all(16.0),
                       child: Text(
-                        'Thomas',
+                        'Anaelle',
                         style: TextStyle(fontSize: 24),
                       ),
                     ),

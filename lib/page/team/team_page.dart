@@ -4,7 +4,7 @@ import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
 class TeamPage extends StatelessWidget {
   static const routeName = '/team';
 
-  const TeamPage({Key? key}) : super(key: key);
+  const TeamPage({super.key});
 
   @override
   Widget build(BuildContext context) {

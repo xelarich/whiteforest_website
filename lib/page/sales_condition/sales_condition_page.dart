@@ -5,7 +5,7 @@ import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
 class SalesConditionPage extends StatelessWidget {
   static const routeName = '/salesConditions';
 
-  const SalesConditionPage({Key? key}) : super(key: key);
+  const SalesConditionPage({super.key});
 
   @override
   Widget build(BuildContext context) {

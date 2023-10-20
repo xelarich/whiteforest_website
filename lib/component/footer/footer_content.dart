@@ -4,7 +4,7 @@ import 'package:whiteforest_website/component/footer/widget/condition.dart';
 import 'package:whiteforest_website/component/footer/widget/contact_details.dart';
 
 class FooterContent extends ConsumerWidget {
-  const FooterContent({Key? key}) : super(key: key);
+  const FooterContent({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

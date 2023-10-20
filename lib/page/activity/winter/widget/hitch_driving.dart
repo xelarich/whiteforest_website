@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:whiteforest_website/component/indicator_difficulty/indicator_difficulty.dart';
 
 class HitchDriving extends StatelessWidget {
-  const HitchDriving(this._scrollController, {Key? key}) : super(key: key);
+  const HitchDriving(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 

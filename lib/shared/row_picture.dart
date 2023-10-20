@@ -4,8 +4,7 @@ class RowPicture extends StatefulWidget {
   final String assetImage;
   final int nbImagesInRow;
 
-  const RowPicture(this.assetImage, {required this.nbImagesInRow, Key? key})
-      : super(key: key);
+  const RowPicture(this.assetImage, {required this.nbImagesInRow, super.key});
 
   @override
   State<RowPicture> createState() => _RowPictureState();

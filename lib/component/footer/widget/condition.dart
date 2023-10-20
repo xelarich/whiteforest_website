@@ -5,7 +5,7 @@ import 'package:whiteforest_website/component/footer/widget/action_text.dart';
 import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
 
 class Condition extends ConsumerWidget {
-  const Condition({Key? key}) : super(key: key);
+  const Condition({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
