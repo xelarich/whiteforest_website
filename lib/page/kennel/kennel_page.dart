@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
+import 'package:whiteforest_website/component/topbar/top_bar_web.dart';
 
 class KennelPage extends StatelessWidget {
   static const routeName = '/kennel';
@@ -9,7 +9,7 @@ class KennelPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopBarContent(KennelPage.routeName),
+      appBar: const TopBarWeb(KennelPage.routeName),
       body: Container(
         padding: const EdgeInsets.only(top: kToolbarHeight + 50),
         child: const Center(

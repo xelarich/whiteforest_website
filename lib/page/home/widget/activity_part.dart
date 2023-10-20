@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:responsive/responsive.dart';
+import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
 import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';
 import 'package:whiteforest_website/page/home/widget/card_home.dart';
 
@@ -8,23 +10,27 @@ class ActivityPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Text(
-          'Vous êtes plutôt',
-          style: TextStyle(
-            fontSize: 28,
+    return ListView(shrinkWrap: true, children: [
+      const Center(
+        child: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            'Vous êtes plutôt',
+            style: TextStyle(
+              fontSize: 28,
+            ),
+            textAlign: TextAlign.justify,
           ),
-          textAlign: TextAlign.justify,
         ),
       ),
-      const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Text(
-          'Été ou Hiver ?',
-          style: TextStyle(fontSize: 38, fontFamily: 'WickedGrit'),
-          textAlign: TextAlign.justify,
+      const Center(
+        child: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            'Été ou Hiver ?',
+            style: TextStyle(fontSize: 38, fontFamily: 'WickedGrit'),
+            textAlign: TextAlign.justify,
+          ),
         ),
       ),
       const Align(
@@ -40,27 +46,54 @@ class ActivityPart extends StatelessWidget {
       ),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 32),
-        child: Row(
+        child: ResponsiveRow(
+          alignment: WrapAlignment.spaceEvenly,
+          runAlignment: WrapAlignment.spaceEvenly,
           children: [
-            CardHome(
-              'Cani-randonnée',
-              "Randonnée à pied, tracté par un chien de traîneau à l’aide d’une ceinture et d’une ligne conçue spécialement pour l’activité !",
-              'assets/images/cani_rando_1.jpg',
-              onTap: () {},
+            FlexWidget(
+              child: CardHome(
+                'Cani-randonnée',
+                "Randonnée à pied, tracté par un chien de traîneau à l’aide d’une ceinture et d’une ligne conçue spécialement pour l’activité !",
+                'assets/images/summer/cani_rando.webp',
+                onTap: () {
+                  context.go(
+                    ActivitySummerPage.routeName,
+                    extra: {
+                      ActivitySummerPage.indexAnchorKey: 1,
+                    },
+                  );
+                },
+              ),
             ),
-            const Spacer(),
-            CardHome(
-              'Cani-randonnée nocturne',
-              "Pratiquer la randonnée autrement ! Amoureux des montagnes, de nourriture et de randonnée, cette activité est faite pour vous !",
-              'assets/images/cani_rando_nocturne_1.jpg',
-              onTap: () {},
+            FlexWidget(
+              child: CardHome(
+                'Cani-randonnée nocturne',
+                "Pratiquer la randonnée autrement ! Amoureux des montagnes, de nourriture et de randonnée, cette activité est faite pour vous !",
+                'assets/images/summer/cani_rando_nocturne.webp',
+                onTap: () {
+                  context.go(
+                    ActivitySummerPage.routeName,
+                    extra: {
+                      ActivitySummerPage.indexAnchorKey: 2,
+                    },
+                  );
+                },
+              ),
             ),
-            const Spacer(),
-            CardHome(
-              'Visite du chenil',
-              "Durant 1H00, au chenil à La Toussuire ou sur votre station. Ecoutez et découvrez le métier de musher ! Le professionnel vous accompagnera et vous présentera sa passion.",
-              'assets/images/chenil_1.jpg',
-              onTap: () {},
+            FlexWidget(
+              child: CardHome(
+                'Visite du chenil',
+                "Durant 1H00, au chenil à La Toussuire ou sur votre station. Ecoutez et découvrez le métier de musher ! Le professionnel vous accompagnera et vous présentera sa passion.",
+                'assets/images/summer/chenil.webp',
+                onTap: () {
+                  context.go(
+                    ActivitySummerPage.routeName,
+                    extra: {
+                      ActivitySummerPage.indexAnchorKey: 3,
+                    },
+                  );
+                },
+              ),
             ),
           ],
         ),
@@ -78,49 +111,55 @@ class ActivityPart extends StatelessWidget {
       ),
       Padding(
         padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 32),
-        child: Row(
+        child: ResponsiveRow(
+          alignment: WrapAlignment.spaceEvenly,
+          runAlignment: WrapAlignment.spaceEvenly,
           children: [
-            CardHome(
-              'Balade en traineau',
-              "Assis dans le traineau, guidé par 10 chiens et leur musher, venez vivre un moment de partage avec nos chiens.",
-              'assets/images/balade_traineau_1.jpg',
-              onTap: () {
-                context.go(
-                  ActivityWinterPage.routeName,
-                  extra: {
-                    ActivityWinterPage.indexAnchorKey: 0,
-                  },
-                );
-              },
+            FlexWidget(
+              child: CardHome(
+                'Balade en traineau',
+                "Assis dans le traineau, guidé par 10 chiens et leur musher, venez vivre un moment de partage avec nos chiens.",
+                'assets/images/winter/balade_traineau.webp',
+                alignment: Alignment.centerRight,
+                onTap: () {
+                  context.go(
+                    ActivityWinterPage.routeName,
+                    extra: {
+                      ActivityWinterPage.indexAnchorKey: 0,
+                    },
+                  );
+                },
+              ),
             ),
-            const Spacer(),
-            CardHome(
-              'Conduite d’attelage',
-              "Le temps d’une demi-journée, ou d’une journée entière devenez le musher de votre propre attelage !",
-              'assets/images/conduite_attelage_1.jpg',
-              onTap: () {
-                context.go(
-                  ActivityWinterPage.routeName,
-                  extra: {
-                    ActivityWinterPage.indexAnchorKey: 1,
-                  },
-                );
-              },
+            FlexWidget(
+              child: CardHome(
+                'Conduite d’attelage',
+                "Le temps d’une demi-journée, ou d’une journée entière devenez le musher de votre propre attelage !",
+                'assets/images/winter/conduite_attelage.webp',
+                onTap: () {
+                  context.go(
+                    ActivityWinterPage.routeName,
+                    extra: {
+                      ActivityWinterPage.indexAnchorKey: 1,
+                    },
+                  );
+                },
+              ),
             ),
-            const Spacer(),
-            // TODO Change photo
-            CardHome(
-              'Cani-raquette nocturne',
-              "Le mardi soir ou le jeudi soir, venez découvrir la cani-raquette ! Équipé d’une ceinture et relié à un chien de traîneau, cette randonnée vous laissera un agréable souvenir",
-              'assets/images/cani_raquette_2.jpeg',
-              onTap: () {
-                context.go(
-                  ActivityWinterPage.routeName,
-                  extra: {
-                    ActivityWinterPage.indexAnchorKey: 2,
-                  },
-                );
-              },
+            FlexWidget(
+              child: CardHome(
+                'Cani-raquette nocturne',
+                "Le mardi soir ou le jeudi soir, venez découvrir la cani-raquette ! Équipé d’une ceinture et relié à un chien de traîneau, cette randonnée vous laissera un agréable souvenir",
+                'assets/images/winter/cani_raquette_nocturne.webp',
+                onTap: () {
+                  context.go(
+                    ActivityWinterPage.routeName,
+                    extra: {
+                      ActivityWinterPage.indexAnchorKey: 2,
+                    },
+                  );
+                },
+              ),
             ),
           ],
         ),

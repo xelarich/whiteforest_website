@@ -142,15 +142,18 @@ class ContactDetails extends StatelessWidget {
                     LineAwesomeIcons.map_marker,
                     color: Colors.white,
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text(
-                      "Le Hordon 73 300 LA TOUSSUIRE",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold),
+                  Flexible(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text(
+                        "Le Hordon 73 300 LA TOUSSUIRE",
+                        maxLines: 2,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ],

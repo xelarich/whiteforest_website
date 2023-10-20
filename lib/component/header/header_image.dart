@@ -7,10 +7,7 @@ class HeaderImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
     return Container(
-      width: screenSize.width,
-      height: screenSize.height,
       decoration: BoxDecoration(
         image: DecorationImage(
             image: AssetImage(imagePath),

@@ -1,10 +1,10 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart' hide Page;
-import 'package:whiteforest_website/component/footer/footer_content.dart';
-import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
-import 'package:whiteforest_website/page/activity/winter/widget/dog_racket.dart';
+import 'package:whiteforest_website/component/footer/footer.dart';
+import 'package:whiteforest_website/page/activity/winter/widget/dog_racket_night.dart';
 import 'package:whiteforest_website/page/activity/winter/widget/hitch_driving.dart';
 import 'package:whiteforest_website/page/activity/winter/widget/sleigh_baptism.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class ActivityWinterPage extends StatefulWidget {
   static const routeName = '/activityWinter';
@@ -19,6 +19,7 @@ class ActivityWinterPage extends StatefulWidget {
 
 class _ActivityWinterPageState extends State<ActivityWinterPage> {
   late final AnchorScrollController _scrollController;
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   void initState() {
@@ -31,13 +32,18 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         if (widget.indexAnchor != null) {
-          _scrollController.scrollToIndex(index: widget.indexAnchor!);
+          _scrollController.scrollToIndex(
+            index: widget.indexAnchor!,
+            scrollSpeed: 5,
+            curve: Curves.fastOutSlowIn,
+          );
         }
       },
     );
-
     return Scaffold(
-      appBar: const TopBarContent(ActivityWinterPage.routeName),
+      appBar: getTopBar(context, _key, ActivityWinterPage.routeName),
+      key: _key,
+      backgroundColor: Colors.brown.shade50,
       body: Column(
         children: [
           Expanded(
@@ -50,7 +56,7 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
                     child: Text('Les activités hivernales'.toUpperCase(),
                         textAlign: TextAlign.center,
                         style: const TextStyle(
-                          fontSize: 48,
+                          fontSize: 38,
                           fontFamily: 'WickedGrit',
                         )),
                   ),
@@ -62,11 +68,11 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
                   const SizedBox(
                     height: 64,
                   ),
-                  DogRacket(_scrollController),
+                  DogRacketNight(_scrollController),
                   const SizedBox(
                     height: 64,
                   ),
-                  const FooterContent(),
+                  const Footer(),
                 ],
               ),
             ),

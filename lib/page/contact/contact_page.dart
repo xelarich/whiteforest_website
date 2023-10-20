@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class ContactPage extends StatelessWidget {
   static const routeName = '/contact';
 
-  const ContactPage({super.key});
+  ContactPage({super.key});
+
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopBarContent(ContactPage.routeName),
+      appBar: getTopBar(context, _key, ContactPage.routeName),
+      key: _key,
       body: Container(
         padding: const EdgeInsets.only(top: kToolbarHeight + 50),
         child: const Center(

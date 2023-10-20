@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:whiteforest_website/menu.dart';
 
-class TabText extends ConsumerStatefulWidget {
+class TabText extends StatefulWidget {
   const TabText(
     this.name, {
     required this.isSelected,
@@ -22,69 +21,74 @@ class TabText extends ConsumerStatefulWidget {
   TabTextState createState() => TabTextState();
 }
 
-class TabTextState extends ConsumerState<TabText> {
+class TabTextState extends State<TabText> {
   bool tabIsHover = false;
   bool menuIsHover = false;
   bool isHover = false;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-        onTap: () {
-          if (widget.onTap != null) {
-            widget.onTap!();
-          }
-        },
-        onHover: (value) async {
-          setState(() {
-            tabIsHover = value;
-          });
-        },
-        hoverColor: Colors.transparent,
-        focusColor: Colors.transparent,
-        child: _ModalEntry(
-          visible: tabIsHover || menuIsHover,
-          childAnchor: Alignment.topRight,
-          menuAnchor: Alignment.topLeft,
-          menu: MouseRegion(
-            onEnter: (_) {
-              setState(() {
-                menuIsHover = true;
-              });
-            },
-            onExit: (_) async {
-              await Future.delayed(const Duration(milliseconds: 200));
-              if (!tabIsHover) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: InkWell(
+          onTap: () {
+            if (widget.onTap != null) {
+              widget.onTap!();
+            }
+          },
+          onHover: (value) async {
+            setState(() {
+              tabIsHover = value;
+            });
+          },
+          hoverColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          child: _ModalEntry(
+            visible: tabIsHover || menuIsHover,
+            childAnchor: Alignment.topRight,
+            menuAnchor: Alignment.topLeft,
+            menu: MouseRegion(
+              onEnter: (_) {
                 setState(() {
-                  menuIsHover = false;
+                  menuIsHover = true;
                 });
-              }
-            },
-            child: Card(
-              shape:
-                  const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-              elevation: 8,
-              child: Column(mainAxisSize: MainAxisSize.min, children: [
-                ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: widget.children.length,
-                    itemBuilder: (context, index) {
-                      return MenuItemButton(
-                        onPressed: () => context.go(
-                          widget.children[index].routeName,
-                        ),
-                        child: Text(widget.children[index].name),
-                      );
-                    }),
-              ]),
+              },
+              onExit: (_) async {
+                await Future.delayed(const Duration(milliseconds: 200));
+                if (!tabIsHover) {
+                  if (mounted) {
+                    setState(() {
+                      menuIsHover = false;
+                    });
+                  }
+                }
+              },
+              child: Card(
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero),
+                elevation: 8,
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: widget.children.length,
+                      itemBuilder: (context, index) {
+                        return MenuItemButton(
+                          onPressed: () => context.go(
+                            widget.children[index].routeName,
+                          ),
+                          child: Text(widget.children[index].name),
+                        );
+                      }),
+                ]),
+              ),
             ),
-          ),
-          child: _TabTextWidget(
-            widget.name,
-            isSelected: widget.isSelected,
-            isHover: tabIsHover || menuIsHover,
-          ),
-        ));
+            child: _TabTextWidget(
+              widget.name,
+              isSelected: widget.isSelected,
+              isHover: tabIsHover || menuIsHover,
+            ),
+          )),
+    );
   }
 }
 
@@ -101,33 +105,30 @@ class _TabTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            name,
-            style: TextStyle(
-              fontSize: 16,
-              color: getColors(),
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          name,
+          style: TextStyle(
+            fontSize: 16,
+            color: getColors(),
           ),
-          const SizedBox(height: 12),
-          Visibility(
-            maintainAnimation: true,
-            maintainState: true,
-            maintainSize: true,
-            visible: isHover || isSelected,
-            child: Container(
-              width: 100,
-              height: 2,
-              color: getColors(),
-            ),
+        ),
+        const SizedBox(height: 8),
+        Visibility(
+          maintainAnimation: true,
+          maintainState: true,
+          maintainSize: true,
+          visible: isHover || isSelected,
+          child: Container(
+            width: 100,
+            height: 2,
+            color: getColors(),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
