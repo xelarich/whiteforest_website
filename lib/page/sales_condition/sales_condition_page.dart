@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:whiteforest_website/component/footer/footer_content.dart';
-import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
+import 'package:whiteforest_website/component/footer/footer.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class SalesConditionPage extends StatelessWidget {
   static const routeName = '/salesConditions';
 
-  const SalesConditionPage({super.key});
+  SalesConditionPage({super.key});
+
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: TopBarContent(SalesConditionPage.routeName),
-      body: SingleChildScrollView(
+    return Scaffold(
+      appBar: getTopBar(context, _key, SalesConditionPage.routeName),
+      key: _key,
+      body: const SingleChildScrollView(
         child: Column(
           children: [
             Padding(
@@ -152,7 +155,7 @@ class SalesConditionPage extends StatelessWidget {
                 ],
               ),
             ),
-            FooterContent(),
+            Footer(),
           ],
         ),
       ),

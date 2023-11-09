@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:whiteforest_website/dependency_injection.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/page/activity/group/activity_group_page.dart';
 import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
 import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';
@@ -14,8 +13,18 @@ import 'package:whiteforest_website/page/sales_condition/sales_condition_page.da
 import 'package:whiteforest_website/page/team/team_page.dart';
 
 void main() {
-  declareServices();
-  runApp(const ProviderScope(child: App()));
+  runApp(const App());
+}
+
+CustomTransitionPage buildPageWithDefaultTransition<T>({
+  required BuildContext context,
+  required GoRouterState state,
+  required Widget child,
+}) {
+  return NoTransitionPage<T>(
+    key: state.pageKey,
+    child: child,
+  );
 }
 
 final GoRouter _router = GoRouter(
@@ -23,81 +32,99 @@ final GoRouter _router = GoRouter(
   routes: <RouteBase>[
     GoRoute(
       path: HomePage.routeName,
-      builder: (BuildContext context, GoRouterState state) {
-        return const HomePage();
-      },
+      pageBuilder: (context, state) => buildPageWithDefaultTransition(
+          context: context, state: state, child: HomePage()),
     ),
     GoRoute(
       path: ActivityWinterPage.routeName,
-      builder: (BuildContext context, GoRouterState state) {
+      pageBuilder: (BuildContext context, GoRouterState state) {
         final Map<String, int>? extra = state.extra as Map<String, int>?;
-        return ActivityWinterPage(
-          indexAnchor:
-              extra == null ? null : extra[ActivityWinterPage.indexAnchorKey]!,
-        );
+        return buildPageWithDefaultTransition(
+            context: context,
+            state: state,
+            child: ActivityWinterPage(
+              indexAnchor: extra == null
+                  ? null
+                  : extra[ActivityWinterPage.indexAnchorKey]!,
+            ));
       },
     ),
     GoRoute(
       path: ActivitySummerPage.routeName,
-      builder: (BuildContext context, GoRouterState state) {
+      pageBuilder: (BuildContext context, GoRouterState state) {
         final Map<String, int>? extra = state.extra as Map<String, int>?;
-        return ActivitySummerPage(
-          indexAnchor:
-              extra == null ? null : extra[ActivitySummerPage.indexAnchorKey]!,
-        );
+        return buildPageWithDefaultTransition(
+            context: context,
+            state: state,
+            child: ActivitySummerPage(
+              indexAnchor: extra == null
+                  ? null
+                  : extra[ActivitySummerPage.indexAnchorKey]!,
+            ));
       },
     ),
     GoRoute(
       path: ActivityGroupPage.routeName,
-      builder: (BuildContext context, GoRouterState state) {
+      pageBuilder: (BuildContext context, GoRouterState state) {
         final Map<String, int>? extra = state.extra as Map<String, int>?;
-        return ActivityGroupPage(
-          indexAnchor:
-              extra == null ? null : extra[ActivityGroupPage.indexAnchorKey],
-        );
+        return buildPageWithDefaultTransition(
+            context: context,
+            state: state,
+            child: ActivityGroupPage(
+              indexAnchor: extra == null
+                  ? null
+                  : extra[ActivityGroupPage.indexAnchorKey]!,
+            ));
       },
     ),
     GoRoute(
-      path: TeamPage.routeName,
-      builder: (BuildContext context, GoRouterState state) {
-        return const TeamPage();
-      },
-    ),
+        path: TeamPage.routeName,
+        pageBuilder: (BuildContext context, GoRouterState state) =>
+            buildPageWithDefaultTransition(
+                context: context, state: state, child: const TeamPage())),
     GoRoute(
       path: KennelPage.routeName,
-      builder: (BuildContext context, GoRouterState state) {
-        return const KennelPage();
-      },
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          buildPageWithDefaultTransition(
+              context: context, state: state, child: const KennelPage()),
     ),
     GoRoute(
       path: ContactPage.routeName,
-      builder: (BuildContext context, GoRouterState state) {
-        return const ContactPage();
-      },
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          buildPageWithDefaultTransition(
+              context: context, state: state, child: ContactPage()),
     ),
     GoRoute(
       path: SalesConditionPage.routeName,
-      builder: (BuildContext context, GoRouterState state) {
-        return const SalesConditionPage();
-      },
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          buildPageWithDefaultTransition(
+              context: context, state: state, child: SalesConditionPage()),
     ),
   ],
 );
 
-class App extends ConsumerWidget {
+class App extends StatelessWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Portal(
       child: MaterialApp.router(
         title: 'White Forest',
+        builder: (context, child) => ResponsiveBreakpoints.builder(
+          child: child!,
+          breakpoints: [
+            const Breakpoint(start: 0, end: 450, name: MOBILE),
+            const Breakpoint(start: 451, end: 800, name: TABLET),
+            const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+            const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
+          ],
+        ),
         theme: ThemeData(
           textTheme: GoogleFonts.carterOneTextTheme(),
           tabBarTheme: TabBarTheme(
               labelStyle: GoogleFonts.carterOne(),
               unselectedLabelStyle: GoogleFonts.carterOne()),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         debugShowCheckedModeBanner: false,
         routerConfig: _router,

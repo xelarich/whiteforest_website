@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:whiteforest_website/component/footer/widget/action_text.dart';
 import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
 
-class Condition extends ConsumerWidget {
+class Condition extends StatelessWidget {
   const Condition({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 32),
       child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive/responsive.dart';
 
 class MusherPart extends StatelessWidget {
   const MusherPart({super.key});
@@ -30,56 +31,58 @@ class MusherPart extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: ResponsiveRow(
+            alignment: WrapAlignment.center,
             children: [
-              Card(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                elevation: 8,
-                shape: const RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(16))),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/profile/meleanne.jpg',
-                      width: 300,
-                      height: 300,
-                      fit: BoxFit.cover,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Text(
-                        'Meleanne',
-                        style: TextStyle(fontSize: 24),
+              FlexWidget(
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  elevation: 8,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(16))),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/images/profile/meleanne.webp',
+                        height: 300,
+                        fit: BoxFit.cover,
                       ),
-                    ),
-                  ],
+                      const Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Text(
+                          'Meleanne',
+                          style: TextStyle(fontSize: 24),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              Card(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                elevation: 8,
-                shape: const RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(16))),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      'assets/images/profile/ANAELLE-min.jpg',
-                      fit: BoxFit.cover,
-                      alignment: Alignment.bottomCenter,
-                      width: 300,
-                      height: 300,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(16.0),
-                      child: Text(
-                        'Anaelle',
-                        style: TextStyle(fontSize: 24),
+              FlexWidget(
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  elevation: 8,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(16))),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'assets/images/profile/anaelle.webp',
+                        fit: BoxFit.cover,
+                        alignment: Alignment.bottomCenter,
+                        height: 300,
                       ),
-                    ),
-                  ],
+                      const Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Text(
+                          'Anaelle',
+                          style: TextStyle(fontSize: 24),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

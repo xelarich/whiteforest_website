@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
+import 'package:whiteforest_website/component/topbar/top_bar_web.dart';
 
 class TeamPage extends StatelessWidget {
   static const routeName = '/team';
@@ -9,7 +9,7 @@ class TeamPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopBarContent(TeamPage.routeName),
+      appBar: const TopBarWeb(TeamPage.routeName),
       body: Container(
         padding: const EdgeInsets.only(top: kToolbarHeight + 50),
         child: const Center(

@@ -1,6 +1,6 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart' hide Page;
-import 'package:whiteforest_website/component/topbar/top_bar_contents.dart';
+import 'package:whiteforest_website/component/topbar/top_bar_web.dart';
 
 class ActivityGroupPage extends StatefulWidget {
   static const routeName = '/activityGroup';
@@ -33,7 +33,7 @@ class _ActivityGroupPageState extends State<ActivityGroupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopBarContent(ActivityGroupPage.routeName),
+      appBar: const TopBarWeb(ActivityGroupPage.routeName),
       body: Container(
         padding: const EdgeInsets.only(top: kToolbarHeight + 50),
         child: const Center(

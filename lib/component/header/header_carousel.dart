@@ -1,64 +1,51 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:infinite_carousel/infinite_carousel.dart';
 import 'package:whiteforest_website/component/header/header_image.dart';
 
 class HeaderCarousel extends StatefulWidget {
   const HeaderCarousel({super.key});
 
   @override
-  HeaderCarouselState createState() => HeaderCarouselState();
+  State<HeaderCarousel> createState() => _HeaderCarouselState();
 }
 
-class HeaderCarouselState extends State<HeaderCarousel> {
-  late InfiniteScrollController _controller;
+class _HeaderCarouselState extends State<HeaderCarousel> {
+  final CarouselController _controller = CarouselController();
 
   final List<Widget> images = [
-    const HeaderImage('assets/images/header/cover_winter.jpg'),
-    const HeaderImage('assets/images/header/cover_summer.jpg'),
+    const HeaderImage('assets/images/header/cover_winter.webp'),
+    const HeaderImage('assets/images/header/cover_summer.webp'),
   ];
 
-  int imageIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = InfiniteScrollController(initialItem: 0);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-
-    super.dispose();
-  }
+  var imageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return SizedBox(
       width: screenSize.width,
-      height: screenSize.height - kTextTabBarHeight - 50,
+      height: screenSize.height - kToolbarHeight,
       child: Stack(
         children: [
           Positioned.fill(
             child: Align(
-              alignment: Alignment.center,
-              child: InfiniteCarousel.builder(
-                itemCount: images.length,
-                itemExtent: screenSize.width,
-                controller: _controller,
-                center: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, itemIndex, realIndex) {
-                  return images[itemIndex];
-                },
-                onIndexChanged: (value) {
-                  setState(() {
-                    imageIndex = value;
-                  });
-                },
-              ),
-            ),
+                alignment: Alignment.center,
+                child: CarouselSlider(
+                  items: images,
+                  carouselController: _controller,
+                  options: CarouselOptions(
+                      autoPlay: true,
+                      autoPlayInterval: const Duration(seconds: 10),
+                      autoPlayAnimationDuration: const Duration(seconds: 2),
+                      viewportFraction: 1,
+                      height: screenSize.height,
+                      scrollPhysics: const NeverScrollableScrollPhysics(),
+                      onPageChanged: (index, _) {
+                        setState(() {
+                          imageIndex = index;
+                        });
+                      }),
+                )),
           ),
           const Positioned.fill(
             child: Center(
@@ -66,7 +53,7 @@ class HeaderCarouselState extends State<HeaderCarousel> {
                 "Préparez-vous pour l'aventure",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 64,
+                  fontSize: 45,
                 ),
                 maxLines: 2,
                 textAlign: TextAlign.center,
@@ -80,7 +67,9 @@ class HeaderCarouselState extends State<HeaderCarousel> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: images.asMap().entries.map((entry) {
                   return InkWell(
-                    onTap: () => _controller.animateToItem(entry.key),
+                    onTap: () {
+                      _controller.animateToPage(entry.key);
+                    },
                     child: Container(
                       width: 12.0,
                       height: 12.0,
@@ -88,12 +77,8 @@ class HeaderCarouselState extends State<HeaderCarousel> {
                           vertical: 8.0, horizontal: 4.0),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color:
-                              (Theme.of(context).brightness == Brightness.dark
-                                      ? Colors.white
-                                      : Colors.white)
-                                  .withOpacity(
-                                      imageIndex == entry.key ? 0.9 : 0.4)),
+                          color: Colors.white.withOpacity(
+                              imageIndex == entry.key ? 0.9 : 0.4)),
                     ),
                   );
                 }).toList(),
