@@ -7,7 +7,7 @@ PreferredSizeWidget getTopBar(
     BuildContext context, GlobalKey<ScaffoldState> key, String routeName) {
   return ResponsiveValue<PreferredSizeWidget>(
     context,
-    defaultValue: TopBarMobile(key),
+    defaultValue: TopBarMobile(scaffoldKey: key),
     conditionalValues: [
       Condition<PreferredSizeWidget>.largerThan(
           name: TABLET,

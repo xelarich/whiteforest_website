@@ -4,8 +4,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 class TopBarMobile extends StatelessWidget implements PreferredSizeWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
-  const TopBarMobile(
-    this.scaffoldKey, {
+  const TopBarMobile({
+    required this.scaffoldKey,
     super.key,
   });
 
