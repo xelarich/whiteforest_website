@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
@@ -14,6 +15,7 @@ class SalesConditionPage extends StatelessWidget {
     return Scaffold(
       appBar: getTopBar(context, _key, SalesConditionPage.routeName),
       key: _key,
+      drawer: const DrawerMobile(SalesConditionPage.routeName),
       body: const SingleChildScrollView(
         child: Column(
           children: [

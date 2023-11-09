@@ -1,6 +1,7 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
-import 'package:flutter/material.dart' hide Page;
-import 'package:whiteforest_website/component/topbar/top_bar_web.dart';
+import 'package:flutter/material.dart' hide Page, NavigationDrawer;
+import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class ActivityGroupPage extends StatefulWidget {
   static const routeName = '/activityGroup';
@@ -15,6 +16,7 @@ class ActivityGroupPage extends StatefulWidget {
 
 class _ActivityGroupPageState extends State<ActivityGroupPage> {
   late final AnchorScrollController _scrollController;
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   void initState() {
@@ -33,7 +35,9 @@ class _ActivityGroupPageState extends State<ActivityGroupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopBarWeb(ActivityGroupPage.routeName),
+      appBar: getTopBar(context, _key, ActivityGroupPage.routeName),
+      key: _key,
+      drawer: const DrawerMobile(ActivityGroupPage.routeName),
       body: Container(
         padding: const EdgeInsets.only(top: kToolbarHeight + 50),
         child: const Center(
