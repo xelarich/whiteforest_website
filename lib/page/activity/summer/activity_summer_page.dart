@@ -1,6 +1,7 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
-import 'package:flutter/material.dart' hide Page;
+import 'package:flutter/material.dart' hide Page, NavigationDrawer;
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
 import 'package:whiteforest_website/page/activity/summer/widget/cani_hike.dart';
 import 'package:whiteforest_website/page/activity/summer/widget/cani_hike_days.dart';
@@ -45,6 +46,7 @@ class _ActivitySummerPageState extends State<ActivitySummerPage> {
     return Scaffold(
       appBar: getTopBar(context, _key, ActivitySummerPage.routeName),
       key: _key,
+      drawer: const DrawerMobile(ActivitySummerPage.routeName),
       backgroundColor: Colors.brown.shade50,
       body: Column(
         children: [

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart' hide NavigationDrawer;
-import 'package:whiteforest_website/component/drawer/drawer.dart';
+import 'package:flutter/material.dart';
+import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
 import 'package:whiteforest_website/component/header/header_carousel.dart';
 import 'package:whiteforest_website/page/home/widget/activity_part.dart';
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.brown.shade50,
       key: _key,
       appBar: getTopBar(context, _key, HomePage.routeName),
-      drawer: const NavigationDrawer(),
+      drawer: const DrawerMobile(HomePage.routeName),
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Column(

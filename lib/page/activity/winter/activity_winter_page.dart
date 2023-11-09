@@ -1,5 +1,6 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
-import 'package:flutter/material.dart' hide Page;
+import 'package:flutter/material.dart' hide Page, NavigationDrawer;
+import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
 import 'package:whiteforest_website/page/activity/winter/widget/dog_racket_night.dart';
 import 'package:whiteforest_website/page/activity/winter/widget/hitch_driving.dart';
@@ -43,6 +44,7 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
     return Scaffold(
       appBar: getTopBar(context, _key, ActivityWinterPage.routeName),
       key: _key,
+      drawer: const DrawerMobile(ActivityWinterPage.routeName),
       backgroundColor: Colors.brown.shade50,
       body: Column(
         children: [
