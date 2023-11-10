@@ -17,42 +17,42 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> list = [
+      const HeaderCarousel(),
+      const WelcomePart(),
+      SizedBox(
+        height: MediaQuery.of(context).size.height * 0.60,
+        width: MediaQuery.of(context).size.width,
+        child: Image.asset(
+          'assets/images/home/home_page_winter.webp',
+          fit: BoxFit.cover,
+          alignment: Alignment.topCenter,
+        ),
+      ),
+      const DogPart(),
+      SizedBox(
+        height: MediaQuery.of(context).size.height * 0.60,
+        width: MediaQuery.of(context).size.width,
+        child: Image.asset(
+          'assets/images/home/home_page_summer.webp',
+          fit: BoxFit.cover,
+          alignment: Alignment.center,
+
+        ),
+      ),
+      const MusherPart(),
+      const ActivityPart(),
+      const Footer(),
+    ];
+
     return Scaffold(
       backgroundColor: Colors.brown.shade50,
       key: _key,
       appBar: getTopBar(context, _key, HomePage.routeName),
       drawer: const DrawerMobile(HomePage.routeName),
-      body: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const HeaderCarousel(),
-            const WelcomePart(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.60,
-              width: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                'assets/images/home/home_page_winter.webp',
-                fit: BoxFit.cover,
-                alignment: Alignment.topCenter,
-              ),
-            ),
-            const DogPart(),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.60,
-              width: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                'assets/images/home/home_page_summer.webp',
-                fit: BoxFit.cover,
-                alignment: Alignment.center,
-              ),
-            ),
-            const MusherPart(),
-            const ActivityPart(),
-            const Footer(),
-          ],
-        ),
+      body: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        itemBuilder: (context, index) => list[index],
       ),
     );
   }
