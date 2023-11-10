@@ -24,9 +24,9 @@ class HomePage extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.60,
         width: MediaQuery.of(context).size.width,
         child: Image.asset(
-          'assets/images/home/home_page_winter.webp',
+          'assets/images/home/home_page_winter_resize.webp',
           fit: BoxFit.cover,
-          alignment: Alignment.topCenter,
+          alignment: Alignment.center,
         ),
       ),
       const DogPart(),
@@ -34,10 +34,9 @@ class HomePage extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.60,
         width: MediaQuery.of(context).size.width,
         child: Image.asset(
-          'assets/images/home/home_page_summer.webp',
+          'assets/images/home/home_page_summer_resize.webp',
           fit: BoxFit.cover,
           alignment: Alignment.center,
-
         ),
       ),
       const MusherPart(),
@@ -52,6 +51,7 @@ class HomePage extends StatelessWidget {
       drawer: const DrawerMobile(HomePage.routeName),
       body: ListView.builder(
         physics: const BouncingScrollPhysics(),
+        itemCount: list.length,
         itemBuilder: (context, index) => list[index],
       ),
     );

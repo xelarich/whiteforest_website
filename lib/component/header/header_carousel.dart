@@ -13,8 +13,8 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
   final CarouselController _controller = CarouselController();
 
   final List<Widget> images = [
-    const HeaderImage('assets/images/header/cover_winter.webp'),
-    const HeaderImage('assets/images/header/cover_summer.webp'),
+    const HeaderImage('assets/images/header/cover_winter_resize.webp'),
+    const HeaderImage('assets/images/header/cover_summer_resize.webp'),
   ];
 
   var imageIndex = 0;
