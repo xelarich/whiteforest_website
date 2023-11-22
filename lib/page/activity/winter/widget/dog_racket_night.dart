@@ -230,6 +230,7 @@ class DogRacketNight extends StatelessWidget {
                   sm: 12,
                   md: 12,
                   child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [

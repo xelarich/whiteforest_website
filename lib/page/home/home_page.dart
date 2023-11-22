@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
       appBar: getTopBar(context, _key, HomePage.routeName),
       drawer: const DrawerMobile(HomePage.routeName),
       body: ListView.builder(
-        physics: const BouncingScrollPhysics(),
+        physics: const AlwaysScrollableScrollPhysics(),
         itemCount: list.length,
         itemBuilder: (context, index) => list[index],
       ),

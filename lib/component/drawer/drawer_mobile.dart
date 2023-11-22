@@ -22,7 +22,7 @@ class DrawerMobile extends StatelessWidget {
               color: Colors.brown.shade200,
             ),
             child: Image.asset(
-              'assets/images/white_forest_logo.webp',
+              'assets/images/white_forest_logo_resize.webp',
             ),
           ),
           DrawerTile('Accueil', routeSelected, routeName: HomePage.routeName),
