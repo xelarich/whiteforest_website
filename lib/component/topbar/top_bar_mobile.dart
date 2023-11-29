@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:whiteforest_website/page/home/home_page.dart';
 
 class TopBarMobile extends StatelessWidget implements PreferredSizeWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -24,10 +26,13 @@ class TopBarMobile extends StatelessWidget implements PreferredSizeWidget {
         hoverColor: Colors.transparent,
         focusColor: Colors.transparent,
       ),
-      flexibleSpace: Padding(
-        padding: const EdgeInsets.all(4),
-        child: Image.asset(
-          'assets/images/white_forest_logo_resize.webp',
+      flexibleSpace: InkWell(
+        onTap: () => context.go(HomePage.routeName),
+        child: Padding(
+          padding: const EdgeInsets.all(4),
+          child: Image.asset(
+            'assets/images/white_forest_logo_resize.webp',
+          ),
         ),
       ),
       backgroundColor: Colors.brown.shade200,
