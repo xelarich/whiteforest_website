@@ -44,7 +44,7 @@ class MusherPart extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'assets/images/profile/meleanne.webp',
+                        'assets/images/profile/meleanne_resize.webp',
                         height: 300,
                         fit: BoxFit.cover,
                       ),
@@ -69,7 +69,7 @@ class MusherPart extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'assets/images/profile/anaelle.webp',
+                        'assets/images/profile/anaelle_resize.webp',
                         fit: BoxFit.cover,
                         alignment: Alignment.bottomCenter,
                         height: 300,

@@ -28,7 +28,7 @@ class Footer extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Image.asset(
-                    'assets/images/white_forest_logo.webp',
+                    'assets/images/white_forest_logo_resize.webp',
                     height: 125,
                   ),
                 ),

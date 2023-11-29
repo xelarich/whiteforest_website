@@ -32,7 +32,7 @@ class CaniHike extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      "assets/images/summer/cani_rando.webp",
+                      "assets/images/summer/cani_rando_resize.webp",
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
