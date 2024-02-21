@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/flex_widget.dart';
 import 'package:responsive/responsive_row.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class SleighBaptism extends StatelessWidget {
   const SleighBaptism(this._scrollController, {super.key});
@@ -33,7 +34,7 @@ class SleighBaptism extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      "assets/images/winter/bapteme_traineau_resize.webp",
+                      "assets/images/winter/${getPathImage(context)}bapteme_traineau.webp",
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
@@ -78,7 +79,7 @@ class SleighBaptism extends StatelessWidget {
                                 ),
                               ),
                               FlexWidget(
-                                xs: 4,
+                                xs: 5,
                                 sm: 3,
                                 md: 2,
                                 lg: 2,

@@ -29,7 +29,7 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
             child: Padding(
               padding: const EdgeInsets.all(4),
               child: Image.asset(
-                'assets/images/white_forest_logo_resize.webp',
+                'assets/images/white_forest_logo.webp',
               ),
             ),
           ),

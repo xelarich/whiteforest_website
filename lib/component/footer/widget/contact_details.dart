@@ -115,7 +115,7 @@ class ContactDetails extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "info@whiteforest.be",
+                      "info@whiteforest.fr",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
@@ -192,7 +192,7 @@ class ContactDetails extends StatelessWidget {
   Future<void> _composeMail() async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'info@whiteforest.be',
+      path: 'info@whiteforest.fr',
       query: encodeQueryParameters(<String, String>{
         'subject': 'White Forest - Contact',
       }),

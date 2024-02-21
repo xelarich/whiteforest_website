@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.60,
         width: MediaQuery.of(context).size.width,
         child: Image.asset(
-          'assets/images/home/home_page_winter_resize.webp',
+          'assets/images/home/${getPathImage(context)}home_page_winter.webp',
           fit: BoxFit.cover,
           alignment: Alignment.center,
         ),
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.60,
         width: MediaQuery.of(context).size.width,
         child: Image.asset(
-          'assets/images/home/home_page_summer_resize.webp',
+          'assets/images/home/${getPathImage(context)}home_page_summer.webp',
           fit: BoxFit.cover,
           alignment: Alignment.center,
         ),

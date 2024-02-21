@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/flex_widget.dart';
 import 'package:responsive/responsive_row.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class HitchDriving extends StatelessWidget {
   const HitchDriving(this._scrollController, {super.key});
@@ -33,7 +34,7 @@ class HitchDriving extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      "assets/images/winter/conduite_attelage_resize.webp",
+                      "assets/images/winter/${getPathImage(context)}conduite_attelage.webp",
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
@@ -79,9 +80,9 @@ class HitchDriving extends StatelessWidget {
                                 ),
                               ),
                               FlexWidget(
-                                xs: 4,
-                                sm: 3,
-                                md: 2,
+                                xs: 5,
+                                sm: 4,
+                                md: 3,
                                 lg: 2,
                                 xl: 2,
                                 xxl: 2,

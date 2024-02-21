@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive/responsive.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class MusherPart extends StatelessWidget {
   const MusherPart({super.key});
@@ -44,7 +45,7 @@ class MusherPart extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'assets/images/profile/meleanne_resize.webp',
+                        'assets/images/profile/${getPathImage(context)}meleanne.webp',
                         height: 300,
                         fit: BoxFit.cover,
                       ),
@@ -69,7 +70,7 @@ class MusherPart extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'assets/images/profile/anaelle_resize.webp',
+                        'assets/images/profile/${getPathImage(context)}anaelle.webp',
                         fit: BoxFit.cover,
                         alignment: Alignment.bottomCenter,
                         height: 300,

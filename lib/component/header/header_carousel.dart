@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:whiteforest_website/component/header/header_image.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class HeaderCarousel extends StatefulWidget {
   const HeaderCarousel({super.key});
@@ -13,8 +14,8 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
   final CarouselController _controller = CarouselController();
 
   final List<Widget> images = [
-    const HeaderImage('assets/images/header/cover_winter_resize.webp'),
-    const HeaderImage('assets/images/header/cover_summer_resize.webp'),
+    const HeaderImage('assets/images/header/header_winter.webp'),
+    const HeaderImage('assets/images/header/header_summer.webp'),
   ];
 
   var imageIndex = 0;
@@ -31,7 +32,12 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
             child: Align(
                 alignment: Alignment.center,
                 child: CarouselSlider(
-                  items: images,
+                  items: [
+                    HeaderImage(
+                        'assets/images/header/${getPathImage(context)}header_winter.webp'),
+                    HeaderImage(
+                        'assets/images/header/${getPathImage(context)}header_summer.webp'),
+                  ],
                   carouselController: _controller,
                   options: CarouselOptions(
                       autoPlay: true,
@@ -63,12 +69,15 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
           Positioned.fill(
             top: screenSize.height * 0.75,
             child: Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: images.asMap().entries.map((entry) {
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: images.length,
+                itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      _controller.animateToPage(entry.key);
+                      _controller.animateToPage(index);
                     },
                     child: Container(
                       width: 12.0,
@@ -77,11 +86,11 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
                           vertical: 8.0, horizontal: 4.0),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.white.withOpacity(
-                              imageIndex == entry.key ? 0.9 : 0.4)),
+                          color: Colors.white
+                              .withOpacity(imageIndex == index ? 0.9 : 0.4)),
                     ),
                   );
-                }).toList(),
+                },
               ),
             ),
           )

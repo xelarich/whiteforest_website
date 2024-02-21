@@ -2,6 +2,7 @@ import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
+import 'package:whiteforest_website/shared/utils.dart';
 
 class CaniHikeDays extends StatelessWidget {
   const CaniHikeDays(this._scrollController, {super.key});
@@ -33,7 +34,7 @@ class CaniHikeDays extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      "assets/images/summer/chalet_resize.webp",
+                      "assets/images/summer/${getPathImage(context)}chalet.webp",
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,

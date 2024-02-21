@@ -17,3 +17,14 @@ PreferredSizeWidget getTopBar(
     ],
   ).value!;
 }
+
+String getPathImage(BuildContext context) {
+  return ResponsiveValue<String>(
+    context,
+    defaultValue: 'web/',
+    conditionalValues: [
+      Condition<String>.smallerThan(
+          name: TABLET, value: 'mobile/'),
+    ],
+  ).value!;
+}
