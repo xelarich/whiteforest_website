@@ -162,7 +162,7 @@ class CaniHike extends StatelessWidget {
                                       "de 1h30 à 2 heures.\n"),
                             ],
                           ),
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
                         const Text(

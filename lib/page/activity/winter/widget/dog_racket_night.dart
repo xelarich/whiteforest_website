@@ -169,12 +169,12 @@ class DogRacketNight extends StatelessWidget {
                                       "après un bel effort en cani-raquette, un retour prévu aux alentours de 23h00. "),
                               TextSpan(
                                 text:
-                                    "Avec une dernière papouille à votre fidèle compagnon!",
+                                    "Avec une dernière papouille à votre fidèle compagnon!\n",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
                         const Text(

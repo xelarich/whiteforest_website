@@ -173,7 +173,7 @@ class CaniHikeDays extends StatelessWidget {
                                       "Un petit déjeuner généreux et c’est repartie pour un retour tout aussi sympathique.\n"),
                             ],
                           ),
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
                         const Text(

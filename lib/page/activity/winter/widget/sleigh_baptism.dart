@@ -164,7 +164,7 @@ class SleighBaptism extends StatelessWidget {
                               ),
                             ],
                           ),
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
                         const SizedBox(

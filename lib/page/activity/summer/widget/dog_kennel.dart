@@ -120,8 +120,6 @@ class DogKennel extends StatelessWidget {
                           height: 24,
                         ),
                         const Text.rich(
-                          textAlign: TextAlign.justify,
-                          maxLines: 15,
                           TextSpan(
                             style: TextStyle(
                               fontSize: 16,
@@ -156,6 +154,8 @@ class DogKennel extends StatelessWidget {
                               TextSpan(text: "de notre métier.\n"),
                             ],
                           ),
+                          textAlign: TextAlign.start,
+                          maxLines: 15,
                         ),
                         const Text(
                           'Les tarifs :',

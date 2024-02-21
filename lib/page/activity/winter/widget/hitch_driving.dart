@@ -173,11 +173,8 @@ class HitchDriving extends StatelessWidget {
                                       "De bonnes conditions sportives sont requises pour pratiquer la conduite d’attelage !\n"),
                             ],
                           ),
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.start,
                           maxLines: 15,
-                        ),
-                        const SizedBox(
-                          height: 32,
                         ),
                         const Text(
                           'Les tarifs :',

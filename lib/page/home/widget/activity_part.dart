@@ -11,7 +11,7 @@ class ActivityPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(shrinkWrap: true, children: [
+    return Column(children: [
       const Center(
         child: Padding(
           padding: EdgeInsets.all(8.0),

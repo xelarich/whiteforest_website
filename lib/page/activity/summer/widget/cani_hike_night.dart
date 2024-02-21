@@ -184,7 +184,7 @@ class CaniHikeNight extends StatelessWidget {
                                   text: "avec nos chiens vous attendent.\n"),
                             ],
                           ),
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
                         const Text(
