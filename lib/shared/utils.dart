@@ -15,7 +15,7 @@ PreferredSizeWidget getTopBar(
             routeName,
           ))
     ],
-  ).value!;
+  ).value;
 }
 
 String getPathImage(BuildContext context) {
@@ -23,8 +23,8 @@ String getPathImage(BuildContext context) {
     context,
     defaultValue: 'web/',
     conditionalValues: [
-      Condition<String>.smallerThan(
+      const Condition<String>.smallerThan(
           name: TABLET, value: 'mobile/'),
     ],
-  ).value!;
+  ).value;
 }

@@ -65,7 +65,7 @@ class _ActivitySummerPageState extends State<ActivitySummerPage> {
                             context,
                             defaultValue: 28,
                             conditionalValues: [
-                              Condition<double>.largerThan(
+                              const Condition<double>.largerThan(
                                   name: MOBILE, value: 38)
                             ],
                           ).value,

@@ -82,7 +82,7 @@ class ContactDetails extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(
-                    LineAwesomeIcons.phone_volume,
+                    LineAwesomeIcons.phone_volume_solid,
                     color: Colors.white,
                   ),
                   Padding(
@@ -109,7 +109,7 @@ class ContactDetails extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(
-                    LineAwesomeIcons.at,
+                    LineAwesomeIcons.at_solid,
                     color: Colors.white,
                   ),
                   Padding(
@@ -132,14 +132,14 @@ class ContactDetails extends StatelessWidget {
               MapsLauncher.launchQuery(
                   'White forest la toussuire, Fontcouverte-la-Toussuire');
             },
-            child: const Padding(
+            child:  const Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 6,
               ),
               child: Row(
                 children: [
                   Icon(
-                    LineAwesomeIcons.map_marker,
+                    LineAwesomeIcons.map_marked_alt_solid,
                     color: Colors.white,
                   ),
                   Flexible(
