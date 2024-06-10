@@ -18,67 +18,17 @@ class ContactPage extends StatelessWidget {
       drawer: const DrawerMobile(ContactPage.routeName),
       body: Stack(
         children: [
-          Column(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.60,
-                      width: MediaQuery.of(context).size.width,
-                      child: Image.asset(
-                        'assets/images/home/${getPathImage(context)}home_page_summer.webp',
-                        fit: BoxFit.cover,
-                        alignment: Alignment.center,
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        color: Colors.brown.shade100,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          Container(
+            color: Colors.brown.shade50,
           ),
-          Center(
-            child: Container(
-              height: 1000,
-              width: 1000,
-              padding: const EdgeInsets.symmetric(vertical: 64),
-              child: SingleChildScrollView(
-                physics: AlwaysScrollableScrollPhysics(),
-                child: Column(
-                  children: [
-                    const FormContact(),
-                    Container(
-                      height: 300,
-                      color: Colors.blue,
-                    ),
-                    Container(
-                      height: 300,
-                      color: Colors.green,
-                    ),
-                    Container(
-                      height: 300,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      height: 300,
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      height: 300,
-                      color: Colors.orange,
-                    ),
-                    Container(
-                      height: 300,
-                      color: Colors.purple,
-                    ),
-                  ],
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 32,vertical: 64),
+            child: Column(
+              children: [
+                Expanded(
+                  child: FormContact(),
                 ),
-              ),
+              ],
             ),
           ),
         ],

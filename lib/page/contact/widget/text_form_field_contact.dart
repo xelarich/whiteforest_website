@@ -21,12 +21,12 @@ class _TextFormFieldContactState extends State<TextFormFieldContact> {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: TextFormField(
+        autovalidateMode: AutovalidateMode.disabled,
         maxLines: widget.maxLines,
         cursorColor: Colors.brown,
-
         decoration: InputDecoration(
           labelText: widget.labelText,
-          labelStyle: const TextStyle(color: Colors.black),
+          labelStyle:  TextStyle(color: Colors.grey.shade700),
           hintText: widget.hintText,
           fillColor: Colors.white,
           alignLabelWithHint: true,
@@ -41,6 +41,9 @@ class _TextFormFieldContactState extends State<TextFormFieldContact> {
             borderRadius: BorderRadius.circular(4.0),
           ),
           enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(4.0),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4.0),
           ),
         ),
