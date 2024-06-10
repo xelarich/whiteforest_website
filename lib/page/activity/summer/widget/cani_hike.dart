@@ -180,8 +180,8 @@ class CaniHike extends StatelessWidget {
                                 color: Colors.brown.shade200,
                               )),
                           child: const Text(
-                            "30€/ Adultes\n"
-                            "25€/ Enfants de -12ans",
+                            "35€/ Adultes\n"
+                            "30€/ Enfants de -12ans",
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,
