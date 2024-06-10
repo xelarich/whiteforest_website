@@ -47,6 +47,7 @@ class HomePage extends StatelessWidget {
           ),
           const MusherPart(),
           const ActivityPart(),
+
           const Footer(),],
       ),
     );

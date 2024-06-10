@@ -42,6 +42,7 @@ dependencies:
   maps_launcher: 2.2.1
   responsive: 0.3.11+11
   responsive_framework: 1.4.0
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:
