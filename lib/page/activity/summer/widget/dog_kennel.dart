@@ -172,8 +172,8 @@ class DogKennel extends StatelessWidget {
                                 color: Colors.brown.shade200,
                               )),
                           child: const Text(
-                            "10€/ Adultes\n"
-                            "8€/ Enfants de -12ans",
+                            "15€/ Adultes\n"
+                            "10€/ Enfants de -12ans",
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,

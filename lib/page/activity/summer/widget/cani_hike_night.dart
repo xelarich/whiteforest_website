@@ -202,8 +202,8 @@ class CaniHikeNight extends StatelessWidget {
                                 color: Colors.brown.shade200,
                               )),
                           child: const Text(
-                            "70€/ Adultes\n"
-                            "65€/ Enfants de -12ans",
+                            "75€/ Adultes\n"
+                            "70€/ Enfants de -12ans",
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,

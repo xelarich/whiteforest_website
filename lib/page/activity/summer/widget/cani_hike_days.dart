@@ -191,7 +191,7 @@ class CaniHikeDays extends StatelessWidget {
                                 color: Colors.brown.shade200,
                               )),
                           child: const Text(
-                            "165€/ Personnes",
+                            "200€/ Personnes",
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,
