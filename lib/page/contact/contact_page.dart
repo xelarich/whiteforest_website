@@ -1,4 +1,3 @@
-import 'package:emailjs/emailjs.dart';
 import 'package:flutter/material.dart' hide NavigationDrawer;
 import 'package:get_it/get_it.dart';
 import 'package:responsive_framework/responsive_framework.dart';

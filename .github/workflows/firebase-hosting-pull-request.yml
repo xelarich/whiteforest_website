@@ -21,7 +21,6 @@ jobs:
           "serviceId": "${{ secrets.SERVICE_ID_MAILER }}",
           "templateId": "${{ secrets.TEMPLATE_ID_MAILER }}"
           }' > assets/config/config.json
-            - name: Generate config.json from secrets
 
       - run: cat assets/config/config.json
 

@@ -1,6 +1,7 @@
 import 'package:emailjs/emailjs.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:whiteforest_website/data/models/config.dart';
 import 'package:whiteforest_website/page/contact/widget/text_form_field_contact.dart';
 import 'package:whiteforest_website/service/conf/conf_service.dart';
 import 'package:whiteforest_website/shared/utils/extension.dart';
@@ -40,7 +41,7 @@ class _FormContactState extends State<FormContact> {
           children: [
             TextFormFieldContact(_nameController, 'Entrez votre nom', 'Nom',
                 (value) {
-              if (value == null || !value.isValidName()) {
+              if (value == null || value.isEmpty) {
                 return 'Veuillez entrer votre nom';
               }
               return null;
@@ -77,13 +78,18 @@ class _FormContactState extends State<FormContact> {
                     borderRadius: BorderRadius.circular(4.0),
                   ),
                 ),
-                onPressed: () {
+                onPressed: () async {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text(
+                            "Public key : ${await confService.getPublicKey()}")),
+                  ); /*
                   if (_formKey.currentState!.validate()) {
                     sendEmail(context);
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Envoi du message')),
                     );
-                  }
+                  }*/
                 },
                 child: const Text(
                   'Envoyer',
@@ -115,8 +121,14 @@ class _FormContactState extends State<FormContact> {
           privateKey: await confService.getPrivateKey(),
         ),
       );
-      print('SUCCESS!');
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Message envoyé avec succès !')),
+      );
     } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Erreur lors de l\'envoi du message !')));
       print(error.toString());
     }
   }
