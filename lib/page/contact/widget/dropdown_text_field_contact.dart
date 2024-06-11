@@ -1,4 +1,3 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
 class DropdownTextFieldContact extends StatefulWidget {
@@ -23,7 +22,8 @@ class _DropdownTextFieldContactState extends State<DropdownTextFieldContact> {
     return Container(
       margin: const EdgeInsets.all(8),
       width: double.maxFinite,
-      child: DropdownButtonFormField2<String>(
+      child: SizedBox()
+      /*DropdownButtonFormField2<String>(
         value: selectedValue,
         hint: Text(
           'Sélectionner une demande',
@@ -82,7 +82,8 @@ class _DropdownTextFieldContactState extends State<DropdownTextFieldContact> {
                 bottomRight: Radius.circular(15)),
           ),
         ),
-      ),
+      )*/
+      ,
     );
   }
 }

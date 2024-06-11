@@ -1,10 +1,15 @@
+import 'package:emailjs/emailjs.dart';
 import 'package:flutter/material.dart' hide NavigationDrawer;
+import 'package:get_it/get_it.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/page/contact/widget/form_contact.dart';
+import 'package:whiteforest_website/service/conf/conf_service.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
 class ContactPage extends StatelessWidget {
   static const routeName = '/contact';
+  final ConfService confService = GetIt.I.get<ConfService>();
 
   ContactPage({super.key});
 
@@ -21,13 +26,28 @@ class ContactPage extends StatelessWidget {
           Container(
             color: Colors.brown.shade50,
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32,vertical: 64),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 32),
             child: Column(
               children: [
-                Expanded(
-                  child: FormContact(),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+                  child: Text('Contactez-nous !'.toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: ResponsiveValue<double>(
+                          context,
+                          defaultValue: 28,
+                          conditionalValues: [
+                            const Condition<double>.largerThan(
+                                name: MOBILE, value: 38)
+                          ],
+                        ).value,
+                        fontFamily: 'WickedGrit',
+                      )),
                 ),
+                const FormContact(),
               ],
             ),
           ),

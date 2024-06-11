@@ -9,9 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+      - name: Generate config.json from secrets
+        run: |
+          echo '{
+          "publicKey": "${{ secrets.PUBLIC_MAILER_KEY }}",
+          "privateKey": "${{ secrets.PRIVATE_MAILER_KEY }}",
+          "serviceId": "${{ secrets.SERVICE_ID_MAILER }}",
+          "templateId": "${{ secrets.TEMPLATE_ID_MAILER }}"
+          }' > assets/config/config.json
+            - name: Generate config.json from secrets
+
+      - run: cat assets/config/config.json
+
       - run: flutter pub get
       - run: flutter build web --release --no-tree-shake-icons
       - uses: FirebaseExtended/action-hosting-deploy@v0

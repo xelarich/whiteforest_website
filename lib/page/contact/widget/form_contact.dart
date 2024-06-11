@@ -1,7 +1,8 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:emailjs/emailjs.dart';
 import 'package:flutter/material.dart';
-import 'package:whiteforest_website/page/contact/widget/dropdown_text_field_contact.dart';
+import 'package:get_it/get_it.dart';
 import 'package:whiteforest_website/page/contact/widget/text_form_field_contact.dart';
+import 'package:whiteforest_website/service/conf/conf_service.dart';
 import 'package:whiteforest_website/shared/utils/extension.dart';
 
 class FormContact extends StatefulWidget {
@@ -12,13 +13,11 @@ class FormContact extends StatefulWidget {
 }
 
 class _FormContactState extends State<FormContact> {
-  final List<String> _queries = [
-    'Demande de renseignements',
-    'Demande de devis',
-    'Autre'
-  ];
-  String? _query;
+  final ConfService confService = GetIt.I.get<ConfService>();
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _mailController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +38,15 @@ class _FormContactState extends State<FormContact> {
         key: _formKey,
         child: Column(
           children: [
-            TextFormFieldContact('Entrez votre nom', 'Nom', (value) {
+            TextFormFieldContact(_nameController, 'Entrez votre nom', 'Nom',
+                (value) {
               if (value == null || !value.isValidName()) {
                 return 'Veuillez entrer votre nom';
               }
               return null;
             }),
-            TextFormFieldContact('Entrez votre mail', 'Mail', (value) {
+            TextFormFieldContact(_mailController, 'Entrez votre mail', 'Mail',
+                (value) {
               if (value == null || !value.isValidEmail()) {
                 return 'Veuillez entrer votre mail';
               }
@@ -55,6 +56,7 @@ class _FormContactState extends State<FormContact> {
             SizedBox(
               height: 200,
               child: TextFormFieldContact(
+                _messageController,
                 'Écrivez ici votre message',
                 'Message',
                 (value) {
@@ -77,6 +79,7 @@ class _FormContactState extends State<FormContact> {
                 ),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    sendEmail(context);
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Envoi du message')),
                     );
@@ -92,5 +95,29 @@ class _FormContactState extends State<FormContact> {
         ),
       ),
     );
+  }
+
+  sendEmail(BuildContext context) async {
+    Map<String, dynamic> templateParams = {
+      'from_name': _nameController.text,
+      'from_mail': _mailController.text,
+      'reply_to': _mailController.text,
+      'message': _messageController.text,
+    };
+
+    try {
+      await EmailJS.send(
+        await confService.getServiceId(),
+        await confService.getTemplateId(),
+        templateParams,
+        Options(
+          publicKey: await confService.getPublicKey(),
+          privateKey: await confService.getPrivateKey(),
+        ),
+      );
+      print('SUCCESS!');
+    } catch (error) {
+      print(error.toString());
+    }
   }
 }

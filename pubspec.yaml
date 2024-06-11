@@ -42,7 +42,11 @@ dependencies:
   maps_launcher: 2.2.1
   responsive: 0.3.11+11
   responsive_framework: 1.4.0
-  dropdown_button2: ^2.3.9
+  emailjs: 1.3.0
+  json_annotation: 4.9.0
+  build_runner: 2.4.11
+  json_serializable: 6.8.0
+  get_it: ^7.7.0
 
 dev_dependencies:
   flutter_test:

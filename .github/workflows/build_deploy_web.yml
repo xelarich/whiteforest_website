@@ -13,12 +13,23 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+
+      - name: Generate config.json from secrets
+        run: |
+          echo '{
+          "publicKey": "${{ secrets.PUBLIC_MAILER_KEY }}",
+          "privateKey": "${{ secrets.PRIVATE_MAILER_KEY }}",
+          "serviceId": "${{ secrets.SERVICE_ID_MAILER }}",
+          "templateId": "${{ secrets.TEMPLATE_ID_MAILER }}"
+          }' > assets/config/config.json
+          
+          
 
       - name: Install dependencies
         run: flutter pub get
