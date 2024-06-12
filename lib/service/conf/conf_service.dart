@@ -27,7 +27,7 @@ class ConfService {
   Future<Config> loadLocalConfig() async {
     try {
       final String json =
-          await rootBundle.loadString('config/config.json');
+          await rootBundle.loadString('assets/config/config.json');
 
       return Config.fromJson(jsonDecode(json) as Map<String, dynamic>);
     } catch (e) {

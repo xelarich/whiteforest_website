@@ -50,3 +50,4 @@ app.*.map.json
 /.firebaserc
 /pubspec.lock
 /assets/config/config.json
+/.env

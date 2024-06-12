@@ -22,14 +22,7 @@ jobs:
 
       - name: Generate config.json from secrets
         run: |
-          echo '{
-          "publicKey": "${{ secrets.PUBLIC_MAILER_KEY }}",
-          "privateKey": "${{ secrets.PRIVATE_MAILER_KEY }}",
-          "serviceId": "${{ secrets.SERVICE_ID_MAILER }}",
-          "templateId": "${{ secrets.TEMPLATE_ID_MAILER }}"
-          }' > assets/config/config.json
-          
-          
+          echo "${{ secrets.ENV_KEY }}" | base64 --decode > .env
 
       - name: Install dependencies
         run: flutter pub get

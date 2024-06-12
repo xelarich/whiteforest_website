@@ -1,5 +1,6 @@
 import 'package:emailjs/emailjs.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:whiteforest_website/data/models/config.dart';
 import 'package:whiteforest_website/page/contact/widget/text_form_field_contact.dart';
@@ -84,10 +85,11 @@ class _FormContactState extends State<FormContact> {
                   ),
                 ),
                 onPressed: () async {
-                  final Config config = await confService.loadLocalConfig();
+                  final String service = dotenv.env['SERVICE_ID'] ?? '';
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('${config.publicKey} ${config.privateKey} ${config.serviceId} ${config.templateId}'),
+                      content: Text(
+                          'Service = ${service}'),
                     ),
                   );
                   /*if (_formKey.currentState!.validate()) {

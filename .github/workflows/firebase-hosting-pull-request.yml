@@ -13,19 +13,15 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+
       - name: Generate config.json from secrets
         run: |
-          echo '{
-          "publicKey": "${{ secrets.PUBLIC_MAILER_KEY }}",
-          "privateKey": "${{ secrets.PRIVATE_MAILER_KEY }}",
-          "serviceId": "${{ secrets.SERVICE_ID_MAILER }}",
-          "templateId": "${{ secrets.TEMPLATE_ID_MAILER }}"
-          }' > assets/config/config.json
-
-      - run: cat assets/config/config.json
+          echo "${{ secrets.ENV_KEY }}" | base64 --decode > .env
 
       - run: flutter pub get
+
       - run: flutter build web --release --no-tree-shake-icons
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

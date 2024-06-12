@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,7 +14,8 @@ import 'package:whiteforest_website/page/kennel/kennel_page.dart';
 import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
 import 'package:whiteforest_website/page/team/team_page.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: ".env");
   declareServices();
   runApp(const App());
 }
