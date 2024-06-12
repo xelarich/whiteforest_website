@@ -21,6 +21,11 @@ class _FormContactState extends State<FormContact> {
   final TextEditingController _messageController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -79,12 +84,13 @@ class _FormContactState extends State<FormContact> {
                   ),
                 ),
                 onPressed: () async {
+                  final Config config = await confService.loadLocalConfig();
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                        content: Text(
-                            "Public key : ${await confService.getPublicKey()}")),
-                  ); /*
-                  if (_formKey.currentState!.validate()) {
+                      content: Text('${config.publicKey} ${config.privateKey} ${config.serviceId} ${config.templateId}'),
+                    ),
+                  );
+                  /*if (_formKey.currentState!.validate()) {
                     sendEmail(context);
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text('Envoi du message')),
