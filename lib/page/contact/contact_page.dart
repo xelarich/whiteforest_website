@@ -3,7 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/page/contact/widget/form_contact.dart';
-import 'package:whiteforest_website/service/conf/conf_service.dart';
+import 'package:whiteforest_website/service/conf_service.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
 class ContactPage extends StatelessWidget {

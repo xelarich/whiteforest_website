@@ -1,10 +1,9 @@
 import 'package:emailjs/emailjs.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:whiteforest_website/data/models/config.dart';
 import 'package:whiteforest_website/page/contact/widget/text_form_field_contact.dart';
-import 'package:whiteforest_website/service/conf/conf_service.dart';
+import 'package:whiteforest_website/service/conf_service.dart';
 import 'package:whiteforest_website/shared/utils/extension.dart';
 
 class FormContact extends StatefulWidget {
@@ -21,10 +20,7 @@ class _FormContactState extends State<FormContact> {
   final TextEditingController _mailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-  }
+  late Config config;
 
   @override
   Widget build(BuildContext context) {
@@ -85,11 +81,11 @@ class _FormContactState extends State<FormContact> {
                   ),
                 ),
                 onPressed: () async {
-                  final String service = dotenv.env['SERVICE_ID'] ?? '';
+                  final Config config = await confService.loadLocalConfig();
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
-                          'Service = ${service}'),
+                          'KEY = ${config.publicKey} ${config.privateKey} ${config.serviceId} ${config.templateId}'),
                     ),
                   );
                   /*if (_formKey.currentState!.validate()) {
@@ -112,6 +108,8 @@ class _FormContactState extends State<FormContact> {
   }
 
   sendEmail(BuildContext context) async {
+    final Config config = await confService.loadLocalConfig();
+
     Map<String, dynamic> templateParams = {
       'from_name': _nameController.text,
       'from_mail': _mailController.text,
@@ -121,14 +119,14 @@ class _FormContactState extends State<FormContact> {
 
     try {
       await EmailJS.send(
-        await confService.getServiceId(),
-        await confService.getTemplateId(),
+        config.serviceId,
+        config.templateId,
         templateParams,
         Options(
-          publicKey: await confService.getPublicKey(),
-          privateKey: await confService.getPrivateKey(),
+          publicKey: config.publicKey,
+          privateKey: config.privateKey,
         ),
-      );
+      ).then((value) {});
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Message envoyé avec succès !')),

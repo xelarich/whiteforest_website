@@ -1,10 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/dependency_injection.dart';
+import 'package:whiteforest_website/firebase_options.dart';
 import 'package:whiteforest_website/page/activity/group/activity_group_page.dart';
 import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
 import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';
@@ -15,7 +16,9 @@ import 'package:whiteforest_website/page/sales_condition/sales_condition_page.da
 import 'package:whiteforest_website/page/team/team_page.dart';
 
 Future<void> main() async {
-  await dotenv.load(fileName: ".env");
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   declareServices();
   runApp(const App());
 }
@@ -112,8 +115,6 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Portal(
       child: MaterialApp.router(
         title: 'White Forest',

@@ -16,7 +16,7 @@ jobs:
 
       - name: Generate config.json from secrets
         run: |
-          echo "${{ secrets.ENV_KEY }}" | base64 --decode > .env
+           ${{ secrets.ENV_KEY }} > assets/config/config.json
 
       - run: flutter pub get
 
