@@ -14,9 +14,9 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Generate config.json from secrets
+      - name: Generate .env file
         run: |
-           ${{ secrets.ENV_KEY }} > assets/config/config.json
+          echo "ENV=production" > .env 
 
       - run: flutter pub get
 

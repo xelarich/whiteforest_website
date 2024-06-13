@@ -2,23 +2,21 @@ import 'dart:convert';
 
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:get_it/get_it.dart';
 import 'package:whiteforest_website/data/models/config.dart';
 
 class ConfService {
-  final remoteConfig = FirebaseRemoteConfig.instance;
-
-  static const String publicKey = 'public_key';
-  static const String privateKey = 'private_key';
-  static const String serviceId = 'service_id';
-  static const String templateId = 'template_id';
+  final remoteConfig = GetIt.I.get<FirebaseRemoteConfig>();
+  late Config config;
 
   void init() async {
-    remoteConfig.fetchAndActivate();
-  }
-
-  Future<Config> getConfig() async {
-    final Config config = await loadFirebaseConfig();
-    return config;
+    await dotenv.load(fileName: '.env');
+    if (dotenv.env['ENV'] == 'development') {
+      config = await loadLocalConfig();
+    } else {
+      config = loadFirebaseConfig();
+    }
   }
 
   Future<Config> loadLocalConfig() async {

@@ -1,7 +1,7 @@
 import 'package:emailjs/emailjs.dart';
 
 class ContactService {
-  Future<Future<EmailJSResponseStatus>> sendMail(
+  Future<EmailJSResponseStatus> sendMail(
     String name,
     String mail,
     String message,
