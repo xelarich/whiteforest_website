@@ -182,6 +182,15 @@ class _FormContactState extends State<FormContact> {
                           ? null
                           : () async {
                               if (_formKey.currentState!.validate()) {
+                                final ConfService _confService =
+                                    GetIt.I.get<ConfService>();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                        'Config : ${_confService.config.serviceId} - ${_confService.config.templateId} - ${_confService.config.publicKey} - ${_confService.config.privateKey}'),
+                                  ),
+                                );
+
                                 contactProvider.sendMail(
                                   _nameController.text,
                                   _mailController.text,
