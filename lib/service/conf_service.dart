@@ -3,11 +3,11 @@ import 'dart:convert';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:get_it/get_it.dart';
+
 import 'package:whiteforest_website/data/models/config.dart';
 
 class ConfService {
-  final remoteConfig = GetIt.I.get<FirebaseRemoteConfig>();
+  final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
   late Config config;
 
   void init() async {

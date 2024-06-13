@@ -181,17 +181,17 @@ class _FormContactState extends State<FormContact> {
                       onPressed: provider.isLoading
                           ? null
                           : () async {
-                              if (_formKey.currentState!.validate()) {
-                                final ConfService _confService =
+                              if (true) {
+                                final ConfService confService =
                                     GetIt.I.get<ConfService>();
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
-                                        'Config : ${_confService.config.serviceId} - ${_confService.config.templateId} - ${_confService.config.publicKey} - ${_confService.config.privateKey}'),
+                                        'Config : ${confService.config.serviceId} - ${confService.config.templateId} - ${confService.config.publicKey} - ${confService.config.privateKey}'),
                                   ),
                                 );
 
-                                contactProvider.sendMail(
+                                /*contactProvider.sendMail(
                                   _nameController.text,
                                   _mailController.text,
                                   _messageController.text,
@@ -203,7 +203,7 @@ class _FormContactState extends State<FormContact> {
                                       ),
                                     );
                                   },
-                                );
+                                );*/
                               }
                             },
                       child: provider.isLoading

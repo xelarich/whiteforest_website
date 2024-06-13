@@ -20,13 +20,15 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  final remoteConfig = FirebaseRemoteConfig.instance;
-  remoteConfig.setConfigSettings(RemoteConfigSettings(
+  final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
+  await remoteConfig.setConfigSettings(RemoteConfigSettings(
     fetchTimeout: const Duration(seconds: 10),
     minimumFetchInterval: const Duration(hours: 1),
   ));
-  remoteConfig.fetchAndActivate();
+  await remoteConfig.fetchAndActivate();
+
   declareServices();
+
   runApp(const App());
 }
 
