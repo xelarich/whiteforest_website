@@ -23,19 +23,15 @@ class ContactPage extends StatelessWidget {
       body: ListView(
         children: [
           Stack(
+            alignment: Alignment.center,
             children: [
               Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height - 70,
                 color: Colors.brown.shade50,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 32),
-                child: Column(
-                  children: [
-                    FormContact(),
-                  ],
-                ),
+              Container(
+                padding: const EdgeInsets.all(32),
+                child: FormContact(),
               ),
             ],
           ),

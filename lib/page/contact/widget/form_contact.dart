@@ -5,10 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/data/models/config.dart';
 import 'package:whiteforest_website/page/contact/widget/text_form_field_contact.dart';
+import 'package:whiteforest_website/provider/contact_provider.dart';
 import 'package:whiteforest_website/service/conf_service.dart';
 import 'package:whiteforest_website/shared/utils/extension.dart';
-
-import '../../../provider/contact_provider.dart';
 
 class FormContact extends StatefulWidget {
   const FormContact({super.key});
@@ -30,12 +29,10 @@ class _FormContactState extends State<FormContact> {
 
   final ContactProvider contactProvider = ContactProvider();
 
-  late Config config;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.maxFinite,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(4.0),
@@ -109,6 +106,7 @@ class _FormContactState extends State<FormContact> {
             return Form(
               key: _formKey,
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
@@ -181,17 +179,8 @@ class _FormContactState extends State<FormContact> {
                       onPressed: provider.isLoading
                           ? null
                           : () async {
-                              if (true) {
-                                final ConfService confService =
-                                    GetIt.I.get<ConfService>();
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                        'Config : ${confService.config.serviceId} - ${confService.config.templateId} - ${confService.config.publicKey} - ${confService.config.privateKey}'),
-                                  ),
-                                );
-
-                                /*contactProvider.sendMail(
+                              if (_formKey.currentState!.validate()) {
+                                contactProvider.sendMail(
                                   _nameController.text,
                                   _mailController.text,
                                   _messageController.text,
@@ -203,7 +192,7 @@ class _FormContactState extends State<FormContact> {
                                       ),
                                     );
                                   },
-                                );*/
+                                );
                               }
                             },
                       child: provider.isLoading

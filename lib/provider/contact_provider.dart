@@ -39,6 +39,7 @@ class ContactProvider extends ChangeNotifier {
         throw error!;
       }
     });
+    updateLoadingState(state: false);
   }
 
   void updateLoadingState({required bool state}) {
