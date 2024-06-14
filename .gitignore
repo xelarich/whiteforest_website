@@ -49,3 +49,5 @@ app.*.map.json
 /.metadata
 /.firebaserc
 /pubspec.lock
+/assets/config/config.json
+/.env

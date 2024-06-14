@@ -1,8 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:whiteforest_website/dependency_injection.dart';
+import 'package:whiteforest_website/firebase_options.dart';
 import 'package:whiteforest_website/page/activity/group/activity_group_page.dart';
 import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
 import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';
@@ -12,7 +16,19 @@ import 'package:whiteforest_website/page/kennel/kennel_page.dart';
 import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
 import 'package:whiteforest_website/page/team/team_page.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
+  await remoteConfig.setConfigSettings(RemoteConfigSettings(
+    fetchTimeout: const Duration(seconds: 10),
+    minimumFetchInterval: const Duration(hours: 1),
+  ));
+  await remoteConfig.fetchAndActivate();
+
+  declareServices();
+
   runApp(const App());
 }
 

@@ -13,12 +13,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+
+      - name: Generate .env file
+        run: |
+          echo "ENV=production" > .env    
 
       - name: Install dependencies
         run: flutter pub get
