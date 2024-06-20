@@ -132,7 +132,7 @@ class ContactDetails extends StatelessWidget {
               MapsLauncher.launchQuery(
                   'White forest la toussuire, Fontcouverte-la-Toussuire');
             },
-            child:  const Padding(
+            child: const Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 6,
               ),

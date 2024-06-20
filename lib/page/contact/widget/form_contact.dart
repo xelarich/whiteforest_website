@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:whiteforest_website/data/models/config.dart';
 import 'package:whiteforest_website/page/contact/widget/text_form_field_contact.dart';
 import 'package:whiteforest_website/provider/contact_provider.dart';
 import 'package:whiteforest_website/service/conf_service.dart';
@@ -28,7 +27,6 @@ class _FormContactState extends State<FormContact> {
   final TextEditingController _messageController = TextEditingController();
 
   final ContactProvider contactProvider = ContactProvider();
-
 
   @override
   Widget build(BuildContext context) {

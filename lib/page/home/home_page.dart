@@ -24,7 +24,8 @@ class HomePage extends StatelessWidget {
       drawer: const DrawerMobile(HomePage.routeName),
       body: ListView(
         physics: const AlwaysScrollableScrollPhysics(),
-        children: [const HeaderCarousel(),
+        children: [
+          const HeaderCarousel(),
           const WelcomePart(),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.60,
@@ -47,8 +48,8 @@ class HomePage extends StatelessWidget {
           ),
           const MusherPart(),
           const ActivityPart(),
-
-          const Footer(),],
+          const Footer(),
+        ],
       ),
     );
   }

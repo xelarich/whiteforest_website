@@ -31,7 +31,7 @@ class ContactPage extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.all(32),
-                child: FormContact(),
+                child: const FormContact(),
               ),
             ],
           ),

@@ -320,12 +320,14 @@ class HitchDriving extends StatelessWidget {
                             padding: EdgeInsets.only(right: 4),
                             child: Icon(Icons.info_outline),
                           ),
-                          Text(
-                            'Informations et recommandations',
-                            style: TextStyle(
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                          Flexible(
+                            child: Text(
+                              'Informations et recommandations',
+                              style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
                           ),
                         ],
                       ),

@@ -23,8 +23,7 @@ String getPathImage(BuildContext context) {
     context,
     defaultValue: 'web/',
     conditionalValues: [
-      const Condition<String>.smallerThan(
-          name: TABLET, value: 'mobile/'),
+      const Condition<String>.smallerThan(name: TABLET, value: 'mobile/'),
     ],
   ).value;
 }

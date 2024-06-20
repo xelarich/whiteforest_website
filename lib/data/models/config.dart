@@ -9,8 +9,6 @@ class Config {
   String serviceId;
   String templateId;
 
-
-
   Config({
     this.publicKey = '',
     this.privateKey = '',
