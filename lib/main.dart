@@ -1,9 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meta_seo/meta_seo.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/dependency_injection.dart';
 import 'package:whiteforest_website/firebase_options.dart';
@@ -27,6 +29,10 @@ Future<void> main() async {
   ));
   await remoteConfig.fetchAndActivate();
 
+  if (kIsWeb) {
+    MetaSEO().config();
+  }
+
   declareServices();
 
   runApp(const App());
@@ -47,10 +53,24 @@ final GoRouter _router = GoRouter(
   initialLocation: HomePage.routeName,
   routes: <RouteBase>[
     GoRoute(
-      path: HomePage.routeName,
-      pageBuilder: (context, state) => buildPageWithDefaultTransition(
-          context: context, state: state, child: HomePage()),
-    ),
+        path: HomePage.routeName,
+        pageBuilder: (context, state) {
+          if (kIsWeb) {
+            // Define MetaSEO object
+            MetaSEO meta = MetaSEO();
+            // add meta seo data for web app as you want
+            meta.ogTitle(ogTitle: 'Accueil');
+            meta.author(author: 'Richard Alexandre');
+            meta.description(
+                description:
+                    "Située en Savoie, dans la vallée de la Maurienne au plus près de Foncouverte La Toussuire.White Forest vous offre la possibilité de vivre une expérience unique avec nos chiens de traineau !En été comme en hiver et même au printemps ou en automne venez rencontrer nos merveilleux compagnons de vie.");
+            meta.keywords(
+                keywords:
+                    'chiens, traineau, pension, activités, la toussuire, savoie, maurienne, foncouverte, chenil, canirandonnée, balade, attelage, visite, hiver, été, conduite d attelage, chien de traineau');
+          }
+          return buildPageWithDefaultTransition(
+              context: context, state: state, child: HomePage());
+        }),
     GoRoute(
       path: ActivityWinterPage.routeName,
       pageBuilder: (BuildContext context, GoRouterState state) {
