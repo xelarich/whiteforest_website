@@ -4,8 +4,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class CaniHikeDays extends StatelessWidget {
-  const CaniHikeDays(this._scrollController, {super.key});
+class CaniHikeDayGroup extends StatelessWidget {
+  const CaniHikeDayGroup(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -71,8 +71,8 @@ class CaniHikeDays extends StatelessWidget {
                                 xxxl: 9,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: "Cani-randonnée deux jours"
-                                        .toUpperCase(),
+                                    text:
+                                        "Cani-randonnée journée".toUpperCase(),
                                     style: const TextStyle(
                                       fontSize: 28,
                                       fontFamily: 'WickedGrit',
@@ -110,7 +110,7 @@ class CaniHikeDays extends StatelessWidget {
                                           size: 18,
                                         ),
                                       ),
-                                      Text("2 jours"),
+                                      Text("1 journée"),
                                     ],
                                   ),
                                 ),
@@ -128,56 +128,38 @@ class CaniHikeDays extends StatelessWidget {
                               fontFamily: 'Roboto',
                             ),
                             children: [
-                              TextSpan(text: "C’est "),
-                              TextSpan(
-                                text: "la nouveauté ",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(
-                                  text: "de cette saison ! Partez à "
-                                      "l’aventure aux pieds des "),
-                              TextSpan(
-                                text: "Aiguilles d’Arves.\n",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(text: "Toujours en cani-randonnée, "),
-                              TextSpan(
-                                text: "parcourez un paysage",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
                               TextSpan(
                                   text:
-                                      ", entre terre d’alpage, rivière, et roche. "
-                                      "Laissez vous guider par ces trois géants de pierre pour une randonnée d’environ "
-                                      "3H.\n"),
+                                      "Basé sur la même pratique qu'à la demi-journée "),
                               TextSpan(
-                                text: "Chiens et humains ",
+                                text: "MAIS ",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
+                              TextSpan(text: "en journée!\n"),
                               TextSpan(
-                                  text: "arpenteront les sentiers jusqu’au "),
-                              TextSpan(
-                                text: "chalet Perron ",
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                text: "Prévoyez votre déjeuné et partons sur ",
                               ),
                               TextSpan(
-                                  text:
-                                      "ou Patricia nous recevra pour un repas savoyard et une nuit en refuge. "),
+                                  text: "les sentiers de Montagne.\n",
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                               TextSpan(
-                                text: "Histoire, partage, et vue imprenable ",
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                text: "Explication sur le métier de ",
                               ),
-                              TextSpan(text: "sont au rendez vous !\n"),
                               TextSpan(
-                                  text:
-                                      "Un petit déjeuner généreux et c’est repartie pour un retour tout aussi sympathique.\n"),
+                                  text: "musher ",
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                text: "entre midi et deux!\n",
+                              ),
                             ],
                           ),
                           textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
                         const Text(
-                          'Les tarifs :',
+                          'Les tarifs groupes ( + de 15 personnes) :',
                           style: TextStyle(fontSize: 24),
                         ),
                         const SizedBox(
@@ -191,7 +173,8 @@ class CaniHikeDays extends StatelessWidget {
                                 color: Colors.brown.shade200,
                               )),
                           child: const Text(
-                            "200€/ Personnes",
+                            "40€/ Adultes\n"
+                            "30€/ Enfants de -12ans",
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,
@@ -246,7 +229,11 @@ class CaniHikeDays extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 28.0),
                         child: Text(
-                          'Le Chalmieu\n',
+                          "La Toussuire\n"
+                          "Le Corbier\n"
+                          "Saint-Sorlin d’Arves\n"
+                          "Saint Jean d’Arves\n"
+                          "Albiez-Montrond.\n",
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                         ),
                       ),
@@ -270,12 +257,14 @@ class CaniHikeDays extends StatelessWidget {
                             padding: EdgeInsets.only(right: 4),
                             child: Icon(Icons.info_outline),
                           ),
-                          Text(
-                            'Informations et recommandations',
-                            style: TextStyle(
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                          Flexible(
+                            child: Text(
+                              'Informations et recommandations',
+                              style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
                           ),
                         ],
                       ),

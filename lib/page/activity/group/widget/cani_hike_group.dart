@@ -4,8 +4,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class CaniHike extends StatelessWidget {
-  const CaniHike(this._scrollController, {super.key});
+class CaniHikeGroup extends StatelessWidget {
+  const CaniHikeGroup(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -263,12 +263,14 @@ class CaniHike extends StatelessWidget {
                             padding: EdgeInsets.only(right: 4),
                             child: Icon(Icons.info_outline),
                           ),
-                          Text(
-                            'Informations et recommandations',
-                            style: TextStyle(
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                          Flexible(
+                            child: Text(
+                              'Informations et recommandations',
+                              style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
                           ),
                         ],
                       ),

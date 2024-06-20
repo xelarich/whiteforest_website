@@ -70,7 +70,7 @@ class DogKennel extends StatelessWidget {
                                 xxxl: 9,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: "Visite du chenil".toUpperCase(),
+                                    text: "Immersion musher ou visite du chenil".toUpperCase(),
                                     style: const TextStyle(
                                       fontSize: 28,
                                       fontFamily: 'WickedGrit',
@@ -158,7 +158,7 @@ class DogKennel extends StatelessWidget {
                           maxLines: 15,
                         ),
                         const Text(
-                          'Les tarifs :',
+                          'Les tarifs groupes ( + de 15 personnes) :',
                           style: TextStyle(fontSize: 24),
                         ),
                         const SizedBox(
@@ -251,12 +251,14 @@ class DogKennel extends StatelessWidget {
                             padding: EdgeInsets.only(right: 4),
                             child: Icon(Icons.info_outline),
                           ),
-                          Text(
-                            'Informations et recommandations',
-                            style: TextStyle(
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                          Flexible(
+                            child: Text(
+                              'Informations et recommandations',
+                              style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
                           ),
                         ],
                       ),
