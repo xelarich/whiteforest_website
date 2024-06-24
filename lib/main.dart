@@ -55,19 +55,6 @@ final GoRouter _router = GoRouter(
     GoRoute(
         path: HomePage.routeName,
         pageBuilder: (context, state) {
-          if (kIsWeb) {
-            // Define MetaSEO object
-            MetaSEO meta = MetaSEO();
-            // add meta seo data for web app as you want
-            meta.ogTitle(ogTitle: 'Accueil');
-            meta.author(author: 'Richard Alexandre');
-            meta.description(
-                description:
-                    "Située en Savoie, dans la vallée de la Maurienne au plus près de Foncouverte La Toussuire.White Forest vous offre la possibilité de vivre une expérience unique avec nos chiens de traineau !En été comme en hiver et même au printemps ou en automne venez rencontrer nos merveilleux compagnons de vie.");
-            meta.keywords(
-                keywords:
-                    'chiens, traineau, pension, activités, la toussuire, savoie, maurienne, foncouverte, chenil, canirandonnée, balade, attelage, visite, hiver, été, conduite d attelage, chien de traineau');
-          }
           return buildPageWithDefaultTransition(
               context: context, state: state, child: HomePage());
         }),
