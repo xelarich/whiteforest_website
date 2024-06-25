@@ -3,8 +3,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class CaniHikeGroup extends StatelessWidget {
-  const CaniHikeGroup({super.key});
+class DogKennelGroup extends StatelessWidget {
+  const DogKennelGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +25,9 @@ class CaniHikeGroup extends StatelessWidget {
                 xxxl: 5,
                 child: ClipRRect(
                   borderRadius:
-                      const BorderRadius.vertical(top: Radius.circular(16)),
+                  const BorderRadius.vertical(top: Radius.circular(16)),
                   child: Image.asset(
-                    "assets/images/summer/${getPathImage(context)}cani_rando.webp",
+                    "assets/images/summer/${getPathImage(context)}chenil.webp",
                     width: 400,
                     height: 450,
                     fit: BoxFit.cover,
@@ -62,18 +62,21 @@ class CaniHikeGroup extends StatelessWidget {
                               xl: 9,
                               xxl: 9,
                               xxxl: 9,
-                              child: Text(
-                                "Cani-randonnée initiation".toUpperCase(),
-                                style: const TextStyle(
-                                  fontSize: 28,
-                                  fontFamily: 'WickedGrit',
+                              child: Text.rich(
+                                TextSpan(
+                                  text: "Immersion musher ou visite du chenil"
+                                      .toUpperCase(),
+                                  style: const TextStyle(
+                                    fontSize: 28,
+                                    fontFamily: 'WickedGrit',
+                                  ),
                                 ),
                                 maxLines: 2,
                               ),
                             ),
                             FlexWidget(
                               xs: 4,
-                              sm: 3,
+                              sm: 2,
                               md: 2,
                               lg: 2,
                               xl: 2,
@@ -81,8 +84,7 @@ class CaniHikeGroup extends StatelessWidget {
                               xxxl: 2,
                               child: Container(
                                 width: double.infinity,
-                                margin:
-                                    const EdgeInsets.symmetric(vertical: 8),
+                                margin: const EdgeInsets.symmetric(vertical: 8),
                                 padding: const EdgeInsets.all(8),
                                 decoration: BoxDecoration(
                                   color: Colors.blue.shade50,
@@ -90,8 +92,7 @@ class CaniHikeGroup extends StatelessWidget {
                                 ),
                                 child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(right: 8.0),
@@ -100,7 +101,7 @@ class CaniHikeGroup extends StatelessWidget {
                                         size: 18,
                                       ),
                                     ),
-                                    Text("1H30 / 2H"),
+                                    Text("1H"),
                                   ],
                                 ),
                               ),
@@ -119,41 +120,26 @@ class CaniHikeGroup extends StatelessWidget {
                           ),
                           children: [
                             TextSpan(
-                              text: "Randonnée à pied",
+                                text:
+                                "Durant 1H00, au chenil à La Toussuire ou "),
+                            TextSpan(
+                              text: "sur votre station, ",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             TextSpan(
                                 text:
-                                    ", tracté par un chien de traîneau à l’aide "
-                                    "d’une ceinture et d’une ligne "
-                                    "conçue spécialement pour l’activité !\n"),
+                                "écoutez et découvrez le métier de musher !\n"),
                             TextSpan(
                                 text:
-                                    "Vous serez aidés par le chien pour arpenter nos "
-                                    "montagnes, ponctués de "),
+                                "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment on les entraine ?\n"),
                             TextSpan(
-                              text: "pauses câlines ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            TextSpan(text: "et de "),
-                            TextSpan(
-                              text: "moment de partages canins et humains ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                                text:
+                                "Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ",
+
                             ),
                             TextSpan(
-                                text:
-                                    "!\nVous tomberez sous le charme de ses chiens "),
-                            TextSpan(
-                              text: "extraordinaires ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            TextSpan(
-                                text:
-                                    "que ce soit par leur volonté à l’exercice ou leur tendresse.\n"),
-                            TextSpan(
-                                text:
-                                    "L’activité comprend une explication sur la pratique de la cani-randonnée puis une balade "
-                                    "de 1h30 à 2 heures.\n"),
+                                text: "sa passion.\n",
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                           ],
                         ),
                         textAlign: TextAlign.start,
@@ -174,8 +160,8 @@ class CaniHikeGroup extends StatelessWidget {
                               color: Colors.brown.shade200,
                             )),
                         child: const Text(
-                          "25€/ Adultes\n"
-                          "19€/ Enfants de -12ans",
+                          "15€/ Adultes\n"
+                              "10€/ Enfants de -12ans",
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold,
@@ -230,10 +216,7 @@ class CaniHikeGroup extends StatelessWidget {
                       padding: EdgeInsets.only(left: 28.0),
                       child: Text(
                         "La Toussuire\n"
-                        "Le Corbier\n"
-                        "Saint-Sorlin d’Arves\n"
-                        "Saint Jean d’Arves\n"
-                        "Albiez-Montrond.\n",
+                            "",
                         style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                       ),
                     ),
@@ -273,31 +256,13 @@ class CaniHikeGroup extends StatelessWidget {
                       child: Text.rich(TextSpan(
                         style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                         children: [
-                          TextSpan(text: "Les chiens sont adaptés à "),
+                          TextSpan(text: "Équipement: "),
                           TextSpan(
-                              text: "votre condition physique.\n",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextSpan(
-                              text: "C’est une activité destinée aux "
-                                  "familles mais aussi aux sportifs.\n"),
-                          TextSpan(
-                              text: "Accessible ",
+                              text: "Vêtements confortables ",
                               style: TextStyle(fontWeight: FontWeight.bold)),
                           TextSpan(
                               text:
-                                  "aux jeunes marcheurs mais aussi aux plus âgés !\n"),
-                          TextSpan(
-                              text: "Interdit aux femmes enceintes.\n",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextSpan(text: "Équipement : "),
-                          TextSpan(
-                              text: "Tenue de randonnée ",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          TextSpan(
-                            text:
-                                "(chaussures fermées obligatoire), bouteille d’eau.\n"
-                                "Les bâtons de marches ne sont pas nécessaires.",
-                          ),
+                              "qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau"),
                         ],
                       )),
                     ),

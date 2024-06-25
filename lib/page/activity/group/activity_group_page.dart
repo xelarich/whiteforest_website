@@ -3,9 +3,9 @@ import 'package:flutter/material.dart' hide Page, NavigationDrawer;
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
-import 'package:whiteforest_website/page/activity/group/widget/cani_hike_group.dart';
 import 'package:whiteforest_website/page/activity/group/widget/cani_hike_day_group.dart';
-import 'package:whiteforest_website/page/activity/group/widget/dog_kennel.dart';
+import 'package:whiteforest_website/page/activity/group/widget/cani_hike_group.dart';
+import 'package:whiteforest_website/page/activity/group/widget/dog_kennel_group.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
 class ActivityGroupPage extends StatefulWidget {
@@ -59,15 +59,15 @@ class _ActivityGroupPageState extends State<ActivityGroupPage> {
                           fontFamily: 'WickedGrit',
                         )),
                   ),
-                  CaniHikeGroup(_scrollController),
+                  const CaniHikeGroup(),
                   const SizedBox(
                     height: 64,
                   ),
-                  CaniHikeDayGroup(_scrollController),
+                  const CaniHikeDayGroup(),
                   const SizedBox(
                     height: 64,
                   ),
-                  DogKennel(_scrollController),
+                  const DogKennelGroup(),
                   const SizedBox(
                     height: 64,
                   ),
