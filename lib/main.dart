@@ -89,15 +89,11 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: ActivityGroupPage.routeName,
       pageBuilder: (BuildContext context, GoRouterState state) {
-        final Map<String, int>? extra = state.extra as Map<String, int>?;
         return buildPageWithDefaultTransition(
-            context: context,
-            state: state,
-            child: ActivityGroupPage(
-              indexAnchor: extra == null
-                  ? null
-                  : extra[ActivityGroupPage.indexAnchorKey]!,
-            ));
+          context: context,
+          state: state,
+          child: const ActivityGroupPage(),
+        );
       },
     ),
     GoRoute(
