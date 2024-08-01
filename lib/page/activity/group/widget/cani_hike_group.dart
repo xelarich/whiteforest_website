@@ -81,8 +81,7 @@ class CaniHikeGroup extends StatelessWidget {
                               xxxl: 2,
                               child: Container(
                                 width: double.infinity,
-                                margin:
-                                    const EdgeInsets.symmetric(vertical: 8),
+                                margin: const EdgeInsets.symmetric(vertical: 8),
                                 padding: const EdgeInsets.all(8),
                                 decoration: BoxDecoration(
                                   color: Colors.blue.shade50,
@@ -90,8 +89,7 @@ class CaniHikeGroup extends StatelessWidget {
                                 ),
                                 child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(right: 8.0),

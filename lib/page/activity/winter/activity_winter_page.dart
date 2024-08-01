@@ -103,7 +103,6 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
                               backgroundColor: Colors.black,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4.0),
-
                               ),
                             ),
                             onPressed: () => context.go(ContactPage.routeName),

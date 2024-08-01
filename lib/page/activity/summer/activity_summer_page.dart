@@ -116,7 +116,6 @@ class _ActivitySummerPageState extends State<ActivitySummerPage> {
                               backgroundColor: Colors.black,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4.0),
-
                               ),
                             ),
                             onPressed: () => context.go(ContactPage.routeName),

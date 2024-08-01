@@ -25,7 +25,7 @@ class DogKennelGroup extends StatelessWidget {
                 xxxl: 5,
                 child: ClipRRect(
                   borderRadius:
-                  const BorderRadius.vertical(top: Radius.circular(16)),
+                      const BorderRadius.vertical(top: Radius.circular(16)),
                   child: Image.asset(
                     "assets/images/summer/${getPathImage(context)}chenil.webp",
                     width: 400,
@@ -121,21 +121,20 @@ class DogKennelGroup extends StatelessWidget {
                           children: [
                             TextSpan(
                                 text:
-                                "Durant 1H00, au chenil à La Toussuire ou "),
+                                    "Durant 1H00, au chenil à La Toussuire ou "),
                             TextSpan(
                               text: "sur votre station, ",
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             TextSpan(
                                 text:
-                                "écoutez et découvrez le métier de musher !\n"),
+                                    "écoutez et découvrez le métier de musher !\n"),
                             TextSpan(
                                 text:
-                                "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment on les entraine ?\n"),
+                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment on les entraine ?\n"),
                             TextSpan(
-                                text:
-                                "Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ",
-
+                              text:
+                                  "Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ",
                             ),
                             TextSpan(
                                 text: "sa passion.\n",
@@ -161,7 +160,7 @@ class DogKennelGroup extends StatelessWidget {
                             )),
                         child: const Text(
                           "15€/ Adultes\n"
-                              "10€/ Enfants de -12ans",
+                          "10€/ Enfants de -12ans",
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold,
@@ -216,7 +215,7 @@ class DogKennelGroup extends StatelessWidget {
                       padding: EdgeInsets.only(left: 28.0),
                       child: Text(
                         "La Toussuire\n"
-                            "",
+                        "",
                         style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                       ),
                     ),
@@ -262,7 +261,7 @@ class DogKennelGroup extends StatelessWidget {
                               style: TextStyle(fontWeight: FontWeight.bold)),
                           TextSpan(
                               text:
-                              "qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau"),
+                                  "qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau"),
                         ],
                       )),
                     ),

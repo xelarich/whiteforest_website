@@ -65,8 +65,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                               xxxl: 9,
                               child: Text.rich(
                                 TextSpan(
-                                  text:
-                                      "Cani-randonnée journée".toUpperCase(),
+                                  text: "Cani-randonnée journée".toUpperCase(),
                                   style: const TextStyle(
                                     fontSize: 28,
                                     fontFamily: 'WickedGrit',
@@ -85,8 +84,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                               xxxl: 2,
                               child: Container(
                                 width: double.infinity,
-                                margin:
-                                    const EdgeInsets.symmetric(vertical: 8),
+                                margin: const EdgeInsets.symmetric(vertical: 8),
                                 padding: const EdgeInsets.all(8),
                                 decoration: BoxDecoration(
                                   color: Colors.blue.shade50,
@@ -94,8 +92,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                                 ),
                                 child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(right: 8.0),
@@ -135,15 +132,13 @@ class CaniHikeDayGroup extends StatelessWidget {
                             ),
                             TextSpan(
                                 text: "les sentiers de Montagne.\n",
-                                style:
-                                    TextStyle(fontWeight: FontWeight.bold)),
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(
                               text: "Explication sur le métier de ",
                             ),
                             TextSpan(
                                 text: "musher ",
-                                style:
-                                    TextStyle(fontWeight: FontWeight.bold)),
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                             TextSpan(
                               text: "entre midi et deux !\n",
                             ),

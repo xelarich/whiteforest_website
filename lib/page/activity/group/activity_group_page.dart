@@ -99,7 +99,6 @@ class _ActivityGroupPageState extends State<ActivityGroupPage> {
                               backgroundColor: Colors.black,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(4.0),
-
                               ),
                             ),
                             onPressed: () => context.go(ContactPage.routeName),
