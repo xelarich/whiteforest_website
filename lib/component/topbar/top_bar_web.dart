@@ -63,12 +63,30 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
                   isSelected: widget.routeSelected == TeamPage.routeName,
                   onTap: () => context.go(TeamPage.routeName),
                 ),*/
-                TabText(
+               /* TabText(
                   'Contact',
                   isSelected: routeSelected == ContactPage.routeName,
                   onTap: () => context.go(ContactPage.routeName),
-                ),
+                ),*/
               ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(180, 50),
+                backgroundColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4.0),
+
+                ),
+              ),
+              onPressed: () => context.go(ContactPage.routeName),
+              child: const Text(
+                'Contactez-nous',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
         ],
