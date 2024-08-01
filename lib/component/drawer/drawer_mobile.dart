@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:go_router/go_router.dart';
 import 'package:whiteforest_website/component/drawer/widget/drawer_tile.dart';
 import 'package:whiteforest_website/page/activity/group/activity_group_page.dart';
 import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
@@ -14,26 +16,52 @@ class DrawerMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.brown.shade200,
-            ),
-            child: Image.asset(
-              'assets/images/white_forest_logo.webp',
+          Column(
+            children: [
+              DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.brown.shade200,
+                  ),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: SizedBox(
+                      width: 150, // Définir la largeur souhaitée
+                      height: 150, // Définir la hauteur souhaitée
+                      child: Image.asset(
+                        'assets/images/white_forest_logo.webp',
+                      ),
+                    ),
+                  )),
+              DrawerTile('Accueil', routeSelected,
+                  routeName: HomePage.routeName),
+              DrawerTile('Activités hiver', routeSelected,
+                  routeName: ActivityWinterPage.routeName),
+              DrawerTile('Activités été', routeSelected,
+                  routeName: ActivitySummerPage.routeName),
+              DrawerTile('Activités groupe', routeSelected,
+                  routeName: ActivityGroupPage.routeName),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(180, 50),
+                backgroundColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
+              ),
+              onPressed: () => context.go(ContactPage.routeName),
+              child: const Text(
+                'Contactez-nous',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
-          DrawerTile('Accueil', routeSelected, routeName: HomePage.routeName),
-          DrawerTile('Activités hiver', routeSelected,
-              routeName: ActivityWinterPage.routeName),
-          DrawerTile('Activités été', routeSelected,
-              routeName: ActivitySummerPage.routeName),
-          DrawerTile('Activités groupe', routeSelected,
-              routeName: ActivityGroupPage.routeName),
-          DrawerTile('Contact', routeSelected,
-              routeName: ContactPage.routeName),
         ],
       ),
     );
