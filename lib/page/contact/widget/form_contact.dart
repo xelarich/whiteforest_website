@@ -44,32 +44,40 @@ class _FormContactState extends State<FormContact> {
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-                  child: Text('Contactez-nous !'.toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: ResponsiveValue<double>(
-                          context,
-                          defaultValue: 24,
-                          conditionalValues: [
-                            const Condition<double>.largerThan(
-                                name: MOBILE, value: 38)
-                          ],
-                        ).value,
-                        fontFamily: 'WickedGrit',
-                      )),
+                  child: Text(
+                    'Contactez-nous !'.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: ResponsiveValue<double>(
+                        context,
+                        defaultValue: 24,
+                        conditionalValues: [
+                          const Condition<double>.largerThan(
+                            name: MOBILE,
+                            value: 38,
+                          ),
+                        ],
+                      ).value,
+                      fontFamily: 'WickedGrit',
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                SvgPicture.asset('assets/icons/mail_sent.svg',
-                    height: ResponsiveValue<double>(
-                      context,
-                      defaultValue: 100,
-                      conditionalValues: [
-                        const Condition<double>.largerThan(
-                            name: MOBILE, value: 150)
-                      ],
-                    ).value),
+                SvgPicture.asset(
+                  'assets/icons/mail_sent.svg',
+                  height: ResponsiveValue<double>(
+                    context,
+                    defaultValue: 100,
+                    conditionalValues: [
+                      const Condition<double>.largerThan(
+                        name: MOBILE,
+                        value: 150,
+                      ),
+                    ],
+                  ).value,
+                ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
@@ -82,7 +90,9 @@ class _FormContactState extends State<FormContact> {
                         defaultValue: 16,
                         conditionalValues: [
                           const Condition<double>.largerThan(
-                              name: MOBILE, value: 24)
+                            name: MOBILE,
+                            value: 24,
+                          ),
                         ],
                       ).value,
                     ),
@@ -102,20 +112,26 @@ class _FormContactState extends State<FormContact> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            vertical: 24, horizontal: 16),
-                        child: Text('Contactez-nous !'.toUpperCase(),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: ResponsiveValue<double>(
-                                context,
-                                defaultValue: 28,
-                                conditionalValues: [
-                                  const Condition<double>.largerThan(
-                                      name: MOBILE, value: 38)
-                                ],
-                              ).value,
-                              fontFamily: 'WickedGrit',
-                            )),
+                          vertical: 24,
+                          horizontal: 16,
+                        ),
+                        child: Text(
+                          'Contactez-nous !'.toUpperCase(),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: ResponsiveValue<double>(
+                              context,
+                              defaultValue: 28,
+                              conditionalValues: [
+                                const Condition<double>.largerThan(
+                                  name: MOBILE,
+                                  value: 38,
+                                ),
+                              ],
+                            ).value,
+                            fontFamily: 'WickedGrit',
+                          ),
+                        ),
                       ),
                       TextFormFieldContact(
                         _nameController,
@@ -172,7 +188,7 @@ class _FormContactState extends State<FormContact> {
                               ? null
                               : () async {
                                   if (_formKey.currentState!.validate()) {
-                                    contactProvider.sendMail(
+                                    await contactProvider.sendMail(
                                       _nameController.text,
                                       _mailController.text,
                                       _messageController.text,
@@ -181,7 +197,8 @@ class _FormContactState extends State<FormContact> {
                                             .showSnackBar(
                                           const SnackBar(
                                             content: Text(
-                                                'Erreur lors de l\'envoi du message !'),
+                                              'Erreur lors de l\'envoi du message !',
+                                            ),
                                           ),
                                         );
                                       },
@@ -191,8 +208,9 @@ class _FormContactState extends State<FormContact> {
                           child: provider.isLoading
                               ? const Center(
                                   child: CircularProgressIndicator(
-                                  color: Colors.white,
-                                ))
+                                    color: Colors.white,
+                                  ),
+                                )
                               : const Text(
                                   'Envoyer',
                                   style: TextStyle(color: Colors.white),

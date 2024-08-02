@@ -19,8 +19,11 @@ class TopBarMobile extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leading: IconButton(
         alignment: Alignment.bottomCenter,
-        icon: const Icon(LineAwesomeIcons.bars_solid,
-            color: Colors.white, size: 32),
+        icon: const Icon(
+          LineAwesomeIcons.bars_solid,
+          color: Colors.white,
+          size: 32,
+        ),
         onPressed: () {
           scaffoldKey.currentState!.openDrawer();
         },

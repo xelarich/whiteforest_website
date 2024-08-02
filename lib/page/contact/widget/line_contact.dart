@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class LineContact extends StatelessWidget {
-  const LineContact(this.title, this.text, this.icons,
-      {required this.onPressed, super.key});
+  const LineContact(
+    this.title,
+    this.text,
+    this.icons, {
+    required this.onPressed,
+    super.key,
+  });
 
   final String title;
   final String text;
@@ -26,12 +31,13 @@ class LineContact extends StatelessWidget {
                 child: Text(
                   title.toUpperCase(),
                   style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontFamily: 'Roboto',
-                      fontWeight: FontWeight.w900),
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -44,10 +50,11 @@ class LineContact extends StatelessWidget {
               text,
               textAlign: TextAlign.start,
               style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.bold),
+                color: Colors.black,
+                fontSize: 14,
+                fontFamily: 'Roboto',
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),

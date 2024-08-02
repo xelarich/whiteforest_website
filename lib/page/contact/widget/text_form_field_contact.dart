@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class TextFormFieldContact extends StatefulWidget {
   const TextFormFieldContact(
-      this.controller, this.hintText, this.labelText, this.validator,
-      {this.maxLines, super.key});
+    this.controller,
+    this.hintText,
+    this.labelText,
+    this.validator, {
+    this.maxLines,
+    super.key,
+  });
 
   final TextEditingController controller;
   final String hintText;

@@ -18,7 +18,8 @@ Future<void> launchInstagram() async {
 
 Future<void> launchTripadvisor() async {
   Uri url = Uri.parse(
-      'https://www.tripadvisor.fr/Attraction_Review-g657856-d3842026-Reviews-White_Forest-Fontcouverte_la_Toussuire_Savoie_Auvergne_Rhone_Alpes.html');
+    'https://www.tripadvisor.fr/Attraction_Review-g657856-d3842026-Reviews-White_Forest-Fontcouverte_la_Toussuire_Savoie_Auvergne_Rhone_Alpes.html',
+  );
   if (!await launchUrl(url)) {
     throw Exception('Could not launch $url');
   }
@@ -27,7 +28,7 @@ Future<void> launchTripadvisor() async {
 Future<void> launchPhoneCall() async {
   final Uri launchUri = Uri(
     scheme: 'tel',
-    path: "+33682759926",
+    path: '+33682759926',
   );
   await launchUrl(launchUri);
 }
@@ -45,13 +46,16 @@ Future<void> launchMail() async {
 }
 
 Future<void> launchMap() async {
-  MapsLauncher.launchQuery(
-      'White forest la toussuire, Fontcouverte-la-Toussuire');
+  await MapsLauncher.launchQuery(
+    'White forest la toussuire, Fontcouverte-la-Toussuire',
+  );
 }
 
 String? encodeQueryParameters(Map<String, String> params) {
   return params.entries
-      .map((MapEntry<String, String> e) =>
-          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+      .map(
+        (MapEntry<String, String> e) =>
+            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}',
+      )
       .join('&');
 }

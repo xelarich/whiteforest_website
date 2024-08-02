@@ -35,14 +35,15 @@ class SocialNetwork extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "Facebook",
+                      'Facebook',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -61,14 +62,15 @@ class SocialNetwork extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "Instagram",
+                      'Instagram',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -86,14 +88,15 @@ class SocialNetwork extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "Tripadvisor",
+                      'Tripadvisor',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

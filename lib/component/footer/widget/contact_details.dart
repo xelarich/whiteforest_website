@@ -37,14 +37,15 @@ class ContactDetails extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "+33 6 82 75 99 26",
+                      '+33 6 82 75 99 26',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -64,14 +65,15 @@ class ContactDetails extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "info@whiteforest.fr",
+                      'info@whiteforest.fr',
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -92,13 +94,14 @@ class ContactDetails extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
-                        "Le Hordon 73 300 LA TOUSSUIRE",
+                        'Le Hordon 73 300 LA TOUSSUIRE',
                         maxLines: 2,
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
