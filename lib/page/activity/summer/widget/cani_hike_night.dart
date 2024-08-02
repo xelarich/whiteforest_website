@@ -144,13 +144,13 @@ class CaniHikeNight extends StatelessWidget {
                                   text:
                                       "!\nPartez à l’aventure tracté par un de nos fidèles "),
                               TextSpan(
-                                text: "chiens de traineaux",
+                                text: "chiens de traineau",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                   text:
                                       ", équipé d’une ceinture et d’une ligne reliée au chien, "
-                                      "vous serez guidé par un Musher prêt à partager "),
+                                      "vous serez guidé par un musher prêt à partager "),
                               TextSpan(
                                 text: "sa passion",
                                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -202,8 +202,8 @@ class CaniHikeNight extends StatelessWidget {
                                 color: Colors.brown.shade200,
                               )),
                           child: const Text(
-                            "75€/ Adultes\n"
-                            "70€/ Enfants de -12ans",
+                            "75€/ Adulte\n"
+                            "70€/ Enfant de -12ans",
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,
@@ -310,9 +310,20 @@ class CaniHikeNight extends StatelessWidget {
                         child: Text.rich(TextSpan(
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           children: [
+                            TextSpan(text: "Équipement : "),
+                            TextSpan(
+                              text: "Tenue de randonnée ",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            TextSpan(
+                                text: "(chaussure de randonnée obligatoire), "),
+                            TextSpan(
+                              text: "imperméable",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
                             TextSpan(
                                 text:
-                                    "La description que j'ai sur le fichier n'est pas bon"),
+                                ", affaire chaude pour le soir, sac à dos, bouteille d’eau."),
                           ],
                         )),
                       ),

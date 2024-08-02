@@ -121,7 +121,7 @@ class DogKennelGroup extends StatelessWidget {
                           children: [
                             TextSpan(
                                 text:
-                                    "Durant 1H00, au chenil à La Toussuire ou "),
+                                    "Durant 1 heure, au chenil à La Toussuire ou "),
                             TextSpan(
                               text: "sur votre station, ",
                               style: TextStyle(fontWeight: FontWeight.bold),
@@ -131,7 +131,7 @@ class DogKennelGroup extends StatelessWidget {
                                     "écoutez et découvrez le métier de musher !\n"),
                             TextSpan(
                                 text:
-                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment on les entraine ?\n"),
+                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment sont ils entraînaient ?\n"),
                             TextSpan(
                               text:
                                   "Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ",
@@ -159,8 +159,8 @@ class DogKennelGroup extends StatelessWidget {
                               color: Colors.brown.shade200,
                             )),
                         child: const Text(
-                          "15€/ Adultes\n"
-                          "10€/ Enfants de -12ans",
+                          "15€/ Adulte\n"
+                          "10€/ Enfant de -12ans",
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold,

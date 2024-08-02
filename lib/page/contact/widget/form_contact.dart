@@ -31,218 +31,182 @@ class _FormContactState extends State<FormContact> {
 
   late final GoogleMapController mapController;
 
-  final LatLng _center = const LatLng(45.25489065226392, 6.27370834350585);
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(4.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: const Offset(0, 3),
-          ),
-        ],
-      ),
-      child: ChangeNotifierProvider<ContactProvider>.value(
-        value: contactProvider,
-        child: Consumer<ContactProvider>(
-          builder: (context, provider, child) {
-            if (provider.mailSent) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 24, horizontal: 16),
-                    child: Text('Contactez-nous !'.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: ResponsiveValue<double>(
-                            context,
-                            defaultValue: 24,
-                            conditionalValues: [
-                              const Condition<double>.largerThan(
-                                  name: MOBILE, value: 38)
-                            ],
-                          ).value,
-                          fontFamily: 'WickedGrit',
-                        )),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  SvgPicture.asset('assets/icons/mail_sent.svg',
-                      height: ResponsiveValue<double>(
-                        context,
-                        defaultValue: 100,
-                        conditionalValues: [
-                          const Condition<double>.largerThan(
-                              name: MOBILE, value: 150)
-                        ],
-                      ).value),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 24, horizontal: 16),
-                    child: Text(
-                      'Message envoyé avec succès !'.toUpperCase(),
+    return ChangeNotifierProvider<ContactProvider>.value(
+      value: contactProvider,
+      child: Consumer<ContactProvider>(
+        builder: (context, provider, child) {
+          if (provider.mailSent) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+                  child: Text('Contactez-nous !'.toUpperCase(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: ResponsiveValue<double>(
                           context,
-                          defaultValue: 16,
+                          defaultValue: 24,
                           conditionalValues: [
                             const Condition<double>.largerThan(
-                                name: MOBILE, value: 24)
+                                name: MOBILE, value: 38)
                           ],
                         ).value,
-                      ),
-                    ),
-                  ),
-                ],
-              );
-            }
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 24, horizontal: 16),
-                          child: Text('Contactez-nous !'.toUpperCase(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: ResponsiveValue<double>(
-                                  context,
-                                  defaultValue: 28,
-                                  conditionalValues: [
-                                    const Condition<double>.largerThan(
-                                        name: MOBILE, value: 38)
-                                  ],
-                                ).value,
-                                fontFamily: 'WickedGrit',
-                              )),
-                        ),
-                        TextFormFieldContact(
-                          _nameController,
-                          'Entrez votre nom',
-                          'Nom',
-                          (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Veuillez entrer votre nom';
-                            }
-                            return null;
-                          },
-                          maxLines: 1,
-                        ),
-                        TextFormFieldContact(
-                          _mailController,
-                          'Entrez votre mail',
-                          'Mail',
-                          (value) {
-                            if (value == null || !value.isValidEmail()) {
-                              return 'Veuillez entrer votre mail';
-                            }
-                            return null;
-                          },
-                          maxLines: 1,
-                        ),
-                        //DropdownTextFieldContact(),
-                        SizedBox(
-                          height: 200,
-                          child: TextFormFieldContact(
-                            _messageController,
-                            'Écrivez ici votre message',
-                            'Message',
-                            (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Veuillez entrer un message';
-                              }
-                              return null;
-                            },
-                            maxLines: 10,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              fixedSize: const Size(150, 50),
-                              backgroundColor: Colors.brown,
-                              disabledBackgroundColor: Colors.brown,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4.0),
-                              ),
-                            ),
-                            onPressed: provider.isLoading
-                                ? null
-                                : () async {
-                                    if (_formKey.currentState!.validate()) {
-                                      contactProvider.sendMail(
-                                        _nameController.text,
-                                        _mailController.text,
-                                        _messageController.text,
-                                        () {
-                                          ScaffoldMessenger.of(context).showSnackBar(
-                                            const SnackBar(
-                                              content: Text(
-                                                  'Erreur lors de l\'envoi du message !'),
-                                            ),
-                                          );
-                                        },
-                                      );
-                                    }
-                                  },
-                            child: provider.isLoading
-                                ? const Center(
-                                    child: CircularProgressIndicator(
-                                    color: Colors.white,
-                                  ))
-                                : const Text(
-                                    'Envoyer',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                        fontFamily: 'WickedGrit',
+                      )),
                 ),
-                Expanded(
-                  child: SizedBox(
-                    width: 200,
-                    height: 200,
-                    child: GoogleMap(
-                      onMapCreated: _onMapCreated,
-                      scrollGesturesEnabled: false,
-                      initialCameraPosition: CameraPosition(
-                        target: _center,
-                        zoom: 16.0,
-                      ),
-                      onTap: (LatLng latLng) {
-
-                      },
+                const SizedBox(
+                  height: 10,
+                ),
+                SvgPicture.asset('assets/icons/mail_sent.svg',
+                    height: ResponsiveValue<double>(
+                      context,
+                      defaultValue: 100,
+                      conditionalValues: [
+                        const Condition<double>.largerThan(
+                            name: MOBILE, value: 150)
+                      ],
+                    ).value),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+                  child: Text(
+                    'Message envoyé avec succès !'.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: ResponsiveValue<double>(
+                        context,
+                        defaultValue: 16,
+                        conditionalValues: [
+                          const Condition<double>.largerThan(
+                              name: MOBILE, value: 24)
+                        ],
+                      ).value,
                     ),
                   ),
                 ),
               ],
             );
-          },
-        ),
+          }
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 24, horizontal: 16),
+                        child: Text('Contactez-nous !'.toUpperCase(),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: ResponsiveValue<double>(
+                                context,
+                                defaultValue: 28,
+                                conditionalValues: [
+                                  const Condition<double>.largerThan(
+                                      name: MOBILE, value: 38)
+                                ],
+                              ).value,
+                              fontFamily: 'WickedGrit',
+                            )),
+                      ),
+                      TextFormFieldContact(
+                        _nameController,
+                        'Entrez votre nom',
+                        'Nom',
+                        (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Veuillez entrer votre nom';
+                          }
+                          return null;
+                        },
+                        maxLines: 1,
+                      ),
+                      TextFormFieldContact(
+                        _mailController,
+                        'Entrez votre mail',
+                        'Mail',
+                        (value) {
+                          if (value == null || !value.isValidEmail()) {
+                            return 'Veuillez entrer votre mail';
+                          }
+                          return null;
+                        },
+                        maxLines: 1,
+                      ),
+                      //DropdownTextFieldContact(),
+                      SizedBox(
+                        height: 200,
+                        child: TextFormFieldContact(
+                          _messageController,
+                          'Écrivez ici votre message',
+                          'Message',
+                          (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Veuillez entrer un message';
+                            }
+                            return null;
+                          },
+                          maxLines: 10,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(150, 50),
+                            backgroundColor: Colors.brown,
+                            disabledBackgroundColor: Colors.brown,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
+                          ),
+                          onPressed: provider.isLoading
+                              ? null
+                              : () async {
+                                  if (_formKey.currentState!.validate()) {
+                                    contactProvider.sendMail(
+                                      _nameController.text,
+                                      _mailController.text,
+                                      _messageController.text,
+                                      () {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          const SnackBar(
+                                            content: Text(
+                                                'Erreur lors de l\'envoi du message !'),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  }
+                                },
+                          child: provider.isLoading
+                              ? const Center(
+                                  child: CircularProgressIndicator(
+                                  color: Colors.white,
+                                ))
+                              : const Text(
+                                  'Envoyer',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
-  }
-
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
   }
 }

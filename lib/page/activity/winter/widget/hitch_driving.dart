@@ -119,7 +119,6 @@ class HitchDriving extends StatelessWidget {
                         const SizedBox(
                           height: 24,
                         ),
-
                         const Text.rich(
                           TextSpan(
                             style: TextStyle(
@@ -160,7 +159,7 @@ class HitchDriving extends StatelessWidget {
                                   text:
                                       "Accompagné d’un musher professionnel pour vous encadrer durant votre pratique, et par petit groupe de 6 personnes maximum, vous apprendrez à"),
                               TextSpan(
-                                text: " diriger et contrôler votre traîneau ",
+                                text: " diriger et contrôler votre traineau ",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(text: "ainsi que "),

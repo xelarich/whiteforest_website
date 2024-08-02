@@ -111,7 +111,7 @@ final GoRouter _router = GoRouter(
       path: ContactPage.routeName,
       pageBuilder: (BuildContext context, GoRouterState state) =>
           buildPageWithDefaultTransition(
-              context: context, state: state, child: ContactPage()),
+              context: context, state: state, child: const ContactPage()),
     ),
     GoRoute(
       path: SalesConditionPage.routeName,

@@ -39,7 +39,7 @@ class ActivityPart extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 48, vertical: 16),
           child: Text(
-            'Nos activités estivals :',
+            'Nos activités estivales :',
             style: TextStyle(fontSize: 28, fontFamily: 'Roboto'),
             textAlign: TextAlign.start,
           ),
@@ -54,7 +54,7 @@ class ActivityPart extends StatelessWidget {
             FlexWidget(
               child: CardHome(
                 'Cani-randonnée',
-                "Randonnée à pied, tracté par un chien de traîneau à l’aide d’une ceinture et d’une ligne conçue spécialement pour l’activité !",
+                "Randonnée à pied, tracté par un chien de traineau à l’aide d’une ceinture et d’une ligne conçue spécialement pour l’activité !",
                 'assets/images/summer/${getPathImage(context)}cani_rando.webp',
                 onTap: () {
                   context.go(
@@ -150,7 +150,7 @@ class ActivityPart extends StatelessWidget {
             FlexWidget(
               child: CardHome(
                 'Cani-raquette nocturne',
-                "Le mardi soir ou le jeudi soir, venez découvrir la cani-raquette ! Équipé d’une ceinture et relié à un chien de traîneau, cette randonnée vous laissera un agréable souvenir",
+                "Le mardi soir ou le jeudi soir, venez découvrir la cani-raquette ! Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera un agréable souvenir",
                 'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
                 onTap: () {
                   context.go(

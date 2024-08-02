@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whiteforest_website/component/footer/widget/action_text.dart';
+import 'package:whiteforest_website/shared/action_text.dart';
 
 class CardHome extends StatelessWidget {
   final String title;

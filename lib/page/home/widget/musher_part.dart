@@ -52,7 +52,7 @@ class MusherPart extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.all(16.0),
                         child: Text(
-                          'Meleanne',
+                          'Méléanne',
                           style: TextStyle(fontSize: 24),
                         ),
                       ),

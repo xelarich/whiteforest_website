@@ -88,15 +88,15 @@ class SalesConditionPage extends StatelessWidget {
                     header: true,
                   ),
                   _TextSalesCondition(
-                    "L’activité traîneau à chiens se déroule dans un environnement particulier au caractère spécifique et aléatoire."
+                    "L’activité traineau à chiens se déroule dans un environnement particulier au caractère spécifique et aléatoire."
                     "La pratique de cette activité impose donc au client de veiller à sa propre sécurité et au strict respect des consignes.\n"
                     "L'encadrant veillera quant à lui à l’obligation de moyens qui lui est faite.\n"
-                    "L’activité baptême comprend sur le créneau horaire imparti : la présentation des chiens,"
+                    "L’activité baptême comprend sur le créneau horaire imparti : la présentation des chiens, "
                     "la mise à l’attelage, les arrêts nécessaires à la gestion de problèmes techniques ou à la prise de photos,"
                     "la sortie proprement dite et le débriefing.\n"
                     "L’activité conduite d’attelage comprend sur le créneau horaire imparti :"
                     " le briefing initial (démonstration des savoir-faire technique inhérent à la pratique), l’équipement des pratiquants, "
-                    "les arrêts techniques liés au bon déroulement d’une séance pédagogique,la séance proprement dite et le débriefing.\n"
+                    "les arrêts techniques liés au bon déroulement d’une séance pédagogique, la séance proprement dite et le débriefing.\n"
                     "Pour des raisons de sécurité ou de contrôle sur le travail des chiens, nos activités pourront être filmées.",
                   ),
                   _TextSalesCondition(
@@ -107,28 +107,28 @@ class SalesConditionPage extends StatelessWidget {
                     "Nos activités démarrent à l’heure prévue lors du rendez-vous, merci de prendre vos dispositions de façon à être ponctuel,"
                     " tout retard amputerait la durée de l’activité du temps de retard. "
                     "Les prestations étant collectives un retard supérieur à 10 minutes notamment en conduite d’attelage ou "
-                    "Baby ou 15 minutes sur le baptême entraîne le démarrage de l’activité sans vous et donc l’annulation de votre fait.",
+                    "15 minutes sur le baptême entraîne le démarrage de l’activité sans vous et donc l’annulation de votre fait.",
                   ),
                   _TextSalesCondition(
                     "Article 6 : Annulation",
                     header: true,
                   ),
                   _TextSalesCondition(
-                    "En cas d’annulation de notre part, un report de la séance vous sera proposé, s’il ne vous"
-                    "convient pas, votre prestation vous sera remboursée sans pouvoir prétendre à aucune"
-                    "autre indemnité. L’annulation pour des phénomènes météorologiques entraînant des"
-                    "risques objectifs pour la pratique, du fait de la fermeture des routes d’accès par les"
-                    "organismes gestionnaires ou du fait de décisions administratives entraînant la"
-                    "suspension nécessaire de l’activité, seront considérées pour votre réservation comme"
-                    "un cas de force majeure indépendant de votre et de notre volonté qui entrainera un"
+                    "En cas d’annulation de notre part, un report de la séance vous sera proposé, s’il ne vous "
+                    "convient pas, votre prestation vous sera remboursée sans pouvoir prétendre à aucune "
+                    "autre indemnité. L’annulation pour des phénomènes météorologiques entraînant des "
+                    "risques objectifs pour la pratique, du fait de la fermeture des routes d’accès par les "
+                    "organismes gestionnaires ou du fait de décisions administratives entraînant la "
+                    "suspension nécessaire de l’activité, seront considérées pour votre réservation comme "
+                    "un cas de force majeure indépendant de votre et de notre volonté qui entrainera un "
                     "remboursement sans pouvoir prétendre à aucune autre indemnité.\n"
-                    "En cas d’annulation de votre part ou de votre fait, en dehors de raisons médicales"
-                    "certifiées, la prestation ne vous sera pas remboursée. La météo ou les conditions de"
-                    "circulation en dehors de la fermeture des routes d’accès par les organismes"
-                    "gestionnaires ne sont pas des causes d’annulation valables, toute activité hivernale"
+                    "En cas d’annulation de votre part ou de votre fait, en dehors de raisons médicales "
+                    "certifiées, la prestation ne vous sera pas remboursée. La météo ou les conditions de "
+                    "circulation en dehors de la fermeture des routes d’accès par les organismes "
+                    "gestionnaires ne sont pas des causes d’annulation valables, toute activité hivernale "
                     "entraîne la circulation sur routes potentiellement enneigées.\n"
-                    "Un remboursement pourra être effectué pour raison médicale sur présentation d’un"
-                    "certificat médical établi le jour même de l’activité ou dans les jours précédents l’activité,"
+                    "Un remboursement pourra être effectué pour raison médicale sur présentation d’un "
+                    "certificat médical établi le jour même de l’activité ou dans les jours précédents l’activité, "
                     "le prestataire devra pour cela avoir été prévenu en amont de la prestation.",
                   ),
                   _TextSalesCondition(
@@ -136,7 +136,7 @@ class SalesConditionPage extends StatelessWidget {
                     header: true,
                   ),
                   _TextSalesCondition(
-                    "White Forest se réserve le droit d’exclure à tout moment une personne dont le"
+                    "White Forest se réserve le droit d’exclure à tout moment une personne dont le "
                     "comportement est de nature à troubler le déroulement et la sécurité de l’enseignement.\n"
                     "Dans ce cas, le client ne pourra prétendre à aucun remboursement.",
                   ),
@@ -147,7 +147,7 @@ class SalesConditionPage extends StatelessWidget {
                   _TextSalesCondition(
                     "– Tenue de ski\n"
                     "– Chaussures imperméables et de type randonnée (éviter les après-ski trop lourds ou trop encombrants)\n"
-                    "– Pour la conduite d’attelage : tenue technique adaptée à un sport d’hiver et bottes de neige (type bottes de"
+                    "– Pour la conduite d’attelage : tenue technique adaptée à un sport d’hiver et bottes de neige (type bottes de "
                     "montagne) ou chaussures de randonnées + guêtres\n"
                     "– Paire de chaussettes chaudes\n"
                     "– Bonnet, gants\n"

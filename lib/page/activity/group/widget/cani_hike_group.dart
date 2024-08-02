@@ -122,7 +122,7 @@ class CaniHikeGroup extends StatelessWidget {
                             ),
                             TextSpan(
                                 text:
-                                    ", tracté par un chien de traîneau à l’aide "
+                                    ", tracté par un chien de traineau à l’aide "
                                     "d’une ceinture et d’une ligne "
                                     "conçue spécialement pour l’activité !\n"),
                             TextSpan(
@@ -172,8 +172,8 @@ class CaniHikeGroup extends StatelessWidget {
                               color: Colors.brown.shade200,
                             )),
                         child: const Text(
-                          "25€/ Adultes\n"
-                          "19€/ Enfants de -12ans",
+                          "25€/ Adulte\n"
+                          "19€/ Enfant de -12ans",
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold,

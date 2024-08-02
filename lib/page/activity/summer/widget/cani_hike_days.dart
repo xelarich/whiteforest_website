@@ -149,7 +149,7 @@ class CaniHikeDays extends StatelessWidget {
                                   text:
                                       ", entre terre d’alpage, rivière, et roche. "
                                       "Laissez vous guider par ces trois géants de pierre pour une randonnée d’environ "
-                                      "3H.\n"),
+                                      "3 heures.\n"),
                               TextSpan(
                                 text: "Chiens et humains ",
                                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -162,7 +162,7 @@ class CaniHikeDays extends StatelessWidget {
                               ),
                               TextSpan(
                                   text:
-                                      "ou Patricia nous recevra pour un repas savoyard et une nuit en refuge. "),
+                                      "où Patricia nous recevra pour un repas savoyard et une nuit en refuge. "),
                               TextSpan(
                                 text: "Histoire, partage, et vue imprenable ",
                                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -191,7 +191,7 @@ class CaniHikeDays extends StatelessWidget {
                                 color: Colors.brown.shade200,
                               )),
                           child: const Text(
-                            "200€/ Personnes",
+                            "200€/ Personne",
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,

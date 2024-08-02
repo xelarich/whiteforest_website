@@ -31,8 +31,14 @@ class _TextFormFieldContactState extends State<TextFormFieldContact> {
         ),
         decoration: InputDecoration(
           labelText: widget.labelText,
-          labelStyle: TextStyle(color: Colors.grey.shade700),
+          labelStyle: TextStyle(
+            color: Colors.grey.shade700,
+            fontFamily: 'Roboto',
+          ),
           hintText: widget.hintText,
+          hintStyle: const TextStyle(
+            fontFamily: 'Roboto',
+          ),
           fillColor: Colors.white,
           alignLabelWithHint: true,
           focusedBorder: OutlineInputBorder(

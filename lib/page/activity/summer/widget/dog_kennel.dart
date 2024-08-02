@@ -128,7 +128,7 @@ class DogKennel extends StatelessWidget {
                             children: [
                               TextSpan(
                                   text:
-                                      "Un endroit conçu pour nos partenaires canin, environ 1h00 avec plus ou moins "),
+                                      "Un endroit conçu pour nos partenaires canins, environ 1 heure avec plus ou moins "),
                               TextSpan(
                                 text: "80 loulous ",
                                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -172,8 +172,8 @@ class DogKennel extends StatelessWidget {
                                 color: Colors.brown.shade200,
                               )),
                           child: const Text(
-                            "15€/ Adultes\n"
-                            "10€/ Enfants de -12ans",
+                            "15€/ Adulte\n"
+                            "10€/ Enfant de -12ans",
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,

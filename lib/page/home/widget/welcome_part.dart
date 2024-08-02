@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class WelcomePart extends StatelessWidget {
@@ -32,8 +34,8 @@ class WelcomePart extends StatelessWidget {
                   "Située en Savoie, dans la vallée de la Maurienne au plus près de Foncouverte La Toussuire.\n"
                   "White Forest vous offre la possibilité de vivre une expérience unique avec nos chiens de traineau !\n"
                   "Pour tous les âges, activité plus ou moins physique, ou simplement une visite du chenil !\n"
-                  "En été comme en hiver et même au printemps ou en automne venez rencontrer nos merveilleux compagnons de vie.\n"
-                  "Sur la neige ou sur terre, Mel et son équipe vous accompagneront pour un moment inoubliable.",
+                  "En été, en hiver, et même au printemps ou en automne venez rencontrer nos merveilleux compagnons de vie.\n"
+                  "Sur la neige ou sur terre, Méléanne et son équipe vous accompagneront pour un moment inoubliable.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 20,

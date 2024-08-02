@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:whiteforest_website/component/footer/widget/action_text.dart';
+import 'package:whiteforest_website/shared/action_text.dart';
 import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
 
 class Condition extends StatelessWidget {

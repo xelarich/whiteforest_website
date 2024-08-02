@@ -141,7 +141,7 @@ class SleighBaptism extends StatelessWidget {
                               ),
                               TextSpan(
                                 text:
-                                    "avec nos chiens d'explication et de sensibilisation sur les chiens nordiques et notre métier.\n",
+                                    "avec nos chiens, d'explication de notre métier et de sensibilisation sur les chiens nordiques.\n",
                               ),
                               TextSpan(
                                   text:
@@ -339,7 +339,7 @@ class SleighBaptism extends StatelessWidget {
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           children: [
                             TextSpan(
-                                text: "ATTENTION : 180kg max par traîneau.\n"
+                                text: "ATTENTION : 180kg max par traineau.\n"
                                     "Accessible au plus grand nombre !\n"),
                             TextSpan(
                                 text: "Interdit aux femmes enceintes ",

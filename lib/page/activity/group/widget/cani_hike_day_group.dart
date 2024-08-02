@@ -128,7 +128,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                             ),
                             TextSpan(text: "en journée!\n"),
                             TextSpan(
-                              text: "Prévoyez votre déjeuné et partons sur ",
+                              text: "Prévoyez votre déjeuner et partons sur ",
                             ),
                             TextSpan(
                                 text: "les sentiers de Montagne.\n",
@@ -162,8 +162,8 @@ class CaniHikeDayGroup extends StatelessWidget {
                               color: Colors.brown.shade200,
                             )),
                         child: const Text(
-                          "45€/ Adultes\n"
-                          "35€/ Enfants de -12ans",
+                          "45€/ Adulte\n"
+                          "35€/ Enfant de -12ans",
                           style: TextStyle(
                             fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold,

@@ -38,13 +38,13 @@ class DogPart extends StatelessWidget {
               Expanded(
                 child: Center(
                   child: Text(
-                    "Venez découvrir nos 80 chiens de traîneaux à travers différentes activités toute l’année !\n"
+                    "Venez découvrir nos 80 chiens de traineau à travers différentes activités toute l’année !\n"
                     "Nos chiens viennent de différents horizons, la plupart ont été abandonnés et quelques-uns sont nés à la maison.\n"
                     "L’objectif est de leur offrir une vie en adéquation avec leurs besoins et leurs envies.\n"
                     "Nous adaptons les chiens aux personnes en fonction de chaque sortie et activités.\n"
-                    "Mel vit avec eux au quotidien, et leur accorde une importante toute particulière.\n"
+                    "Méléanne vit avec eux au quotidien, et leur accorde une importante toute particulière.\n"
                     "Chacun avec sa personnalité contribue à la grande famille de White Forest.\n"
-                    "Vous aurez l’occasion de découvrir différentes races de chiens de traîneaux\n"
+                    "Vous aurez l’occasion de découvrir différentes races de chiens de traineau\n"
                     "Ils seront heureux de vous accompagner durant une canirando, un baptême ou simplement une visite.\n"
                     "Tout ceci dans un cadre magnifique, face aux Aiguilles d’Arves !",
                     textAlign: TextAlign.center,

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:whiteforest_website/shared/utils/launch_contact.dart';
 
-class ContactDetails extends StatelessWidget {
-  const ContactDetails({super.key});
+class SocialNetwork extends StatelessWidget {
+  const SocialNetwork({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class ContactDetails extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
             child: Text(
-              'Nos coordonnées'.toUpperCase(),
+              'Nous suivre'.toUpperCase(),
               style: const TextStyle(
                 fontSize: 20,
                 color: Colors.white,
@@ -23,21 +23,45 @@ class ContactDetails extends StatelessWidget {
             ),
           ),
           const InkWell(
-            onTap: launchPhoneCall,
+            onTap: launchFacebook,
             child: Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: 6,
-              ),
+              padding: EdgeInsets.symmetric(vertical: 6),
               child: Row(
                 children: [
                   Icon(
-                    LineAwesomeIcons.phone_volume_solid,
+                    LineAwesomeIcons.facebook_square,
                     color: Colors.white,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "+33 6 82 75 99 26",
+                      "Facebook",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.bold),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          //Add instagram
+          const InkWell(
+            onTap: launchInstagram,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 6),
+              child: Row(
+                children: [
+                  Icon(
+                    LineAwesomeIcons.instagram,
+                    color: Colors.white,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      "Instagram",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
@@ -50,21 +74,19 @@ class ContactDetails extends StatelessWidget {
             ),
           ),
           const InkWell(
-            onTap: launchMail,
+            onTap: launchTripadvisor,
             child: Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: 6,
-              ),
+              padding: EdgeInsets.symmetric(vertical: 6),
               child: Row(
                 children: [
                   Icon(
-                    LineAwesomeIcons.at_solid,
+                    LineAwesomeIcons.tripadvisor,
                     color: Colors.white,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      "info@whiteforest.fr",
+                      "Tripadvisor",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
@@ -72,36 +94,6 @@ class ContactDetails extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                   )
-                ],
-              ),
-            ),
-          ),
-          const InkWell(
-            onTap: launchMap,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: 6,
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    LineAwesomeIcons.map_marked_alt_solid,
-                    color: Colors.white,
-                  ),
-                  Flexible(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        "Le Hordon 73 300 LA TOUSSUIRE",
-                        maxLines: 2,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

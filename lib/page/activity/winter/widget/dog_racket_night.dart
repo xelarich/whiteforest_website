@@ -116,7 +116,6 @@ class DogRacketNight extends StatelessWidget {
                         const SizedBox(
                           height: 24,
                         ),
-
                         const Text.rich(
                           TextSpan(
                             style: TextStyle(
@@ -139,11 +138,11 @@ class DogRacketNight extends StatelessWidget {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                text: ', venez découvrir la cani-raquette! ',
+                                text: ', venez découvrir la cani-raquette ! ',
                               ),
                               TextSpan(
                                 text:
-                                    'Équipé d’une ceinture et relié à un chien de traîneau, cette randonnée vous laissera ',
+                                    'Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera ',
                               ),
                               TextSpan(
                                 text: "un agréable souvenir.\n",
@@ -169,7 +168,7 @@ class DogRacketNight extends StatelessWidget {
                                       "après un bel effort en cani-raquette, un retour prévu aux alentours de 23h00. "),
                               TextSpan(
                                 text:
-                                    "Avec une dernière papouille à votre fidèle compagnon!\n",
+                                    "Avec une dernière papouille à votre fidèle compagnon !\n",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ],
