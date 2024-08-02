@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class TextFormFieldContact extends StatefulWidget {
   const TextFormFieldContact(
-      this.controller, this.hintText, this.labelText, this.validator,
-      {this.maxLines, super.key});
+    this.controller,
+    this.hintText,
+    this.labelText,
+    this.validator, {
+    this.maxLines,
+    super.key,
+  });
 
   final TextEditingController controller;
   final String hintText;
@@ -31,8 +36,14 @@ class _TextFormFieldContactState extends State<TextFormFieldContact> {
         ),
         decoration: InputDecoration(
           labelText: widget.labelText,
-          labelStyle: TextStyle(color: Colors.grey.shade700),
+          labelStyle: TextStyle(
+            color: Colors.grey.shade700,
+            fontFamily: 'Roboto',
+          ),
           hintText: widget.hintText,
+          hintStyle: const TextStyle(
+            fontFamily: 'Roboto',
+          ),
           fillColor: Colors.white,
           alignLabelWithHint: true,
           focusedBorder: OutlineInputBorder(

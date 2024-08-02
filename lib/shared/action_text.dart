@@ -8,13 +8,15 @@ class ActionText extends StatefulWidget {
   final String fontFamily;
   final FontWeight fontWeight;
 
-  const ActionText(this.text,
-      {required this.onTap,
-      this.color = Colors.black,
-      this.size = 14,
-      this.fontFamily = 'Roboto',
-      this.fontWeight = FontWeight.normal,
-      super.key});
+  const ActionText(
+    this.text, {
+    required this.onTap,
+    this.color = Colors.black,
+    this.size = 14,
+    this.fontFamily = 'Roboto',
+    this.fontWeight = FontWeight.normal,
+    super.key,
+  });
 
   @override
   State<ActionText> createState() => _ActionTextState();

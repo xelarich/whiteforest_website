@@ -4,16 +4,20 @@ import 'package:whiteforest_website/component/topbar/top_bar_mobile.dart';
 import 'package:whiteforest_website/component/topbar/top_bar_web.dart';
 
 PreferredSizeWidget getTopBar(
-    BuildContext context, GlobalKey<ScaffoldState> key, String routeName) {
+  BuildContext context,
+  GlobalKey<ScaffoldState> key,
+  String routeName,
+) {
   return ResponsiveValue<PreferredSizeWidget>(
     context,
     defaultValue: TopBarMobile(scaffoldKey: key),
     conditionalValues: [
       Condition<PreferredSizeWidget>.largerThan(
-          name: TABLET,
-          value: TopBarWeb(
-            routeName,
-          ))
+        name: TABLET,
+        value: TopBarWeb(
+          routeName,
+        ),
+      ),
     ],
   ).value;
 }

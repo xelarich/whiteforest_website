@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:go_router/go_router.dart';
-import 'package:whiteforest_website/menu.dart';
+import 'package:whiteforest_website/data/models/menu.dart';
 
 class TabText extends StatefulWidget {
   const TabText(
@@ -31,63 +31,69 @@ class TabTextState extends State<TabText> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: InkWell(
-          onTap: () {
-            if (widget.onTap != null) {
-              widget.onTap!();
-            }
-          },
-          onHover: (value) async {
-            setState(() {
-              tabIsHover = value;
-            });
-          },
-          hoverColor: Colors.transparent,
-          focusColor: Colors.transparent,
-          child: _ModalEntry(
-            visible: tabIsHover || menuIsHover,
-            childAnchor: Alignment.topRight,
-            menuAnchor: Alignment.topLeft,
-            menu: MouseRegion(
-              onEnter: (_) {
-                setState(() {
-                  menuIsHover = true;
-                });
-              },
-              onExit: (_) async {
-                await Future.delayed(const Duration(milliseconds: 200));
-                if (!tabIsHover) {
-                  if (mounted) {
-                    setState(() {
-                      menuIsHover = false;
-                    });
-                  }
+        onTap: () {
+          if (widget.onTap != null) {
+            widget.onTap!();
+          }
+        },
+        onHover: (value) async {
+          setState(() {
+            tabIsHover = value;
+          });
+        },
+        hoverColor: Colors.transparent,
+        focusColor: Colors.transparent,
+        child: _ModalEntry(
+          visible: tabIsHover || menuIsHover,
+          childAnchor: Alignment.topRight,
+          menuAnchor: Alignment.topLeft,
+          menu: MouseRegion(
+            onEnter: (_) {
+              setState(() {
+                menuIsHover = true;
+              });
+            },
+            onExit: (_) async {
+              await Future.delayed(const Duration(milliseconds: 200));
+              if (!tabIsHover) {
+                if (mounted) {
+                  setState(() {
+                    menuIsHover = false;
+                  });
                 }
-              },
-              child: Card(
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.zero),
-                elevation: 8,
-                child: Column(mainAxisSize: MainAxisSize.min, children: [
+              }
+            },
+            child: Card(
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.zero,
+              ),
+              elevation: 8,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
                   ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: widget.children.length,
-                      itemBuilder: (context, index) {
-                        return MenuItemButton(
-                          onPressed: () => context.go(
-                            widget.children[index].routeName,
-                          ),
-                          child: Text(widget.children[index].name),
-                        );
-                      }),
-                ]),
+                    shrinkWrap: true,
+                    itemCount: widget.children.length,
+                    itemBuilder: (context, index) {
+                      return MenuItemButton(
+                        onPressed: () => context.go(
+                          widget.children[index].routeName,
+                        ),
+                        child: Text(widget.children[index].name),
+                      );
+                    },
+                  ),
+                ],
               ),
             ),
-            child: _TabTextWidget(
-              widget.name,
-              isSelected: widget.isSelected,
-              isHover: tabIsHover || menuIsHover,
-            ),
-          )),
+          ),
+          child: _TabTextWidget(
+            widget.name,
+            isSelected: widget.isSelected,
+            isHover: tabIsHover || menuIsHover,
+          ),
+        ),
+      ),
     );
   }
 }

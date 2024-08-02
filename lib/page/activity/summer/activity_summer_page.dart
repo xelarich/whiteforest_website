@@ -1,6 +1,5 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart' hide Page, NavigationDrawer;
-import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
@@ -8,7 +7,7 @@ import 'package:whiteforest_website/page/activity/summer/widget/cani_hike.dart';
 import 'package:whiteforest_website/page/activity/summer/widget/cani_hike_days.dart';
 import 'package:whiteforest_website/page/activity/summer/widget/cani_hike_night.dart';
 import 'package:whiteforest_website/page/activity/summer/widget/dog_kennel.dart';
-import 'package:whiteforest_website/page/contact/contact_page.dart';
+import 'package:whiteforest_website/shared/redirection_contact.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
 class ActivitySummerPage extends StatefulWidget {
@@ -38,9 +37,10 @@ class _ActivitySummerPageState extends State<ActivitySummerPage> {
       (_) {
         if (widget.indexAnchor != null) {
           _scrollController.scrollToIndex(
-              index: widget.indexAnchor!,
-              scrollSpeed: 5,
-              curve: Curves.fastOutSlowIn);
+            index: widget.indexAnchor!,
+            scrollSpeed: 5,
+            curve: Curves.fastOutSlowIn,
+          );
         }
       },
     );
@@ -59,20 +59,26 @@ class _ActivitySummerPageState extends State<ActivitySummerPage> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 24, horizontal: 16),
-                    child: Text('Les activités estivales'.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: ResponsiveValue<double>(
-                            context,
-                            defaultValue: 28,
-                            conditionalValues: [
-                              const Condition<double>.largerThan(
-                                  name: MOBILE, value: 38)
-                            ],
-                          ).value,
-                          fontFamily: 'WickedGrit',
-                        )),
+                      vertical: 24,
+                      horizontal: 16,
+                    ),
+                    child: Text(
+                      'Les activités estivales'.toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: ResponsiveValue<double>(
+                          context,
+                          defaultValue: 28,
+                          conditionalValues: [
+                            const Condition<double>.largerThan(
+                              name: MOBILE,
+                              value: 38,
+                            ),
+                          ],
+                        ).value,
+                        fontFamily: 'WickedGrit',
+                      ),
+                    ),
                   ),
                   CaniHikeDays(_scrollController),
                   const SizedBox(
@@ -90,44 +96,7 @@ class _ActivitySummerPageState extends State<ActivitySummerPage> {
                   const SizedBox(
                     height: 64,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Une information ? Un devis ? Une réservation ?",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: ResponsiveValue<double>(
-                              context,
-                              defaultValue: 28,
-                              conditionalValues: [
-                                const Condition<double>.largerThan(
-                                    name: MOBILE, value: 38)
-                              ],
-                            ).value,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              fixedSize: const Size(180, 50),
-                              backgroundColor: Colors.black,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4.0),
-                              ),
-                            ),
-                            onPressed: () => context.go(ContactPage.routeName),
-                            child: const Text(
-                              'Contactez-nous',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  RedirectionContact(),
                   const SizedBox(
                     height: 64,
                   ),

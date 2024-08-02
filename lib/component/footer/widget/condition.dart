@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:whiteforest_website/component/footer/widget/action_text.dart';
 import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
+import 'package:whiteforest_website/shared/action_text.dart';
 
 class Condition extends StatelessWidget {
   const Condition({super.key});
@@ -27,10 +27,12 @@ class Condition extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 6),
             child: ActionText(
               'Conditions général de vente',
-              onTap: () => context.go(SalesConditionPage.routeName),
+              onTap: () => context.go(
+                SalesConditionPage.routeName,
+              ),
               color: Colors.white,
             ),
-          )
+          ),
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:whiteforest_website/menu.dart';
+import 'package:whiteforest_website/data/models/menu.dart';
 import 'package:whiteforest_website/page/activity/group/activity_group_page.dart';
 import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
 import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/component/footer/widget/condition.dart';
 import 'package:whiteforest_website/component/footer/widget/contact_details.dart';
+import 'package:whiteforest_website/component/footer/widget/social_network.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -15,8 +16,13 @@ class Footer extends StatelessWidget {
         alignment: WrapAlignment.center,
         children: [
           FlexWidget(
+            xs: 12,
             sm: 12,
             md: 12,
+            lg: 3,
+            xl: 3,
+            xxl: 3,
+            xxxl: 3,
             child: Padding(
               padding: const EdgeInsets.only(top: 32, bottom: 16),
               child: Container(
@@ -36,14 +42,39 @@ class Footer extends StatelessWidget {
             ),
           ),
           FlexWidget(
-              sm: 12,
-              md: 12,
-              lg: 4,
-              xl: 5,
-              xxl: 5,
-              xxxl: 5,
-              child: const Center(child: ContactDetails())),
-          FlexWidget(sm: 12, md: 12, child: const Condition()),
+            xs: 12,
+            sm: 12,
+            md: 12,
+            lg: 3,
+            xl: 3,
+            xxl: 3,
+            xxxl: 3,
+            child: const Center(
+              child: ContactDetails(),
+            ),
+          ),
+          FlexWidget(
+            xs: 12,
+            sm: 12,
+            md: 12,
+            lg: 2,
+            xl: 2,
+            xxl: 2,
+            xxxl: 2,
+            child: const Center(
+              child: SocialNetwork(),
+            ),
+          ),
+          FlexWidget(
+            xs: 12,
+            sm: 12,
+            md: 12,
+            lg: 4,
+            xl: 4,
+            xxl: 4,
+            xxxl: 4,
+            child: const Condition(),
+          ),
         ],
       ),
     );

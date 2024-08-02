@@ -30,28 +30,32 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
         children: [
           Positioned.fill(
             child: Align(
-                alignment: Alignment.center,
-                child: CarouselSlider(
-                  items: [
-                    HeaderImage(
-                        'assets/images/header/${getPathImage(context)}header_winter.webp'),
-                    HeaderImage(
-                        'assets/images/header/${getPathImage(context)}header_summer.webp'),
-                  ],
-                  carouselController: _controller,
-                  options: CarouselOptions(
-                      autoPlay: true,
-                      autoPlayInterval: const Duration(seconds: 10),
-                      autoPlayAnimationDuration: const Duration(seconds: 2),
-                      viewportFraction: 1,
-                      height: screenSize.height,
-                      scrollPhysics: const NeverScrollableScrollPhysics(),
-                      onPageChanged: (index, _) {
-                        setState(() {
-                          imageIndex = index;
-                        });
-                      }),
-                )),
+              alignment: Alignment.center,
+              child: CarouselSlider(
+                items: [
+                  HeaderImage(
+                    'assets/images/header/${getPathImage(context)}header_winter.webp',
+                  ),
+                  HeaderImage(
+                    'assets/images/header/${getPathImage(context)}header_summer.webp',
+                  ),
+                ],
+                carouselController: _controller,
+                options: CarouselOptions(
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 10),
+                  autoPlayAnimationDuration: const Duration(seconds: 2),
+                  viewportFraction: 1,
+                  height: screenSize.height,
+                  scrollPhysics: const NeverScrollableScrollPhysics(),
+                  onPageChanged: (index, _) {
+                    setState(() {
+                      imageIndex = index;
+                    });
+                  },
+                ),
+              ),
+            ),
           ),
           const Positioned.fill(
             child: Center(
@@ -83,17 +87,20 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
                       width: 12.0,
                       height: 12.0,
                       margin: const EdgeInsets.symmetric(
-                          vertical: 8.0, horizontal: 4.0),
+                        vertical: 8.0,
+                        horizontal: 4.0,
+                      ),
                       decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white
-                              .withOpacity(imageIndex == index ? 0.9 : 0.4)),
+                        shape: BoxShape.circle,
+                        color: Colors.white
+                            .withOpacity(imageIndex == index ? 0.9 : 0.4),
+                      ),
                     ),
                   );
                 },
               ),
             ),
-          )
+          ),
         ],
       ),
     );

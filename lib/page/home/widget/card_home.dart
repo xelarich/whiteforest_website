@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whiteforest_website/component/footer/widget/action_text.dart';
+import 'package:whiteforest_website/shared/action_text.dart';
 
 class CardHome extends StatelessWidget {
   final String title;
@@ -8,8 +8,14 @@ class CardHome extends StatelessWidget {
   final Alignment alignment;
   final Function onTap;
 
-  const CardHome(this.title, this.description, this.imagePath,
-      {required this.onTap, this.alignment = Alignment.center, super.key});
+  const CardHome(
+    this.title,
+    this.description,
+    this.imagePath, {
+    required this.onTap,
+    this.alignment = Alignment.center,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +25,8 @@ class CardHome extends StatelessWidget {
         clipBehavior: Clip.antiAliasWithSaveLayer,
         elevation: 8,
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(16))),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,

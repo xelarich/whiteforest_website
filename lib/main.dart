@@ -1,11 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meta_seo/meta_seo.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/dependency_injection.dart';
 import 'package:whiteforest_website/firebase_options.dart';
@@ -23,15 +21,13 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
-  await remoteConfig.setConfigSettings(RemoteConfigSettings(
-    fetchTimeout: const Duration(seconds: 10),
-    minimumFetchInterval: const Duration(hours: 1),
-  ));
+  await remoteConfig.setConfigSettings(
+    RemoteConfigSettings(
+      fetchTimeout: const Duration(seconds: 10),
+      minimumFetchInterval: const Duration(hours: 1),
+    ),
+  );
   await remoteConfig.fetchAndActivate();
-
-  if (kIsWeb) {
-    MetaSEO().config();
-  }
 
   declareServices();
 
@@ -53,23 +49,28 @@ final GoRouter _router = GoRouter(
   initialLocation: HomePage.routeName,
   routes: <RouteBase>[
     GoRoute(
-        path: HomePage.routeName,
-        pageBuilder: (context, state) {
-          return buildPageWithDefaultTransition(
-              context: context, state: state, child: HomePage());
-        }),
+      path: HomePage.routeName,
+      pageBuilder: (context, state) {
+        return buildPageWithDefaultTransition(
+          context: context,
+          state: state,
+          child: HomePage(),
+        );
+      },
+    ),
     GoRoute(
       path: ActivityWinterPage.routeName,
       pageBuilder: (BuildContext context, GoRouterState state) {
         final Map<String, int>? extra = state.extra as Map<String, int>?;
         return buildPageWithDefaultTransition(
-            context: context,
-            state: state,
-            child: ActivityWinterPage(
-              indexAnchor: extra == null
-                  ? null
-                  : extra[ActivityWinterPage.indexAnchorKey]!,
-            ));
+          context: context,
+          state: state,
+          child: ActivityWinterPage(
+            indexAnchor: extra == null
+                ? null
+                : extra[ActivityWinterPage.indexAnchorKey]!,
+          ),
+        );
       },
     ),
     GoRoute(
@@ -77,13 +78,14 @@ final GoRouter _router = GoRouter(
       pageBuilder: (BuildContext context, GoRouterState state) {
         final Map<String, int>? extra = state.extra as Map<String, int>?;
         return buildPageWithDefaultTransition(
-            context: context,
-            state: state,
-            child: ActivitySummerPage(
-              indexAnchor: extra == null
-                  ? null
-                  : extra[ActivitySummerPage.indexAnchorKey]!,
-            ));
+          context: context,
+          state: state,
+          child: ActivitySummerPage(
+            indexAnchor: extra == null
+                ? null
+                : extra[ActivitySummerPage.indexAnchorKey]!,
+          ),
+        );
       },
     ),
     GoRoute(
@@ -97,27 +99,40 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-        path: TeamPage.routeName,
-        pageBuilder: (BuildContext context, GoRouterState state) =>
-            buildPageWithDefaultTransition(
-                context: context, state: state, child: const TeamPage())),
+      path: TeamPage.routeName,
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          buildPageWithDefaultTransition(
+        context: context,
+        state: state,
+        child: const TeamPage(),
+      ),
+    ),
     GoRoute(
       path: KennelPage.routeName,
       pageBuilder: (BuildContext context, GoRouterState state) =>
           buildPageWithDefaultTransition(
-              context: context, state: state, child: const KennelPage()),
+        context: context,
+        state: state,
+        child: const KennelPage(),
+      ),
     ),
     GoRoute(
       path: ContactPage.routeName,
       pageBuilder: (BuildContext context, GoRouterState state) =>
           buildPageWithDefaultTransition(
-              context: context, state: state, child: ContactPage()),
+        context: context,
+        state: state,
+        child: const ContactPage(),
+      ),
     ),
     GoRoute(
       path: SalesConditionPage.routeName,
       pageBuilder: (BuildContext context, GoRouterState state) =>
           buildPageWithDefaultTransition(
-              context: context, state: state, child: SalesConditionPage()),
+        context: context,
+        state: state,
+        child: SalesConditionPage(),
+      ),
     ),
   ],
 );
@@ -142,8 +157,9 @@ class App extends StatelessWidget {
         theme: ThemeData(
           textTheme: GoogleFonts.carterOneTextTheme(),
           tabBarTheme: TabBarTheme(
-              labelStyle: GoogleFonts.carterOne(),
-              unselectedLabelStyle: GoogleFonts.carterOne()),
+            labelStyle: GoogleFonts.carterOne(),
+            unselectedLabelStyle: GoogleFonts.carterOne(),
+          ),
         ),
         debugShowCheckedModeBanner: false,
         routerConfig: _router,

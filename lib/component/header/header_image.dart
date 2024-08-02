@@ -10,12 +10,13 @@ class HeaderImage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(imagePath),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(
-              Colors.grey.withOpacity(0.7),
-              BlendMode.darken,
-            )),
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            Colors.grey.withOpacity(0.7),
+            BlendMode.darken,
+          ),
+        ),
       ),
     );
   }

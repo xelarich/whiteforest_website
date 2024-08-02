@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class DrawerTile extends StatelessWidget {
-  const DrawerTile(this.title, this.routeSelected,
-      {required this.routeName, super.key});
+  const DrawerTile(
+    this.title,
+    this.routeSelected, {
+    required this.routeName,
+    super.key,
+  });
 
   final String title;
   final String routeSelected;
@@ -18,13 +22,15 @@ class DrawerTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
                 color: Colors.brown.shade200,
-              ))
+              ),
+            )
           : null,
       child: ListTile(
         title: Text(title),
         onTap: () {
-          context.pop();
-          context.go(routeName);
+          context
+            ..pop()
+            ..go(routeName);
         },
         hoverColor: Colors.transparent,
         focusColor: Colors.transparent,

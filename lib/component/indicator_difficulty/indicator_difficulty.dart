@@ -41,9 +41,12 @@ class IndicatorDifficulty extends StatelessWidget {
           width: 8,
         ),
         Text(
-          "Niveau $difficulty/3",
+          'Niveau $difficulty/3',
           style: const TextStyle(
-              fontFamily: 'Roboto', fontSize: 14, fontWeight: FontWeight.w300),
+            fontFamily: 'Roboto',
+            fontSize: 14,
+            fontWeight: FontWeight.w300,
+          ),
         ),
       ],
     );
