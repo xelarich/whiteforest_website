@@ -28,7 +28,6 @@ class _TextFormFieldContactState extends State<TextFormFieldContact> {
       padding: const EdgeInsets.all(8),
       child: TextFormField(
         controller: widget.controller,
-        autovalidateMode: AutovalidateMode.disabled,
         maxLines: widget.maxLines,
         cursorColor: Colors.brown,
         style: const TextStyle(

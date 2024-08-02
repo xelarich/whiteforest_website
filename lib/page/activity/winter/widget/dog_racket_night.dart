@@ -200,7 +200,7 @@ class DogRacketNight extends StatelessWidget {
                               '80€/ personne\n'
                               'Le tarif comprends:\n'
                               'L’activité\n'
-                              'La location du matériels\n'
+                              'La location du matériel\n'
                               'Le repas (apéritif, plat,dessert, café)',
                               style: TextStyle(
                                 fontFamily: 'Roboto',

@@ -39,11 +39,12 @@ class _ContactPageState extends State<ContactPage> {
       appBar: getTopBar(context, _key, ContactPage.routeName),
       key: _key,
       drawer: const DrawerMobile(ContactPage.routeName),
+      resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
-              color: Colors.brown[50],
+              color: Colors.brown[600],
               child: ResponsiveRow(
                 children: [
                   FlexWidget(
@@ -56,7 +57,6 @@ class _ContactPageState extends State<ContactPage> {
                     xxxl: 8,
                     child: Container(
                       color: Colors.white,
-                      height: 525,
                       child: const FormContact(),
                     ),
                   ),
