@@ -3,8 +3,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class CaniHikeDayGroup extends StatelessWidget {
-  const CaniHikeDayGroup({super.key});
+class DogKennelGroup extends StatelessWidget {
+  const DogKennelGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,6 @@ class CaniHikeDayGroup extends StatelessWidget {
             child: ResponsiveRow(
               alignment: WrapAlignment.spaceAround,
               children: [
-                //Image
                 FlexWidget(
                   sm: 12,
                   md: 12,
@@ -30,7 +29,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      'assets/images/summer/${getPathImage(context)}chalet.webp',
+                      'assets/images/summer/${getPathImage(context)}chenil.webp',
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
@@ -67,8 +66,8 @@ class CaniHikeDayGroup extends StatelessWidget {
                                 xxxl: 9,
                                 child: Text.rich(
                                   TextSpan(
-                                    text:
-                                        'Cani-randonnée journée'.toUpperCase(),
+                                    text: 'Immersion musher ou visite du chenil'
+                                        .toUpperCase(),
                                     style: const TextStyle(
                                       fontSize: 28,
                                       fontFamily: 'WickedGrit',
@@ -79,7 +78,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                               ),
                               FlexWidget(
                                 xs: 4,
-                                sm: 3,
+                                sm: 2,
                                 md: 2,
                                 lg: 2,
                                 xl: 2,
@@ -106,7 +105,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                                           size: 18,
                                         ),
                                       ),
-                                      Text('1 journée'),
+                                      Text('1H'),
                                     ],
                                   ),
                                 ),
@@ -126,29 +125,27 @@ class CaniHikeDayGroup extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text:
-                                    "Basé sur la même pratique qu'à la demi-journée ",
+                                    'Durant 1 heure, au chenil à La Toussuire ou ',
                               ),
                               TextSpan(
-                                text: 'MAIS ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(text: 'en journée!\n'),
-                              TextSpan(
-                                text: 'Prévoyez votre déjeuner et partons sur ',
-                              ),
-                              TextSpan(
-                                text: 'les sentiers de Montagne.\n',
+                                text: 'sur votre station, ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                text: 'Explication sur le métier de ',
+                                text:
+                                    'écoutez et découvrez le métier de musher !\n',
                               ),
                               TextSpan(
-                                text: 'musher ',
+                                text:
+                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment sont ils entraînaient ?\n",
+                              ),
+                              TextSpan(
+                                text:
+                                    'Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ',
+                              ),
+                              TextSpan(
+                                text: 'sa passion.\n',
                                 style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(
-                                text: 'entre midi et deux !\n',
                               ),
                             ],
                           ),
@@ -171,8 +168,8 @@ class CaniHikeDayGroup extends StatelessWidget {
                             ),
                           ),
                           child: const Text(
-                            '45€/ Adulte\n'
-                            '35€/ Enfant de -12ans',
+                            '15€/ Adulte\n'
+                            '10€/ Enfant de -12ans',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,
@@ -200,7 +197,6 @@ class CaniHikeDayGroup extends StatelessWidget {
               ),
             ),
             child: ResponsiveRow(
-              alignment: WrapAlignment.spaceBetween,
               crossAxisAlignment: WrapCrossAlignment.start,
               children: [
                 FlexWidget(
@@ -230,10 +226,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                         padding: EdgeInsets.only(left: 28.0),
                         child: Text(
                           'La Toussuire\n'
-                          'Le Corbier\n'
-                          'Saint-Sorlin d’Arves\n'
-                          'Saint Jean d’Arves\n'
-                          'Albiez-Montrond.\n',
+                          '',
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                         ),
                       ),
@@ -276,21 +269,14 @@ class CaniHikeDayGroup extends StatelessWidget {
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                             children: [
-                              TextSpan(text: 'Équipement : '),
+                              TextSpan(text: 'Équipement: '),
                               TextSpan(
-                                text: 'Tenue de randonnée ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(
-                                text: '(chaussure de randonnée obligatoire), ',
-                              ),
-                              TextSpan(
-                                text: 'imperméable',
+                                text: 'Vêtements confortables ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    ', affaire chaude pour le soir, sac à dos, bouteille d’eau.',
+                                    'qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau.',
                               ),
                             ],
                           ),

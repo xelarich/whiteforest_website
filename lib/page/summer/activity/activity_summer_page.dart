@@ -3,10 +3,10 @@ import 'package:flutter/material.dart' hide Page, NavigationDrawer;
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
-import 'package:whiteforest_website/page/activity/summer/widget/cani_hike.dart';
-import 'package:whiteforest_website/page/activity/summer/widget/cani_hike_days.dart';
-import 'package:whiteforest_website/page/activity/summer/widget/cani_hike_night.dart';
-import 'package:whiteforest_website/page/activity/summer/widget/dog_kennel.dart';
+import 'package:whiteforest_website/page/summer/activity/widget/cani_hike.dart';
+import 'package:whiteforest_website/page/summer/activity/widget/cani_hike_days.dart';
+import 'package:whiteforest_website/page/summer/activity/widget/cani_hike_night.dart';
+import 'package:whiteforest_website/page/summer/activity/widget/dog_kennel.dart';
 import 'package:whiteforest_website/shared/redirection_contact.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 

@@ -2,9 +2,9 @@ import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart' hide Page, NavigationDrawer;
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
-import 'package:whiteforest_website/page/activity/winter/widget/dog_racket_night.dart';
-import 'package:whiteforest_website/page/activity/winter/widget/hitch_driving.dart';
-import 'package:whiteforest_website/page/activity/winter/widget/sleigh_baptism.dart';
+import 'package:whiteforest_website/page/winter/activity/widget/dog_racket_night.dart';
+import 'package:whiteforest_website/page/winter/activity/widget/hitch_driving.dart';
+import 'package:whiteforest_website/page/winter/activity/widget/sleigh_baptism.dart';
 import 'package:whiteforest_website/shared/redirection_contact.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 

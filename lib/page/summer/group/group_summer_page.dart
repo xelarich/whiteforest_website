@@ -3,23 +3,24 @@ import 'package:flutter/material.dart' hide Page, NavigationDrawer;
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
-import 'package:whiteforest_website/page/activity/group/widget/cani_hike_day_group.dart';
-import 'package:whiteforest_website/page/activity/group/widget/cani_hike_group.dart';
-import 'package:whiteforest_website/page/activity/group/widget/dog_kennel_group.dart';
+import 'package:whiteforest_website/page/summer/group/widget/cani_hike_day_group.dart';
+import 'package:whiteforest_website/page/summer/group/widget/cani_hike_group.dart';
+import 'package:whiteforest_website/page/summer/group/widget/dog_kennel_group.dart';
 import 'package:whiteforest_website/shared/redirection_contact.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class ActivityGroupPage extends StatefulWidget {
-  static const routeName = '/activityGroup';
+class GroupSummerPage extends StatefulWidget {
+  static const routeName = '/groupSummer';
   static const indexAnchorKey = 'indexAnchorKey';
 
-  const ActivityGroupPage({super.key});
+  const GroupSummerPage({super.key});
 
   @override
-  State<ActivityGroupPage> createState() => _ActivityGroupPageState();
+  State<GroupSummerPage> createState() =>
+      _GroupSummerPageState();
 }
 
-class _ActivityGroupPageState extends State<ActivityGroupPage> {
+class _GroupSummerPageState extends State<GroupSummerPage> {
   late final AnchorScrollController _scrollController;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -32,9 +33,9 @@ class _ActivityGroupPageState extends State<ActivityGroupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getTopBar(context, _key, ActivityGroupPage.routeName),
+      appBar: getTopBar(context, _key, GroupSummerPage.routeName),
       key: _key,
-      drawer: const DrawerMobile(ActivityGroupPage.routeName),
+      drawer: const DrawerMobile(GroupSummerPage.routeName),
       backgroundColor: Colors.brown.shade50,
       body: Column(
         children: [

@@ -1,12 +1,11 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:responsive/flex_widget.dart';
-import 'package:responsive/responsive_row.dart';
+import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class SleighBaptism extends StatelessWidget {
-  const SleighBaptism(this._scrollController, {super.key});
+class DogKennel extends StatelessWidget {
+  const DogKennel(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -14,7 +13,7 @@ class SleighBaptism extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnchorItemWrapper(
       controller: _scrollController,
-      index: 0,
+      index: 3,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -36,7 +35,7 @@ class SleighBaptism extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/winter/${getPathImage(context)}bapteme_traineau.webp',
+                        'assets/images/summer/${getPathImage(context)}chenil.webp',
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
@@ -51,7 +50,7 @@ class SleighBaptism extends StatelessWidget {
                     xxl: 6,
                     xxxl: 6,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
@@ -71,18 +70,20 @@ class SleighBaptism extends StatelessWidget {
                                   xl: 9,
                                   xxl: 9,
                                   xxxl: 9,
-                                  child: Text(
-                                    'Bapteme traineau'.toUpperCase(),
-                                    maxLines: 2,
-                                    style: const TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'WickedGrit',
+                                  child: Text.rich(
+                                    TextSpan(
+                                      text: 'Visite du chenil'.toUpperCase(),
+                                      style: const TextStyle(
+                                        fontSize: 28,
+                                        fontFamily: 'WickedGrit',
+                                      ),
                                     ),
+                                    maxLines: 2,
                                   ),
                                 ),
                                 FlexWidget(
-                                  xs: 5,
-                                  sm: 3,
+                                  xs: 4,
+                                  sm: 2,
                                   md: 2,
                                   lg: 2,
                                   xl: 2,
@@ -110,7 +111,7 @@ class SleighBaptism extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('30 Min à 1 H'),
+                                        Text('1H'),
                                       ],
                                     ),
                                   ),
@@ -129,51 +130,38 @@ class SleighBaptism extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
-                                  text: 'Assis dans le traineau, ',
+                                  text:
+                                      'Un endroit conçu pour nos partenaires canins, environ 1 heure avec plus ou moins ',
                                 ),
                                 TextSpan(
-                                  text: 'guidé par 10 chiens et leur musher',
+                                  text: '80 loulous ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text: ', venez vivre ',
+                                  text: 'demandeurs de câlin et d’attention.\n',
+                                ),
+                                TextSpan(text: 'Des mushers '),
+                                TextSpan(
+                                  text: 'passionnés ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text: 'un moment de partage ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  text: 'prêt à vous expliquer leur travail, '
+                                      'leur passion et la vie de leurs chiens.\n',
                                 ),
                                 TextSpan(
                                   text:
-                                      "avec nos chiens, d'explication de notre métier et de sensibilisation sur les chiens nordiques.\n",
+                                      "Apprenez en plus sur le métier de musher, sur l’éducation, l'entraînement et ",
                                 ),
                                 TextSpan(
-                                  text:
-                                      'Profitez des différents paysages sur des pistes variées et ensoleillées. ',
-                                ),
-                                TextSpan(text: 'Nous serons ravis de '),
-                                TextSpan(
-                                  text: 'partager durant 30 minutes ',
+                                  text: 'les différents aspects ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                TextSpan(text: 'ou '),
-                                TextSpan(
-                                  text: '1 heure une expérience inoubliable ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'et unique dans nos montagnes !\n',
-                                ),
-                                TextSpan(
-                                  text: 'Activité familiale par excellence !',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
+                                TextSpan(text: 'de notre métier.\n'),
                               ],
                             ),
                             textAlign: TextAlign.start,
                             maxLines: 15,
-                          ),
-                          const SizedBox(
-                            height: 32,
                           ),
                           const Text(
                             'Les tarifs :',
@@ -182,81 +170,23 @@ class SleighBaptism extends StatelessWidget {
                           const SizedBox(
                             height: 16,
                           ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ResponsiveRow(
-                              alignment: WrapAlignment.spaceBetween,
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              children: [
-                                FlexWidget(
-                                  xs: 12,
-                                  sm: 5,
-                                  md: 5,
-                                  lg: 5,
-                                  xl: 5,
-                                  xxl: 5,
-                                  xxxl: 5,
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.brown.shade200,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      '30 min : 110€\n'
-                                      'Traineau pour 1 à 2 personnes\n'
-                                      'Supplément / personne\n'
-                                      'Enfant (2 ans à 6 ans) : 20€\n'
-                                      'Jeune (7 à 12 ans) : 40€\n'
-                                      'Adulte : 55€',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.bold,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                FlexWidget(
-                                  xs: 12,
-                                  sm: 5,
-                                  md: 5,
-                                  lg: 5,
-                                  xl: 5,
-                                  xxl: 5,
-                                  xxxl: 5,
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.brown.shade200,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      '1H : 155€\n'
-                                      'Traineau pour 1 à 2 personnes\n'
-                                      'Supplément / personne\n'
-                                      'Enfant (2 ans à 6 ans) : 40€\n'
-                                      'Jeune (7 à 12 ans) : 60€\n'
-                                      'Adulte : 75€',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.bold,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                          Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Colors.brown.shade200,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 32,
+                            child: const Text(
+                              '15€/ Adulte\n'
+                              '10€/ Enfant de -12ans',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
+                                height: 1.4,
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -278,7 +208,6 @@ class SleighBaptism extends StatelessWidget {
                 ),
               ),
               child: ResponsiveRow(
-                alignment: WrapAlignment.spaceBetween,
                 crossAxisAlignment: WrapCrossAlignment.start,
                 children: [
                   FlexWidget(
@@ -307,7 +236,7 @@ class SleighBaptism extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
                           child: Text(
-                            "La Toussuire, Saint-Sorlin d'Arves, Albiez-Montrond, Saint Jean d'Arves (uniquement 30 min)",
+                            'La Toussuire\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
@@ -351,30 +280,14 @@ class SleighBaptism extends StatelessWidget {
                               style:
                                   TextStyle(fontFamily: 'Roboto', fontSize: 16),
                               children: [
+                                TextSpan(text: 'Équipement: '),
                                 TextSpan(
-                                  text: 'ATTENTION : 180kg max par traineau.\n'
-                                      'Accessible au plus grand nombre !\n',
-                                ),
-                                TextSpan(
-                                  text: 'Interdit aux femmes enceintes ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: 'et '),
-                                TextSpan(
-                                  text:
-                                      'déconseillés aux personnes fragiles du dos.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'Équipement : ',
-                                ),
-                                TextSpan(
-                                  text: 'Tenue chaude ',
+                                  text: 'Vêtements confortables ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      '(vêtements de ski, après ski, écharpe, gant)',
+                                      'qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau.',
                                 ),
                               ],
                             ),

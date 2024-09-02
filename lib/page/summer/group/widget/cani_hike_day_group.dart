@@ -3,8 +3,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class DogKennelGroup extends StatelessWidget {
-  const DogKennelGroup({super.key});
+class CaniHikeDayGroup extends StatelessWidget {
+  const CaniHikeDayGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,7 @@ class DogKennelGroup extends StatelessWidget {
             child: ResponsiveRow(
               alignment: WrapAlignment.spaceAround,
               children: [
+                //Image
                 FlexWidget(
                   sm: 12,
                   md: 12,
@@ -29,7 +30,7 @@ class DogKennelGroup extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      'assets/images/summer/${getPathImage(context)}chenil.webp',
+                      'assets/images/summer/${getPathImage(context)}chalet.webp',
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
@@ -66,8 +67,8 @@ class DogKennelGroup extends StatelessWidget {
                                 xxxl: 9,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'Immersion musher ou visite du chenil'
-                                        .toUpperCase(),
+                                    text:
+                                        'Cani-randonnée journée'.toUpperCase(),
                                     style: const TextStyle(
                                       fontSize: 28,
                                       fontFamily: 'WickedGrit',
@@ -78,7 +79,7 @@ class DogKennelGroup extends StatelessWidget {
                               ),
                               FlexWidget(
                                 xs: 4,
-                                sm: 2,
+                                sm: 3,
                                 md: 2,
                                 lg: 2,
                                 xl: 2,
@@ -105,7 +106,7 @@ class DogKennelGroup extends StatelessWidget {
                                           size: 18,
                                         ),
                                       ),
-                                      Text('1H'),
+                                      Text('1 journée'),
                                     ],
                                   ),
                                 ),
@@ -125,27 +126,29 @@ class DogKennelGroup extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text:
-                                    'Durant 1 heure, au chenil à La Toussuire ou ',
+                                    "Basé sur la même pratique qu'à la demi-journée ",
                               ),
                               TextSpan(
-                                text: 'sur votre station, ',
+                                text: 'MAIS ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(text: 'en journée!\n'),
+                              TextSpan(
+                                text: 'Prévoyez votre déjeuner et partons sur ',
+                              ),
+                              TextSpan(
+                                text: 'les sentiers de Montagne.\n',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                text:
-                                    'écoutez et découvrez le métier de musher !\n',
+                                text: 'Explication sur le métier de ',
                               ),
                               TextSpan(
-                                text:
-                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment sont ils entraînaient ?\n",
-                              ),
-                              TextSpan(
-                                text:
-                                    'Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ',
-                              ),
-                              TextSpan(
-                                text: 'sa passion.\n',
+                                text: 'musher ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'entre midi et deux !\n',
                               ),
                             ],
                           ),
@@ -168,8 +171,8 @@ class DogKennelGroup extends StatelessWidget {
                             ),
                           ),
                           child: const Text(
-                            '15€/ Adulte\n'
-                            '10€/ Enfant de -12ans',
+                            '45€/ Adulte\n'
+                            '35€/ Enfant de -12ans',
                             style: TextStyle(
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,
@@ -197,6 +200,7 @@ class DogKennelGroup extends StatelessWidget {
               ),
             ),
             child: ResponsiveRow(
+              alignment: WrapAlignment.spaceBetween,
               crossAxisAlignment: WrapCrossAlignment.start,
               children: [
                 FlexWidget(
@@ -226,7 +230,10 @@ class DogKennelGroup extends StatelessWidget {
                         padding: EdgeInsets.only(left: 28.0),
                         child: Text(
                           'La Toussuire\n'
-                          '',
+                          'Le Corbier\n'
+                          'Saint-Sorlin d’Arves\n'
+                          'Saint Jean d’Arves\n'
+                          'Albiez-Montrond\n',
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                         ),
                       ),
@@ -269,14 +276,21 @@ class DogKennelGroup extends StatelessWidget {
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                             children: [
-                              TextSpan(text: 'Équipement: '),
+                              TextSpan(text: 'Équipement : '),
                               TextSpan(
-                                text: 'Vêtements confortables ',
+                                text: 'Tenue de randonnée ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: '(chaussure de randonnée obligatoire), ',
+                              ),
+                              TextSpan(
+                                text: 'imperméable',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    'qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau',
+                                    ', affaire chaude pour le soir, sac à dos, bouteille d’eau.',
                               ),
                             ],
                           ),
