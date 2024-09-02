@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:whiteforest_website/component/drawer/widget/drawer_tile.dart';
-import 'package:whiteforest_website/page/activity/group/activity_group_page.dart';
-import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
-import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
+import 'package:whiteforest_website/page/summer/activity/activity_summer_page.dart';
+import 'package:whiteforest_website/page/summer/group/group_summer_page.dart';
+import 'package:whiteforest_website/page/winter/activity/activity_winter_page.dart';
 
 class DrawerMobile extends StatelessWidget {
   const DrawerMobile(this.routeSelected, {super.key});
@@ -53,7 +53,7 @@ class DrawerMobile extends StatelessWidget {
               DrawerTile(
                 'Activités groupe',
                 routeSelected,
-                routeName: ActivityGroupPage.routeName,
+                routeName: GroupSummerPage.routeName,
               ),
             ],
           ),

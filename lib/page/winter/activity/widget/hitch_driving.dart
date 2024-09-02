@@ -1,11 +1,12 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:responsive/responsive.dart';
+import 'package:responsive/flex_widget.dart';
+import 'package:responsive/responsive_row.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class DogKennel extends StatelessWidget {
-  const DogKennel(this._scrollController, {super.key});
+class HitchDriving extends StatelessWidget {
+  const HitchDriving(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -13,7 +14,7 @@ class DogKennel extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnchorItemWrapper(
       controller: _scrollController,
-      index: 3,
+      index: 1,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -35,10 +36,11 @@ class DogKennel extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/summer/${getPathImage(context)}chenil.webp',
+                        'assets/images/winter/${getPathImage(context)}conduite_attelage.webp',
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
+                        alignment: Alignment.topCenter,
                       ),
                     ),
                   ),
@@ -50,7 +52,7 @@ class DogKennel extends StatelessWidget {
                     xxl: 6,
                     xxxl: 6,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
@@ -70,21 +72,19 @@ class DogKennel extends StatelessWidget {
                                   xl: 9,
                                   xxl: 9,
                                   xxxl: 9,
-                                  child: Text.rich(
-                                    TextSpan(
-                                      text: 'Visite du chenil'.toUpperCase(),
-                                      style: const TextStyle(
-                                        fontSize: 28,
-                                        fontFamily: 'WickedGrit',
-                                      ),
-                                    ),
+                                  child: Text(
+                                    "Conduite d'attelage".toUpperCase(),
                                     maxLines: 2,
+                                    style: const TextStyle(
+                                      fontSize: 28,
+                                      fontFamily: 'WickedGrit',
+                                    ),
                                   ),
                                 ),
                                 FlexWidget(
-                                  xs: 4,
-                                  sm: 2,
-                                  md: 2,
+                                  xs: 5,
+                                  sm: 4,
+                                  md: 3,
                                   lg: 2,
                                   xl: 2,
                                   xxl: 2,
@@ -111,7 +111,7 @@ class DogKennel extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('1H'),
+                                        Text('0,5 à 1 Journée'),
                                       ],
                                     ),
                                   ),
@@ -130,34 +130,51 @@ class DogKennel extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
+                                  text: 'Le temps d’',
+                                ),
+                                TextSpan(
+                                  text: 'une demi-journée',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: ', ou d’',
+                                ),
+                                TextSpan(
+                                  text: 'une journée entière ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: 'devenez le musher de ',
+                                ),
+                                TextSpan(
+                                  text: 'votre propre attelage !\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
                                   text:
-                                      'Un endroit conçu pour nos partenaires canins, environ 1 heure avec plus ou moins ',
+                                      "Avec 3 ou 4 chiens selon les conditions d'enneigement, découvrez les magnifiques ",
                                 ),
                                 TextSpan(
-                                  text: '80 loulous ',
+                                  text: 'paysages de la Maurienne.\n',
                                   style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'demandeurs de câlin et d’attention.\n',
-                                ),
-                                TextSpan(text: 'Des mushers '),
-                                TextSpan(
-                                  text: 'passionnés ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'prêt à vous expliquer leur travail, '
-                                      'leur passion et la vie de leurs chiens.\n',
                                 ),
                                 TextSpan(
                                   text:
-                                      "Apprenez en plus sur le métier de musher, sur l’éducation, l'entraînement et ",
+                                      'Accompagné d’un musher professionnel pour vous encadrer durant votre pratique, et par petit groupe de 6 personnes maximum, vous apprendrez à',
                                 ),
                                 TextSpan(
-                                  text: 'les différents aspects ',
+                                  text: ' diriger et contrôler votre traineau ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                TextSpan(text: 'de notre métier.\n'),
+                                TextSpan(text: 'ainsi que '),
+                                TextSpan(
+                                  text: 'vos chiens.\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text:
+                                      'De bonnes conditions sportives sont requises pour pratiquer la conduite d’attelage !\n',
+                                ),
                               ],
                             ),
                             textAlign: TextAlign.start,
@@ -170,23 +187,72 @@ class DogKennel extends StatelessWidget {
                           const SizedBox(
                             height: 16,
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(
-                                color: Colors.brown.shade200,
-                              ),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ResponsiveRow(
+                              alignment: WrapAlignment.spaceBetween,
+                              crossAxisAlignment: WrapCrossAlignment.start,
+                              children: [
+                                FlexWidget(
+                                  xs: 12,
+                                  sm: 5,
+                                  md: 5,
+                                  lg: 5,
+                                  xl: 5,
+                                  xxl: 5,
+                                  xxxl: 5,
+                                  child: Container(
+                                    margin: const EdgeInsets.only(top: 8),
+                                    padding: const EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(
+                                        color: Colors.brown.shade200,
+                                      ),
+                                    ),
+                                    child: const Text(
+                                      'Demi-journée : 120€/ personne',
+                                      style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.bold,
+                                        height: 1.4,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                FlexWidget(
+                                  xs: 12,
+                                  sm: 5,
+                                  md: 5,
+                                  lg: 5,
+                                  xl: 5,
+                                  xxl: 5,
+                                  xxxl: 5,
+                                  child: Container(
+                                    margin: const EdgeInsets.only(top: 8),
+                                    padding: const EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(
+                                        color: Colors.brown.shade200,
+                                      ),
+                                    ),
+                                    child: const Text(
+                                      'Journée: 240€/ personne\n'
+                                      '(le repas du midi n’est pas compris dans le tarif)',
+                                      style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.bold,
+                                        height: 1.4,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            child: const Text(
-                              '15€/ Adulte\n'
-                              '10€/ Enfant de -12ans',
-                              style: TextStyle(
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                height: 1.4,
-                              ),
-                            ),
+                          ),
+                          const SizedBox(
+                            height: 32,
                           ),
                         ],
                       ),
@@ -208,6 +274,7 @@ class DogKennel extends StatelessWidget {
                 ),
               ),
               child: ResponsiveRow(
+                alignment: WrapAlignment.spaceBetween,
                 crossAxisAlignment: WrapCrossAlignment.start,
                 children: [
                   FlexWidget(
@@ -236,7 +303,8 @@ class DogKennel extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
                           child: Text(
-                            'La Toussuire\n',
+                            'En demi-journée: Le Corbier / La Toussuire / Saint-Sorlin-d’Arves\n'
+                            'En journée: Saint-Sorlin-d’Arves\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
@@ -280,14 +348,30 @@ class DogKennel extends StatelessWidget {
                               style:
                                   TextStyle(fontFamily: 'Roboto', fontSize: 16),
                               children: [
-                                TextSpan(text: 'Équipement: '),
                                 TextSpan(
-                                  text: 'Vêtements confortables ',
+                                  text: 'Équipement : ',
+                                ),
+                                TextSpan(
+                                  text: 'Tenue chaude ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      'qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau',
+                                      '(vêtements de ski, après ski, écharpe, gant), ',
+                                ),
+                                TextSpan(
+                                  text: 'lunette ou masque.\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: 'Casque ',
+                                ),
+                                TextSpan(
+                                  text: 'obligatoire ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: '(non fourni).',
                                 ),
                               ],
                             ),

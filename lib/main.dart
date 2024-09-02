@@ -7,14 +7,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/dependency_injection.dart';
 import 'package:whiteforest_website/firebase_options.dart';
-import 'package:whiteforest_website/page/activity/group/activity_group_page.dart';
-import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
-import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
 import 'package:whiteforest_website/page/kennel/kennel_page.dart';
 import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
+import 'package:whiteforest_website/page/summer/activity/activity_summer_page.dart';
+import 'package:whiteforest_website/page/summer/group/group_summer_page.dart';
 import 'package:whiteforest_website/page/team/team_page.dart';
+import 'package:whiteforest_website/page/winter/activity/activity_winter_page.dart';
+import 'package:whiteforest_website/page/winter/group/group_winter_page.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(
@@ -89,12 +90,22 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: ActivityGroupPage.routeName,
+      path: GroupSummerPage.routeName,
       pageBuilder: (BuildContext context, GoRouterState state) {
         return buildPageWithDefaultTransition(
           context: context,
           state: state,
-          child: const ActivityGroupPage(),
+          child: const GroupSummerPage(),
+        );
+      },
+    ),
+    GoRoute(
+      path: GroupWinterPage.routeName,
+      pageBuilder: (BuildContext context, GoRouterState state) {
+        return buildPageWithDefaultTransition(
+          context: context,
+          state: state,
+          child: const GroupWinterPage(),
         );
       },
     ),
@@ -149,8 +160,8 @@ class App extends StatelessWidget {
           child: child!,
           breakpoints: [
             const Breakpoint(start: 0, end: 450, name: MOBILE),
-            const Breakpoint(start: 451, end: 800, name: TABLET),
-            const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+            const Breakpoint(start: 451, end: 870, name: TABLET),
+            const Breakpoint(start: 871, end: 1920, name: DESKTOP),
             const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
           ],
         ),

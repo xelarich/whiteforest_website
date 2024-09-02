@@ -4,8 +4,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class CaniHikeNight extends StatelessWidget {
-  const CaniHikeNight(this._scrollController, {super.key});
+class CaniHike extends StatelessWidget {
+  const CaniHike(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -13,7 +13,7 @@ class CaniHikeNight extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnchorItemWrapper(
       controller: _scrollController,
-      index: 2,
+      index: 1,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -24,7 +24,6 @@ class CaniHikeNight extends StatelessWidget {
               child: ResponsiveRow(
                 alignment: WrapAlignment.spaceAround,
                 children: [
-                  //Image
                   FlexWidget(
                     sm: 12,
                     md: 12,
@@ -36,7 +35,7 @@ class CaniHikeNight extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/summer/${getPathImage(context)}cani_rando_nocturne.webp',
+                        'assets/images/summer/${getPathImage(context)}cani_rando.webp',
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
@@ -71,21 +70,18 @@ class CaniHikeNight extends StatelessWidget {
                                   xl: 9,
                                   xxl: 9,
                                   xxxl: 9,
-                                  child: Text.rich(
-                                    TextSpan(
-                                      text: 'Cani-randonnée nocturne'
-                                          .toUpperCase(),
-                                      style: const TextStyle(
-                                        fontSize: 28,
-                                        fontFamily: 'WickedGrit',
-                                      ),
+                                  child: Text(
+                                    'Cani-randonnée initiation'.toUpperCase(),
+                                    style: const TextStyle(
+                                      fontSize: 28,
+                                      fontFamily: 'WickedGrit',
                                     ),
                                     maxLines: 2,
                                   ),
                                 ),
                                 FlexWidget(
                                   xs: 4,
-                                  sm: 2,
+                                  sm: 3,
                                   md: 2,
                                   lg: 2,
                                   xl: 2,
@@ -113,7 +109,7 @@ class CaniHikeNight extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('3H / 4H'),
+                                        Text('1H30 / 2H'),
                                       ],
                                     ),
                                   ),
@@ -132,63 +128,45 @@ class CaniHikeNight extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
-                                  text: 'Pratiquer la randonnée autrement ',
+                                  text: 'Randonnée à pied',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      '!\nAmoureux des montagnes, de nourriture et de '
-                                      'randonnée, cette activité est ',
+                                      ', tracté par un chien de traineau à l’aide '
+                                      'd’une ceinture et d’une ligne '
+                                      'conçue spécialement pour l’activité !\n',
                                 ),
                                 TextSpan(
-                                  text: 'faite pour vous ',
+                                  text:
+                                      'Vous serez aidés par le chien pour arpenter nos '
+                                      'montagnes, ponctués de ',
+                                ),
+                                TextSpan(
+                                  text: 'pauses câlines ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(text: 'et de '),
+                                TextSpan(
+                                  text: 'moment de partages canins et humains ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      '!\nPartez à l’aventure tracté par un de nos fidèles ',
+                                      '!\nVous tomberez sous le charme de ses chiens ',
                                 ),
                                 TextSpan(
-                                  text: 'chiens de traineau',
+                                  text: 'extraordinaires ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      ', équipé d’une ceinture et d’une ligne reliée au chien, '
-                                      'vous serez guidé par un musher prêt à partager ',
-                                ),
-                                TextSpan(
-                                  text: 'sa passion',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: '.\nUn moment '),
-                                TextSpan(
-                                  text: 'gourmand ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                      'que ce soit par leur volonté à l’exercice ou leur tendresse.\n',
                                 ),
                                 TextSpan(
                                   text:
-                                      'vous permettra de souffler et de déguster un bon plat avant de '
-                                      'finir la balade à l’aide d’une lampe frontale '
-                                      'et de votre compagnon à 4 pattes.\n',
-                                ),
-                                TextSpan(text: 'De '),
-                                TextSpan(
-                                  text: 'beaux paysages',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: ', de '),
-                                TextSpan(
-                                  text: 'beaux couchers de soleil ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: 'et des '),
-                                TextSpan(
-                                  text: 'moments de complicité ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'avec nos chiens vous attendent.\n',
+                                      'L’activité comprend une explication sur la pratique de la cani-randonnée puis une balade '
+                                      'de 1h30 à 2 heures.\n',
                                 ),
                               ],
                             ),
@@ -211,8 +189,8 @@ class CaniHikeNight extends StatelessWidget {
                               ),
                             ),
                             child: const Text(
-                              '75€/ Adulte\n'
-                              '70€/ Enfant de -12ans',
+                              '35€/ Adulte\n'
+                              '30€/ Enfant de -12ans',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontWeight: FontWeight.bold,
@@ -267,25 +245,12 @@ class CaniHikeNight extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
-                          child: Text.rich(
-                            TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: 'Le mardi soir à 17h30 au départ de ',
-                                ),
-                                TextSpan(
-                                  text: 'La Toussuire.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'Le jeudi soir à 18h00 au départ de ',
-                                ),
-                                TextSpan(
-                                  text: 'St Sorlin D’Arves\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
+                          child: Text(
+                            'La Toussuire\n'
+                            'Le Corbier\n'
+                            'Saint-Sorlin-d’Arves\n'
+                            'Saint-Jean-d’Arves\n'
+                            'Albiez-Montrond\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
@@ -329,6 +294,27 @@ class CaniHikeNight extends StatelessWidget {
                               style:
                                   TextStyle(fontFamily: 'Roboto', fontSize: 16),
                               children: [
+                                TextSpan(text: 'Les chiens sont adaptés à '),
+                                TextSpan(
+                                  text: 'votre condition physique.\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: 'C’est une activité destinée aux '
+                                      'familles mais aussi aux sportifs.\n',
+                                ),
+                                TextSpan(
+                                  text: 'Accessible ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text:
+                                      'aux jeunes marcheurs mais aussi aux plus âgés !\n',
+                                ),
+                                TextSpan(
+                                  text: 'Interdit aux femmes enceintes.\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
                                 TextSpan(text: 'Équipement : '),
                                 TextSpan(
                                   text: 'Tenue de randonnée ',
@@ -336,15 +322,8 @@ class CaniHikeNight extends StatelessWidget {
                                 ),
                                 TextSpan(
                                   text:
-                                      '(chaussure de randonnée obligatoire), ',
-                                ),
-                                TextSpan(
-                                  text: 'imperméable',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      ', affaire chaude pour le soir, sac à dos, bouteille d’eau.',
+                                      '(chaussures fermées obligatoire), bouteille d’eau.\n'
+                                      'Les bâtons de marches ne sont pas nécessaires.',
                                 ),
                               ],
                             ),
