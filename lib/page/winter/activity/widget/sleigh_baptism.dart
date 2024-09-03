@@ -274,11 +274,11 @@ class SleighBaptism extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
                           child: Text(
-                            "La Toussuire\n"
+                            'La Toussuire\n'
                                 "Saint-Sorlin-d'Arves\n"
-                                "Albiez-Montrond\n"
+                                'Albiez-Montrond\n'
                                 "Saint-Jean-d'Arves\n"
-                                "Domaine skiable des Sybelles\n",
+                                'Domaine skiable des Sybelles\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
