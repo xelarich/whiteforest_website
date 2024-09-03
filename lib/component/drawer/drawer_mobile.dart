@@ -7,7 +7,6 @@ import 'package:whiteforest_website/page/summer/activity/activity_summer_page.da
 import 'package:whiteforest_website/page/summer/group/group_summer_page.dart';
 import 'package:whiteforest_website/page/winter/activity/activity_winter_page.dart';
 import 'package:whiteforest_website/page/winter/group/group_winter_page.dart';
-import 'package:whiteforest_website/shared/styles.dart';
 
 class DrawerMobile extends StatelessWidget {
   const DrawerMobile(this.routeSelected, {super.key});
@@ -40,8 +39,11 @@ class DrawerMobile extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  DrawerTile('Accueil', routeSelected,
-                      routeName: HomePage.routeName),
+                  DrawerTile(
+                    'Accueil',
+                    routeSelected,
+                    routeName: HomePage.routeName,
+                  ),
                   ExpansionTile(
                     title: Padding(
                       padding: const EdgeInsets.all(8.0),
