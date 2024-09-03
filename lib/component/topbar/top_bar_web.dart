@@ -60,14 +60,14 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
                   children: [
                     SubMenu('Prestations hiver', ActivityWinterPage.routeName),
                     SubMenu(
-                        'Groupe/CE hiver', GroupWinterPage.routeName),
+                        'Groupe/CE hiver', GroupWinterPage.routeName,),
                   ],
                 ),
-                TabText(
+                /*TabText(
                   "L'équipe",
                   isSelected: routeSelected == TeamPage.routeName,
                   onTap: () => context.go(TeamPage.routeName),
-                ),
+                ),*/
               ],
             ),
           ),
