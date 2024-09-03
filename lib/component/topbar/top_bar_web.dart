@@ -5,7 +5,6 @@ import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
 import 'package:whiteforest_website/page/summer/activity/activity_summer_page.dart';
 import 'package:whiteforest_website/page/summer/group/group_summer_page.dart';
-import 'package:whiteforest_website/page/team/team_page.dart';
 import 'package:whiteforest_website/page/winter/activity/activity_winter_page.dart';
 import 'package:whiteforest_website/page/winter/group/group_winter_page.dart';
 import 'package:whiteforest_website/shared/tab_text.dart';
@@ -60,7 +59,9 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
                   children: [
                     SubMenu('Prestations hiver', ActivityWinterPage.routeName),
                     SubMenu(
-                        'Groupe/CE hiver', GroupWinterPage.routeName,),
+                      'Groupe/CE hiver',
+                      GroupWinterPage.routeName,
+                    ),
                   ],
                 ),
                 /*TabText(

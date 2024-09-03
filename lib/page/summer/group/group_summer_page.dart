@@ -16,8 +16,7 @@ class GroupSummerPage extends StatefulWidget {
   const GroupSummerPage({super.key});
 
   @override
-  State<GroupSummerPage> createState() =>
-      _GroupSummerPageState();
+  State<GroupSummerPage> createState() => _GroupSummerPageState();
 }
 
 class _GroupSummerPageState extends State<GroupSummerPage> {

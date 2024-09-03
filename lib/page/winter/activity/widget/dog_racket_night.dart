@@ -381,12 +381,15 @@ class DogRacketNight extends StatelessWidget {
                               child: Text.rich(
                                 TextSpan(
                                   style: TextStyle(
-                                      fontFamily: 'Roboto', fontSize: 16,),
+                                    fontFamily: 'Roboto',
+                                    fontSize: 16,
+                                  ),
                                   children: [
                                     TextSpan(
                                       text: 'Restaurants :\n',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.bold,),
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                     TextSpan(
                                       text: 'Les Carlines\n'
@@ -402,12 +405,15 @@ class DogRacketNight extends StatelessWidget {
                                 child: Text.rich(
                                   TextSpan(
                                     style: TextStyle(
-                                        fontFamily: 'Roboto', fontSize: 16,),
+                                      fontFamily: 'Roboto',
+                                      fontSize: 16,
+                                    ),
                                     children: [
                                       TextSpan(
                                         text: 'Location de raquette :\n',
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold,),
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                       TextSpan(
                                         text: 'Intersport, La Toussuire\n',

@@ -76,11 +76,10 @@ class TabTextState extends State<TabText> {
                         onPressed: () => context.go(
                           widget.children[index].routeName,
                         ),
-                        child:
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(widget.children[index].name),
-                            ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(widget.children[index].name),
+                        ),
                       );
                     },
                   ),
