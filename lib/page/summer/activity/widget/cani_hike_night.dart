@@ -64,8 +64,8 @@ class CaniHikeNight extends StatelessWidget {
                               alignment: WrapAlignment.spaceBetween,
                               children: [
                                 FlexWidget(
-                                  xs: 10,
-                                  sm: 10,
+                                  xs: 12,
+                                  sm: 12,
                                   md: 9,
                                   lg: 9,
                                   xl: 9,

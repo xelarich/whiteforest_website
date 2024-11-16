@@ -58,8 +58,8 @@ class CaniHikeDayGroup extends StatelessWidget {
                             alignment: WrapAlignment.spaceBetween,
                             children: [
                               FlexWidget(
-                                xs: 10,
-                                sm: 10,
+                                xs: 12,
+                                sm: 12,
                                 md: 9,
                                 lg: 9,
                                 xl: 9,
@@ -156,7 +156,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                           maxLines: 15,
                         ),
                         const Text(
-                          'Les tarifs groupes ( + de 15 personnes) :',
+                          'Les tarifs groupes ( + de 15 personnes ) :',
                           style: TextStyle(fontSize: 24),
                         ),
                         const SizedBox(

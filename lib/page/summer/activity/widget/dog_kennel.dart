@@ -63,8 +63,8 @@ class DogKennel extends StatelessWidget {
                               alignment: WrapAlignment.spaceBetween,
                               children: [
                                 FlexWidget(
-                                  xs: 10,
-                                  sm: 10,
+                                  xs: 12,
+                                  sm: 12,
                                   md: 9,
                                   lg: 9,
                                   xl: 9,
@@ -236,7 +236,8 @@ class DogKennel extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
                           child: Text(
-                            'La Toussuire\n',
+                            'La Toussuire\n'
+                            'Sur votre station\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
