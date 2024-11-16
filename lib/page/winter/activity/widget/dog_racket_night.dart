@@ -99,6 +99,10 @@ class DogRacketNight extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(4),
                                     ),
                                     child: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.only(right: 8.0),
@@ -352,7 +356,7 @@ class DogRacketNight extends StatelessWidget {
                     xl: 4,
                     xxl: 4,
                     xxxl: 4,
-                    child: const Column(
+                    child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
@@ -373,33 +377,36 @@ class DogRacketNight extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        ResponsiveRow(
+                          crossAxisAlignment: WrapCrossAlignment.start,
+                          alignment: WrapAlignment.spaceBetween,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 28.0),
-                              child: Text.rich(
-                                TextSpan(
-                                  style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    fontSize: 16,
-                                  ),
-                                  children: [
-                                    TextSpan(
-                                      text: 'Restaurants :\n',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                            FlexWidget(
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 28.0),
+                                child: Text.rich(
+                                  TextSpan(
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 16,
+                                    ),
+                                    children: [
+                                      TextSpan(
+                                        text: 'Restaurants :\n',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
-                                    ),
-                                    TextSpan(
-                                      text: 'Les Carlines\n'
-                                          "L'éTable des Prés Plan\n",
-                                    ),
-                                  ],
+                                      TextSpan(
+                                        text: 'Chez Bib\n'
+                                            "L'éTable des Prés Plan\n",
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                            Expanded(
+                            FlexWidget(
                               child: Padding(
                                 padding: EdgeInsets.only(left: 28.0),
                                 child: Text.rich(

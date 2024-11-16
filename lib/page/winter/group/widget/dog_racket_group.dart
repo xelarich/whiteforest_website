@@ -3,8 +3,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class DogKennelGroup extends StatelessWidget {
-  const DogKennelGroup({super.key});
+class DogRacketGroup extends StatelessWidget {
+  const DogRacketGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class DogKennelGroup extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      'assets/images/summer/${getPathImage(context)}chenil.webp',
+                      'assets/images/winter/${getPathImage(context)}cani_raquette_groupe.webp',
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
@@ -57,28 +57,25 @@ class DogKennelGroup extends StatelessWidget {
                             alignment: WrapAlignment.spaceBetween,
                             children: [
                               FlexWidget(
-                                xs: 12,
-                                sm: 12,
+                                xs: 10,
+                                sm: 10,
                                 md: 9,
                                 lg: 9,
                                 xl: 9,
                                 xxl: 9,
                                 xxxl: 9,
-                                child: Text.rich(
-                                  TextSpan(
-                                    text: 'Immersion musher ou visite du chenil'
-                                        .toUpperCase(),
-                                    style: const TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'WickedGrit',
-                                    ),
+                                child: Text(
+                                  'Cani-raquette'.toUpperCase(),
+                                  style: const TextStyle(
+                                    fontSize: 28,
+                                    fontFamily: 'WickedGrit',
                                   ),
                                   maxLines: 2,
                                 ),
                               ),
                               FlexWidget(
                                 xs: 4,
-                                sm: 2,
+                                sm: 3,
                                 md: 2,
                                 lg: 2,
                                 xl: 2,
@@ -105,7 +102,7 @@ class DogKennelGroup extends StatelessWidget {
                                           size: 18,
                                         ),
                                       ),
-                                      Text('1H'),
+                                      Text('1H30 / 2H'),
                                     ],
                                   ),
                                 ),
@@ -125,32 +122,48 @@ class DogKennelGroup extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text:
-                                    'Durant 1 heure, au chenil à La Toussuire ou ',
+                                    "Une activité emblématique dans l'univers du chien de traîneau, une façon ",
                               ),
                               TextSpan(
-                                text: 'sur votre station, ',
+                                text: 'ludique et simple ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                text:
-                                    'écoutez et découvrez le métier de musher !\n',
+                                text: 'de découvrir la marche en raquette.\n',
                               ),
                               TextSpan(
-                                text:
-                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment sont ils entraînaient ?\n",
+                                text: "Accompagné d'un ",
                               ),
                               TextSpan(
-                                text:
-                                    'Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ',
-                              ),
-                              TextSpan(
-                                text: 'sa passion.\n',
+                                text: 'un chien de traineau, ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                  text:
+                                      'celui-ci vous aidera durant votre randonnée.\n'),
+                              TextSpan(text: 'Vous créerez '),
+                              TextSpan(
+                                text: 'une relation ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'toute particulière avec ',
+                              ),
+                              TextSpan(
+                                text:
+                                    "votre binôme à quatre pattes et le musher ",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'qui vous accompagne.\n',
                               ),
                             ],
                           ),
                           textAlign: TextAlign.start,
                           maxLines: 15,
+                        ),
+                        const SizedBox(
+                          height: 32,
                         ),
                         const Text(
                           'Les tarifs groupes ( + de 15 personnes) :',
@@ -168,7 +181,7 @@ class DogKennelGroup extends StatelessWidget {
                             ),
                           ),
                           child: const Text(
-                            '15€/ Adulte\n'
+                            '25€/ Adulte\n'
                             '10€/ Enfant de -12ans',
                             style: TextStyle(
                               fontFamily: 'Roboto',
@@ -226,7 +239,10 @@ class DogKennelGroup extends StatelessWidget {
                         padding: EdgeInsets.only(left: 28.0),
                         child: Text(
                           'La Toussuire\n'
-                          'Sur votre station\n',
+                          'Le Corbier\n'
+                          'Saint-Sorlin d’Arves\n'
+                          'Saint Jean d’Arves\n'
+                          'Albiez-Montrond.\n',
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                         ),
                       ),
@@ -237,10 +253,10 @@ class DogKennelGroup extends StatelessWidget {
                   xs: 12,
                   sm: 12,
                   md: 12,
-                  lg: 8,
-                  xl: 8,
-                  xxl: 8,
-                  xxxl: 8,
+                  lg: 4,
+                  xl: 4,
+                  xxl: 4,
+                  xxxl: 4,
                   child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -269,18 +285,96 @@ class DogKennelGroup extends StatelessWidget {
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                             children: [
-                              TextSpan(text: 'Équipement: '),
                               TextSpan(
-                                text: 'Vêtements confortables ',
+                                text: 'Équipement : ',
+                              ),
+                              TextSpan(
+                                text: 'Tenue chaude ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    'qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau.',
+                                    '(vêtements de ski, après ski, écharpe, gant).\n',
+                              ),
+                              TextSpan(
+                                text: 'Raquette ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text:
+                                    '(location de raquette possible auprès de nos partenaires).\n',
                               ),
                             ],
                           ),
                         ),
+                      ),
+                    ],
+                  ),
+                ),
+                FlexWidget(
+                  xs: 12,
+                  sm: 12,
+                  md: 12,
+                  lg: 4,
+                  xl: 4,
+                  xxl: 4,
+                  xxxl: 4,
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(right: 4),
+                            child: Icon(Icons.info_outline),
+                          ),
+                          Flexible(
+                            child: Text(
+                              'Nos partenaires',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 28.0),
+                              child: Text.rich(
+                                TextSpan(
+                                  style: TextStyle(
+                                    fontFamily: 'Roboto',
+                                    fontSize: 16,
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: 'Location de raquette :\n',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: 'Intersport, La Toussuire\n',
+                                    ),
+                                    TextSpan(
+                                      text: 'Arthur Sport, La Toussuire\n',
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          'Skiset - Tout Pour le Ski, Saint-Sorlin-d’Arves\n',
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),

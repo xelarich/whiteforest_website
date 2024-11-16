@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:responsive/responsive.dart';
+import 'package:responsive/flex_widget.dart';
+import 'package:responsive/responsive_row.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class DogKennelGroup extends StatelessWidget {
-  const DogKennelGroup({super.key});
+class SleighGroup extends StatelessWidget {
+  const SleighGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,8 @@ class DogKennelGroup extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      'assets/images/summer/${getPathImage(context)}chenil.webp',
+                      'assets/images/winter/${getPathImage(context)}traineau_groupe.webp',
+                      alignment: Alignment.center,
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
@@ -44,7 +46,7 @@ class DogKennelGroup extends StatelessWidget {
                   xxl: 6,
                   xxxl: 6,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -57,28 +59,25 @@ class DogKennelGroup extends StatelessWidget {
                             alignment: WrapAlignment.spaceBetween,
                             children: [
                               FlexWidget(
-                                xs: 12,
-                                sm: 12,
+                                xs: 10,
+                                sm: 10,
                                 md: 9,
                                 lg: 9,
                                 xl: 9,
                                 xxl: 9,
                                 xxxl: 9,
-                                child: Text.rich(
-                                  TextSpan(
-                                    text: 'Immersion musher ou visite du chenil'
-                                        .toUpperCase(),
-                                    style: const TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'WickedGrit',
-                                    ),
-                                  ),
+                                child: Text(
+                                  'Balade traineau'.toUpperCase(),
                                   maxLines: 2,
+                                  style: const TextStyle(
+                                    fontSize: 28,
+                                    fontFamily: 'WickedGrit',
+                                  ),
                                 ),
                               ),
                               FlexWidget(
-                                xs: 4,
-                                sm: 2,
+                                xs: 6,
+                                sm: 3,
                                 md: 2,
                                 lg: 2,
                                 xl: 2,
@@ -105,7 +104,7 @@ class DogKennelGroup extends StatelessWidget {
                                           size: 18,
                                         ),
                                       ),
-                                      Text('1H'),
+                                      Text('15 min / 30 min'),
                                     ],
                                   ),
                                 ),
@@ -124,58 +123,116 @@ class DogKennelGroup extends StatelessWidget {
                             ),
                             children: [
                               TextSpan(
-                                text:
-                                    'Durant 1 heure, au chenil à La Toussuire ou ',
+                                text: 'Vivez une ',
                               ),
                               TextSpan(
-                                text: 'sur votre station, ',
+                                text: 'expérience ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'entre amis ou en famille !\n'
+                                    'Venez découvrir nos ',
+                              ),
+                              TextSpan(
+                                text: 'attelages ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    'écoutez et découvrez le métier de musher !\n',
+                                    "et profiter d'une balade enneigée de 15mn ou 30mn.\n"
+                                    "Accompagné d'une musheuse,celle-ci vous en apprendra d'avantage sur son métier.\n",
                               ),
                               TextSpan(
-                                text:
-                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment sont ils entraînaient ?\n",
-                              ),
-                              TextSpan(
-                                text:
-                                    'Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ',
-                              ),
-                              TextSpan(
-                                text: 'sa passion.\n',
+                                text: 'Un joli souvenir ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'pour tout le monde.',
                               ),
                             ],
                           ),
                           textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
+                        const SizedBox(
+                          height: 32,
+                        ),
                         const Text(
-                          'Les tarifs groupes ( + de 15 personnes) :',
+                          'Les tarifs groupes ( + de 15 personnes ) :',
                           style: TextStyle(fontSize: 24),
                         ),
                         const SizedBox(
                           height: 16,
                         ),
-                        Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: Colors.brown.shade200,
-                            ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ResponsiveRow(
+                            alignment: WrapAlignment.spaceBetween,
+                            crossAxisAlignment: WrapCrossAlignment.start,
+                            children: [
+                              FlexWidget(
+                                xs: 12,
+                                sm: 5,
+                                md: 5,
+                                lg: 5,
+                                xl: 5,
+                                xxl: 5,
+                                xxxl: 5,
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 8),
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.brown.shade200,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    '15min : \n'
+                                    'Adulte : 30€/ personne\n'
+                                    'Enfant : 25€/ personne',
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.bold,
+                                      height: 1.4,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              FlexWidget(
+                                xs: 12,
+                                sm: 5,
+                                md: 5,
+                                lg: 5,
+                                xl: 5,
+                                xxl: 5,
+                                xxxl: 5,
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 8),
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.brown.shade200,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    '30 min\n'
+                                    'Adulte : 45€/ personne\n'
+                                    'Enfant : 38€/ personne',
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.bold,
+                                      height: 1.4,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          child: const Text(
-                            '15€/ Adulte\n'
-                            '10€/ Enfant de -12ans',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.bold,
-                              height: 1.4,
-                            ),
-                          ),
+                        ),
+                        const SizedBox(
+                          height: 32,
                         ),
                       ],
                     ),
@@ -197,6 +254,7 @@ class DogKennelGroup extends StatelessWidget {
               ),
             ),
             child: ResponsiveRow(
+              alignment: WrapAlignment.spaceBetween,
               crossAxisAlignment: WrapCrossAlignment.start,
               children: [
                 FlexWidget(
@@ -226,7 +284,10 @@ class DogKennelGroup extends StatelessWidget {
                         padding: EdgeInsets.only(left: 28.0),
                         child: Text(
                           'La Toussuire\n'
-                          'Sur votre station\n',
+                          "Saint-Sorlin-d'Arves\n"
+                          'Albiez-Montrond\n'
+                          "Saint-Jean-d'Arves\n"
+                          'Domaine skiable des Sybelles\n',
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                         ),
                       ),
@@ -269,14 +330,35 @@ class DogKennelGroup extends StatelessWidget {
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                             children: [
-                              TextSpan(text: 'Équipement: '),
                               TextSpan(
-                                text: 'Vêtements confortables ',
+                                text: 'ATTENTION :\n',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    'qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau.',
+                                    "En fonction des conditions d'enneigement, le départ peut se faire en altitude, il faudra donc prévoir les forfaits de ski.\n"
+                                    '180kg max par traineau.\n',
+                              ),
+                              TextSpan(
+                                text: 'Interdit aux femmes enceintes ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(text: 'et '),
+                              TextSpan(
+                                text:
+                                    'déconseillés aux personnes fragiles du dos.\n',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'Équipement : ',
+                              ),
+                              TextSpan(
+                                text: 'Tenue chaude ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text:
+                                    '(vêtements de ski, après ski, écharpe, gant).',
                               ),
                             ],
                           ),

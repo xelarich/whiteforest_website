@@ -1,4 +1,3 @@
-import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart' hide Page, NavigationDrawer;
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
@@ -11,7 +10,6 @@ import 'package:whiteforest_website/shared/utils.dart';
 
 class GroupSummerPage extends StatefulWidget {
   static const routeName = '/groupSummer';
-  static const indexAnchorKey = 'indexAnchorKey';
 
   const GroupSummerPage({super.key});
 
@@ -20,14 +18,7 @@ class GroupSummerPage extends StatefulWidget {
 }
 
 class _GroupSummerPageState extends State<GroupSummerPage> {
-  late final AnchorScrollController _scrollController;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-
-  @override
-  void initState() {
-    super.initState();
-    _scrollController = AnchorScrollController();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +31,6 @@ class _GroupSummerPageState extends State<GroupSummerPage> {
         children: [
           Expanded(
             child: SingleChildScrollView(
-              controller: _scrollController,
               child: Column(
                 children: [
                   Padding(

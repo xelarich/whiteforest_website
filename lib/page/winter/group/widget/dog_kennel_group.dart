@@ -29,10 +29,11 @@ class DogKennelGroup extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      'assets/images/summer/${getPathImage(context)}chenil.webp',
+                      'assets/images/winter/${getPathImage(context)}chenil_winter.webp',
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
+                      alignment: Alignment.bottomCenter,
                     ),
                   ),
                 ),
@@ -124,27 +125,42 @@ class DogKennelGroup extends StatelessWidget {
                             ),
                             children: [
                               TextSpan(
-                                text:
-                                    'Durant 1 heure, au chenil à La Toussuire ou ',
+                                text: 'Vous souhaitez en apprendre plus sur ',
                               ),
                               TextSpan(
-                                text: 'sur votre station, ',
+                                text: 'nos chiens, ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'sur notre façon de les ',
+                              ),
+                              TextSpan(
+                                text: 'chouchouter.\n',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                  text: "Entouré de nos "),
+                              TextSpan(
+                                text: '68 chiens ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    'écoutez et découvrez le métier de musher !\n',
+                                    "à papouiller, venez découvrir d'avantage sur les races qui composent la meute, sur leur alimentation, leur provenance.\n",
                               ),
+                              TextSpan(text: 'Notre musher vous expliquera '),
                               TextSpan(
-                                text:
-                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment sont ils entraînaient ?\n",
+                                text: 'son métier, ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
                               ),
+                              TextSpan(text: 'les différentes activités qui composent '),
                               TextSpan(
-                                text:
-                                    'Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ',
+                                text: 'son quotidien, ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
                               ),
+                              TextSpan(text: ' les entrainements, les soins apportés aux chiens et '),
                               TextSpan(
-                                text: 'sa passion.\n',
+                                text: "pleins d'autres choses.\n",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                             ],

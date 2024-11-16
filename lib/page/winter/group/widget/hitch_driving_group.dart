@@ -1,10 +1,12 @@
+import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:responsive/responsive.dart';
+import 'package:responsive/flex_widget.dart';
+import 'package:responsive/responsive_row.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class DogKennelGroup extends StatelessWidget {
-  const DogKennelGroup({super.key});
+class HitchDrivingGroup extends StatelessWidget {
+  const HitchDrivingGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +31,11 @@ class DogKennelGroup extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      'assets/images/summer/${getPathImage(context)}chenil.webp',
+                      'assets/images/winter/${getPathImage(context)}conduite_attelage_groupe.webp',
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
+                      alignment: Alignment.center,
                     ),
                   ),
                 ),
@@ -44,7 +47,7 @@ class DogKennelGroup extends StatelessWidget {
                   xxl: 6,
                   xxxl: 6,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -57,28 +60,26 @@ class DogKennelGroup extends StatelessWidget {
                             alignment: WrapAlignment.spaceBetween,
                             children: [
                               FlexWidget(
-                                xs: 12,
-                                sm: 12,
+                                xs: 10,
+                                sm: 10,
                                 md: 9,
                                 lg: 9,
                                 xl: 9,
                                 xxl: 9,
                                 xxxl: 9,
-                                child: Text.rich(
-                                  TextSpan(
-                                    text: 'Immersion musher ou visite du chenil'
-                                        .toUpperCase(),
-                                    style: const TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'WickedGrit',
-                                    ),
+                                child: Text(
+                                  "Conduite d'attelage : Découverte ou Expert"
+                                      .toUpperCase(),
+                                  maxLines: 5,
+                                  style: const TextStyle(
+                                    fontSize: 28,
+                                    fontFamily: 'WickedGrit',
                                   ),
-                                  maxLines: 2,
                                 ),
                               ),
                               FlexWidget(
-                                xs: 4,
-                                sm: 2,
+                                xs: 6,
+                                sm: 3,
                                 md: 2,
                                 lg: 2,
                                 xl: 2,
@@ -105,7 +106,7 @@ class DogKennelGroup extends StatelessWidget {
                                           size: 18,
                                         ),
                                       ),
-                                      Text('1H'),
+                                      Text('1H / 2H'),
                                     ],
                                   ),
                                 ),
@@ -125,57 +126,147 @@ class DogKennelGroup extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text:
-                                    'Durant 1 heure, au chenil à La Toussuire ou ',
+                                    'Envie de piloter un traineau, vous êtes sportif et dynamique, ',
                               ),
                               TextSpan(
-                                text: 'sur votre station, ',
+                                text: 'vous aimez les animaux.\n',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'Vivez en groupe une ',
+                              ),
+                              TextSpan(
+                                text: 'expérience unique, ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: "accompagné d'une ",
+                              ),
+                              TextSpan(
+                                text: 'monitrice diplômée.\n',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    'écoutez et découvrez le métier de musher !\n',
+                                    "Par petit groupe de 6 vous arpentez la montagne et vous vous initiez à la ",
                               ),
                               TextSpan(
-                                text:
-                                    "Qu'est ce que c'est, d'où ça vient ? Que mangent les chiens ? Comment sont ils entraînaient ?\n",
-                              ),
-                              TextSpan(
-                                text:
-                                    'Le professionnel viendra accompagné de quelques chiens et de visuels pour vous présenter ',
-                              ),
-                              TextSpan(
-                                text: 'sa passion.\n',
+                                text: "conduite d'attelage\n",
                                 style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: "Vous apprendrez à ",
+                              ),
+                              TextSpan(
+                                text: 'diriger et contrôler votre traineau ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(text: 'ainsi que '),
+                              TextSpan(
+                                text: 'vos chiens.\n\n',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(text: 'Conduite "'),
+                              TextSpan(
+                                text: 'Découverte',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text:
+                                    '" : Activité en co-pilotage ou en solo sur 1H.\n',
+                              ),
+                              TextSpan(text: 'Conduite "'),
+                              TextSpan(
+                                text: 'Expert',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text:
+                                    '" : Activité uniquement en solo sur 2H.\n',
                               ),
                             ],
                           ),
                           textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
+                        const SizedBox(
+                          height: 32,
+                        ),
                         const Text(
-                          'Les tarifs groupes ( + de 15 personnes) :',
+                          'Les tarifs groupes ( + de 15 personnes ) :',
                           style: TextStyle(fontSize: 24),
                         ),
                         const SizedBox(
                           height: 16,
                         ),
-                        Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: Colors.brown.shade200,
-                            ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ResponsiveRow(
+                            alignment: WrapAlignment.spaceBetween,
+                            crossAxisAlignment: WrapCrossAlignment.start,
+                            children: [
+                              FlexWidget(
+                                xs: 12,
+                                sm: 5,
+                                md: 5,
+                                lg: 5,
+                                xl: 5,
+                                xxl: 5,
+                                xxxl: 5,
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 8),
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.brown.shade200,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Conduite "Découverte":\n'
+                                    'En co-pilotage: 45€/ personne\n'
+                                    'En solo: 65€/ personne',
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.bold,
+                                      height: 1.4,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              FlexWidget(
+                                xs: 12,
+                                sm: 5,
+                                md: 5,
+                                lg: 5,
+                                xl: 5,
+                                xxl: 5,
+                                xxxl: 5,
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 8),
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.brown.shade200,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Conduite "Expert":\n'
+                                    'En solo: 110€/ personne',
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.bold,
+                                      height: 1.4,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          child: const Text(
-                            '15€/ Adulte\n'
-                            '10€/ Enfant de -12ans',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.bold,
-                              height: 1.4,
-                            ),
-                          ),
+                        ),
+                        const SizedBox(
+                          height: 32,
                         ),
                       ],
                     ),
@@ -197,6 +288,7 @@ class DogKennelGroup extends StatelessWidget {
               ),
             ),
             child: ResponsiveRow(
+              alignment: WrapAlignment.spaceBetween,
               crossAxisAlignment: WrapCrossAlignment.start,
               children: [
                 FlexWidget(
@@ -225,8 +317,10 @@ class DogKennelGroup extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 28.0),
                         child: Text(
+                          //TODO Verify this
+                          'Le Corbier\n'
                           'La Toussuire\n'
-                          'Sur votre station\n',
+                          'Saint-Sorlin-d’Arves\n',
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                         ),
                       ),
@@ -269,14 +363,30 @@ class DogKennelGroup extends StatelessWidget {
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                             children: [
-                              TextSpan(text: 'Équipement: '),
                               TextSpan(
-                                text: 'Vêtements confortables ',
+                                text: 'Équipement : ',
+                              ),
+                              TextSpan(
+                                text: 'Tenue chaude ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    'qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau.',
+                                    '(vêtements de ski, après ski, écharpe, gant), ',
+                              ),
+                              TextSpan(
+                                text: 'lunette ou masque.\n',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'Casque ',
+                              ),
+                              TextSpan(
+                                text: 'obligatoire ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: '(non fourni).',
                               ),
                             ],
                           ),

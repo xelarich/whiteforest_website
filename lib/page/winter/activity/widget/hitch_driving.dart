@@ -111,7 +111,7 @@ class HitchDriving extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('0,5 à 1 Journée'),
+                                        Text('0,5 ou 1 Journée'),
                                       ],
                                     ),
                                   ),
