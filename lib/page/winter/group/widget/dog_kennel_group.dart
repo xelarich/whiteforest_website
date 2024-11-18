@@ -139,7 +139,7 @@ class DogKennelGroup extends StatelessWidget {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                  text: "Entouré de nos "),
+                                  text: 'Entouré de nos ',),
                               TextSpan(
                                 text: '68 chiens ',
                                 style: TextStyle(fontWeight: FontWeight.bold),

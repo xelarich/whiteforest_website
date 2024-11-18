@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
-import 'package:whiteforest_website/page/summer/group/widget/cani_hike_day_group.dart';
 import 'package:whiteforest_website/page/winter/group/widget/dog_racket_group.dart';
 import 'package:whiteforest_website/page/winter/group/widget/dog_kennel_group.dart';
 import 'package:whiteforest_website/page/winter/group/widget/hitch_driving_group.dart';

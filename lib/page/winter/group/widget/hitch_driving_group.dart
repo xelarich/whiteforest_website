@@ -1,4 +1,3 @@
-import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/flex_widget.dart';
@@ -148,14 +147,14 @@ class HitchDrivingGroup extends StatelessWidget {
                               ),
                               TextSpan(
                                 text:
-                                    "Par petit groupe de 6 vous arpentez la montagne et vous vous initiez à la ",
+                                    'Par petit groupe de 6 vous arpentez la montagne et vous vous initiez à la ',
                               ),
                               TextSpan(
                                 text: "conduite d'attelage\n",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                text: "Vous apprendrez à ",
+                                text: 'Vous apprendrez à ',
                               ),
                               TextSpan(
                                 text: 'diriger et contrôler votre traineau ',
