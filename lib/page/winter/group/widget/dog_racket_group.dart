@@ -140,7 +140,7 @@ class DogRacketGroup extends StatelessWidget {
                               ),
                               TextSpan(
                                   text:
-                                      'celui-ci vous aidera durant votre randonnée.\n'),
+                                      'celui-ci vous aidera durant votre randonnée.\n',),
                               TextSpan(text: 'Vous créerez '),
                               TextSpan(
                                 text: 'une relation ',
@@ -151,7 +151,7 @@ class DogRacketGroup extends StatelessWidget {
                               ),
                               TextSpan(
                                 text:
-                                    "votre binôme à quatre pattes et le musher ",
+                                    'votre binôme à quatre pattes et le musher ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
