@@ -6,6 +6,7 @@ class DrawerTile extends StatelessWidget {
     this.title,
     this.routeSelected, {
     required this.routeName,
+    this.isSubMenu = false,
     super.key,
   });
 
@@ -13,28 +14,31 @@ class DrawerTile extends StatelessWidget {
   final String routeSelected;
   final String routeName;
 
+  final bool isSubMenu;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(8),
-      decoration: routeSelected == routeName
-          ? BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(
-                color: Colors.brown.shade200,
-              ),
-            )
-          : null,
-      child: ListTile(
-        title: Text(title),
-        onTap: () {
-          context
-            ..pop()
-            ..go(routeName);
-        },
-        hoverColor: Colors.transparent,
-        focusColor: Colors.transparent,
+    return ListTile(
+      leading: isSubMenu ? SizedBox() : null,
+      title: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4.0),
+          color: routeName == routeSelected
+              ? Colors.brown.shade200.withOpacity(
+                  0.4,
+                )
+              : null,
+        ),
+        child: Text(
+          title,
+        ),
       ),
+      onTap: () {
+        context
+          ..pop()
+          ..go(routeName);
+      },
     );
   }
 }

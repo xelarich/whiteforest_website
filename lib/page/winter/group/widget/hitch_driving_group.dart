@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:responsive/responsive.dart';
+import 'package:responsive/flex_widget.dart';
+import 'package:responsive/responsive_row.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class CaniHikeDayGroup extends StatelessWidget {
-  const CaniHikeDayGroup({super.key});
+class HitchDrivingGroup extends StatelessWidget {
+  const HitchDrivingGroup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,6 @@ class CaniHikeDayGroup extends StatelessWidget {
             child: ResponsiveRow(
               alignment: WrapAlignment.spaceAround,
               children: [
-                //Image
                 FlexWidget(
                   sm: 12,
                   md: 12,
@@ -30,10 +30,11 @@ class CaniHikeDayGroup extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      'assets/images/summer/${getPathImage(context)}chalet.webp',
+                      'assets/images/winter/${getPathImage(context)}conduite_attelage_groupe.webp',
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
+                      alignment: Alignment.center,
                     ),
                   ),
                 ),
@@ -45,7 +46,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                   xxl: 6,
                   xxxl: 6,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -65,20 +66,18 @@ class CaniHikeDayGroup extends StatelessWidget {
                                 xl: 9,
                                 xxl: 9,
                                 xxxl: 9,
-                                child: Text.rich(
-                                  TextSpan(
-                                    text:
-                                        'Cani-randonnée journée'.toUpperCase(),
-                                    style: const TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'WickedGrit',
-                                    ),
+                                child: Text(
+                                  "Conduite d'attelage : Découverte ou Expert"
+                                      .toUpperCase(),
+                                  maxLines: 5,
+                                  style: const TextStyle(
+                                    fontSize: 28,
+                                    fontFamily: 'WickedGrit',
                                   ),
-                                  maxLines: 2,
                                 ),
                               ),
                               FlexWidget(
-                                xs: 4,
+                                xs: 6,
                                 sm: 3,
                                 md: 2,
                                 lg: 2,
@@ -106,7 +105,7 @@ class CaniHikeDayGroup extends StatelessWidget {
                                           size: 18,
                                         ),
                                       ),
-                                      Text('1 journée'),
+                                      Text('1H / 2H'),
                                     ],
                                   ),
                                 ),
@@ -126,59 +125,147 @@ class CaniHikeDayGroup extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text:
-                                    "Basé sur la même pratique qu'à la demi-journée ",
+                                    'Envie de piloter un traineau, vous êtes sportif et dynamique, ',
                               ),
                               TextSpan(
-                                text: 'MAIS ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              TextSpan(text: 'en journée!\n'),
-                              TextSpan(
-                                text: 'Prévoyez votre déjeuner et partons sur ',
-                              ),
-                              TextSpan(
-                                text: 'les sentiers de Montagne.\n',
+                                text: 'vous aimez les animaux.\n',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                text: 'Explication sur le métier de ',
+                                text: 'Vivez en groupe une ',
                               ),
                               TextSpan(
-                                text: 'musher ',
+                                text: 'expérience unique, ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                text: 'entre midi et deux !\n',
+                                text: "accompagné d'une ",
+                              ),
+                              TextSpan(
+                                text: 'monitrice diplômée.\n',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text:
+                                    'Par petit groupe de 6 vous arpentez la montagne et vous vous initiez à la ',
+                              ),
+                              TextSpan(
+                                text: "conduite d'attelage\n",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'Vous apprendrez à ',
+                              ),
+                              TextSpan(
+                                text: 'diriger et contrôler votre traineau ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(text: 'ainsi que '),
+                              TextSpan(
+                                text: 'vos chiens.\n\n',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(text: 'Conduite "'),
+                              TextSpan(
+                                text: 'Découverte',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text:
+                                    '" : Activité en co-pilotage ou en solo sur 1H.\n',
+                              ),
+                              TextSpan(text: 'Conduite "'),
+                              TextSpan(
+                                text: 'Expert',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text:
+                                    '" : Activité uniquement en solo sur 2H.\n',
                               ),
                             ],
                           ),
                           textAlign: TextAlign.start,
                           maxLines: 15,
                         ),
+                        const SizedBox(
+                          height: 32,
+                        ),
                         const Text(
-                          'Les tarifs groupes ( + de 15 personnes) :',
+                          'Les tarifs groupes ( + de 15 personnes ) :',
                           style: TextStyle(fontSize: 24),
                         ),
                         const SizedBox(
                           height: 16,
                         ),
-                        Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: Colors.brown.shade200,
-                            ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ResponsiveRow(
+                            alignment: WrapAlignment.spaceBetween,
+                            crossAxisAlignment: WrapCrossAlignment.start,
+                            children: [
+                              FlexWidget(
+                                xs: 12,
+                                sm: 5,
+                                md: 5,
+                                lg: 5,
+                                xl: 5,
+                                xxl: 5,
+                                xxxl: 5,
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 8),
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.brown.shade200,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Conduite "Découverte":\n'
+                                    'En co-pilotage: 45€/ personne\n'
+                                    'En solo: 65€/ personne',
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.bold,
+                                      height: 1.4,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              FlexWidget(
+                                xs: 12,
+                                sm: 5,
+                                md: 5,
+                                lg: 5,
+                                xl: 5,
+                                xxl: 5,
+                                xxxl: 5,
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 8),
+                                  padding: const EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.brown.shade200,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Conduite "Expert":\n'
+                                    'En solo: 110€/ personne',
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.bold,
+                                      height: 1.4,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          child: const Text(
-                            '45€/ Adulte\n'
-                            '35€/ Enfant de -12ans',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.bold,
-                              height: 1.4,
-                            ),
-                          ),
+                        ),
+                        const SizedBox(
+                          height: 32,
                         ),
                       ],
                     ),
@@ -229,11 +316,10 @@ class CaniHikeDayGroup extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 28.0),
                         child: Text(
-                          'La Toussuire\n'
+                          //TODO Verify this
                           'Le Corbier\n'
-                          'Saint-Sorlin d’Arves\n'
-                          'Saint Jean d’Arves\n'
-                          'Albiez-Montrond.\n',
+                          'La Toussuire\n'
+                          'Saint-Sorlin-d’Arves\n',
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 16),
                         ),
                       ),
@@ -276,21 +362,30 @@ class CaniHikeDayGroup extends StatelessWidget {
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                             children: [
-                              TextSpan(text: 'Équipement : '),
                               TextSpan(
-                                text: 'Tenue de randonnée ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                text: 'Équipement : ',
                               ),
                               TextSpan(
-                                text: '(chaussure de randonnée obligatoire), ',
-                              ),
-                              TextSpan(
-                                text: 'imperméable',
+                                text: 'Tenue chaude ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
-                                    ', affaire chaude pour le soir, sac à dos, bouteille d’eau.',
+                                    '(vêtements de ski, après ski, écharpe, gant), ',
+                              ),
+                              TextSpan(
+                                text: 'lunette ou masque.\n',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: 'Casque ',
+                              ),
+                              TextSpan(
+                                text: 'obligatoire ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              TextSpan(
+                                text: '(non fourni).',
                               ),
                             ],
                           ),

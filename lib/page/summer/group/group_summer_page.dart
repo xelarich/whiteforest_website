@@ -1,60 +1,36 @@
-import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart' hide Page, NavigationDrawer;
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
-import 'package:whiteforest_website/page/activity/summer/widget/cani_hike.dart';
-import 'package:whiteforest_website/page/activity/summer/widget/cani_hike_days.dart';
-import 'package:whiteforest_website/page/activity/summer/widget/cani_hike_night.dart';
-import 'package:whiteforest_website/page/activity/summer/widget/dog_kennel.dart';
+import 'package:whiteforest_website/page/summer/group/widget/cani_hike_day_group.dart';
+import 'package:whiteforest_website/page/summer/group/widget/cani_hike_group.dart';
+import 'package:whiteforest_website/page/summer/group/widget/dog_kennel_group.dart';
 import 'package:whiteforest_website/shared/redirection_contact.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class ActivitySummerPage extends StatefulWidget {
-  static const routeName = '/activitySummer';
-  static const indexAnchorKey = 'indexAnchorKey';
-  final int? indexAnchor;
+class GroupSummerPage extends StatefulWidget {
+  static const routeName = '/groupSummer';
 
-  const ActivitySummerPage({this.indexAnchor, super.key});
+  const GroupSummerPage({super.key});
 
   @override
-  State<ActivitySummerPage> createState() => _ActivitySummerPageState();
+  State<GroupSummerPage> createState() => _GroupSummerPageState();
 }
 
-class _ActivitySummerPageState extends State<ActivitySummerPage> {
-  late final AnchorScrollController _scrollController;
+class _GroupSummerPageState extends State<GroupSummerPage> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
-  void initState() {
-    super.initState();
-    _scrollController = AnchorScrollController();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) {
-        if (widget.indexAnchor != null) {
-          _scrollController.scrollToIndex(
-            index: widget.indexAnchor!,
-            scrollSpeed: 5,
-            curve: Curves.fastOutSlowIn,
-          );
-        }
-      },
-    );
-
     return Scaffold(
-      appBar: getTopBar(context, _key, ActivitySummerPage.routeName),
+      appBar: getTopBar(context, _key, GroupSummerPage.routeName),
       key: _key,
-      drawer: const DrawerMobile(ActivitySummerPage.routeName),
+      drawer: const DrawerMobile(GroupSummerPage.routeName),
       backgroundColor: Colors.brown.shade50,
       body: Column(
         children: [
           Expanded(
             child: SingleChildScrollView(
-              controller: _scrollController,
               child: Column(
                 children: [
                   Padding(
@@ -63,7 +39,7 @@ class _ActivitySummerPageState extends State<ActivitySummerPage> {
                       horizontal: 16,
                     ),
                     child: Text(
-                      'Les activités estivales'.toUpperCase(),
+                      'Offres groupes'.toUpperCase(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: ResponsiveValue<double>(
@@ -80,19 +56,15 @@ class _ActivitySummerPageState extends State<ActivitySummerPage> {
                       ),
                     ),
                   ),
-                  CaniHikeDays(_scrollController),
+                  const CaniHikeGroup(),
                   const SizedBox(
                     height: 64,
                   ),
-                  CaniHike(_scrollController),
+                  const CaniHikeDayGroup(),
                   const SizedBox(
                     height: 64,
                   ),
-                  CaniHikeNight(_scrollController),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  DogKennel(_scrollController),
+                  const DogKennelGroup(),
                   const SizedBox(
                     height: 64,
                   ),

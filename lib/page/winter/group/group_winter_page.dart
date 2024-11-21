@@ -1,46 +1,37 @@
-import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
-import 'package:flutter/material.dart' hide Page, NavigationDrawer;
+import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
-import 'package:whiteforest_website/page/activity/group/widget/cani_hike_day_group.dart';
-import 'package:whiteforest_website/page/activity/group/widget/cani_hike_group.dart';
-import 'package:whiteforest_website/page/activity/group/widget/dog_kennel_group.dart';
+import 'package:whiteforest_website/page/winter/group/widget/dog_racket_group.dart';
+import 'package:whiteforest_website/page/winter/group/widget/dog_kennel_group.dart';
+import 'package:whiteforest_website/page/winter/group/widget/hitch_driving_group.dart';
+import 'package:whiteforest_website/page/winter/group/widget/sleigh_group.dart';
 import 'package:whiteforest_website/shared/redirection_contact.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class ActivityGroupPage extends StatefulWidget {
-  static const routeName = '/activityGroup';
-  static const indexAnchorKey = 'indexAnchorKey';
+class GroupWinterPage extends StatefulWidget {
+  static const routeName = '/groupWinter';
 
-  const ActivityGroupPage({super.key});
+  const GroupWinterPage({super.key});
 
   @override
-  State<ActivityGroupPage> createState() => _ActivityGroupPageState();
+  State<GroupWinterPage> createState() => _GroupWinterPageState();
 }
 
-class _ActivityGroupPageState extends State<ActivityGroupPage> {
-  late final AnchorScrollController _scrollController;
+class _GroupWinterPageState extends State<GroupWinterPage> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
-
-  @override
-  void initState() {
-    super.initState();
-    _scrollController = AnchorScrollController();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getTopBar(context, _key, ActivityGroupPage.routeName),
+      appBar: getTopBar(context, _key, GroupWinterPage.routeName),
       key: _key,
-      drawer: const DrawerMobile(ActivityGroupPage.routeName),
+      drawer: const DrawerMobile(GroupWinterPage.routeName),
       backgroundColor: Colors.brown.shade50,
       body: Column(
         children: [
           Expanded(
             child: SingleChildScrollView(
-              controller: _scrollController,
               child: Column(
                 children: [
                   Padding(
@@ -66,11 +57,15 @@ class _ActivityGroupPageState extends State<ActivityGroupPage> {
                       ),
                     ),
                   ),
-                  const CaniHikeGroup(),
+                  const SleighGroup(),
                   const SizedBox(
                     height: 64,
                   ),
-                  const CaniHikeDayGroup(),
+                  const HitchDrivingGroup(),
+                  const SizedBox(
+                    height: 64,
+                  ),
+                  const DogRacketGroup(),
                   const SizedBox(
                     height: 64,
                   ),

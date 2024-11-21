@@ -4,8 +4,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class DogRacketNight extends StatelessWidget {
-  const DogRacketNight(this._scrollController, {super.key});
+class CaniHike extends StatelessWidget {
+  const CaniHike(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -13,7 +13,7 @@ class DogRacketNight extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnchorItemWrapper(
       controller: _scrollController,
-      index: 2,
+      index: 1,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -24,7 +24,6 @@ class DogRacketNight extends StatelessWidget {
               child: ResponsiveRow(
                 alignment: WrapAlignment.spaceAround,
                 children: [
-                  //Image
                   FlexWidget(
                     sm: 12,
                     md: 12,
@@ -36,11 +35,10 @@ class DogRacketNight extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
+                        'assets/images/summer/${getPathImage(context)}cani_rando.webp',
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
-                        alignment: Alignment.center,
                       ),
                     ),
                   ),
@@ -52,7 +50,7 @@ class DogRacketNight extends StatelessWidget {
                     xxl: 6,
                     xxxl: 6,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
@@ -65,20 +63,20 @@ class DogRacketNight extends StatelessWidget {
                               alignment: WrapAlignment.spaceBetween,
                               children: [
                                 FlexWidget(
-                                  xs: 10,
-                                  sm: 10,
+                                  xs: 12,
+                                  sm: 12,
                                   md: 9,
                                   lg: 9,
                                   xl: 9,
                                   xxl: 9,
                                   xxxl: 9,
                                   child: Text(
-                                    'Cani-raquette nocturne'.toUpperCase(),
-                                    maxLines: 2,
+                                    'Cani-randonnée initiation'.toUpperCase(),
                                     style: const TextStyle(
                                       fontSize: 28,
                                       fontFamily: 'WickedGrit',
                                     ),
+                                    maxLines: 2,
                                   ),
                                 ),
                                 FlexWidget(
@@ -99,6 +97,10 @@ class DogRacketNight extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(4),
                                     ),
                                     child: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Padding(
                                           padding: EdgeInsets.only(right: 8.0),
@@ -107,7 +109,7 @@ class DogRacketNight extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('5H'),
+                                        Text('1H30 / 2H'),
                                       ],
                                     ),
                                   ),
@@ -126,54 +128,45 @@ class DogRacketNight extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
-                                  text: 'Le ',
-                                ),
-                                TextSpan(
-                                  text: 'mardi soir ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'ou le ',
-                                ),
-                                TextSpan(
-                                  text: 'jeudi soir',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: ', venez découvrir la cani-raquette ! ',
-                                ),
-                                TextSpan(
-                                  text:
-                                      'Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera ',
-                                ),
-                                TextSpan(
-                                  text: 'un agréable souvenir.\n',
+                                  text: 'Randonnée à pied',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      'Vous créerez une relation toute particulière avec votre binôme à quatre pattes et le musher qui vous accompagne dans ',
+                                      ', tracté par un chien de traineau à l’aide '
+                                      'd’une ceinture et d’une ligne '
+                                      'conçue spécialement pour l’activité !\n',
                                 ),
                                 TextSpan(
-                                  text: 'un paysage nocturne',
+                                  text:
+                                      'Vous serez aidés par le chien pour arpenter nos '
+                                      'montagnes, ponctués de ',
+                                ),
+                                TextSpan(
+                                  text: 'pauses câlines ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(text: 'et de '),
+                                TextSpan(
+                                  text: 'moment de partages canins et humains ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      '. Sans oublier la pause dîner en altitude ou dans la vallée de l’Arvan, ou vous vous ',
+                                      '!\nVous tomberez sous le charme de ses chiens ',
                                 ),
                                 TextSpan(
-                                  text: 'régalerez ',
+                                  text: 'extraordinaires ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      'après un bel effort en cani-raquette, un retour prévu aux alentours de 23h00. ',
+                                      'que ce soit par leur volonté à l’exercice ou leur tendresse.\n',
                                 ),
                                 TextSpan(
                                   text:
-                                      'Avec une dernière papouille à votre fidèle compagnon !\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                      'L’activité comprend une explication sur la pratique de la cani-randonnée puis une balade '
+                                      'de 1h30 à 2 heures.\n',
                                 ),
                               ],
                             ),
@@ -188,7 +181,6 @@ class DogRacketNight extends StatelessWidget {
                             height: 16,
                           ),
                           Container(
-                            margin: const EdgeInsets.only(top: 8),
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
@@ -197,11 +189,8 @@ class DogRacketNight extends StatelessWidget {
                               ),
                             ),
                             child: const Text(
-                              '80€/ personne\n'
-                              'Le tarif comprends:\n'
-                              'L’activité\n'
-                              'La location du matériel\n'
-                              'Le repas (apéritif, plat,dessert, café)',
+                              '35€/ Adulte\n'
+                              '30€/ Enfant de -12ans',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontWeight: FontWeight.bold,
@@ -257,8 +246,11 @@ class DogRacketNight extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
                           child: Text(
-                            'Le mardi soir à 17h30 au départ de La Toussuire\n'
-                            'Le jeudi soir à 18h00 au départ de St Sorlin D’Arves.\n',
+                            'La Toussuire\n'
+                            'Le Corbier\n'
+                            'Saint-Sorlin-d’Arves\n'
+                            'Saint-Jean-d’Arves\n'
+                            'Albiez-Montrond\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
@@ -302,23 +294,36 @@ class DogRacketNight extends StatelessWidget {
                               style:
                                   TextStyle(fontFamily: 'Roboto', fontSize: 16),
                               children: [
+                                TextSpan(text: 'Les chiens sont adaptés à '),
                                 TextSpan(
-                                  text: 'Nos partenaires :\n'
-                                      'Le mardi soir avec les restaurants des Carlines\n'
-                                      "Le jeudi soir avec l'Étable des prés plan\n"
-                                      'Équipement : ',
+                                  text: 'votre condition physique.\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text: 'Tenue chaude ',
+                                  text: 'C’est une activité destinée aux '
+                                      'familles mais aussi aux sportifs.\n',
+                                ),
+                                TextSpan(
+                                  text: 'Accessible ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      '(vêtements de ski, après ski, écharpe, gant), ',
+                                      'aux jeunes marcheurs mais aussi aux plus âgés !\n',
                                 ),
                                 TextSpan(
-                                  text: 'Raquette',
+                                  text: 'Interdit aux femmes enceintes.\n',
                                   style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(text: 'Équipement : '),
+                                TextSpan(
+                                  text: 'Tenue de randonnée ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text:
+                                      '(chaussures fermées obligatoire), bouteille d’eau.\n'
+                                      'Les bâtons de marches ne sont pas nécessaires.',
                                 ),
                               ],
                             ),

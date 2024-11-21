@@ -1,12 +1,11 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:responsive/flex_widget.dart';
-import 'package:responsive/responsive_row.dart';
+import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class SleighBaptism extends StatelessWidget {
-  const SleighBaptism(this._scrollController, {super.key});
+class DogRacketNight extends StatelessWidget {
+  const DogRacketNight(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -14,7 +13,7 @@ class SleighBaptism extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnchorItemWrapper(
       controller: _scrollController,
-      index: 0,
+      index: 2,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -25,6 +24,7 @@ class SleighBaptism extends StatelessWidget {
               child: ResponsiveRow(
                 alignment: WrapAlignment.spaceAround,
                 children: [
+                  //Image
                   FlexWidget(
                     sm: 12,
                     md: 12,
@@ -36,10 +36,11 @@ class SleighBaptism extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/winter/${getPathImage(context)}bapteme_traineau.webp',
+                        'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
+                        alignment: Alignment.center,
                       ),
                     ),
                   ),
@@ -72,7 +73,7 @@ class SleighBaptism extends StatelessWidget {
                                   xxl: 9,
                                   xxxl: 9,
                                   child: Text(
-                                    'Bapteme traineau'.toUpperCase(),
+                                    'Cani-raquette nocturne'.toUpperCase(),
                                     maxLines: 2,
                                     style: const TextStyle(
                                       fontSize: 28,
@@ -81,7 +82,7 @@ class SleighBaptism extends StatelessWidget {
                                   ),
                                 ),
                                 FlexWidget(
-                                  xs: 5,
+                                  xs: 4,
                                   sm: 3,
                                   md: 2,
                                   lg: 2,
@@ -110,7 +111,7 @@ class SleighBaptism extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('30 Min à 1 H'),
+                                        Text('5H'),
                                       ],
                                     ),
                                   ),
@@ -129,51 +130,59 @@ class SleighBaptism extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
-                                  text: 'Assis dans le traineau, ',
+                                  text: 'Le ',
                                 ),
                                 TextSpan(
-                                  text: 'guidé par 10 chiens et leur musher',
+                                  text: 'mardi soir ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text: ', venez vivre ',
+                                  text: 'ou le ',
                                 ),
                                 TextSpan(
-                                  text: 'un moment de partage ',
+                                  text: 'jeudi soir',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: ', venez découvrir la cani-raquette ! ',
+                                ),
+                                TextSpan(
+                                  text:
+                                      'Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera ',
+                                ),
+                                TextSpan(
+                                  text: 'un agréable souvenir.\n',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      "avec nos chiens, d'explication de notre métier et de sensibilisation sur les chiens nordiques.\n",
+                                      'Vous créerez une relation toute particulière avec votre binôme à quatre pattes et le musher qui vous accompagne dans ',
+                                ),
+                                TextSpan(
+                                  text: 'un paysage nocturne',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      'Profitez des différents paysages sur des pistes variées et ensoleillées. ',
+                                      '. Sans oublier la pause dîner en altitude ou dans la vallée de l’Arvan, ou vous vous ',
                                 ),
-                                TextSpan(text: 'Nous serons ravis de '),
                                 TextSpan(
-                                  text: 'partager durant 30 minutes ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: 'ou '),
-                                TextSpan(
-                                  text: '1 heure une expérience inoubliable ',
+                                  text: 'régalerez ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text: 'et unique dans nos montagnes !\n',
+                                  text:
+                                      'après un bel effort en cani-raquette, un retour prévu aux alentours de 23h00. ',
                                 ),
                                 TextSpan(
-                                  text: 'Activité familiale par excellence !',
+                                  text:
+                                      'Avec une dernière papouille à votre fidèle compagnon !\n',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
                             textAlign: TextAlign.start,
                             maxLines: 15,
-                          ),
-                          const SizedBox(
-                            height: 32,
                           ),
                           const Text(
                             'Les tarifs :',
@@ -182,81 +191,27 @@ class SleighBaptism extends StatelessWidget {
                           const SizedBox(
                             height: 16,
                           ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ResponsiveRow(
-                              alignment: WrapAlignment.spaceBetween,
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              children: [
-                                FlexWidget(
-                                  xs: 12,
-                                  sm: 5,
-                                  md: 5,
-                                  lg: 5,
-                                  xl: 5,
-                                  xxl: 5,
-                                  xxxl: 5,
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.brown.shade200,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      '30 min : 110€\n'
-                                      'Traineau pour 1 à 2 personnes\n'
-                                      'Supplément / personne\n'
-                                      'Enfant (2 ans à 6 ans) : 20€\n'
-                                      'Jeune (7 à 12 ans) : 40€\n'
-                                      'Adulte : 55€',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.bold,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                FlexWidget(
-                                  xs: 12,
-                                  sm: 5,
-                                  md: 5,
-                                  lg: 5,
-                                  xl: 5,
-                                  xxl: 5,
-                                  xxxl: 5,
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.brown.shade200,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      '1H : 155€\n'
-                                      'Traineau pour 1 à 2 personnes\n'
-                                      'Supplément / personne\n'
-                                      'Enfant (2 ans à 6 ans) : 40€\n'
-                                      'Jeune (7 à 12 ans) : 60€\n'
-                                      'Adulte : 75€',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.bold,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                          Container(
+                            margin: const EdgeInsets.only(top: 8),
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: Colors.brown.shade200,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 32,
+                            child: const Text(
+                              '80€/ personne\n'
+                              'Le tarif comprends:\n'
+                              'L’activité\n'
+                              'La location du matériel (sauf raquette)\n'
+                              'Le repas (apéritif, plat,dessert, café)',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
+                                height: 1.4,
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -278,7 +233,6 @@ class SleighBaptism extends StatelessWidget {
                 ),
               ),
               child: ResponsiveRow(
-                alignment: WrapAlignment.spaceBetween,
                 crossAxisAlignment: WrapCrossAlignment.start,
                 children: [
                   FlexWidget(
@@ -306,8 +260,25 @@ class SleighBaptism extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
-                          child: Text(
-                            "La Toussuire, Saint-Sorlin d'Arves, Albiez-Montrond, Saint Jean d'Arves (uniquement 30 min)",
+                          child: Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Le mardi soir à 17h30 au départ de ',
+                                ),
+                                TextSpan(
+                                  text: 'La Toussuire\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: 'Le jeudi soir à 18h00 au départ de ',
+                                ),
+                                TextSpan(
+                                  text: 'Saint-Sorlin-d’Arves\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
@@ -319,10 +290,10 @@ class SleighBaptism extends StatelessWidget {
                     xs: 12,
                     sm: 12,
                     md: 12,
-                    lg: 8,
-                    xl: 8,
-                    xxl: 8,
-                    xxxl: 8,
+                    lg: 4,
+                    xl: 4,
+                    xxl: 4,
+                    xxxl: 4,
                     child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -352,20 +323,6 @@ class SleighBaptism extends StatelessWidget {
                                   TextStyle(fontFamily: 'Roboto', fontSize: 16),
                               children: [
                                 TextSpan(
-                                  text: 'ATTENTION : 180kg max par traineau.\n'
-                                      'Accessible au plus grand nombre !\n',
-                                ),
-                                TextSpan(
-                                  text: 'Interdit aux femmes enceintes ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: 'et '),
-                                TextSpan(
-                                  text:
-                                      'déconseillés aux personnes fragiles du dos.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
                                   text: 'Équipement : ',
                                 ),
                                 TextSpan(
@@ -374,11 +331,113 @@ class SleighBaptism extends StatelessWidget {
                                 ),
                                 TextSpan(
                                   text:
-                                      '(vêtements de ski, après ski, écharpe, gant)',
+                                      '(vêtements de ski, après ski, écharpe, gant).\n',
+                                ),
+                                TextSpan(
+                                  text: 'Raquette ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text:
+                                      '(location de raquette possible auprès de nos partenaires).\n',
                                 ),
                               ],
                             ),
                           ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  FlexWidget(
+                    xs: 12,
+                    sm: 12,
+                    md: 12,
+                    lg: 4,
+                    xl: 4,
+                    xxl: 4,
+                    xxxl: 4,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(right: 4),
+                              child: Icon(Icons.info_outline),
+                            ),
+                            Flexible(
+                              child: Text(
+                                'Nos partenaires',
+                                style: TextStyle(
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        ResponsiveRow(
+                          crossAxisAlignment: WrapCrossAlignment.start,
+                          alignment: WrapAlignment.spaceBetween,
+                          children: [
+                            FlexWidget(
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 28.0),
+                                child: Text.rich(
+                                  TextSpan(
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 16,
+                                    ),
+                                    children: [
+                                      TextSpan(
+                                        text: 'Restaurants :\n',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: 'Chez Bib\n'
+                                            "L'éTable des Prés Plan\n",
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            FlexWidget(
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 28.0),
+                                child: Text.rich(
+                                  TextSpan(
+                                    style: TextStyle(
+                                      fontFamily: 'Roboto',
+                                      fontSize: 16,
+                                    ),
+                                    children: [
+                                      TextSpan(
+                                        text: 'Location de raquette :\n',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text: 'Intersport, La Toussuire\n',
+                                      ),
+                                      TextSpan(
+                                        text: 'Arthur Sport, La Toussuire\n',
+                                      ),
+                                      TextSpan(
+                                        text:
+                                            'Skiset - Tout Pour le Ski, Saint-Sorlin-d’Arves\n',
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

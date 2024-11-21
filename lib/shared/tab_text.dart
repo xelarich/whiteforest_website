@@ -63,11 +63,8 @@ class TabTextState extends State<TabText> {
                 }
               }
             },
-            child: Card(
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.zero,
-              ),
-              elevation: 8,
+            child: Container(
+              color: Colors.white,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -79,7 +76,10 @@ class TabTextState extends State<TabText> {
                         onPressed: () => context.go(
                           widget.children[index].routeName,
                         ),
-                        child: Text(widget.children[index].name),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(widget.children[index].name),
+                        ),
                       );
                     },
                   ),
@@ -111,30 +111,34 @@ class _TabTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          name,
-          style: TextStyle(
-            fontSize: 16,
-            color: getColors(),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Text(
+            name,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 16,
+              color: getColors(),
+            ),
           ),
-        ),
-        const SizedBox(height: 8),
-        Visibility(
-          maintainAnimation: true,
-          maintainState: true,
-          maintainSize: true,
-          visible: isHover || isSelected,
-          child: Container(
-            width: 100,
-            height: 2,
-            color: getColors(),
+          const SizedBox(height: 8),
+          Visibility(
+            maintainAnimation: true,
+            maintainState: true,
+            maintainSize: true,
+            visible: isHover || isSelected,
+            child: Container(
+              width: 100,
+              height: 2,
+              color: getColors(),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

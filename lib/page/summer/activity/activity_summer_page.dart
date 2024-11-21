@@ -1,25 +1,27 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart' hide Page, NavigationDrawer;
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
-import 'package:whiteforest_website/page/activity/winter/widget/dog_racket_night.dart';
-import 'package:whiteforest_website/page/activity/winter/widget/hitch_driving.dart';
-import 'package:whiteforest_website/page/activity/winter/widget/sleigh_baptism.dart';
+import 'package:whiteforest_website/page/summer/activity/widget/cani_hike.dart';
+import 'package:whiteforest_website/page/summer/activity/widget/cani_hike_days.dart';
+import 'package:whiteforest_website/page/summer/activity/widget/cani_hike_night.dart';
+import 'package:whiteforest_website/page/summer/activity/widget/dog_kennel.dart';
 import 'package:whiteforest_website/shared/redirection_contact.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class ActivityWinterPage extends StatefulWidget {
-  static const routeName = '/activityWinter';
+class ActivitySummerPage extends StatefulWidget {
+  static const routeName = '/activitySummer';
   static const indexAnchorKey = 'indexAnchorKey';
   final int? indexAnchor;
 
-  const ActivityWinterPage({this.indexAnchor, super.key});
+  const ActivitySummerPage({this.indexAnchor, super.key});
 
   @override
-  State<ActivityWinterPage> createState() => _ActivityWinterPageState();
+  State<ActivitySummerPage> createState() => _ActivitySummerPageState();
 }
 
-class _ActivityWinterPageState extends State<ActivityWinterPage> {
+class _ActivitySummerPageState extends State<ActivitySummerPage> {
   late final AnchorScrollController _scrollController;
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -42,10 +44,11 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
         }
       },
     );
+
     return Scaffold(
-      appBar: getTopBar(context, _key, ActivityWinterPage.routeName),
+      appBar: getTopBar(context, _key, ActivitySummerPage.routeName),
       key: _key,
-      drawer: const DrawerMobile(ActivityWinterPage.routeName),
+      drawer: const DrawerMobile(ActivitySummerPage.routeName),
       backgroundColor: Colors.brown.shade50,
       body: Column(
         children: [
@@ -55,25 +58,41 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 24),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 24,
+                      horizontal: 16,
+                    ),
                     child: Text(
-                      'Les activités hivernales'.toUpperCase(),
+                      'Les activités estivales'.toUpperCase(),
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 38,
+                      style: TextStyle(
+                        fontSize: ResponsiveValue<double>(
+                          context,
+                          defaultValue: 28,
+                          conditionalValues: [
+                            const Condition<double>.largerThan(
+                              name: MOBILE,
+                              value: 38,
+                            ),
+                          ],
+                        ).value,
                         fontFamily: 'WickedGrit',
                       ),
                     ),
                   ),
-                  SleighBaptism(_scrollController),
+                  CaniHikeDays(_scrollController),
                   const SizedBox(
                     height: 64,
                   ),
-                  HitchDriving(_scrollController),
+                  CaniHike(_scrollController),
                   const SizedBox(
                     height: 64,
                   ),
-                  DogRacketNight(_scrollController),
+                  CaniHikeNight(_scrollController),
+                  const SizedBox(
+                    height: 64,
+                  ),
+                  DogKennel(_scrollController),
                   const SizedBox(
                     height: 64,
                   ),

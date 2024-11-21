@@ -5,8 +5,8 @@ import 'package:responsive/flex_widget.dart';
 import 'package:responsive/responsive_row.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class HitchDriving extends StatelessWidget {
-  const HitchDriving(this._scrollController, {super.key});
+class SleighBaptism extends StatelessWidget {
+  const SleighBaptism(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -14,7 +14,7 @@ class HitchDriving extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnchorItemWrapper(
       controller: _scrollController,
-      index: 1,
+      index: 0,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -36,11 +36,11 @@ class HitchDriving extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/winter/${getPathImage(context)}conduite_attelage.webp',
+                        'assets/images/winter/${getPathImage(context)}bapteme_traineau.webp',
+                        alignment: Alignment.bottomRight,
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
-                        alignment: Alignment.topCenter,
                       ),
                     ),
                   ),
@@ -73,7 +73,7 @@ class HitchDriving extends StatelessWidget {
                                   xxl: 9,
                                   xxxl: 9,
                                   child: Text(
-                                    "Conduite d'attelage".toUpperCase(),
+                                    'Bapteme traineau'.toUpperCase(),
                                     maxLines: 2,
                                     style: const TextStyle(
                                       fontSize: 28,
@@ -83,8 +83,8 @@ class HitchDriving extends StatelessWidget {
                                 ),
                                 FlexWidget(
                                   xs: 5,
-                                  sm: 4,
-                                  md: 3,
+                                  sm: 3,
+                                  md: 2,
                                   lg: 2,
                                   xl: 2,
                                   xxl: 2,
@@ -111,7 +111,7 @@ class HitchDriving extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('0,5 à 1 Journée'),
+                                        Text('30 Min'),
                                       ],
                                     ),
                                   ),
@@ -130,55 +130,49 @@ class HitchDriving extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
-                                  text: 'Le temps d’',
+                                  text: 'Assis dans le traineau, ',
                                 ),
                                 TextSpan(
-                                  text: 'une demi-journée',
+                                  text: 'guidé par 10 chiens et leur musher',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text: ', ou d’',
+                                  text: ', venez vivre ',
                                 ),
                                 TextSpan(
-                                  text: 'une journée entière ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'devenez le musher de ',
-                                ),
-                                TextSpan(
-                                  text: 'votre propre attelage !',
+                                  text: 'un moment de partage ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      "\nAvec 3 ou 4 chiens selon les conditions d'enneigement, découvrez les magnifiques ",
-                                ),
-                                TextSpan(
-                                  text: 'paysages de la Maurienne.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                      "avec nos chiens, d'explication de notre métier et de sensibilisation sur les chiens nordiques.\n",
                                 ),
                                 TextSpan(
                                   text:
-                                      'Accompagné d’un musher professionnel pour vous encadrer durant votre pratique, et par petit groupe de 6 personnes maximum, vous apprendrez à',
-                                ),
-                                TextSpan(
-                                  text: ' diriger et contrôler votre traineau ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: 'ainsi que '),
-                                TextSpan(
-                                  text: 'vos chiens.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                      'Profitez des différents paysages sur des pistes variées et ensoleillées.\n',
                                 ),
                                 TextSpan(
                                   text:
-                                      'De bonnes conditions sportives sont requises pour pratiquer la conduite d’attelage !\n',
+                                      'Nous serons ravis de partager durant 30 minutes une expérience ',
+                                ),
+                                TextSpan(
+                                  text: 'inoubliable et unique ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: 'dans nos montagnes !\n',
+                                ),
+                                TextSpan(
+                                  text: 'Activité familiale par excellence !',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
                             textAlign: TextAlign.start,
                             maxLines: 15,
+                          ),
+                          const SizedBox(
+                            height: 32,
                           ),
                           const Text(
                             'Les tarifs :',
@@ -191,7 +185,7 @@ class HitchDriving extends StatelessWidget {
                             width: double.infinity,
                             child: ResponsiveRow(
                               alignment: WrapAlignment.spaceBetween,
-                              crossAxisAlignment: WrapCrossAlignment.start,
+                              crossAxisAlignment: WrapCrossAlignment.center,
                               children: [
                                 FlexWidget(
                                   xs: 12,
@@ -211,35 +205,12 @@ class HitchDriving extends StatelessWidget {
                                       ),
                                     ),
                                     child: const Text(
-                                      'Demi-journée : 120€/ personne',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.bold,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                FlexWidget(
-                                  xs: 12,
-                                  sm: 5,
-                                  md: 5,
-                                  lg: 5,
-                                  xl: 5,
-                                  xxl: 5,
-                                  xxxl: 5,
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.brown.shade200,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      'Journée: 240€/ personne\n'
-                                      '(le repas du midi n’est pas compris dans le tarif)',
+                                      '30 min : 110€\n'
+                                      'Traineau pour 1 à 2 personnes\n'
+                                      'Supplément / personne\n'
+                                      'Enfant (2 ans à 6 ans) : 20€\n'
+                                      'Jeune (7 à 12 ans) : 40€\n'
+                                      'Adulte : 55€',
                                       style: TextStyle(
                                         fontFamily: 'Roboto',
                                         fontWeight: FontWeight.bold,
@@ -303,8 +274,11 @@ class HitchDriving extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
                           child: Text(
-                            'En demi-journée: Le Corbier / La Toussuire/ Saint Sorlin d’Arves\n'
-                            'En journée: Saint Sorlin d’Arves',
+                            'La Toussuire\n'
+                            "Saint-Sorlin-d'Arves\n"
+                            'Albiez-Montrond\n'
+                            "Saint-Jean-d'Arves\n"
+                            'Domaine skiable des Sybelles\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
@@ -349,9 +323,34 @@ class HitchDriving extends StatelessWidget {
                                   TextStyle(fontFamily: 'Roboto', fontSize: 16),
                               children: [
                                 TextSpan(
+                                  text: 'ATTENTION :\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
                                   text:
-                                      'Équipement : chaussure type après ski, pantalon et veste de neige (imperméable),\n'
-                                      'gants, bonnet, lunette ou masque. ',
+                                      "En fonction des conditions d'enneigement, le départ peut se faire en altitude, il faudra donc prévoir les forfaits de ski.\n"
+                                      '180kg max par traineau.\n',
+                                ),
+                                TextSpan(
+                                  text: 'Interdit aux femmes enceintes ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(text: 'et '),
+                                TextSpan(
+                                  text:
+                                      'déconseillés aux personnes fragiles du dos.\n',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text: 'Équipement : ',
+                                ),
+                                TextSpan(
+                                  text: 'Tenue chaude ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                TextSpan(
+                                  text:
+                                      '(vêtements de ski, après ski, écharpe, gant).',
                                 ),
                               ],
                             ),

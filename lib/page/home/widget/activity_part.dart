@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive/responsive.dart';
-import 'package:whiteforest_website/page/activity/summer/activity_summer_page.dart';
-import 'package:whiteforest_website/page/activity/winter/activity_winter_page.dart';
 import 'package:whiteforest_website/page/home/widget/card_home.dart';
+import 'package:whiteforest_website/page/summer/activity/activity_summer_page.dart';
+import 'package:whiteforest_website/page/winter/activity/activity_winter_page.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
 class ActivityPart extends StatelessWidget {

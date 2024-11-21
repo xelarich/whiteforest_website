@@ -4,8 +4,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
-class CaniHike extends StatelessWidget {
-  const CaniHike(this._scrollController, {super.key});
+class DogKennel extends StatelessWidget {
+  const DogKennel(this._scrollController, {super.key});
 
   final AnchorScrollController _scrollController;
 
@@ -13,7 +13,7 @@ class CaniHike extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnchorItemWrapper(
       controller: _scrollController,
-      index: 1,
+      index: 3,
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -35,7 +35,7 @@ class CaniHike extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/summer/${getPathImage(context)}cani_rando.webp',
+                        'assets/images/summer/${getPathImage(context)}chenil.webp',
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
@@ -63,25 +63,27 @@ class CaniHike extends StatelessWidget {
                               alignment: WrapAlignment.spaceBetween,
                               children: [
                                 FlexWidget(
-                                  xs: 10,
-                                  sm: 10,
+                                  xs: 12,
+                                  sm: 12,
                                   md: 9,
                                   lg: 9,
                                   xl: 9,
                                   xxl: 9,
                                   xxxl: 9,
-                                  child: Text(
-                                    'Cani-randonnée initiation'.toUpperCase(),
-                                    style: const TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'WickedGrit',
+                                  child: Text.rich(
+                                    TextSpan(
+                                      text: 'Visite du chenil'.toUpperCase(),
+                                      style: const TextStyle(
+                                        fontSize: 28,
+                                        fontFamily: 'WickedGrit',
+                                      ),
                                     ),
                                     maxLines: 2,
                                   ),
                                 ),
                                 FlexWidget(
                                   xs: 4,
-                                  sm: 3,
+                                  sm: 2,
                                   md: 2,
                                   lg: 2,
                                   xl: 2,
@@ -109,7 +111,7 @@ class CaniHike extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('1H30 / 2H'),
+                                        Text('1H'),
                                       ],
                                     ),
                                   ),
@@ -128,46 +130,34 @@ class CaniHike extends StatelessWidget {
                               ),
                               children: [
                                 TextSpan(
-                                  text: 'Randonnée à pied',
+                                  text:
+                                      'Un endroit conçu pour nos partenaires canins, environ 1 heure avec plus ou moins ',
+                                ),
+                                TextSpan(
+                                  text: '80 loulous ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text:
-                                      ', tracté par un chien de traineau à l’aide '
-                                      'd’une ceinture et d’une ligne '
-                                      'conçue spécialement pour l’activité !\n',
+                                  text: 'demandeurs de câlin et d’attention.\n',
                                 ),
+                                TextSpan(text: 'Des mushers '),
                                 TextSpan(
-                                  text:
-                                      'Vous serez aidés par le chien pour arpenter nos '
-                                      'montagnes, ponctués de ',
-                                ),
-                                TextSpan(
-                                  text: 'pauses câlines ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: 'et de '),
-                                TextSpan(
-                                  text: 'moment de partages canins et humains ',
+                                  text: 'passionnés ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text:
-                                      '!\nVous tomberez sous le charme de ses chiens ',
+                                  text: 'prêt à vous expliquer leur travail, '
+                                      'leur passion et la vie de leurs chiens.\n',
                                 ),
                                 TextSpan(
-                                  text: 'extraordinaires ',
+                                  text:
+                                      "Apprenez en plus sur le métier de musher, sur l’éducation, l'entraînement et ",
+                                ),
+                                TextSpan(
+                                  text: 'les différents aspects ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                TextSpan(
-                                  text:
-                                      'que ce soit par leur volonté à l’exercice ou leur tendresse.\n',
-                                ),
-                                TextSpan(
-                                  text:
-                                      'L’activité comprend une explication sur la pratique de la cani-randonnée puis une balade '
-                                      'de 1h30 à 2 heures.\n',
-                                ),
+                                TextSpan(text: 'de notre métier.\n'),
                               ],
                             ),
                             textAlign: TextAlign.start,
@@ -189,8 +179,8 @@ class CaniHike extends StatelessWidget {
                               ),
                             ),
                             child: const Text(
-                              '35€/ Adulte\n'
-                              '30€/ Enfant de -12ans',
+                              '15€/ Adulte\n'
+                              '10€/ Enfant de -12ans',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontWeight: FontWeight.bold,
@@ -247,10 +237,7 @@ class CaniHike extends StatelessWidget {
                           padding: EdgeInsets.only(left: 28.0),
                           child: Text(
                             'La Toussuire\n'
-                            'Le Corbier\n'
-                            'Saint-Sorlin d’Arves\n'
-                            'Saint Jean d’Arves\n'
-                            'Albiez-Montrond.\n',
+                            'Sur votre station\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),
@@ -294,36 +281,14 @@ class CaniHike extends StatelessWidget {
                               style:
                                   TextStyle(fontFamily: 'Roboto', fontSize: 16),
                               children: [
-                                TextSpan(text: 'Les chiens sont adaptés à '),
+                                TextSpan(text: 'Équipement: '),
                                 TextSpan(
-                                  text: 'votre condition physique.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'C’est une activité destinée aux '
-                                      'familles mais aussi aux sportifs.\n',
-                                ),
-                                TextSpan(
-                                  text: 'Accessible ',
+                                  text: 'Vêtements confortables ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
-                                      'aux jeunes marcheurs mais aussi aux plus âgés !\n',
-                                ),
-                                TextSpan(
-                                  text: 'Interdit aux femmes enceintes.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: 'Équipement : '),
-                                TextSpan(
-                                  text: 'Tenue de randonnée ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      '(chaussures fermées obligatoire), bouteille d’eau.\n'
-                                      'Les bâtons de marches ne sont pas nécessaires.',
+                                      'qui ne craignent pas les poils et les traces de pattes, chaussure fermée, eau.',
                                 ),
                               ],
                             ),
