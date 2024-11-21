@@ -139,7 +139,8 @@ class DogKennelGroup extends StatelessWidget {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                  text: 'Entouré de nos ',),
+                                text: 'Entouré de nos ',
+                              ),
                               TextSpan(
                                 text: '68 chiens ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -153,12 +154,16 @@ class DogKennelGroup extends StatelessWidget {
                                 text: 'son métier, ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
-                              TextSpan(text: 'les différentes activités qui composent '),
+                              TextSpan(
+                                  text:
+                                      'les différentes activités qui composent '),
                               TextSpan(
                                 text: 'son quotidien, ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
-                              TextSpan(text: ' les entrainements, les soins apportés aux chiens et '),
+                              TextSpan(
+                                  text:
+                                      ' les entrainements, les soins apportés aux chiens et '),
                               TextSpan(
                                 text: "pleins d'autres choses.\n",
                                 style: TextStyle(fontWeight: FontWeight.bold),

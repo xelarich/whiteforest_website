@@ -139,8 +139,9 @@ class DogRacketGroup extends StatelessWidget {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                  text:
-                                      'celui-ci vous aidera durant votre randonnée.\n',),
+                                text:
+                                    'celui-ci vous aidera durant votre randonnée.\n',
+                              ),
                               TextSpan(text: 'Vous créerez '),
                               TextSpan(
                                 text: 'une relation ',
