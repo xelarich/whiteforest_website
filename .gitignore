@@ -51,3 +51,6 @@ app.*.map.json
 /pubspec.lock
 /assets/config/config.json
 /.env
+
+# FVM Version Cache
+.fvm/
