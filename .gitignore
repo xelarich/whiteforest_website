@@ -45,6 +45,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/.firebase/
 /.fvm
 /.metadata
 /.firebaserc
@@ -54,3 +55,4 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+

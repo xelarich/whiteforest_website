@@ -11,7 +11,7 @@ class HeaderCarousel extends StatefulWidget {
 }
 
 class _HeaderCarouselState extends State<HeaderCarousel> {
-  final CarouselController _controller = CarouselController();
+  final CarouselSliderController _controller = CarouselSliderController();
 
   final List<Widget> images = [
     const HeaderImage('assets/images/header/header_winter.webp'),

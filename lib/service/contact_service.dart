@@ -1,13 +1,13 @@
-import 'package:emailjs/emailjs.dart';
+import 'package:emailjs/emailjs.dart' as emailjs;
 
 class ContactService {
-  Future<EmailJSResponseStatus> sendMail(
+  Future<emailjs.EmailJSResponseStatus> sendMail(
     String name,
     String mail,
     String message,
     String serviceId,
     String templateId,
-    Options options,
+    emailjs.Options options,
   ) async {
     {
       Map<String, dynamic> templateParams = {
@@ -16,7 +16,7 @@ class ContactService {
         'reply_to': mail,
         'message': message,
       };
-      return EmailJS.send(serviceId, templateId, templateParams, options);
+      return emailjs.send(serviceId, templateId, templateParams, options);
     }
   }
 }
