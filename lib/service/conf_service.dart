@@ -12,7 +12,7 @@ class ConfService {
   void init() async {
     await dotenv.load(fileName: '.env');
     if (dotenv.env['ENV'] == 'development') {
-      config = await loadLocalConfig();
+      config = await loadFirebaseConfig();
     } else {
       config = loadFirebaseConfig();
     }

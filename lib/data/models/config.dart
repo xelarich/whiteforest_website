@@ -16,6 +16,11 @@ class Config {
     this.templateId = '',
   });
 
+  @override
+  String toString() {
+    return 'Config{publicKey: $publicKey, privateKey: $privateKey, serviceId: $serviceId, templateId: $templateId}';
+  }
+
   factory Config.fromJson(Map<String, dynamic> json) => _$ConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$ConfigToJson(this);
