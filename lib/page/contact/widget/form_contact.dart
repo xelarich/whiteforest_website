@@ -16,7 +16,6 @@ class FormContact extends StatefulWidget {
 }
 
 class _FormContactState extends State<FormContact> {
-  final ConfService confService = GetIt.I.get<ConfService>();
 
   final _formKey = GlobalKey<FormState>();
 

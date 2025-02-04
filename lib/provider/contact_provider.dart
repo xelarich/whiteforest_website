@@ -22,11 +22,11 @@ class ContactProvider extends ChangeNotifier {
       name,
       mail,
       message,
-      _confService.config.serviceId,
-      _confService.config.templateId,
+      'service_trcy7zq',
+      'template_r486v6l',
       Options(
-        publicKey: _confService.config.publicKey,
-        privateKey: _confService.config.privateKey,
+        publicKey: '9g4nW2brfly0sSDOm',
+        privateKey: 'deRMn1Hho0fcRxVTgsjNV',
       ),
     )
         .then((value) {

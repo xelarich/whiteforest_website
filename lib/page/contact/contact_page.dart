@@ -27,8 +27,6 @@ class _ContactPageState extends State<ContactPage> {
     mapController = controller;
   }
 
-  final ConfService confService = GetIt.I.get<ConfService>();
-
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   final LatLng _center = const LatLng(45.25489065226392, 6.27370834350585);
