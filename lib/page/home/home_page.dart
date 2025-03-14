@@ -18,12 +18,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Site en maintenance',
-        style: TextStyle(fontSize: 48),),
-      ),
-    );
-    return Scaffold(
       backgroundColor: Colors.brown.shade50,
       key: _key,
       appBar: getTopBar(context, _key, HomePage.routeName),

@@ -36,7 +36,7 @@ class DogRacketNight extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
+                        'assets/images/winter/${getPathImage(context)}cani_nocturne.webp',
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
@@ -73,7 +73,8 @@ class DogRacketNight extends StatelessWidget {
                                   xxl: 9,
                                   xxxl: 9,
                                   child: Text(
-                                    'Cani-raquette nocturne'.toUpperCase(),
+                                    //'Cani-raquette nocturne'.toUpperCase(),
+                                    'cani-randonnée hivernale'.toUpperCase(),
                                     maxLines: 2,
                                     style: const TextStyle(
                                       fontSize: 28,
@@ -144,7 +145,7 @@ class DogRacketNight extends StatelessWidget {
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text: ', venez découvrir la cani-raquette ! ',
+                                  text: ', venez découvrir la cani-nocturne ! ',
                                 ),
                                 TextSpan(
                                   text:
@@ -171,8 +172,9 @@ class DogRacketNight extends StatelessWidget {
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
-                                  text:
-                                      'après un bel effort en cani-raquette, un retour prévu aux alentours de 23h00. ',
+                                  text: 'après un bel effort, '
+                                      // 'en cani-raquette, '
+                                      'un retour prévu aux alentours de 23h00. ',
                                 ),
                                 TextSpan(
                                   text:
@@ -204,7 +206,7 @@ class DogRacketNight extends StatelessWidget {
                               '80€/ personne\n'
                               'Le tarif comprends:\n'
                               'L’activité\n'
-                              'La location du matériel (sauf raquette)\n'
+                              //'La location du matériel (sauf raquette)\n'
                               'Le repas (apéritif, plat,dessert, café)',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
@@ -333,14 +335,14 @@ class DogRacketNight extends StatelessWidget {
                                   text:
                                       '(vêtements de ski, après ski, écharpe, gant).\n',
                                 ),
-                                TextSpan(
+                                /*TextSpan(
                                   text: 'Raquette ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
                                   text:
                                       '(location de raquette possible auprès de nos partenaires).\n',
-                                ),
+                                ),*/
                               ],
                             ),
                           ),
@@ -406,7 +408,7 @@ class DogRacketNight extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            FlexWidget(
+                            /*FlexWidget(
                               child: Padding(
                                 padding: EdgeInsets.only(left: 28.0),
                                 child: Text.rich(
@@ -436,7 +438,7 @@ class DogRacketNight extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            ),
+                            ),*/
                           ],
                         ),
                       ],

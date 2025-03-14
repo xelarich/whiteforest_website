@@ -46,13 +46,17 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 /.firebase/
-/.fvm
 /.metadata
 /.firebaserc
 /pubspec.lock
-/assets/config/config.json
-/.env
+
 
 # FVM Version Cache
 .fvm/
+/.fvm
+
+# Do not push
+/assets/config/config.json
+/.env
+web/index.html
 

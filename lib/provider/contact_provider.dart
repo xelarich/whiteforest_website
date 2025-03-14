@@ -22,12 +22,6 @@ class ContactProvider extends ChangeNotifier {
       name,
       mail,
       message,
-      'service_trcy7zq',
-      'template_r486v6l',
-      Options(
-        publicKey: '9g4nW2brfly0sSDOm',
-        privateKey: 'deRMn1Hho0fcRxVTgsjNV',
-      ),
     )
         .then((value) {
       mailSent = true;

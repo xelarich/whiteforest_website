@@ -150,9 +150,9 @@ class ActivityPart extends StatelessWidget {
               ),
               FlexWidget(
                 child: CardHome(
-                  'Cani-raquette nocturne',
-                  'Le mardi soir ou le jeudi soir, venez découvrir la cani-raquette ! Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera un agréable souvenir',
-                  'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
+                  'Cani-randonnée hivernale',
+                  'Le mardi soir ou le jeudi soir, venez découvrir la cani-randonnée hivernale ! Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera un agréable souvenir',
+                  'assets/images/winter/${getPathImage(context)}cani_nocturne.webp',
                   onTap: () {
                     context.go(
                       ActivityWinterPage.routeName,
