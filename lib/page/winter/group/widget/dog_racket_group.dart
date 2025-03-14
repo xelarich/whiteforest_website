@@ -29,7 +29,7 @@ class DogRacketGroup extends StatelessWidget {
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(16)),
                     child: Image.asset(
-                      'assets/images/winter/${getPathImage(context)}cani_raquette_groupe.webp',
+                      'assets/images/winter/${getPathImage(context)}cani_nocturne_groupe.webp',
                       width: 400,
                       height: 450,
                       fit: BoxFit.cover,
@@ -65,7 +65,8 @@ class DogRacketGroup extends StatelessWidget {
                                 xxl: 9,
                                 xxxl: 9,
                                 child: Text(
-                                  'Cani-raquette'.toUpperCase(),
+                                  //'Cani-raquette'.toUpperCase(),
+                                  'Cani-randonnée hivernal'.toUpperCase(),
                                   style: const TextStyle(
                                     fontSize: 28,
                                     fontFamily: 'WickedGrit',
@@ -129,7 +130,8 @@ class DogRacketGroup extends StatelessWidget {
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
-                                text: 'de découvrir la marche en raquette.\n',
+                                text: 'de découvrir la randonnée.\n',
+                                //'la marche en raquette.\n',
                               ),
                               TextSpan(
                                 text: "Accompagné d'un ",
@@ -140,7 +142,7 @@ class DogRacketGroup extends StatelessWidget {
                               ),
                               TextSpan(
                                 text:
-                                    'celui-ci vous aidera durant votre randonnée.\n',
+                                    'celui-ci vous aidera durant votre balade.\n',
                               ),
                               TextSpan(text: 'Vous créerez '),
                               TextSpan(
@@ -297,14 +299,14 @@ class DogRacketGroup extends StatelessWidget {
                                 text:
                                     '(vêtements de ski, après ski, écharpe, gant).\n',
                               ),
-                              TextSpan(
+                              /*TextSpan(
                                 text: 'Raquette ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               TextSpan(
                                 text:
                                     '(location de raquette possible auprès de nos partenaires).\n',
-                              ),
+                              ),*/
                             ],
                           ),
                         ),
@@ -312,7 +314,7 @@ class DogRacketGroup extends StatelessWidget {
                     ],
                   ),
                 ),
-                FlexWidget(
+                /*FlexWidget(
                   xs: 12,
                   sm: 12,
                   md: 12,
@@ -379,7 +381,7 @@ class DogRacketGroup extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
+                ),*/
               ],
             ),
           ),
