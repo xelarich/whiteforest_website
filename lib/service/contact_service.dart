@@ -22,8 +22,12 @@ class ContactService {
         'reply_to': mail,
         'message': message,
       };
-      return emailjs.send(confService.config.serviceId,
-          confService.config.templateId, templateParams, options);
+      return emailjs.send(
+        confService.config.serviceId,
+        confService.config.templateId,
+        templateParams,
+        options,
+      );
     }
   }
 }

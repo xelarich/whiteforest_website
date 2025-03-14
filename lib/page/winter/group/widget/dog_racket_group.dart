@@ -131,7 +131,7 @@ class DogRacketGroup extends StatelessWidget {
                               ),
                               TextSpan(
                                 text: 'de découvrir la randonnée.\n',
-                                    //'la marche en raquette.\n',
+                                //'la marche en raquette.\n',
                               ),
                               TextSpan(
                                 text: "Accompagné d'un ",

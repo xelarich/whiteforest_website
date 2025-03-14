@@ -18,9 +18,9 @@ jobs:
         run: |
           echo "ENV=production" > .env 
 
-      - name: Generate index file
+      - name: Get Google API Key
         run: |
-          echo '${{ secrets.INDEX_HTML }}' > /web/index.html     
+          perl -pi -e "s/__API_KEY_PLACEHOLDER__/${{ secrets.GOOGLE_API_KEY }}/g" web/index.html  
 
       - run: flutter pub get
 

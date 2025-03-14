@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart' hide NavigationDrawer;
-import 'package:get_it/get_it.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
@@ -7,7 +6,6 @@ import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
 import 'package:whiteforest_website/page/contact/widget/form_contact.dart';
 import 'package:whiteforest_website/page/contact/widget/line_contact.dart';
-import 'package:whiteforest_website/service/conf_service.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 import 'package:whiteforest_website/shared/utils/launch_contact.dart';
 
