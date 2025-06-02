@@ -55,6 +55,9 @@ app.*.map.json
 .fvm/
 /.fvm
 
+# VS Code settings
+.vscode/
+
 # Do not push
 /assets/config/config.json
 /.env

@@ -31,10 +31,6 @@ class ConfigProvider extends ChangeNotifier {
     try {
       remoteConfig.getAll();
       print('Remote config fetched successfully');
-      print('Public Key: ${remoteConfig.getString('public_key')}');
-      print('Private Key: ${remoteConfig.getString('private_key')}');
-      print('Service ID: ${remoteConfig.getString('service_id')}');
-      print('Template ID: ${remoteConfig.getString('template_id')}');
       setConfig(
         Config(
           publicKey: remoteConfig.getString('public_key'),

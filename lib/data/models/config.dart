@@ -21,6 +21,13 @@ class Config {
     return 'Config{publicKey: $publicKey, privateKey: $privateKey, serviceId: $serviceId, templateId: $templateId}';
   }
 
+  bool get isValid {
+    return publicKey.isNotEmpty &&
+        privateKey.isNotEmpty &&
+        serviceId.isNotEmpty &&
+        templateId.isNotEmpty;
+  }
+
   factory Config.fromJson(Map<String, dynamic> json) => _$ConfigFromJson(json);
 
   Map<String, dynamic> toJson() => _$ConfigToJson(this);

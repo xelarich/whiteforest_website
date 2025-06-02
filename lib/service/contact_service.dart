@@ -11,10 +11,10 @@ class ContactService {
     String mail,
     String message,
   ) async {
-    print(confService.config?.publicKey);
-    print(confService.config?.privateKey);
-    print(confService.config?.serviceId);
-    print(confService.config?.templateId);
+    
+    if (confService.config == null &&  (confService.config?.isValid ?? false)) {
+      throw Exception('Configuration not set. Please initialize the configuration first');
+    }
     {
       emailjs.Options options = Options(
         publicKey: confService.config?.publicKey,
@@ -26,13 +26,13 @@ class ContactService {
         'reply_to': mail,
         'message': message,
       };
-      throw 'This is a test error';
-      /*return emailjs.send(
-        confService.config?.serviceId,
-        confService.config?.templateId,
+      
+      return emailjs.send(
+        confService.config!.serviceId,
+        confService.config!.templateId,
         templateParams,
         options,
-      );*/
+      );
     }
   }
 }

@@ -32,7 +32,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Flutter Web
-        run: flutter build web --profile --no-tree-shake-icons
+        run: flutter build web --release --no-tree-shake-icons
 
       - name: Deploy to OVH via FTP
         env:
