@@ -11,6 +11,10 @@ class ContactService {
     String mail,
     String message,
   ) async {
+    print(confService.config.publicKey);
+    print(confService.config.privateKey);
+    print(confService.config.serviceId);
+    print(confService.config.templateId);
     {
       emailjs.Options options = Options(
         publicKey: confService.config.publicKey,
@@ -22,6 +26,7 @@ class ContactService {
         'reply_to': mail,
         'message': message,
       };
+      throw ('This is a test error');
       return emailjs.send(
         confService.config.serviceId,
         confService.config.templateId,
