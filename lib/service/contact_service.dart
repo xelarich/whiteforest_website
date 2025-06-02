@@ -11,14 +11,14 @@ class ContactService {
     String mail,
     String message,
   ) async {
-    print(confService.config.publicKey);
-    print(confService.config.privateKey);
-    print(confService.config.serviceId);
-    print(confService.config.templateId);
+    print(confService.config?.publicKey);
+    print(confService.config?.privateKey);
+    print(confService.config?.serviceId);
+    print(confService.config?.templateId);
     {
       emailjs.Options options = Options(
-        publicKey: confService.config.publicKey,
-        privateKey: confService.config.privateKey,
+        publicKey: confService.config?.publicKey,
+        privateKey: confService.config?.privateKey,
       );
       Map<String, dynamic> templateParams = {
         'from_name': name,
@@ -27,12 +27,12 @@ class ContactService {
         'message': message,
       };
       throw 'This is a test error';
-      return emailjs.send(
-        confService.config.serviceId,
-        confService.config.templateId,
+      /*return emailjs.send(
+        confService.config?.serviceId,
+        confService.config?.templateId,
         templateParams,
         options,
-      );
+      );*/
     }
   }
 }

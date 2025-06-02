@@ -30,8 +30,6 @@ Future<void> main() async {
   );
   await remoteConfig.fetchAndActivate();
 
-  print('Remote Config Version: ${remoteConfig.getString('version')}');
-
   declareServices();
 
   runApp(const App());

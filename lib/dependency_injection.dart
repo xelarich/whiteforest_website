@@ -5,6 +5,6 @@ import 'package:whiteforest_website/service/contact_service.dart';
 GetIt getIt = GetIt.instance;
 
 Function declareServices = () {
-  GetIt.I.registerSingleton(ConfService()).init();
+  GetIt.I.registerSingleton(ConfService());
   GetIt.I.registerSingleton(ContactService());
 };
