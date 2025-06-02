@@ -169,7 +169,7 @@ class App extends StatelessWidget {
         ),
         theme: ThemeData(
           textTheme: GoogleFonts.carterOneTextTheme(),
-          tabBarTheme: TabBarTheme(
+          tabBarTheme: TabBarThemeData(
             labelStyle: GoogleFonts.carterOne(),
             unselectedLabelStyle: GoogleFonts.carterOne(),
           ),

@@ -26,7 +26,7 @@ class ContactService {
         'reply_to': mail,
         'message': message,
       };
-      throw ('This is a test error');
+      throw 'This is a test error';
       return emailjs.send(
         confService.config.serviceId,
         confService.config.templateId,
