@@ -11,9 +11,9 @@ class ContactService {
     String mail,
     String message,
   ) async {
-    
-    if (confService.config == null &&  (confService.config?.isValid ?? false)) {
-      throw Exception('Configuration not set. Please initialize the configuration first');
+    if (confService.config == null && (confService.config?.isValid ?? false)) {
+      throw Exception(
+          'Configuration not set. Please initialize the configuration first');
     }
     {
       emailjs.Options options = Options(
@@ -26,7 +26,7 @@ class ContactService {
         'reply_to': mail,
         'message': message,
       };
-      
+
       return emailjs.send(
         confService.config!.serviceId,
         confService.config!.templateId,

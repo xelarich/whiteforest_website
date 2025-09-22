@@ -185,10 +185,9 @@ class _FormContactState extends State<FormContact> {
                     onPressed: provider.isLoading
                         ? null
                         : () async {
-                          print(_nameController.text);
-                          print(_mailController.text);
-                          print(_messageController.text);
-                          
+                            print(_nameController.text);
+                            print(_mailController.text);
+                            print(_messageController.text);
 
                             if (_formKey.currentState!.validate()) {
                               await contactProvider.sendMail(
