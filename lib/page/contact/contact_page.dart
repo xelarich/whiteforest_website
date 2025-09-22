@@ -51,10 +51,23 @@ class _ContactPageState extends State<ContactPage> {
                   xxxl: 8,
                   child: Container(
                     color: Colors.white,
-                    child: const FormContact(),
+                    child: const Text(
+                        "Madame, Monsieur,\n\n"
+                        "Merci pour l'intérêt porté à nos activités. Si votre demande est en rapport avec les activités canirandonnée ou visite de chenil, sur la période d'août, septembre et octobre, vous pouvez m'envoyer un message sur mon numéro de portable : 06.82.75.99.26.\n\n"
+                        "Si vous souhaitez avoir des informations ou réserver pour cet hiver, sachez que pour le moment je ne suis pas encore certaine de pouvoir travailler dans la station des Sybelles.\n\n"
+                        "En effet, l'hiver dernier nous avions pour projet de rénover le bâtiment qui se trouve à côté du chenil, pour créer de nouveaux locaux plus adaptés pour les chiens, un espace culturel sur le milieu montagnard et la vie de musher, ainsi que 12 appartements pour les travailleurs de la station qui ont beaucoup de mal à se loger.\n\n"
+                        "Malheureusement, après avoir demandé le PLU et nous avoir validé le projet oralement, ma surprise fut de recevoir le permis de rénover rejeté car le chenil et le bâtiment sont placés sur une zone à risque.\n\n"
+                        "Nous voilà donc obligés de partir, car le bâtiment sans rénovation n'est plus vivable, et le chenil sur une zone à risque ne nous permet pas de respecter les critères juridiques.\n\n"
+                        "La mairie aujourd'hui ne prend pas en compte la situation, malgré mes mails et mes appels pour essayer de trouver des solutions pour maintenir l'activité.\n\n"
+                        "Alors, si vous avez le temps et souhaitez nous voir cet hiver, vous pouvez envoyer un mail à la mairie de Fontcouverte et à l'office du tourisme de La Toussuire, pour qu'ils comprennent que l'activité chien de traîneau compte aussi au sein de la station.\n\n"
+                        "Je suis navrée de vous annoncer ces nouvelles, mais je préfère être transparente avec vous.\n\n"
+                        "Merci de l'attention que vous porterez à ce mail.\n\n"
+                        "Cordialement,\n\n"
+                        "Méléanne\n\n",
+                        textAlign: TextAlign.justify,),
                   ),
                 ),
-                FlexWidget(
+                /*FlexWidget(
                   xs: 12,
                   sm: 12,
                   md: 5,
@@ -130,21 +143,10 @@ class _ContactPageState extends State<ContactPage> {
                       ],
                     ),
                   ),
-                ),
+                ),*/
               ],
             ),
-            SizedBox(
-              height: 400,
-              child: GoogleMap(
-                onMapCreated: _onMapCreated,
-                scrollGesturesEnabled: false,
-                initialCameraPosition: CameraPosition(
-                  target: _center,
-                  zoom: 16.0,
-                ),
-                onTap: (LatLng latLng) {},
-              ),
-            ),
+
             const Footer(),
           ],
         ),

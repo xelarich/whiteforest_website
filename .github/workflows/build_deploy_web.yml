@@ -20,10 +20,6 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Generate .env file
-        run: |
-          echo "ENV=production" > .env    
-
       - name: Get Google API Key
         run: |
           perl -pi -e "s/__API_KEY_PLACEHOLDER__/${{ secrets.GOOGLE_API_KEY }}/g" web/index.html  
