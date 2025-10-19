@@ -205,7 +205,7 @@ class SleighBaptism extends StatelessWidget {
                                       ),
                                     ),
                                     child: const Text(
-                                      '30 min : 110€\n'
+                                      '30 min : 160€\n'
                                       'Traineau pour 1 à 2 personnes\n'
                                       'Supplément / personne\n'
                                       'Enfant (2 ans à 6 ans) : 20€\n'

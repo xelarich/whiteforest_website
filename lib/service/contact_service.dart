@@ -13,7 +13,7 @@ class ContactService {
   ) async {
     if (confService.config == null && (confService.config?.isValid ?? false)) {
       throw Exception(
-          'Configuration not set. Please initialize the configuration first');
+          'Configuration not set. Please initialize the configuration first',);
     }
     {
       emailjs.Options options = Options(

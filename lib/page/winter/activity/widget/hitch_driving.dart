@@ -211,7 +211,7 @@ class HitchDriving extends StatelessWidget {
                                       ),
                                     ),
                                     child: const Text(
-                                      'Demi-journée : 120€/ personne',
+                                      'Demi-journée : 190€/ personne',
                                       style: TextStyle(
                                         fontFamily: 'Roboto',
                                         fontWeight: FontWeight.bold,
