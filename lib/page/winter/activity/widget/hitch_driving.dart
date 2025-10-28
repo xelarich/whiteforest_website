@@ -133,7 +133,7 @@ class HitchDriving extends StatelessWidget {
                                   text: 'Le temps d’',
                                 ),
                                 TextSpan(
-                                  text: 'une demi-journée',
+                                  text: 'une demi-journée ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(

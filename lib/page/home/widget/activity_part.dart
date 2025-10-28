@@ -136,7 +136,7 @@ class ActivityPart extends StatelessWidget {
               FlexWidget(
                 child: CardHome(
                   'Conduite d’attelage',
-                  'Le temps d’une demi-journée, ou d’une journée entière devenez le musher de votre propre attelage !',
+                  'Le temps d’une demi-journée devenez le musher de votre propre attelage !',
                   'assets/images/winter/${getPathImage(context)}conduite_attelage.webp',
                   onTap: () {
                     context.go(
