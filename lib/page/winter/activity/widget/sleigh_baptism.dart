@@ -205,12 +205,36 @@ class SleighBaptism extends StatelessWidget {
                                       ),
                                     ),
                                     child: const Text(
-                                      '30 min : 160€\n'
-                                      'Traineau pour 1 à 2 personnes\n'
-                                      'Supplément / personne\n'
-                                      'Enfant (2 ans à 6 ans) : 20€\n'
-                                      'Jeune (7 à 12 ans) : 40€\n'
-                                      'Adulte : 55€',
+                                      '30 min : 150€\n'
+                                      'Traineau pour 1 à 2 personnes\n',
+                                      style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        fontWeight: FontWeight.bold,
+                                        height: 1.4,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                FlexWidget(
+                                  xs: 12,
+                                  sm: 5,
+                                  md: 5,
+                                  lg: 5,
+                                  xl: 5,
+                                  xxl: 5,
+                                  xxxl: 5,
+                                  child: Container(
+                                    margin: const EdgeInsets.only(top: 8),
+                                    padding: const EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      border: Border.all(
+                                        color: Colors.brown.shade200,
+                                      ),
+                                    ),
+                                    child: const Text(
+                                      '50 min : 190€\n'
+                                          'Traineau pour 1 à 2 personnes\n',
                                       style: TextStyle(
                                         fontFamily: 'Roboto',
                                         fontWeight: FontWeight.bold,
@@ -329,7 +353,7 @@ class SleighBaptism extends StatelessWidget {
                                 TextSpan(
                                   text:
                                       "En fonction des conditions d'enneigement, le départ peut se faire en altitude, il faudra donc prévoir les forfaits de ski.\n"
-                                      '180kg max par traineau.\n',
+                                      '160kg max par traineau.\n',
                                 ),
                                 TextSpan(
                                   text: 'Interdit aux femmes enceintes ',
