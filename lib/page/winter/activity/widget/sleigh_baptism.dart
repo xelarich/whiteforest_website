@@ -111,7 +111,7 @@ class SleighBaptism extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('30 Min'),
+                                        Text('30 Min / 50 Min'),
                                       ],
                                     ),
                                   ),

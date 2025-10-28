@@ -152,7 +152,7 @@ class ActivityPart extends StatelessWidget {
                 child: CardHome(
                   'Cani-randonnée hivernale',
                   'Le mardi soir ou le jeudi soir, venez découvrir la cani-randonnée hivernale ! Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera un agréable souvenir',
-                  'assets/images/winter/${getPathImage(context)}cani_nocturne.webp',
+                  'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
                   onTap: () {
                     context.go(
                       ActivityWinterPage.routeName,
@@ -164,6 +164,38 @@ class ActivityPart extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+        ),
+        Text(
+          'Information Réservation',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SelectableText.rich(
+            textAlign: TextAlign.center,
+            TextSpan(
+              children: [
+                TextSpan(
+                  text:
+                  'Pour toute demande de réservation, merci de bien vouloir passer par le site internet ',
+                ),
+                TextSpan(
+                  text: 'www.montagneevent.com',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            style: TextStyle(
+              fontFamily: 'Roboto',
+              fontSize: 20,
+
+            ),
           ),
         ),
       ],

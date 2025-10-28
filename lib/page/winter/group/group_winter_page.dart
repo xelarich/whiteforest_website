@@ -57,6 +57,36 @@ class _GroupWinterPageState extends State<GroupWinterPage> {
                       ),
                     ),
                   ),
+                  Text(
+                    'Information Réservation',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SelectableText.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text:
+                            'Pour toute demande de réservation, merci de bien vouloir passer par le site internet ',
+                          ),
+                          TextSpan(
+                            text: 'www.montagneevent.com',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
                   const SleighGroup(),
                   const SizedBox(
                     height: 64,

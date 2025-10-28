@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart' hide NavigationDrawer;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:responsive/responsive.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
+import 'package:whiteforest_website/page/contact/widget/form_contact.dart';
+import 'package:whiteforest_website/page/contact/widget/line_contact.dart';
 import 'package:whiteforest_website/shared/utils.dart';
+import 'package:whiteforest_website/shared/utils/launch_contact.dart';
 
 class ContactPage extends StatefulWidget {
   static const routeName = '/contact';
@@ -35,6 +39,36 @@ class _ContactPageState extends State<ContactPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Text(
+              'Information Réservation',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SelectableText.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                          'Pour toute demande de réservation, merci de bien vouloir passer par le site internet ',
+                    ),
+                    TextSpan(
+                      text: 'www.montagneevent.com',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                style: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontSize: 20,
+                ),
+              ),
+            ),
             ResponsiveRow(
               children: [
                 FlexWidget(
@@ -48,26 +82,10 @@ class _ContactPageState extends State<ContactPage> {
                   child: Container(
                     padding: EdgeInsets.all(16),
                     color: Colors.white,
-                    child: const Text(
-                      'Madame, Monsieur,\n\n'
-                      "Merci pour l'intérêt porté à notre structure.\n\n"
-                      "Si votre demande est en rapport avec les activités canirandonnée ou visite de chenil, sur la période d'août, septembre et octobre, vous pouvez m'envoyez un message sur mon numéro de portable: 06.82.75.99.26\n\n"
-                      'Si vous souhaitez avoir des informations ou réserver pour cet hiver.\n'
-                      "Sachez que pour le moment l'entreprise évolue, et n'est pas encore prête à prendre vos réservations.\n"
-                      "Nous vous invitons à nous contacter en novembre pour avoir plus d'informations.\n\n"
-                      'Sachez que nous mettons tout en œuvre pour vous proposer des activités pour cet hiver à la hauteur de vos espérances.\n\n'
-                      "Merci de l'attention que vous porterez à ce mail.\n"
-                      'Cordialement,\n'
-                      'Méléanne',
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Roboto',
-                      ),
-                    ),
+                    child: FormContact(),
                   ),
                 ),
-                /*FlexWidget(
+                FlexWidget(
                   xs: 12,
                   sm: 12,
                   md: 5,
@@ -143,8 +161,20 @@ class _ContactPageState extends State<ContactPage> {
                       ],
                     ),
                   ),
-                ),*/
+                ),
               ],
+            ),
+            SizedBox(
+              height: 400,
+              child: GoogleMap(
+                onMapCreated: _onMapCreated,
+                scrollGesturesEnabled: false,
+                initialCameraPosition: CameraPosition(
+                  target: _center,
+                  zoom: 16.0,
+                ),
+                onTap: (LatLng latLng) {},
+              ),
             ),
             const Footer(),
           ],

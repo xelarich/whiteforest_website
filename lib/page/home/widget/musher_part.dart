@@ -62,33 +62,6 @@ class MusherPart extends StatelessWidget {
                     ),
                   ),
                 ),
-                FlexWidget(
-                  child: Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    elevation: 8,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(16)),
-                    ),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/profile/${getPathImage(context)}anaelle.webp',
-                          fit: BoxFit.cover,
-                          alignment: Alignment.bottomCenter,
-                          height: 300,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Text(
-                            'Anaelle',
-                            style: TextStyle(fontSize: 24),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

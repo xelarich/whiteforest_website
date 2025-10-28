@@ -111,7 +111,7 @@ class HitchDriving extends StatelessWidget {
                                             size: 18,
                                           ),
                                         ),
-                                        Text('0,5 ou 1 Journée'),
+                                        Text('1/2 Journée'),
                                       ],
                                     ),
                                   ),
@@ -134,13 +134,6 @@ class HitchDriving extends StatelessWidget {
                                 ),
                                 TextSpan(
                                   text: 'une demi-journée',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: ', ou d’',
-                                ),
-                                TextSpan(
-                                  text: 'une journée entière ',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 TextSpan(
@@ -220,34 +213,6 @@ class HitchDriving extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                FlexWidget(
-                                  xs: 12,
-                                  sm: 5,
-                                  md: 5,
-                                  lg: 5,
-                                  xl: 5,
-                                  xxl: 5,
-                                  xxxl: 5,
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.brown.shade200,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      'Journée: 240€/ personne\n'
-                                      '(le repas du midi n’est pas compris dans le tarif)',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.bold,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                ),
                               ],
                             ),
                           ),
@@ -303,8 +268,7 @@ class HitchDriving extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 28.0),
                           child: Text(
-                            'En demi-journée: Le Corbier / La Toussuire / Saint-Sorlin-d’Arves\n'
-                            'En journée: Saint-Sorlin-d’Arves\n',
+                            'En demi-journée: Le Corbier / La Toussuire / Saint-Sorlin-d’Arves\n',
                             style:
                                 TextStyle(fontFamily: 'Roboto', fontSize: 16),
                           ),

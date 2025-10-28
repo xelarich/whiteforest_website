@@ -36,7 +36,7 @@ class DogRacketNight extends StatelessWidget {
                       borderRadius:
                           const BorderRadius.vertical(top: Radius.circular(16)),
                       child: Image.asset(
-                        'assets/images/winter/${getPathImage(context)}cani_nocturne.webp',
+                        'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
                         width: 400,
                         height: 450,
                         fit: BoxFit.cover,
