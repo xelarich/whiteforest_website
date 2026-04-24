@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/dependency_injection.dart';
 import 'package:whiteforest_website/firebase_options.dart';
+import 'package:whiteforest_website/page/booking/booking_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
 import 'package:whiteforest_website/page/kennel/kennel_page.dart';
@@ -125,6 +126,15 @@ final GoRouter _router = GoRouter(
         context: context,
         state: state,
         child: const KennelPage(),
+      ),
+    ),
+    GoRoute(
+      path: BookingPage.routeName,
+      pageBuilder: (BuildContext context, GoRouterState state) =>
+          buildPageWithDefaultTransition(
+        context: context,
+        state: state,
+        child: const BookingPage(),
       ),
     ),
     GoRoute(

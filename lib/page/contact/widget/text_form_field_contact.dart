@@ -29,37 +29,47 @@ class _TextFormFieldContactState extends State<TextFormFieldContact> {
       child: TextFormField(
         controller: widget.controller,
         maxLines: widget.maxLines,
-        cursorColor: Colors.brown,
+        cursorColor: Colors.brown.shade700,
         style: const TextStyle(
           fontFamily: 'Roboto',
+          fontSize: 15,
         ),
         decoration: InputDecoration(
           labelText: widget.labelText,
           labelStyle: TextStyle(
-            color: Colors.grey.shade700,
+            color: Colors.brown.shade400,
             fontFamily: 'Roboto',
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
           ),
           hintText: widget.hintText,
-          hintStyle: const TextStyle(
+          hintStyle: TextStyle(
             fontFamily: 'Roboto',
+            color: Colors.brown.shade200,
           ),
-          fillColor: Colors.white,
+          filled: true,
+          fillColor: const Color(0xFFFAF7F4),
           alignLabelWithHint: true,
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: const BorderSide(
-              color: Colors.brown,
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(
+              color: Colors.brown.shade600,
               width: 2,
             ),
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(color: Colors.red.shade300),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(color: Colors.brown.shade100),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(color: Colors.red.shade300, width: 2),
           ),
         ),
         validator: (value) => widget.validator!(value),

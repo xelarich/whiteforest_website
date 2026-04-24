@@ -175,11 +175,12 @@ class _FormContactState extends State<FormContact> {
                   padding: const EdgeInsets.all(16.0),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(150, 50),
-                      backgroundColor: Colors.brown,
-                      disabledBackgroundColor: Colors.brown,
+                      fixedSize: const Size(180, 50),
+                      backgroundColor: Colors.brown.shade700,
+                      disabledBackgroundColor: Colors.brown.shade700,
+                      elevation: 0,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.0),
+                        borderRadius: BorderRadius.circular(12.0),
                       ),
                     ),
                     onPressed: provider.isLoading

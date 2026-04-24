@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:whiteforest_website/data/models/menu.dart';
+import 'package:whiteforest_website/page/booking/booking_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
 import 'package:whiteforest_website/page/summer/activity/activity_summer_page.dart';
@@ -64,11 +65,11 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
                     ),
                   ],
                 ),
-                /*TabText(
-                  "L'équipe",
-                  isSelected: routeSelected == TeamPage.routeName,
-                  onTap: () => context.go(TeamPage.routeName),
-                ),*/
+                TabText(
+                  'Contact',
+                  isSelected: routeSelected == ContactPage.routeName,
+                  onTap: () => context.go(ContactPage.routeName),
+                ),
               ],
             ),
           ),
@@ -82,9 +83,9 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
                   borderRadius: BorderRadius.circular(4.0),
                 ),
               ),
-              onPressed: () => context.go(ContactPage.routeName),
+              onPressed: () => context.go(BookingPage.routeName),
               child: const Text(
-                'Contactez-nous',
+                'Réserver',
                 style: TextStyle(color: Colors.white),
               ),
             ),

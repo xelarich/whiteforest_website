@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:whiteforest_website/component/drawer/widget/drawer_tile.dart';
+import 'package:whiteforest_website/page/booking/booking_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
 import 'package:whiteforest_website/page/summer/activity/activity_summer_page.dart';
@@ -96,6 +97,11 @@ class DrawerMobile extends StatelessWidget {
                       ),
                     ],
                   ),
+                  DrawerTile(
+                    'Contact',
+                    routeSelected,
+                    routeName: ContactPage.routeName,
+                  ),
                 ],
               ),
             ),
@@ -109,9 +115,9 @@ class DrawerMobile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4.0),
                   ),
                 ),
-                onPressed: () => context.go(ContactPage.routeName),
+                onPressed: () => context.go(BookingPage.routeName),
                 child: const Text(
-                  'Contactez-nous',
+                  'Réserver',
                   style: TextStyle(color: Colors.white),
                 ),
               ),

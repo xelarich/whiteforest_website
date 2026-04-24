@@ -13,7 +13,7 @@ class RedirectionContact extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Une information ? Un devis ? Une réservation ?',
+            'Une information ? Un devis ?',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: ResponsiveValue<double>(
