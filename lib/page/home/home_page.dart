@@ -28,7 +28,6 @@ class HomePage extends StatelessWidget {
       value: ConfigProvider(),
       child: Consumer<ConfigProvider>(
         builder: (context, configProvider, child) {
-          // Initialize the configuration if not already done
           if (configProvider.config == null) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               configProvider.loadConfig();
@@ -39,7 +38,7 @@ class HomePage extends StatelessWidget {
           }
 
           return Scaffold(
-            backgroundColor: Colors.brown.shade50,
+            backgroundColor: const Color(0xFFF5F0EB),
             key: _key,
             appBar: getTopBar(context, _key, HomePage.routeName),
             drawer: const DrawerMobile(HomePage.routeName),
@@ -48,24 +47,18 @@ class HomePage extends StatelessWidget {
               children: [
                 const HeaderCarousel(),
                 const WelcomePart(),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.60,
-                  width: MediaQuery.of(context).size.width,
-                  child: Image.asset(
-                    'assets/images/home/${getPathImage(context)}home_page_winter.webp',
-                    fit: BoxFit.cover,
-                    alignment: Alignment.center,
-                  ),
+                _buildFullWidthImage(
+                  context,
+                  'assets/images/home/${getPathImage(context)}home_page_winter.webp',
+                  Colors.white,
+                  const Color(0xFFF5F0EB),
                 ),
                 const DogPart(),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.60,
-                  width: MediaQuery.of(context).size.width,
-                  child: Image.asset(
-                    'assets/images/home/${getPathImage(context)}home_page_summer.webp',
-                    fit: BoxFit.cover,
-                    alignment: Alignment.center,
-                  ),
+                _buildFullWidthImage(
+                  context,
+                  'assets/images/home/${getPathImage(context)}home_page_summer.webp',
+                  const Color(0xFFF5F0EB),
+                  Colors.white,
                 ),
                 const MusherPart(),
                 const ActivityPart(),
@@ -74,6 +67,58 @@ class HomePage extends StatelessWidget {
             ),
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildFullWidthImage(
+    BuildContext context,
+    String path,
+    Color topColor,
+    Color bottomColor,
+  ) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.60,
+      width: MediaQuery.of(context).size.width,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            path,
+            fit: BoxFit.cover,
+            alignment: Alignment.center,
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 60,
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [topColor, topColor.withValues(alpha: 0)],
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: 60,
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [bottomColor, bottomColor.withValues(alpha: 0)],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

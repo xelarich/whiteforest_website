@@ -12,9 +12,19 @@ class HeaderImage extends StatelessWidget {
         image: DecorationImage(
           image: AssetImage(imagePath),
           fit: BoxFit.cover,
-          colorFilter: ColorFilter.mode(
-            Colors.grey.withOpacity(0.7),
-            BlendMode.darken,
+        ),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.black.withValues(alpha: 0.3),
+              Colors.black.withValues(alpha: 0.15),
+              Colors.black.withValues(alpha: 0.5),
+            ],
+            stops: const [0.0, 0.5, 1.0],
           ),
         ),
       ),

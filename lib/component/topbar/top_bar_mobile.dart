@@ -30,12 +30,23 @@ class TopBarMobile extends StatelessWidget implements PreferredSizeWidget {
         hoverColor: Colors.transparent,
         focusColor: Colors.transparent,
       ),
-      flexibleSpace: InkWell(
-        onTap: () => context.go(HomePage.routeName),
-        child: Padding(
-          padding: const EdgeInsets.all(4),
-          child: Image.asset(
-            'assets/images/white_forest_logo.webp',
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.brown.shade300,
+              Colors.brown.shade200,
+              Colors.brown.shade300,
+            ],
+          ),
+        ),
+        child: InkWell(
+          onTap: () => context.go(HomePage.routeName),
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: Image.asset(
+              'assets/images/white_forest_logo.webp',
+            ),
           ),
         ),
       ),

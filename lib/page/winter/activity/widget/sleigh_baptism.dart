@@ -1,8 +1,6 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:responsive/flex_widget.dart';
-import 'package:responsive/responsive_row.dart';
+import 'package:whiteforest_website/shared/activity_section.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
 class SleighBaptism extends StatelessWidget {
@@ -12,383 +10,119 @@ class SleighBaptism extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnchorItemWrapper(
-      controller: _scrollController,
+    return ActivitySection(
+      scrollController: _scrollController,
       index: 0,
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      title: 'Baptême traineau',
+      duration: '30 / 50 min',
+      imagePath:
+          'assets/images/winter/${getPathImage(context)}bapteme_traineau.webp',
+      imageAlignment: Alignment.bottomRight,
+      description: const Text.rich(
+        TextSpan(
+          style: TextStyle(fontSize: 16, fontFamily: 'Roboto', height: 1.6),
           children: [
-            SizedBox(
-              width: double.infinity,
-              child: ResponsiveRow(
-                alignment: WrapAlignment.spaceAround,
-                children: [
-                  FlexWidget(
-                    sm: 12,
-                    md: 12,
-                    lg: 12,
-                    xl: 5,
-                    xxl: 5,
-                    xxxl: 5,
-                    child: ClipRRect(
-                      borderRadius:
-                          const BorderRadius.vertical(top: Radius.circular(16)),
-                      child: Image.asset(
-                        'assets/images/winter/${getPathImage(context)}bapteme_traineau.webp',
-                        alignment: Alignment.bottomRight,
-                        width: 400,
-                        height: 450,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  FlexWidget(
-                    sm: 12,
-                    md: 12,
-                    lg: 12,
-                    xl: 6,
-                    xxl: 6,
-                    xxxl: 6,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          //Titre et temps
-                          SizedBox(
-                            width: double.infinity,
-                            child: ResponsiveRow(
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              alignment: WrapAlignment.spaceBetween,
-                              children: [
-                                FlexWidget(
-                                  xs: 10,
-                                  sm: 10,
-                                  md: 9,
-                                  lg: 9,
-                                  xl: 9,
-                                  xxl: 9,
-                                  xxxl: 9,
-                                  child: Text(
-                                    'Bapteme traineau'.toUpperCase(),
-                                    maxLines: 2,
-                                    style: const TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'WickedGrit',
-                                    ),
-                                  ),
-                                ),
-                                FlexWidget(
-                                  xs: 5,
-                                  sm: 3,
-                                  md: 2,
-                                  lg: 2,
-                                  xl: 2,
-                                  xxl: 2,
-                                  xxxl: 2,
-                                  child: Container(
-                                    width: double.infinity,
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                      color: Colors.blue.shade50,
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                    child: const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 8.0),
-                                          child: Icon(
-                                            LineAwesomeIcons.clock,
-                                            size: 18,
-                                          ),
-                                        ),
-                                        Text('30 Min / 50 Min'),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 24,
-                          ),
-                          const Text.rich(
-                            TextSpan(
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'Roboto',
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: 'Assis dans le traineau, ',
-                                ),
-                                TextSpan(
-                                  text: 'guidé par 10 chiens et leur musher',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: ', venez vivre ',
-                                ),
-                                TextSpan(
-                                  text: 'un moment de partage ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      "avec nos chiens, d'explication de notre métier et de sensibilisation sur les chiens nordiques.\n",
-                                ),
-                                TextSpan(
-                                  text:
-                                      'Profitez des différents paysages sur des pistes variées et ensoleillées.\n',
-                                ),
-                                TextSpan(
-                                  text:
-                                      'Nous serons ravis de partager durant 30 minutes une expérience ',
-                                ),
-                                TextSpan(
-                                  text: 'inoubliable et unique ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'dans nos montagnes !\n',
-                                ),
-                                TextSpan(
-                                  text: 'Activité familiale par excellence !',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            textAlign: TextAlign.start,
-                            maxLines: 15,
-                          ),
-                          const SizedBox(
-                            height: 32,
-                          ),
-                          const Text(
-                            'Les tarifs :',
-                            style: TextStyle(fontSize: 24),
-                          ),
-                          const SizedBox(
-                            height: 16,
-                          ),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ResponsiveRow(
-                              alignment: WrapAlignment.spaceBetween,
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              children: [
-                                FlexWidget(
-                                  xs: 12,
-                                  sm: 5,
-                                  md: 5,
-                                  lg: 5,
-                                  xl: 5,
-                                  xxl: 5,
-                                  xxxl: 5,
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.brown.shade200,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      '30 min : 150€\n'
-                                      'Traineau pour 1 à 2 personnes\n',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.bold,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                FlexWidget(
-                                  xs: 12,
-                                  sm: 5,
-                                  md: 5,
-                                  lg: 5,
-                                  xl: 5,
-                                  xxl: 5,
-                                  xxxl: 5,
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    padding: const EdgeInsets.all(16),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.brown.shade200,
-                                      ),
-                                    ),
-                                    child: const Text(
-                                      '50 min : 190€\n'
-                                          'Traineau pour 1 à 2 personnes\n',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.bold,
-                                        height: 1.4,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 32,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            TextSpan(text: 'Assis dans le traineau, '),
+            TextSpan(
+              text: 'guidé par 10 chiens et leur musher',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(
-              height: 24,
+            TextSpan(text: ', venez vivre '),
+            TextSpan(
+              text: 'un moment de partage ',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: Colors.brown.shade200,
-                ),
-              ),
-              child: ResponsiveRow(
-                alignment: WrapAlignment.spaceBetween,
-                crossAxisAlignment: WrapCrossAlignment.start,
-                children: [
-                  FlexWidget(
-                    xs: 12,
-                    sm: 12,
-                    md: 12,
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: 4),
-                              child: Icon(Icons.info_outline),
-                            ),
-                            Text(
-                              'Lieu de pratique',
-                              style: TextStyle(
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 28.0),
-                          child: Text(
-                            'La Toussuire\n'
-                            "Saint-Sorlin-d'Arves\n"
-                            'Albiez-Montrond\n'
-                            "Saint-Jean-d'Arves\n"
-                            'Domaine skiable des Sybelles\n',
-                            style:
-                                TextStyle(fontFamily: 'Roboto', fontSize: 16),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  FlexWidget(
-                    xs: 12,
-                    sm: 12,
-                    md: 12,
-                    lg: 8,
-                    xl: 8,
-                    xxl: 8,
-                    xxxl: 8,
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: 4),
-                              child: Icon(Icons.info_outline),
-                            ),
-                            Flexible(
-                              child: Text(
-                                'Informations et recommandations',
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 28.0),
-                          child: Text.rich(
-                            TextSpan(
-                              style:
-                                  TextStyle(fontFamily: 'Roboto', fontSize: 16),
-                              children: [
-                                TextSpan(
-                                  text: 'ATTENTION :\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      "En fonction des conditions d'enneigement, le départ peut se faire en altitude, il faudra donc prévoir les forfaits de ski.\n"
-                                      '160kg max par traineau.\n',
-                                ),
-                                TextSpan(
-                                  text: 'Interdit aux femmes enceintes ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(text: 'et '),
-                                TextSpan(
-                                  text:
-                                      'déconseillés aux personnes fragiles du dos.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'Équipement : ',
-                                ),
-                                TextSpan(
-                                  text: 'Tenue chaude ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      '(vêtements de ski, après ski, écharpe, gant).',
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+            TextSpan(
+              text:
+                  "avec nos chiens, d'explication de notre métier et de sensibilisation sur les chiens nordiques.\n",
+            ),
+            TextSpan(
+              text:
+                  'Profitez des différents paysages sur des pistes variées et ensoleillées.\n',
+            ),
+            TextSpan(
+              text:
+                  'Nous serons ravis de partager durant 30 minutes une expérience ',
+            ),
+            TextSpan(
+              text: 'inoubliable et unique ',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(text: 'dans nos montagnes !\n'),
+            TextSpan(
+              text: 'Activité familiale par excellence !',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ],
         ),
       ),
+      prices: const [
+        PriceCard(text: '30 min : 150€\nTraineau pour 1 à 2 personnes'),
+        PriceCard(text: '50 min : 190€\nTraineau pour 1 à 2 personnes'),
+      ],
+      infos: const [
+        InfoCard(
+          title: 'Lieu de pratique',
+          icon: Icons.location_on_outlined,
+          content: Text(
+            'La Toussuire\n'
+            "Saint-Sorlin-d'Arves\n"
+            'Albiez-Montrond\n'
+            "Saint-Jean-d'Arves\n"
+            'Domaine skiable des Sybelles',
+            style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+          ),
+        ),
+        InfoCard(
+          title: 'Recommandations',
+          icon: Icons.warning_amber_rounded,
+          content: Text.rich(
+            TextSpan(
+              style:
+                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              children: [
+                TextSpan(
+                  text: 'ATTENTION : ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(
+                  text:
+                      "En fonction des conditions d'enneigement, le départ peut se faire en altitude (prévoir forfaits de ski).\n"
+                      '160kg max par traineau.\n',
+                ),
+                TextSpan(
+                  text: 'Interdit aux femmes enceintes ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: 'et '),
+                TextSpan(
+                  text: 'déconseillé aux personnes fragiles du dos.',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ),
+        InfoCard(
+          title: 'Équipement',
+          icon: Icons.checkroom_outlined,
+          content: Text.rich(
+            TextSpan(
+              style:
+                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              children: [
+                TextSpan(
+                  text: 'Tenue chaude ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(
+                  text: '(vêtements de ski, après ski, écharpe, gants).',
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

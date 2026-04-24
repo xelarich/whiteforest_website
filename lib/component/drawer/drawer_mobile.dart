@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:whiteforest_website/component/drawer/widget/drawer_tile.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:whiteforest_website/page/booking/booking_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
@@ -20,85 +20,67 @@ class DrawerMobile extends StatelessWidget {
       child: Theme(
         data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            DrawerHeader(
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 24),
               decoration: BoxDecoration(
-                color: Colors.brown.shade200,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.brown.shade300,
+                    Colors.brown.shade200,
+                  ],
+                ),
               ),
-              child: Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  width: 150, // Définir la largeur souhaitée
-                  height: 150, // Définir la hauteur souhaitée
+              child: SafeArea(
+                bottom: false,
+                child: Center(
                   child: Image.asset(
                     'assets/images/white_forest_logo.webp',
+                    height: 100,
                   ),
                 ),
               ),
             ),
             Expanded(
               child: ListView(
+                padding: const EdgeInsets.symmetric(vertical: 8),
                 children: [
-                  DrawerTile(
+                  _DrawerItem(
                     'Accueil',
+                    LineAwesomeIcons.home_solid,
                     routeSelected,
                     routeName: HomePage.routeName,
                   ),
-                  ExpansionTile(
-                    title: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'Activités été',
-                      ),
-                    ),
-                    iconColor: Colors.brown,
-                    initiallyExpanded:
-                        routeSelected == ActivitySummerPage.routeName ||
-                            routeSelected == GroupSummerPage.routeName,
-                    children: [
-                      DrawerTile(
-                        'Prestations',
-                        routeSelected,
-                        routeName: ActivitySummerPage.routeName,
-                        isSubMenu: true,
-                      ),
-                      DrawerTile(
-                        'Groupe/CE',
-                        routeSelected,
-                        routeName: GroupSummerPage.routeName,
-                        isSubMenu: true,
-                      ),
-                    ],
+                  _DrawerItem(
+                    'Prestations été',
+                    LineAwesomeIcons.sun_solid,
+                    routeSelected,
+                    routeName: ActivitySummerPage.routeName,
                   ),
-                  ExpansionTile(
-                    title: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        'Activités hiver',
-                      ),
-                    ),
-                    iconColor: Colors.brown,
-                    initiallyExpanded:
-                        routeSelected == ActivityWinterPage.routeName ||
-                            routeSelected == GroupWinterPage.routeName,
-                    children: [
-                      DrawerTile(
-                        'Prestations',
-                        routeSelected,
-                        routeName: ActivityWinterPage.routeName,
-                        isSubMenu: true,
-                      ),
-                      DrawerTile(
-                        'Groupe/CE',
-                        routeSelected,
-                        routeName: GroupWinterPage.routeName,
-                        isSubMenu: true,
-                      ),
-                    ],
+                  _DrawerItem(
+                    'Groupe/CE été',
+                    LineAwesomeIcons.users_solid,
+                    routeSelected,
+                    routeName: GroupSummerPage.routeName,
                   ),
-                  DrawerTile(
+                  _DrawerItem(
+                    'Prestations hiver',
+                    LineAwesomeIcons.snowflake,
+                    routeSelected,
+                    routeName: ActivityWinterPage.routeName,
+                  ),
+                  _DrawerItem(
+                    'Groupe/CE hiver',
+                    LineAwesomeIcons.users_solid,
+                    routeSelected,
+                    routeName: GroupWinterPage.routeName,
+                  ),
+                  _DrawerItem(
                     'Contact',
+                    LineAwesomeIcons.envelope_solid,
                     routeSelected,
                     routeName: ContactPage.routeName,
                   ),
@@ -107,23 +89,82 @@ class DrawerMobile extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(16),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(180, 50),
-                  backgroundColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4.0),
+              child: SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFD4A24E),
+                    foregroundColor: Colors.white,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
-                ),
-                onPressed: () => context.go(BookingPage.routeName),
-                child: const Text(
-                  'Réserver',
-                  style: TextStyle(color: Colors.white),
+                  onPressed: () {
+                    Navigator.pop(context);
+                    context.go(BookingPage.routeName);
+                  },
+                  child: const Text(
+                    'Réserver',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
                 ),
               ),
             ),
+            const SizedBox(height: 8),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _DrawerItem extends StatelessWidget {
+  const _DrawerItem(
+    this.title,
+    this.icon,
+    this.routeSelected, {
+    required this.routeName,
+  });
+
+  final String title;
+  final IconData icon;
+  final String routeSelected;
+  final String routeName;
+
+  @override
+  Widget build(BuildContext context) {
+    final isSelected = routeName == routeSelected;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+      child: ListTile(
+        leading: Icon(
+          icon,
+          size: 22,
+          color: isSelected ? Colors.brown.shade700 : Colors.brown.shade400,
+        ),
+        title: Text(
+          title,
+          style: TextStyle(
+            fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+            color: isSelected ? Colors.brown.shade900 : Colors.brown.shade700,
+            fontSize: 15,
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        tileColor:
+            isSelected ? Colors.brown.withValues(alpha: 0.08) : null,
+        onTap: () {
+          Navigator.pop(context);
+          context.go(routeName);
+        },
       ),
     );
   }

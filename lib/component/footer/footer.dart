@@ -9,74 +9,90 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey.shade900,
-      width: double.infinity,
-      child: ResponsiveRow(
-        alignment: WrapAlignment.center,
-        children: [
-          FlexWidget(
-            xs: 12,
-            sm: 12,
-            md: 12,
-            lg: 3,
-            xl: 3,
-            xxl: 3,
-            xxxl: 3,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 32, bottom: 16),
-              child: Container(
-                padding: const EdgeInsets.all(48),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.grey.shade50,
-                ),
+    return Column(
+      children: [
+        Container(
+          height: 3,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.transparent,
+                Color(0xFFD4A24E),
+                Colors.transparent,
+              ],
+            ),
+          ),
+        ),
+        Container(
+          color: const Color(0xFF3E2723),
+          width: double.infinity,
+          child: ResponsiveRow(
+            alignment: WrapAlignment.center,
+            children: [
+              FlexWidget(
+                xs: 12,
+                sm: 12,
+                md: 12,
+                lg: 3,
+                xl: 3,
+                xxl: 3,
+                xxxl: 3,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Image.asset(
-                    'assets/images/white_forest_logo.webp',
-                    height: 125,
+                  padding: const EdgeInsets.only(top: 32, bottom: 16),
+                  child: Container(
+                    padding: const EdgeInsets.all(40),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white.withValues(alpha: 0.1),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Image.asset(
+                        'assets/images/white_forest_logo.webp',
+                        height: 125,
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
+              FlexWidget(
+                xs: 12,
+                sm: 12,
+                md: 12,
+                lg: 3,
+                xl: 3,
+                xxl: 3,
+                xxxl: 3,
+                child: const Center(
+                  child: ContactDetails(),
+                ),
+              ),
+              FlexWidget(
+                xs: 12,
+                sm: 12,
+                md: 12,
+                lg: 2,
+                xl: 2,
+                xxl: 2,
+                xxxl: 2,
+                child: const Center(
+                  child: SocialNetwork(),
+                ),
+              ),
+              FlexWidget(
+                xs: 12,
+                sm: 12,
+                md: 12,
+                lg: 4,
+                xl: 4,
+                xxl: 4,
+                xxxl: 4,
+                child: const Condition(),
+              ),
+            ],
           ),
-          FlexWidget(
-            xs: 12,
-            sm: 12,
-            md: 12,
-            lg: 3,
-            xl: 3,
-            xxl: 3,
-            xxxl: 3,
-            child: const Center(
-              child: ContactDetails(),
-            ),
-          ),
-          FlexWidget(
-            xs: 12,
-            sm: 12,
-            md: 12,
-            lg: 2,
-            xl: 2,
-            xxl: 2,
-            xxxl: 2,
-            child: const Center(
-              child: SocialNetwork(),
-            ),
-          ),
-          FlexWidget(
-            xs: 12,
-            sm: 12,
-            md: 12,
-            lg: 4,
-            xl: 4,
-            xxl: 4,
-            xxxl: 4,
-            child: const Condition(),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

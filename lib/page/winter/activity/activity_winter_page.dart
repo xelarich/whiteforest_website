@@ -1,5 +1,6 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart' hide Page, NavigationDrawer;
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
 import 'package:whiteforest_website/page/winter/activity/widget/dog_racket_night.dart';
@@ -31,6 +32,8 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = ResponsiveBreakpoints.of(context).isMobile;
+
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         if (widget.indexAnchor != null) {
@@ -46,77 +49,71 @@ class _ActivityWinterPageState extends State<ActivityWinterPage> {
       appBar: getTopBar(context, _key, ActivityWinterPage.routeName),
       key: _key,
       drawer: const DrawerMobile(ActivityWinterPage.routeName),
-      backgroundColor: Colors.brown.shade50,
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              controller: _scrollController,
+      backgroundColor: const Color(0xFFF5F0EB),
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        child: Column(
+          children: [
+            // Page header
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(
+                vertical: isMobile ? 32 : 48,
+                horizontal: 24,
+              ),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.brown.shade800,
+                    Colors.brown.shade600,
+                  ],
+                ),
+              ),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 24),
-                    child: Text(
-                      'Les activités hivernales'.toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 38,
-                        fontFamily: 'WickedGrit',
-                      ),
-                    ),
-                  ),
                   Text(
-                    'Information Réservation',
+                    'Activités hivernales',
                     style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                      fontSize: isMobile ? 26 : 38,
+                      fontFamily: 'WickedGrit',
+                      color: Colors.white,
+                      letterSpacing: 1,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SelectableText.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text:
-                            'Pour toute demande de réservation, merci de bien vouloir passer par le site internet ',
-                          ),
-                          TextSpan(
-                            text: 'www.montagneevent.com',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 20,
-                      ),
+                  const SizedBox(height: 12),
+                  Container(
+                    width: 50,
+                    height: 3,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFD4A24E),
+                      borderRadius: BorderRadius.circular(2),
                     ),
                   ),
-                  SleighBaptism(_scrollController),
-                  const SizedBox(
-                    height: 64,
+                  const SizedBox(height: 12),
+                  Text(
+                    'Découvrez nos expériences sur la neige',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white.withValues(alpha: 0.85),
+                    ),
                   ),
-                  HitchDriving(_scrollController),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  DogRacketNight(_scrollController),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  RedirectionContact(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  const Footer(),
                 ],
               ),
             ),
-          ),
-        ],
+
+            const SizedBox(height: 16),
+            SleighBaptism(_scrollController),
+            HitchDriving(_scrollController),
+            DogRacketNight(_scrollController),
+            const SizedBox(height: 16),
+            const RedirectionContact(),
+            const Footer(),
+          ],
+        ),
       ),
     );
   }

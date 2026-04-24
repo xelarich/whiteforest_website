@@ -1,47 +1,73 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:whiteforest_website/page/contact/contact_page.dart';
+import 'package:whiteforest_website/page/booking/booking_page.dart';
 
 class RedirectionContact extends StatelessWidget {
   const RedirectionContact({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24),
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(vertical: 48, horizontal: 24),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.brown.shade700,
+            Colors.brown.shade600,
+          ],
+        ),
+      ),
       child: Column(
         children: [
           Text(
-            'Une information ? Un devis ?',
+            'Prêt pour l\'aventure ?',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: ResponsiveValue<double>(
                 context,
-                defaultValue: 28,
+                defaultValue: 24,
                 conditionalValues: [
                   const Condition<double>.largerThan(
                     name: MOBILE,
-                    value: 38,
+                    value: 34,
                   ),
                 ],
               ).value,
+              color: Colors.white,
+              fontFamily: 'WickedGrit',
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                fixedSize: const Size(180, 50),
-                backgroundColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4.0),
-                ),
+          const SizedBox(height: 8),
+          Text(
+            'Réservez votre expérience dès maintenant',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.white.withValues(alpha: 0.8),
+              fontFamily: 'Roboto',
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          const SizedBox(height: 24),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              fixedSize: const Size(200, 50),
+              backgroundColor: const Color(0xFFD4A24E),
+              foregroundColor: Colors.white,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
               ),
-              onPressed: () => context.go(ContactPage.routeName),
-              child: const Text(
-                'Contactez-nous',
-                style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () => context.go(BookingPage.routeName),
+            child: const Text(
+              'Réserver',
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 16,
+                letterSpacing: 0.5,
               ),
             ),
           ),

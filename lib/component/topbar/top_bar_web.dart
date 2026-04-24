@@ -22,7 +22,22 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.brown.shade200,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.brown.shade300,
+            Colors.brown.shade200,
+            Colors.brown.shade300,
+          ],
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.brown.withValues(alpha: 0.3),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -77,16 +92,22 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                fixedSize: const Size(180, 50),
-                backgroundColor: Colors.black,
+                fixedSize: const Size(180, 48),
+                backgroundColor: const Color(0xFFD4A24E),
+                foregroundColor: Colors.white,
+                elevation: 0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4.0),
+                  borderRadius: BorderRadius.circular(24),
                 ),
               ),
               onPressed: () => context.go(BookingPage.routeName),
               child: const Text(
                 'Réserver',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 15,
+                  letterSpacing: 0.5,
+                ),
               ),
             ),
           ),

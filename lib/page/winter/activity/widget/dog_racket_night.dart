@@ -1,7 +1,6 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:responsive/responsive.dart';
+import 'package:whiteforest_website/shared/activity_section.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
 class DogRacketNight extends StatelessWidget {
@@ -11,445 +10,120 @@ class DogRacketNight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnchorItemWrapper(
-      controller: _scrollController,
+    return ActivitySection(
+      scrollController: _scrollController,
       index: 2,
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      title: 'Cani-randonnée hivernale',
+      duration: '5H',
+      imagePath:
+          'assets/images/winter/${getPathImage(context)}cani_nocturne.webp',
+      description: const Text.rich(
+        TextSpan(
+          style: TextStyle(fontSize: 16, fontFamily: 'Roboto', height: 1.6),
           children: [
-            SizedBox(
-              width: double.infinity,
-              child: ResponsiveRow(
-                alignment: WrapAlignment.spaceAround,
-                children: [
-                  //Image
-                  FlexWidget(
-                    sm: 12,
-                    md: 12,
-                    lg: 12,
-                    xl: 5,
-                    xxl: 5,
-                    xxxl: 5,
-                    child: ClipRRect(
-                      borderRadius:
-                          const BorderRadius.vertical(top: Radius.circular(16)),
-                      child: Image.asset(
-                        'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
-                        width: 400,
-                        height: 450,
-                        fit: BoxFit.cover,
-                        alignment: Alignment.center,
-                      ),
-                    ),
-                  ),
-                  FlexWidget(
-                    sm: 12,
-                    md: 12,
-                    lg: 12,
-                    xl: 6,
-                    xxl: 6,
-                    xxxl: 6,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          //Titre et temps
-                          SizedBox(
-                            width: double.infinity,
-                            child: ResponsiveRow(
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              alignment: WrapAlignment.spaceBetween,
-                              children: [
-                                FlexWidget(
-                                  xs: 10,
-                                  sm: 10,
-                                  md: 9,
-                                  lg: 9,
-                                  xl: 9,
-                                  xxl: 9,
-                                  xxxl: 9,
-                                  child: Text(
-                                    //'Cani-raquette nocturne'.toUpperCase(),
-                                    'cani-randonnée hivernale'.toUpperCase(),
-                                    maxLines: 2,
-                                    style: const TextStyle(
-                                      fontSize: 28,
-                                      fontFamily: 'WickedGrit',
-                                    ),
-                                  ),
-                                ),
-                                FlexWidget(
-                                  xs: 4,
-                                  sm: 3,
-                                  md: 2,
-                                  lg: 2,
-                                  xl: 2,
-                                  xxl: 2,
-                                  xxxl: 2,
-                                  child: Container(
-                                    width: double.infinity,
-                                    margin:
-                                        const EdgeInsets.symmetric(vertical: 8),
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                      color: Colors.blue.shade50,
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                    child: const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(right: 8.0),
-                                          child: Icon(
-                                            LineAwesomeIcons.clock,
-                                            size: 18,
-                                          ),
-                                        ),
-                                        Text('5H'),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 24,
-                          ),
-                          const Text.rich(
-                            TextSpan(
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: 'Roboto',
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: 'Le ',
-                                ),
-                                TextSpan(
-                                  text: 'mardi soir ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'ou le ',
-                                ),
-                                TextSpan(
-                                  text: 'jeudi soir',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: ', venez découvrir la cani-nocturne ! ',
-                                ),
-                                TextSpan(
-                                  text:
-                                      'Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera ',
-                                ),
-                                TextSpan(
-                                  text: 'un agréable souvenir.\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      'Vous créerez une relation toute particulière avec votre binôme à quatre pattes et le musher qui vous accompagne dans ',
-                                ),
-                                TextSpan(
-                                  text: 'un paysage nocturne',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      '. Sans oublier la pause dîner en altitude ou dans la vallée de l’Arvan, ou vous vous ',
-                                ),
-                                TextSpan(
-                                  text: 'régalerez ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'après un bel effort, '
-                                      // 'en cani-raquette, '
-                                      'un retour prévu aux alentours de 23h00. ',
-                                ),
-                                TextSpan(
-                                  text:
-                                      'Avec une dernière papouille à votre fidèle compagnon !\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            textAlign: TextAlign.start,
-                            maxLines: 15,
-                          ),
-                          const Text(
-                            'Les tarifs :',
-                            style: TextStyle(fontSize: 24),
-                          ),
-                          const SizedBox(
-                            height: 16,
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 8),
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(
-                                color: Colors.brown.shade200,
-                              ),
-                            ),
-                            child: const Text(
-                              '80€/ personne\n'
-                              'Le tarif comprends:\n'
-                              'L’activité\n'
-                              //'La location du matériel (sauf raquette)\n'
-                              'Le repas (apéritif, plat,dessert, café)',
-                              style: TextStyle(
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                height: 1.4,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            TextSpan(text: 'Le '),
+            TextSpan(
+              text: 'mardi soir ',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            const SizedBox(
-              height: 24,
+            TextSpan(text: 'ou le '),
+            TextSpan(
+              text: 'jeudi soir',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: Colors.brown.shade200,
-                ),
-              ),
-              child: ResponsiveRow(
-                crossAxisAlignment: WrapCrossAlignment.start,
-                children: [
-                  FlexWidget(
-                    xs: 12,
-                    sm: 12,
-                    md: 12,
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: 4),
-                              child: Icon(Icons.info_outline),
-                            ),
-                            Text(
-                              'Lieu de pratique',
-                              style: TextStyle(
-                                fontFamily: 'Roboto',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 28.0),
-                          child: Text.rich(
-                            TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: 'Le mardi soir à 17h30 au départ de ',
-                                ),
-                                TextSpan(
-                                  text: 'La Toussuire\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text: 'Le jeudi soir à 18h00 au départ de ',
-                                ),
-                                TextSpan(
-                                  text: 'Saint-Sorlin-d’Arves\n',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            style:
-                                TextStyle(fontFamily: 'Roboto', fontSize: 16),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  FlexWidget(
-                    xs: 12,
-                    sm: 12,
-                    md: 12,
-                    lg: 4,
-                    xl: 4,
-                    xxl: 4,
-                    xxxl: 4,
-                    child: const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: 4),
-                              child: Icon(Icons.info_outline),
-                            ),
-                            Flexible(
-                              child: Text(
-                                'Informations et recommandations',
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 28.0),
-                          child: Text.rich(
-                            TextSpan(
-                              style:
-                                  TextStyle(fontFamily: 'Roboto', fontSize: 16),
-                              children: [
-                                TextSpan(
-                                  text: 'Équipement : ',
-                                ),
-                                TextSpan(
-                                  text: 'Tenue chaude ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      '(vêtements de ski, après ski, écharpe, gant).\n',
-                                ),
-                                /*TextSpan(
-                                  text: 'Raquette ',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                  text:
-                                      '(location de raquette possible auprès de nos partenaires).\n',
-                                ),*/
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  FlexWidget(
-                    xs: 12,
-                    sm: 12,
-                    md: 12,
-                    lg: 4,
-                    xl: 4,
-                    xxl: 4,
-                    xxxl: 4,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: 4),
-                              child: Icon(Icons.info_outline),
-                            ),
-                            Flexible(
-                              child: Text(
-                                'Nos partenaires',
-                                style: TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        ResponsiveRow(
-                          crossAxisAlignment: WrapCrossAlignment.start,
-                          alignment: WrapAlignment.spaceBetween,
-                          children: [
-                            FlexWidget(
-                              child: Padding(
-                                padding: EdgeInsets.only(left: 28.0),
-                                child: Text.rich(
-                                  TextSpan(
-                                    style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      fontSize: 16,
-                                    ),
-                                    children: [
-                                      TextSpan(
-                                        text: 'Restaurants :\n',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: 'Chez Bib\n'
-                                            "L'éTable des Prés Plan\n",
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                            /*FlexWidget(
-                              child: Padding(
-                                padding: EdgeInsets.only(left: 28.0),
-                                child: Text.rich(
-                                  TextSpan(
-                                    style: TextStyle(
-                                      fontFamily: 'Roboto',
-                                      fontSize: 16,
-                                    ),
-                                    children: [
-                                      TextSpan(
-                                        text: 'Location de raquette :\n',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                        text: 'Intersport, La Toussuire\n',
-                                      ),
-                                      TextSpan(
-                                        text: 'Arthur Sport, La Toussuire\n',
-                                      ),
-                                      TextSpan(
-                                        text:
-                                            'Skiset - Tout Pour le Ski, Saint-Sorlin-d’Arves\n',
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),*/
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+            TextSpan(
+              text:
+                  ", venez découvrir la cani-nocturne ! Équipé d'une ceinture et relié à un chien de traineau, cette randonnée vous laissera ",
+            ),
+            TextSpan(
+              text: 'un agréable souvenir.\n',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(
+              text:
+                  'Vous créerez une relation toute particulière avec votre binôme à quatre pattes et le musher qui vous accompagne dans ',
+            ),
+            TextSpan(
+              text: 'un paysage nocturne',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(
+              text:
+                  ". Sans oublier la pause dîner en altitude ou dans la vallée de l'Arvan, où vous vous ",
+            ),
+            TextSpan(
+              text: 'régalerez ',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(
+              text:
+                  "après un bel effort, un retour prévu aux alentours de 23h00. ",
+            ),
+            TextSpan(
+              text: 'Avec une dernière papouille à votre fidèle compagnon !',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ],
         ),
       ),
+      prices: const [
+        PriceCard(
+          text: "80€ / personne\n"
+              "Comprend : l'activité + repas\n"
+              '(apéritif, plat, dessert, café)',
+        ),
+      ],
+      infos: [
+        InfoCard(
+          title: 'Lieu de pratique',
+          icon: Icons.location_on_outlined,
+          content: const Text.rich(
+            TextSpan(
+              style:
+                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              children: [
+                TextSpan(text: 'Mardi soir 17h30 — '),
+                TextSpan(
+                  text: 'La Toussuire\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: 'Jeudi soir 18h00 — '),
+                TextSpan(
+                  text: "Saint-Sorlin-d'Arves",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const InfoCard(
+          title: 'Équipement',
+          icon: Icons.checkroom_outlined,
+          content: Text.rich(
+            TextSpan(
+              style:
+                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              children: [
+                TextSpan(
+                  text: 'Tenue chaude ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(
+                  text: '(vêtements de ski, après ski, écharpe, gants).',
+                ),
+              ],
+            ),
+          ),
+        ),
+        const InfoCard(
+          title: 'Nos partenaires',
+          icon: Icons.restaurant_outlined,
+          content: Text(
+            "Restaurants :\nChez Bib\nL'éTable des Prés Plan",
+            style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+          ),
+        ),
+      ],
     );
   }
 }

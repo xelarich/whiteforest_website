@@ -25,9 +25,7 @@ class DrawerTile extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4.0),
           color: routeName == routeSelected
-              ? Colors.brown.shade200.withOpacity(
-                  0.4,
-                )
+              ? Colors.brown.shade200.withValues(alpha: 0.4)
               : null,
         ),
         child: Text(

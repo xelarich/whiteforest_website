@@ -11,194 +11,200 @@ class ActivityPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Center(
-          child: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              'Vous êtes plutôt',
-              style: TextStyle(
-                fontSize: 28,
-              ),
-              textAlign: TextAlign.justify,
-            ),
-          ),
-        ),
-        const Center(
-          child: Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              'Été ou Hiver ?',
-              style: TextStyle(fontSize: 38, fontFamily: 'WickedGrit'),
-              textAlign: TextAlign.justify,
-            ),
-          ),
-        ),
-        const Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 48, vertical: 16),
-            child: Text(
-              'Nos activités estivales :',
-              style: TextStyle(fontSize: 28, fontFamily: 'Roboto'),
-              textAlign: TextAlign.start,
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 32),
-          child: ResponsiveRow(
-            alignment: WrapAlignment.spaceEvenly,
-            runAlignment: WrapAlignment.spaceEvenly,
-            children: [
-              FlexWidget(
-                child: CardHome(
-                  'Cani-randonnée',
-                  'Randonnée à pied, tracté par un chien de traineau à l’aide d’une ceinture et d’une ligne conçue spécialement pour l’activité !',
-                  'assets/images/summer/${getPathImage(context)}cani_rando.webp',
-                  onTap: () {
-                    context.go(
-                      ActivitySummerPage.routeName,
-                      extra: {
-                        ActivitySummerPage.indexAnchorKey: 1,
-                      },
-                    );
-                  },
-                ),
-              ),
-              FlexWidget(
-                child: CardHome(
-                  'Cani-randonnée nocturne',
-                  'Pratiquer la randonnée autrement ! Amoureux des montagnes, de nourriture et de randonnée, cette activité est faite pour vous !',
-                  'assets/images/summer/${getPathImage(context)}cani_rando_nocturne.webp',
-                  onTap: () {
-                    context.go(
-                      ActivitySummerPage.routeName,
-                      extra: {
-                        ActivitySummerPage.indexAnchorKey: 2,
-                      },
-                    );
-                  },
-                ),
-              ),
-              FlexWidget(
-                child: CardHome(
-                  'Visite du chenil',
-                  'Durant 1H00, au chenil à La Toussuire ou sur votre station. Ecoutez et découvrez le métier de musher ! Le professionnel vous accompagnera et vous présentera sa passion.',
-                  'assets/images/summer/${getPathImage(context)}chenil.webp',
-                  onTap: () {
-                    context.go(
-                      ActivitySummerPage.routeName,
-                      extra: {
-                        ActivitySummerPage.indexAnchorKey: 3,
-                      },
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
-        const Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 48, vertical: 16),
-            child: Text(
-              'Nos activités hivernales :',
-              style: TextStyle(fontSize: 28, fontFamily: 'Roboto'),
-              textAlign: TextAlign.start,
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 32),
-          child: ResponsiveRow(
-            alignment: WrapAlignment.spaceEvenly,
-            runAlignment: WrapAlignment.spaceEvenly,
-            children: [
-              FlexWidget(
-                child: CardHome(
-                  'Balade en traineau',
-                  'Assis dans le traineau, guidé par 10 chiens et leur musher, venez vivre un moment de partage avec nos chiens.',
-                  'assets/images/winter/${getPathImage(context)}balade_traineau.webp',
-                  alignment: Alignment.centerRight,
-                  onTap: () {
-                    context.go(
-                      ActivityWinterPage.routeName,
-                      extra: {
-                        ActivityWinterPage.indexAnchorKey: 0,
-                      },
-                    );
-                  },
-                ),
-              ),
-              FlexWidget(
-                child: CardHome(
-                  'Conduite d’attelage',
-                  'Le temps d’une demi-journée devenez le musher de votre propre attelage !',
-                  'assets/images/winter/${getPathImage(context)}conduite_attelage.webp',
-                  onTap: () {
-                    context.go(
-                      ActivityWinterPage.routeName,
-                      extra: {
-                        ActivityWinterPage.indexAnchorKey: 1,
-                      },
-                    );
-                  },
-                ),
-              ),
-              FlexWidget(
-                child: CardHome(
-                  'Cani-randonnée hivernale',
-                  'Le mardi soir ou le jeudi soir, venez découvrir la cani-randonnée hivernale ! Équipé d’une ceinture et relié à un chien de traineau, cette randonnée vous laissera un agréable souvenir',
-                  'assets/images/winter/${getPathImage(context)}cani_raquette_nocturne.webp',
-                  onTap: () {
-                    context.go(
-                      ActivityWinterPage.routeName,
-                      extra: {
-                        ActivityWinterPage.indexAnchorKey: 2,
-                      },
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
-        Text(
-          'Information Réservation',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SelectableText.rich(
+    return Container(
+      color: const Color(0xFFF5F0EB),
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(vertical: 48),
+      child: Column(
+        children: [
+          const Text(
+            'Vous êtes plutôt',
+            style: TextStyle(fontSize: 28),
             textAlign: TextAlign.center,
-            TextSpan(
-              children: [
-                TextSpan(
-                  text:
-                  'Pour toute demande de réservation, merci de bien vouloir passer par le site internet ',
+          ),
+          const SizedBox(height: 8),
+          const Text(
+            'Été ou Hiver ?',
+            style: TextStyle(fontSize: 38, fontFamily: 'WickedGrit'),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 16),
+          Container(
+            width: 50,
+            height: 3,
+            decoration: BoxDecoration(
+              color: const Color(0xFFD4A24E),
+              borderRadius: BorderRadius.circular(2),
+            ),
+          ),
+          const SizedBox(height: 40),
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 48),
+              child: Text(
+                'Nos activités estivales',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w300,
                 ),
-                TextSpan(
-                  text: 'www.montagneevent.com',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 48),
+            child: ResponsiveRow(
+              alignment: WrapAlignment.spaceEvenly,
+              runAlignment: WrapAlignment.spaceEvenly,
+              children: [
+                FlexWidget(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 12,
+                    ),
+                    child: CardHome(
+                      'Cani-randonnée',
+                      "Randonnée à pied, tracté par un chien de traineau à l'aide d'une ceinture et d'une ligne conçue spécialement pour l'activité !",
+                      'assets/images/summer/${getPathImage(context)}cani_rando.webp',
+                      onTap: () {
+                        context.go(
+                          ActivitySummerPage.routeName,
+                          extra: {ActivitySummerPage.indexAnchorKey: 1},
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                FlexWidget(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 12,
+                    ),
+                    child: CardHome(
+                      'Cani-randonnée nocturne',
+                      'Pratiquer la randonnée autrement ! Amoureux des montagnes, de nourriture et de randonnée, cette activité est faite pour vous !',
+                      'assets/images/summer/${getPathImage(context)}cani_rando_nocturne.webp',
+                      onTap: () {
+                        context.go(
+                          ActivitySummerPage.routeName,
+                          extra: {ActivitySummerPage.indexAnchorKey: 2},
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                FlexWidget(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 12,
+                    ),
+                    child: CardHome(
+                      'Visite du chenil',
+                      'Durant 1H00, au chenil à La Toussuire ou sur votre station. Ecoutez et découvrez le métier de musher !',
+                      'assets/images/summer/${getPathImage(context)}chenil.webp',
+                      onTap: () {
+                        context.go(
+                          ActivitySummerPage.routeName,
+                          extra: {ActivitySummerPage.indexAnchorKey: 3},
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],
             ),
-            style: TextStyle(
-              fontFamily: 'Roboto',
-              fontSize: 20,
-
+          ),
+          const SizedBox(height: 48),
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 48),
+              child: Text(
+                'Nos activités hivernales',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
             ),
           ),
-        ),
-      ],
+          const SizedBox(height: 24),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 48),
+            child: ResponsiveRow(
+              alignment: WrapAlignment.spaceEvenly,
+              runAlignment: WrapAlignment.spaceEvenly,
+              children: [
+                FlexWidget(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 12,
+                    ),
+                    child: CardHome(
+                      'Balade en traineau',
+                      'Assis dans le traineau, guidé par 10 chiens et leur musher, venez vivre un moment de partage avec nos chiens.',
+                      'assets/images/winter/${getPathImage(context)}balade_traineau.webp',
+                      alignment: Alignment.centerRight,
+                      onTap: () {
+                        context.go(
+                          ActivityWinterPage.routeName,
+                          extra: {ActivityWinterPage.indexAnchorKey: 0},
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                FlexWidget(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 12,
+                    ),
+                    child: CardHome(
+                      "Conduite d'attelage",
+                      "Le temps d'une demi-journée devenez le musher de votre propre attelage !",
+                      'assets/images/winter/${getPathImage(context)}conduite_attelage.webp',
+                      onTap: () {
+                        context.go(
+                          ActivityWinterPage.routeName,
+                          extra: {ActivityWinterPage.indexAnchorKey: 1},
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                FlexWidget(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 12,
+                    ),
+                    child: CardHome(
+                      'Cani-randonnée hivernale',
+                      "Équipé d'une ceinture et relié à un chien de traineau, cette randonnée vous laissera un agréable souvenir.",
+                      'assets/images/winter/${getPathImage(context)}cani_nocturne.webp',
+                      onTap: () {
+                        context.go(
+                          ActivityWinterPage.routeName,
+                          extra: {ActivityWinterPage.indexAnchorKey: 2},
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 32),
+        ],
+      ),
     );
   }
 }

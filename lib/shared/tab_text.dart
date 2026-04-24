@@ -24,7 +24,6 @@ class TabText extends StatefulWidget {
 class TabTextState extends State<TabText> {
   bool tabIsHover = false;
   bool menuIsHover = false;
-  bool isHover = false;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +63,17 @@ class TabTextState extends State<TabText> {
               }
             },
             child: Container(
-              color: Colors.white,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.brown.withValues(alpha: 0.15),
+                    blurRadius: 16,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -77,8 +86,18 @@ class TabTextState extends State<TabText> {
                           widget.children[index].routeName,
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(widget.children[index].name),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                            vertical: 10,
+                          ),
+                          child: Text(
+                            widget.children[index].name,
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 14,
+                              color: Colors.brown.shade800,
+                            ),
+                          ),
                         ),
                       );
                     },
@@ -117,24 +136,30 @@ class _TabTextWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Text(
-            name,
-            textAlign: TextAlign.center,
+          AnimatedDefaultTextStyle(
+            duration: const Duration(milliseconds: 200),
             style: TextStyle(
               fontSize: 16,
-              color: getColors(),
+              color: _getColor(),
+              fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+            ),
+            child: Text(
+              name,
+              textAlign: TextAlign.center,
             ),
           ),
-          const SizedBox(height: 8),
-          Visibility(
-            maintainAnimation: true,
-            maintainState: true,
-            maintainSize: true,
-            visible: isHover || isSelected,
-            child: Container(
-              width: 100,
-              height: 2,
-              color: getColors(),
+          const SizedBox(height: 6),
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            width: isHover || isSelected ? 30 : 0,
+            height: 3,
+            decoration: BoxDecoration(
+              color: isSelected
+                  ? const Color(0xFFD4A24E)
+                  : isHover
+                      ? Colors.brown.shade600
+                      : Colors.transparent,
+              borderRadius: BorderRadius.circular(2),
             ),
           ),
         ],
@@ -142,10 +167,10 @@ class _TabTextWidget extends StatelessWidget {
     );
   }
 
-  Color getColors() => isSelected
-      ? Colors.black
+  Color _getColor() => isSelected
+      ? Colors.brown.shade900
       : isHover
-          ? Colors.brown
+          ? Colors.brown.shade700
           : Colors.white;
 }
 
