@@ -1,7 +1,7 @@
 import 'package:anchor_scroll_controller/anchor_scroll_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/shared/activity_section.dart';
-import 'package:whiteforest_website/shared/utils.dart';
 
 class DogRacketNight extends StatelessWidget {
   const DogRacketNight(this._scrollController, {super.key});
@@ -10,13 +10,17 @@ class DogRacketNight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = ResponsiveBreakpoints.of(context).isMobile;
+    final imageName =
+        isMobile ? 'cani_raquette_nocturne.webp' : 'cani_nocturne.webp';
+    final pathPrefix = isMobile ? 'mobile/' : 'web/';
+
     return ActivitySection(
       scrollController: _scrollController,
       index: 2,
       title: 'Cani-randonnée hivernale',
       duration: '5H',
-      imagePath:
-          'assets/images/winter/${getPathImage(context)}cani_nocturne.webp',
+      imagePath: 'assets/images/winter/$pathPrefix$imageName',
       description: const Text.rich(
         TextSpan(
           style: TextStyle(fontSize: 16, fontFamily: 'Roboto', height: 1.6),

@@ -22,62 +22,76 @@ class _GroupSummerPageState extends State<GroupSummerPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = ResponsiveBreakpoints.of(context).isMobile;
+
     return Scaffold(
       appBar: getTopBar(context, _key, GroupSummerPage.routeName),
       key: _key,
       drawer: const DrawerMobile(GroupSummerPage.routeName),
-      backgroundColor: Colors.brown.shade50,
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
+      backgroundColor: const Color(0xFFF5F0EB),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(
+                vertical: isMobile ? 32 : 48,
+                horizontal: 24,
+              ),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.green.shade800,
+                    Colors.green.shade600,
+                  ],
+                ),
+              ),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 24,
-                      horizontal: 16,
+                  Text(
+                    'Offres groupes — Été',
+                    style: TextStyle(
+                      fontSize: isMobile ? 26 : 38,
+                      fontFamily: 'WickedGrit',
+                      color: Colors.white,
+                      letterSpacing: 1,
                     ),
-                    child: Text(
-                      'Offres groupes'.toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: ResponsiveValue<double>(
-                          context,
-                          defaultValue: 28,
-                          conditionalValues: [
-                            const Condition<double>.largerThan(
-                              name: MOBILE,
-                              value: 38,
-                            ),
-                          ],
-                        ).value,
-                        fontFamily: 'WickedGrit',
-                      ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 12),
+                  Container(
+                    width: 50,
+                    height: 3,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFD4A24E),
+                      borderRadius: BorderRadius.circular(2),
                     ),
                   ),
-                  const CaniHikeGroup(),
-                  const SizedBox(
-                    height: 64,
+                  const SizedBox(height: 12),
+                  Text(
+                    'Des expériences sur mesure pour vos groupes (+ de 15 personnes)',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white.withValues(alpha: 0.85),
+                    ),
                   ),
-                  const CaniHikeDayGroup(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  const DogKennelGroup(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  RedirectionContact(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  const Footer(),
                 ],
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 16),
+            const CaniHikeGroup(),
+            const CaniHikeDayGroup(),
+            const DogKennelGroup(),
+            const SizedBox(height: 16),
+            const RedirectionContact(),
+            const Footer(),
+          ],
+        ),
       ),
     );
   }

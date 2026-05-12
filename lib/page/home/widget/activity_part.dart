@@ -189,7 +189,9 @@ class ActivityPart extends StatelessWidget {
                     child: CardHome(
                       'Cani-randonnée hivernale',
                       "Équipé d'une ceinture et relié à un chien de traineau, cette randonnée vous laissera un agréable souvenir.",
-                      'assets/images/winter/${getPathImage(context)}cani_nocturne.webp',
+                      getPathImage(context) == 'mobile/'
+                          ? 'assets/images/winter/mobile/cani_raquette_nocturne.webp'
+                          : 'assets/images/winter/web/cani_nocturne.webp',
                       onTap: () {
                         context.go(
                           ActivityWinterPage.routeName,

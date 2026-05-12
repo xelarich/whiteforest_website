@@ -23,96 +23,77 @@ class _GroupWinterPageState extends State<GroupWinterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = ResponsiveBreakpoints.of(context).isMobile;
+
     return Scaffold(
       appBar: getTopBar(context, _key, GroupWinterPage.routeName),
       key: _key,
       drawer: const DrawerMobile(GroupWinterPage.routeName),
-      backgroundColor: Colors.brown.shade50,
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
+      backgroundColor: const Color(0xFFF5F0EB),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(
+                vertical: isMobile ? 32 : 48,
+                horizontal: 24,
+              ),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.brown.shade800,
+                    Colors.brown.shade600,
+                  ],
+                ),
+              ),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 24,
-                      horizontal: 16,
-                    ),
-                    child: Text(
-                      'Offres groupes'.toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: ResponsiveValue<double>(
-                          context,
-                          defaultValue: 28,
-                          conditionalValues: [
-                            const Condition<double>.largerThan(
-                              name: MOBILE,
-                              value: 38,
-                            ),
-                          ],
-                        ).value,
-                        fontFamily: 'WickedGrit',
-                      ),
-                    ),
-                  ),
                   Text(
-                    'Information Réservation',
+                    'Offres groupes — Hiver',
                     style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                      fontSize: isMobile ? 26 : 38,
+                      fontFamily: 'WickedGrit',
+                      color: Colors.white,
+                      letterSpacing: 1,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 12),
+                  Container(
+                    width: 50,
+                    height: 3,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFD4A24E),
+                      borderRadius: BorderRadius.circular(2),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SelectableText.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text:
-                            'Pour toute demande de réservation, merci de bien vouloir passer par le site internet ',
-                          ),
-                          TextSpan(
-                            text: 'www.montagneevent.com',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Roboto',
-                        fontSize: 20,
-                      ),
+                  const SizedBox(height: 12),
+                  Text(
+                    'Des expériences sur mesure pour vos groupes (+ de 15 personnes)',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white.withValues(alpha: 0.85),
                     ),
                   ),
-                  const SleighGroup(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  const HitchDrivingGroup(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  const DogRacketGroup(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  const DogKennelGroup(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  RedirectionContact(),
-                  const SizedBox(
-                    height: 64,
-                  ),
-                  const Footer(),
                 ],
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 16),
+            const SleighGroup(),
+            const HitchDrivingGroup(),
+            const DogRacketGroup(),
+            const DogKennelGroup(),
+            const SizedBox(height: 16),
+            const RedirectionContact(),
+            const Footer(),
+          ],
+        ),
       ),
     );
   }

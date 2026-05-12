@@ -6,20 +6,21 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 class ActivitySection extends StatelessWidget {
   const ActivitySection({
-    required this.scrollController,
-    required this.index,
     required this.title,
     required this.duration,
     required this.imagePath,
     required this.description,
     required this.prices,
     required this.infos,
+    this.scrollController,
+    this.index,
+    this.pricesTitle = 'Tarifs',
     this.imageAlignment = Alignment.center,
     super.key,
   });
 
-  final AnchorScrollController scrollController;
-  final int index;
+  final AnchorScrollController? scrollController;
+  final int? index;
   final String title;
   final String duration;
   final String imagePath;
@@ -27,16 +28,27 @@ class ActivitySection extends StatelessWidget {
   final List<PriceCard> prices;
   final List<InfoCard> infos;
   final Alignment imageAlignment;
+  final String pricesTitle;
 
   @override
   Widget build(BuildContext context) {
     final isMobile = ResponsiveBreakpoints.of(context).isMobile;
 
-    return AnchorItemWrapper(
-      controller: scrollController,
-      index: index,
-      child: Center(
-        child: Container(
+    final content = _buildContent(context, isMobile);
+
+    if (scrollController != null && index != null) {
+      return AnchorItemWrapper(
+        controller: scrollController!,
+        index: index!,
+        child: content,
+      );
+    }
+    return content;
+  }
+
+  Widget _buildContent(BuildContext context, bool isMobile) {
+    return Center(
+      child: Container(
         constraints: const BoxConstraints(maxWidth: 900),
         margin: EdgeInsets.symmetric(
           horizontal: isMobile ? 12 : 32,
@@ -156,21 +168,25 @@ class ActivitySection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         width: 4,
                         height: 24,
+                        margin: const EdgeInsets.only(top: 4),
                         decoration: BoxDecoration(
                           color: const Color(0xFFD4A24E),
                           borderRadius: BorderRadius.circular(2),
                         ),
                       ),
                       const SizedBox(width: 12),
-                      const Text(
-                        'Tarifs',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
+                      Expanded(
+                        child: Text(
+                          pricesTitle,
+                          style: TextStyle(
+                            fontSize: isMobile ? 18 : 22,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                     ],
@@ -213,7 +229,6 @@ class ActivitySection extends StatelessWidget {
             const SizedBox(height: 12),
           ],
         ),
-      ),
       ),
     );
   }
