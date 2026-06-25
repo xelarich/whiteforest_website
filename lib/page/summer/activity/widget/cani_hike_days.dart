@@ -62,10 +62,10 @@ class CaniHikeDays extends StatelessWidget {
       ),
       prices: const [
         PriceCard(
-          text: '170€ / Adulte — dès 13 ans\nActivité, matériel, repas, nuitée et petit déjeuner',
+          text: '165€ / Adulte — dès 13 ans\nActivité, matériel, repas, nuitée et petit déjeuner (boissons non comprises)',
         ),
         PriceCard(
-          text: '150€ / Enfant — de 10 à 12 ans\nActivité, matériel, repas, nuitée et petit déjeuner',
+          text: '150€ / Enfant — de 6 à 12 ans\nActivité, matériel, repas, nuitée et petit déjeuner (boissons non comprises)',
         ),
       ],
       infos: [
@@ -109,8 +109,7 @@ class CaniHikeDays extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
-                  text:
-                      '26-27 sept  •  3-4 oct  •  10-11 oct\n7-8 nov  •  14-15 nov',
+                  text: '26-27 sept  •  3-4 oct  •  10-11 oct',
                 ),
               ],
             ),
