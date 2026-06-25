@@ -62,8 +62,8 @@ class _CardHomeState extends State<CardHome> {
               curve: Curves.easeOut,
               transform: Matrix4.identity()
                 ..translate(0.0, _hovered ? -6.0 : 0.0, 0.0),
-              width: 340,
-              height: 420,
+              width: double.infinity,
+              height: isMobile ? 280 : 420,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
