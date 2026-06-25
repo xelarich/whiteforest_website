@@ -53,6 +53,12 @@ class CaniHikeDays extends StatelessWidget {
               text: 'petit déjeuner de champion',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
+          ),
+        ),
+        const InfoCard(
+          title: 'Dates',
+          icon: Icons.calendar_today_outlined,
+          content: Text.rich(
             TextSpan(
               text:
                   ', un retour possible par le Col de Montjoie pour rentrer en beauté.',
