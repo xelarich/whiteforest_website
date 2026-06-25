@@ -23,6 +23,7 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
 
   @override
   Widget build(BuildContext context) {
+    final isDesktop = ResponsiveBreakpoints.of(context).isDesktop;
     final isMobile = ResponsiveBreakpoints.of(context).isMobile;
     final screenSize = MediaQuery.of(context).size;
     final heroHeight = screenSize.height - kToolbarHeight;
@@ -59,8 +60,8 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
             ),
           ),
 
-          // Gradient overlay on desktop for editorial readability
-          if (!isMobile)
+          // Gradient de lisibilité uniquement sur desktop
+          if (isDesktop)
             Positioned.fill(
               child: Container(
                 decoration: const BoxDecoration(
@@ -74,8 +75,8 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
               ),
             ),
 
-          // Desktop: editorial bottom-left title
-          if (!isMobile) ...[
+          // Desktop : titre éditorial en bas à gauche
+          if (isDesktop) ...[
             Positioned(
               top: 28,
               right: 56,
@@ -151,12 +152,12 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
             ),
           ],
 
-          // Mobile: centered title
-          if (isMobile)
+          // Mobile & tablet : titre centré
+          if (!isDesktop)
             Positioned.fill(
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -164,12 +165,13 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
                         "Préparez-vous pour l'aventure",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 40,
+                          fontSize: isMobile ? 36.0 : 48.0,
                           fontWeight: FontWeight.w700,
                           shadows: const [_titleShadow],
                         ),
-                        maxLines: 2,
+                        maxLines: 3,
                         textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 12),
                       Container(
@@ -185,7 +187,7 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
                         'Chiens de traineau en Savoie',
                         style: TextStyle(
                           color: Colors.white.withValues(alpha: 0.85),
-                          fontSize: 16,
+                          fontSize: isMobile ? 14.0 : 16.0,
                           fontFamily: 'Roboto',
                           fontWeight: FontWeight.w300,
                           letterSpacing: 2,
@@ -203,7 +205,7 @@ class _HeaderCarouselState extends State<HeaderCarousel> {
               ),
             ),
 
-          // Carousel dots
+          // Points du carousel
           Positioned(
             bottom: screenSize.height * 0.04,
             left: 0,

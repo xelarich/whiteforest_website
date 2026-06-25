@@ -63,7 +63,7 @@ class _CardHomeState extends State<CardHome> {
               transform: Matrix4.identity()
                 ..translate(0.0, _hovered ? -6.0 : 0.0, 0.0),
               width: double.infinity,
-              height: isMobile ? 280 : 420,
+              height: isMobile ? 260 : 340,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [

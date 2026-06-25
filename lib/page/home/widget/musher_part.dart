@@ -26,14 +26,6 @@ class MusherPart extends StatelessWidget {
         children: [
           Expanded(
             flex: 5,
-            child: Image.asset(
-              imagePath,
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
-          ),
-          Expanded(
-            flex: 5,
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 80,
@@ -91,6 +83,14 @@ class MusherPart extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+          ),
+          Expanded(
+            flex: 5,
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+              alignment: Alignment.topCenter,
             ),
           ),
         ],

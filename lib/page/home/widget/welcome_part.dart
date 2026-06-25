@@ -49,12 +49,16 @@ class WelcomePart extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              const Text(
-                'Bienvenue',
-                style: TextStyle(
-                  fontSize: 76,
-                  fontFamily: 'WickedGrit',
-                  height: 1.0,
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Bienvenue',
+                  style: TextStyle(
+                    fontSize: 76,
+                    fontFamily: 'WickedGrit',
+                    height: 1.0,
+                  ),
                 ),
               ),
               const SizedBox(height: 24),
