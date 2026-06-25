@@ -21,6 +21,7 @@ class MusherPart extends StatelessWidget {
       color: Colors.white,
       width: double.infinity,
       height: 540,
+      padding: const EdgeInsets.only(top: 48),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
