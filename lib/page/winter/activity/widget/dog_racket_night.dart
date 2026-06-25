@@ -61,7 +61,7 @@ class DogRacketNight extends StatelessWidget {
             ),
             TextSpan(
               text:
-                  "après un bel effort, un retour prévu aux alentours de 23h00. ",
+                  'après un bel effort, un retour prévu aux alentours de 23h00. ',
             ),
             TextSpan(
               text: 'Avec une dernière papouille à votre fidèle compagnon !',
@@ -72,7 +72,7 @@ class DogRacketNight extends StatelessWidget {
       ),
       prices: const [
         PriceCard(
-          text: "80€ / personne\n"
+          text: '80€ / personne\n'
               "Comprend : l'activité + repas\n"
               '(apéritif, plat, dessert, café)',
         ),

@@ -27,7 +27,7 @@ class CaniHikeNight extends StatelessWidget {
             ),
             TextSpan(
               text:
-                  "!\nAmoureux des montagnes, de nourriture et de randonnée, cette activité est ",
+                  '!\nAmoureux des montagnes, de nourriture et de randonnée, cette activité est ',
             ),
             TextSpan(
               text: 'faite pour vous ',

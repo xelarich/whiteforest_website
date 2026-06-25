@@ -35,7 +35,7 @@ class DogKennelGroup extends StatelessWidget {
             ),
             TextSpan(
               text:
-                  "à papouiller, venez découvrir davantage les races qui composent la meute, sur leur alimentation, leur provenance.\n",
+                  'à papouiller, venez découvrir davantage les races qui composent la meute, sur leur alimentation, leur provenance.\n',
             ),
             TextSpan(text: 'Notre musher vous expliquera '),
             TextSpan(

@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-  ConfService confService = GetIt.I.get<ConfService>();
+  final ConfService confService = GetIt.I.get<ConfService>();
 
   @override
   Widget build(BuildContext context) {
