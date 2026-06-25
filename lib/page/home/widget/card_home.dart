@@ -61,9 +61,9 @@ class _CardHomeState extends State<CardHome> {
               duration: const Duration(milliseconds: 250),
               curve: Curves.easeOut,
               transform: Matrix4.identity()
-                ..translate(0.0, _hovered ? -6.0 : 0.0, 0.0),
-              width: 340,
-              height: 420,
+                ..translateByDouble(0.0, _hovered ? -6.0 : 0.0, 0.0, 1.0),
+              width: double.infinity,
+              height: isMobile ? 260 : 340,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
@@ -95,8 +95,8 @@ class _CardHomeState extends State<CardHome> {
                         ),
                         curve: Curves.easeOut,
                         transform: Matrix4.identity()
-                          ..translate(parallaxX, parallaxY, 0.0)
-                          ..scale(_imageScale),
+                          ..translateByDouble(parallaxX, parallaxY, 0.0, 1.0)
+                          ..scaleByDouble(_imageScale, _imageScale, _imageScale, 1.0),
                         transformAlignment: Alignment.center,
                         child: Image.asset(
                           widget.imagePath,

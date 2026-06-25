@@ -38,80 +38,93 @@ class TopBarWeb extends StatelessWidget implements PreferredSizeWidget {
           ),
         ],
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          InkWell(
-            onTap: () => context.go(HomePage.routeName),
-            child: Padding(
-              padding: const EdgeInsets.all(4),
-              child: Image.asset(
-                'assets/images/white_forest_logo.webp',
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1280),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              InkWell(
+                onTap: () => context.go(HomePage.routeName),
+                child: Padding(
+                  padding: const EdgeInsets.all(4),
+                  child: Image.asset(
+                    'assets/images/white_forest_logo.webp',
+                  ),
+                ),
               ),
-            ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TabText(
-                  'Accueil',
-                  isSelected: routeSelected == HomePage.routeName,
-                  onTap: () => context.go(HomePage.routeName),
-                ),
-                TabText(
-                  'Activités été',
-                  isSelected: routeSelected == ActivitySummerPage.routeName ||
-                      routeSelected == GroupSummerPage.routeName,
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SubMenu('Prestations été', ActivitySummerPage.routeName),
-                    SubMenu('Groupe/CE été', GroupSummerPage.routeName),
-                  ],
-                ),
-                TabText(
-                  'Activités hiver',
-                  isSelected: routeSelected == ActivityWinterPage.routeName ||
-                      routeSelected == GroupWinterPage.routeName,
-                  children: [
-                    SubMenu('Prestations hiver', ActivityWinterPage.routeName),
-                    SubMenu(
-                      'Groupe/CE hiver',
-                      GroupWinterPage.routeName,
+                    TabText(
+                      'Accueil',
+                      isSelected: routeSelected == HomePage.routeName,
+                      onTap: () => context.go(HomePage.routeName),
+                    ),
+                    TabText(
+                      'Activités été',
+                      isSelected:
+                          routeSelected == ActivitySummerPage.routeName ||
+                          routeSelected == GroupSummerPage.routeName,
+                      children: [
+                        SubMenu(
+                          'Prestations été',
+                          ActivitySummerPage.routeName,
+                        ),
+                        SubMenu('Groupe/CE été', GroupSummerPage.routeName),
+                      ],
+                    ),
+                    TabText(
+                      'Activités hiver',
+                      isSelected:
+                          routeSelected == ActivityWinterPage.routeName ||
+                          routeSelected == GroupWinterPage.routeName,
+                      children: [
+                        SubMenu(
+                          'Prestations hiver',
+                          ActivityWinterPage.routeName,
+                        ),
+                        SubMenu(
+                          'Groupe/CE hiver',
+                          GroupWinterPage.routeName,
+                        ),
+                      ],
+                    ),
+                    TabText(
+                      'Contact',
+                      isSelected: routeSelected == ContactPage.routeName,
+                      onTap: () => context.go(ContactPage.routeName),
                     ),
                   ],
                 ),
-                TabText(
-                  'Contact',
-                  isSelected: routeSelected == ContactPage.routeName,
-                  onTap: () => context.go(ContactPage.routeName),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                fixedSize: const Size(180, 48),
-                backgroundColor: const Color(0xFFD4A24E),
-                foregroundColor: Colors.white,
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(180, 48),
+                    backgroundColor: const Color(0xFFD4A24E),
+                    foregroundColor: Colors.white,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    ),
+                  ),
+                  onPressed: () => context.go(BookingPage.routeName),
+                  child: const Text(
+                    'Réserver',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 15,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
                 ),
               ),
-              onPressed: () => context.go(BookingPage.routeName),
-              child: const Text(
-                'Réserver',
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 15,
-                  letterSpacing: 0.5,
-                ),
-              ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

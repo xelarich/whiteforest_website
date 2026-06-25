@@ -153,7 +153,7 @@ class _ContactPageState extends State<ContactPage> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 24)
+                        const SizedBox(height: 24),
                       ],
                     ),
                   ),
@@ -169,7 +169,7 @@ class _ContactPageState extends State<ContactPage> {
                     xxxl: 8,
                     child: Padding(
                       padding: EdgeInsets.only(
-                          top: isMobile ? 40 : 0, left: isMobile ? 0 : 24),
+                          top: isMobile ? 40 : 0, left: isMobile ? 0 : 24,),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.white,

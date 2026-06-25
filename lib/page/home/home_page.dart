@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
 import 'package:whiteforest_website/component/footer/footer.dart';
 import 'package:whiteforest_website/component/header/header_carousel.dart';
-
 import 'package:whiteforest_website/page/home/widget/activity_part.dart';
 import 'package:whiteforest_website/page/home/widget/dog_part.dart';
 import 'package:whiteforest_website/page/home/widget/musher_part.dart';
@@ -20,7 +19,7 @@ class HomePage extends StatelessWidget {
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-  ConfService confService = GetIt.I.get<ConfService>();
+  final ConfService confService = GetIt.I.get<ConfService>();
 
   @override
   Widget build(BuildContext context) {
@@ -77,9 +76,11 @@ class HomePage extends StatelessWidget {
     Color topColor,
     Color bottomColor,
   ) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.60,
+    return Container(
+      height: (MediaQuery.of(context).size.height * 0.60).floorToDouble(),
       width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(color: bottomColor),
+      clipBehavior: Clip.hardEdge,
       child: Stack(
         fit: StackFit.expand,
         children: [
@@ -107,7 +108,7 @@ class HomePage extends StatelessWidget {
             bottom: 0,
             left: 0,
             right: 0,
-            height: 60,
+            height: 80,
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(

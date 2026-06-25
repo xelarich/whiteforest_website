@@ -40,7 +40,7 @@ class CaniHikeGroup extends StatelessWidget {
             ),
             TextSpan(
               text:
-                  "!\nVous tomberez sous le charme de ces chiens ",
+                  '!\nVous tomberez sous le charme de ces chiens ',
             ),
             TextSpan(
               text: 'extraordinaires ',
