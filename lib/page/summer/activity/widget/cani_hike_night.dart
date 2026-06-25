@@ -105,6 +105,31 @@ class CaniHikeNight extends StatelessWidget {
           ),
         ),
         const InfoCard(
+          title: 'Réservations packages',
+          icon: Icons.confirmation_number_outlined,
+          content: Text.rich(
+            TextSpan(
+              style:
+                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              children: [
+                TextSpan(
+                  text:
+                      'Les réservations incluant un repas au restaurant sont à effectuer via le site de l\'',
+                ),
+                TextSpan(
+                  text: 'Office de tourisme de La Toussuire\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: 'ou par téléphone : '),
+                TextSpan(
+                  text: '06.82.75.99.26',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const InfoCard(
           title: 'Équipement',
           icon: Icons.checkroom_outlined,
           content: Text.rich(

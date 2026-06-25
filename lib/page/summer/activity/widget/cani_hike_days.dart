@@ -13,76 +13,139 @@ class CaniHikeDays extends StatelessWidget {
     return ActivitySection(
       scrollController: _scrollController,
       index: 0,
-      title: 'Cani-randonnée deux jours',
-      duration: '2 jours',
+      title: 'Cani-randonnée & Nuit en refuge',
+      duration: '2 jours / 1 nuit',
       imagePath:
-          'assets/images/summer/${getPathImage(context)}chalet.webp',
+          'assets/images/summer/${getPathImage(context)}refuge.webp',
       description: const Text.rich(
         TextSpan(
           style: TextStyle(fontSize: 16, fontFamily: 'Roboto', height: 1.6),
           children: [
-            TextSpan(text: "C'est "),
             TextSpan(
-              text: 'la nouveauté ',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            TextSpan(
-              text: "de cette saison ! Partez à l'aventure aux pieds des ",
-            ),
-            TextSpan(
-              text: "Aiguilles d'Arves.\n",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            TextSpan(text: 'Toujours en cani-randonnée, '),
-            TextSpan(
-              text: 'parcourez un paysage',
+              text: 'Canirandonnée et nuit en refuge',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             TextSpan(
               text:
-                  ", entre terre d'alpage, rivière, et roche. "
-                  "Laissez vous guider par ces trois géants de pierre pour une randonnée d'environ 3 heures.\n",
+                  ', partez en cani-rando au départ de St François Longchamp. '
+                  'Après 2h de rando entre montagne et forêt, découvrez le ',
             ),
             TextSpan(
-              text: 'Chiens et humains ',
+              text: 'Refuge du Lac de la Grande Léchère',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            TextSpan(text: ' !\n'),
             TextSpan(
-              text: "arpenteront les sentiers jusqu'au ",
-            ),
-            TextSpan(
-              text: 'chalet Perron ',
+              text: 'Aline et Amélie ',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             TextSpan(
               text:
-                  'où Patricia nous recevra pour un repas savoyard et une nuit en refuge. ',
+                  'vous accueilleront dans ce petit paradis pour un délicieux repas dans une ambiance conviviale.\n',
             ),
+            TextSpan(text: 'Après une belle '),
             TextSpan(
-              text: 'Histoire, partage, et vue imprenable ',
+              text: 'nuit en montagne',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            TextSpan(text: 'sont au rendez-vous !\n'),
+            TextSpan(text: ', un '),
+            TextSpan(
+              text: 'petit déjeuner de champion',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             TextSpan(
               text:
-                  "Un petit déjeuner généreux et c'est reparti pour un retour tout aussi sympathique.",
+                  ', un retour possible par le Col de Montjoie pour rentrer en beauté.',
             ),
           ],
         ),
       ),
       prices: const [
-        PriceCard(text: '200€ / personne'),
+        PriceCard(
+          text: '170€ / Adulte — dès 13 ans\nActivité, matériel, repas, nuitée et petit déjeuner',
+        ),
+        PriceCard(
+          text: '150€ / Enfant — de 10 à 12 ans\nActivité, matériel, repas, nuitée et petit déjeuner',
+        ),
       ],
-      infos: const [
-        InfoCard(
-          title: 'Lieu de pratique',
+      infos: [
+        const InfoCard(
+          title: 'Départ',
           icon: Icons.location_on_outlined,
-          content: Text(
-            'Le Chalmieu',
-            style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+          content: Text.rich(
+            TextSpan(
+              style:
+                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              children: [
+                TextSpan(
+                  text: 'Parking de St François Longchamp\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: 'Départ à '),
+                TextSpan(
+                  text: '15h30',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: ' — retour entre 8h et 9h le lendemain'),
+              ],
+            ),
+          ),
+        ),
+        const InfoCard(
+          title: 'Dates',
+          icon: Icons.calendar_today_outlined,
+          content: Text.rich(
+            TextSpan(
+              style:
+                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.6),
+              children: [
+                TextSpan(
+                  text: 'Vendredi\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: '4-5 sept  •  11-12 sept  •  18-19 sept\n'),
+                TextSpan(
+                  text: '\nSamedi\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(
+                  text:
+                      '26-27 sept  •  3-4 oct  •  10-11 oct\n7-8 nov  •  14-15 nov',
+                ),
+              ],
+            ),
           ),
         ),
         InfoCard(
+          title: 'Réservations',
+          icon: Icons.confirmation_number_outlined,
+          content: Text.rich(
+            TextSpan(
+              style:
+                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              children: [
+                TextSpan(
+                  text: 'Ouverture fin juin\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(
+                  text:
+                      "Packages (refuge + repas) à réserver via le site de l'",
+                ),
+                TextSpan(
+                  text: 'Office de tourisme de La Toussuire\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: 'ou par téléphone : '),
+                TextSpan(
+                  text: '06.82.75.99.26',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const InfoCard(
           title: 'Équipement',
           icon: Icons.checkroom_outlined,
           content: Text.rich(
@@ -103,7 +166,7 @@ class CaniHikeDays extends StatelessWidget {
                 ),
                 TextSpan(
                   text:
-                      ", affaires chaudes pour le soir, sac à dos, bouteille d'eau.",
+                      ", affaires chaudes pour la nuit, sac à dos, bouteille d'eau.",
                 ),
               ],
             ),
