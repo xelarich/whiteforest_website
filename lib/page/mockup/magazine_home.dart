@@ -319,18 +319,20 @@ class _StoryIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = ResponsiveBreakpoints.of(context).isMobile;
+    // Colonne « 01 » à gauche seulement sur desktop : en tablette le texte serait écrasé.
+    final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
 
     return Container(
       width: double.infinity,
       color: cream,
       padding: EdgeInsets.symmetric(
-        horizontal: isMobile ? 24 : 80,
-        vertical: isMobile ? 80 : 140,
+        horizontal: isMobile ? 24 : (isDesktop ? 80 : 48),
+        vertical: isMobile ? 80 : (isDesktop ? 140 : 100),
       ),
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1100),
-          child: isMobile
+          child: !isDesktop
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: _buildContent(context, isMobile, true),
@@ -393,7 +395,7 @@ class _StoryIntro extends StatelessWidget {
         Text(
           '01',
           style: serif(
-            size: 56,
+            size: isMobile ? 56 : 72,
             weight: FontWeight.w300,
             color: accent,
             height: 1,
@@ -425,30 +427,41 @@ class _StoryIntro extends StatelessWidget {
       Text(
         'White Forest.',
         style: serif(
-          size: isMobile ? 48 : 76,
+          size: isMobile
+              ? 48
+              : ResponsiveBreakpoints.of(context).largerThan(TABLET)
+              ? 76
+              : 64,
           weight: FontWeight.w400,
           color: ink,
           height: 1.05,
         ),
       ),
       const SizedBox(height: 36),
-      Text(
-        'Situés en Savoie, dans la vallée de la Maurienne au plus près de Foncouverte La Toussuire, nous vous offrons la possibilité de vivre une expérience unique avec nos chiens de traineau.',
-        style: sans(
-          size: isMobile ? 16 : 18,
-          color: ink,
-          weight: FontWeight.w400,
-          height: 1.75,
+      ConstrainedBox(
+        // Longueur de ligne lisible en tablette, où le texte prend toute la largeur.
+        constraints: const BoxConstraints(maxWidth: 680),
+        child: Text(
+          'Situés en Savoie, dans la vallée de la Maurienne au plus près de Foncouverte La Toussuire, nous vous offrons la possibilité de vivre une expérience unique avec nos chiens de traineau.',
+          style: sans(
+            size: isMobile ? 16 : 18,
+            color: ink,
+            weight: FontWeight.w400,
+            height: 1.75,
+          ),
         ),
       ),
       const SizedBox(height: 24),
-      Text(
-        'Pour tous les âges, plus ou moins physique, ou simplement une visite du chenil. En été comme en hiver, sur la neige ou sur terre, Méléanne et son équipe vous accompagneront pour un moment inoubliable.',
-        style: sans(
-          size: isMobile ? 14 : 15,
-          color: ink.withValues(alpha: 0.75),
-          weight: FontWeight.w400,
-          height: 1.8,
+      ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 680),
+        child: Text(
+          'Pour tous les âges, plus ou moins physique, ou simplement une visite du chenil. En été comme en hiver, sur la neige ou sur terre, Méléanne et son équipe vous accompagneront pour un moment inoubliable.',
+          style: sans(
+            size: isMobile ? 14 : 15,
+            color: ink.withValues(alpha: 0.75),
+            weight: FontWeight.w400,
+            height: 1.8,
+          ),
         ),
       ),
     ];
@@ -776,10 +789,13 @@ class _EditorialRow extends StatelessWidget {
       child: Image.asset(data.image, fit: BoxFit.cover),
     );
 
+    // Côte à côte seulement sur desktop : en tablette la colonne texte est trop étroite.
+    final stacked = !ResponsiveBreakpoints.of(context).largerThan(TABLET);
+
     final text = Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: isMobile ? 0 : 40,
-        vertical: isMobile ? 24 : 0,
+        horizontal: stacked ? 0 : 40,
+        vertical: stacked ? 24 : 0,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -862,7 +878,7 @@ class _EditorialRow extends StatelessWidget {
       ),
     );
 
-    if (isMobile) {
+    if (stacked) {
       return Column(children: [image, text]);
     }
 
