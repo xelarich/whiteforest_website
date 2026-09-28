@@ -2,21 +2,25 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart' hide Config;
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:whiteforest_website/data/models/config.dart';
 import 'package:whiteforest_website/dependency_injection.dart';
 import 'package:whiteforest_website/firebase_options.dart';
 import 'package:whiteforest_website/page/booking/booking_page.dart';
 import 'package:whiteforest_website/page/contact/contact_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
 import 'package:whiteforest_website/page/kennel/kennel_page.dart';
+import 'package:whiteforest_website/page/mockup/magazine_home.dart';
 import 'package:whiteforest_website/page/sales_condition/sales_condition_page.dart';
 import 'package:whiteforest_website/page/summer/activity/activity_summer_page.dart';
 import 'package:whiteforest_website/page/summer/group/group_summer_page.dart';
 import 'package:whiteforest_website/page/team/team_page.dart';
 import 'package:whiteforest_website/page/winter/activity/activity_winter_page.dart';
 import 'package:whiteforest_website/page/winter/group/group_winter_page.dart';
+import 'package:whiteforest_website/service/conf_service.dart';
 
 Future<void> main() async {
   await Firebase.initializeApp(
@@ -32,6 +36,14 @@ Future<void> main() async {
   await remoteConfig.fetchAndActivate();
 
   declareServices();
+  GetIt.I.get<ConfService>().setConfig(
+    Config(
+      publicKey: remoteConfig.getString('public_key'),
+      privateKey: remoteConfig.getString('private_key'),
+      serviceId: remoteConfig.getString('service_id'),
+      templateId: remoteConfig.getString('template_id'),
+    ),
+  );
 
   runApp(const App());
 }
@@ -56,7 +68,7 @@ final GoRouter _router = GoRouter(
         return buildPageWithDefaultTransition(
           context: context,
           state: state,
-          child: HomePage(),
+          child: MagazineHome(),
         );
       },
     ),
