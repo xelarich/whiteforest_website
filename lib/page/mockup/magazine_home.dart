@@ -811,11 +811,14 @@ class _EditorialRow extends StatelessWidget {
       return Column(children: [image, text]);
     }
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: reversed
-          ? [Expanded(flex: 5, child: text), Expanded(flex: 6, child: image)]
-          : [Expanded(flex: 6, child: image), Expanded(flex: 5, child: text)],
+    return SizedBox(
+      height: 480,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: reversed
+            ? [Expanded(flex: 5, child: text), Expanded(flex: 6, child: image)]
+            : [Expanded(flex: 6, child: image), Expanded(flex: 5, child: text)],
+      ),
     );
   }
 }
