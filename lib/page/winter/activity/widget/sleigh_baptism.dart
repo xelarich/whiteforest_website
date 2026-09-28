@@ -14,7 +14,7 @@ class SleighBaptism extends StatelessWidget {
       scrollController: _scrollController,
       index: 0,
       title: 'Baptême traineau',
-      duration: '30 / 50 min',
+      duration: '30 min',
       imagePath:
           'assets/images/winter/${getPathImage(context)}bapteme_traineau.webp',
       imageAlignment: Alignment.bottomRight,
@@ -57,19 +57,18 @@ class SleighBaptism extends StatelessWidget {
         ),
       ),
       prices: const [
-        PriceCard(text: '30 min : 150€\nTraineau pour 1 à 2 personnes'),
-        PriceCard(text: '50 min : 190€\nTraineau pour 1 à 2 personnes'),
+        PriceCard(
+          text: '30 min : 160€\n'
+              '25 min de balade + 5 min de prestation\n'
+              'Traineau pour 1 à 2 personnes',
+        ),
       ],
       infos: const [
         InfoCard(
           title: 'Lieu de pratique',
           icon: Icons.location_on_outlined,
           content: Text(
-            'La Toussuire\n'
-            "Saint-Sorlin-d'Arves\n"
-            'Albiez-Montrond\n'
-            "Saint-Jean-d'Arves\n"
-            'Domaine skiable des Sybelles',
+            'La Toussuire',
             style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
           ),
         ),

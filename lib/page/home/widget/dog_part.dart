@@ -5,7 +5,7 @@ class DogPart extends StatelessWidget {
   const DogPart({super.key});
 
   static const _body =
-      "Venez découvrir nos 80 chiens de traineau à travers différentes activités toute l'année !\n"
+      "Venez découvrir nos 35 chiens de traineau à travers différentes activités toute l'année !\n"
       'Nos chiens viennent de différents horizons, la plupart ont été abandonnés et quelques-uns sont nés à la maison.\n'
       "L'objectif est de leur offrir une vie en adéquation avec leurs besoins et leurs envies.\n"
       'Nous adaptons les chiens aux personnes en fonction de chaque sortie et activités.\n'

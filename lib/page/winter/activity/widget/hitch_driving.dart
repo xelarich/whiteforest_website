@@ -42,7 +42,7 @@ class HitchDriving extends StatelessWidget {
             ),
             TextSpan(
               text:
-                  "Accompagné d'un musher professionnel pour vous encadrer durant votre pratique, et par petit groupe de 6 personnes maximum, vous apprendrez à",
+                  "Accompagné d'un musher professionnel pour vous encadrer durant votre pratique, et par groupe de 3 à 4 personnes, vous apprendrez à",
             ),
             TextSpan(
               text: ' diriger et contrôler votre traineau ',
@@ -61,14 +61,14 @@ class HitchDriving extends StatelessWidget {
         ),
       ),
       prices: const [
-        PriceCard(text: 'Demi-journée : 200€ / personne'),
+        PriceCard(text: 'Demi-journée : 250€ / personne'),
       ],
       infos: const [
         InfoCard(
           title: 'Lieu de pratique',
           icon: Icons.location_on_outlined,
           content: Text(
-            "Le Corbier / La Toussuire / Saint-Sorlin-d'Arves",
+            "La Toussuire / Saint-Sorlin-d'Arves",
             style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
           ),
         ),

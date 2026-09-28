@@ -30,6 +30,11 @@ class DogRacketNight extends StatelessWidget {
               text: 'mardi soir ',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            TextSpan(text: ', le '),
+            TextSpan(
+              text: 'mercredi soir ',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             TextSpan(text: 'ou le '),
             TextSpan(
               text: 'jeudi soir',
@@ -72,7 +77,12 @@ class DogRacketNight extends StatelessWidget {
       ),
       prices: const [
         PriceCard(
-          text: '80€ / personne\n'
+          text: '90€ / Adulte\n'
+              "Comprend : l'activité + repas\n"
+              '(apéritif, plat, dessert, café)',
+        ),
+        PriceCard(
+          text: '85€ / Enfant de -12 ans\n'
               "Comprend : l'activité + repas\n"
               '(apéritif, plat, dessert, café)',
         ),
@@ -89,6 +99,11 @@ class DogRacketNight extends StatelessWidget {
                 TextSpan(text: 'Mardi soir 17h30 — '),
                 TextSpan(
                   text: 'La Toussuire\n',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: 'Mercredi soir 17h30 — '),
+                TextSpan(
+                  text: 'Le Corbier\n',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 TextSpan(text: 'Jeudi soir 18h00 — '),
@@ -123,7 +138,7 @@ class DogRacketNight extends StatelessWidget {
           title: 'Nos partenaires',
           icon: Icons.restaurant_outlined,
           content: Text(
-            "Restaurants :\nChez Bib\nL'éTable des Prés Plan",
+            'Restaurant :\nChalet 2000',
             style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
           ),
         ),
