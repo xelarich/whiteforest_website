@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart' hide NavigationDrawer;
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -91,6 +93,62 @@ class MagazineHome extends StatelessWidget {
 // ============================================================
 // HERO
 // ============================================================
+/// Fond du hero : alterne hiver et été en fondu enchaîné.
+class _HeroCarousel extends StatefulWidget {
+  const _HeroCarousel();
+
+  @override
+  State<_HeroCarousel> createState() => _HeroCarouselState();
+}
+
+class _HeroCarouselState extends State<_HeroCarousel> {
+  static const _images = ['header_winter.webp', 'header_summer.webp'];
+  static const _interval = Duration(seconds: 10);
+
+  Timer? _timer;
+  int _index = 0;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    for (final image in _images) {
+      precacheImage(AssetImage(_path(image)), context);
+    }
+    // Pas de défilement automatique si l'utilisateur a réduit les animations.
+    _timer?.cancel();
+    if (!MediaQuery.of(context).disableAnimations) {
+      _timer = Timer.periodic(
+        _interval,
+        (_) => setState(() => _index = (_index + 1) % _images.length),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  String _path(String image) =>
+      'assets/images/header/${getPathImage(context)}$image';
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 1500),
+      layoutBuilder: (current, previous) =>
+          Stack(fit: StackFit.expand, children: [...previous, ?current]),
+      child: Image.asset(
+        _path(_images[_index]),
+        key: ValueKey(_index),
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+}
+
+// ============================================================
 class _Hero extends StatelessWidget {
   const _Hero({
     required this.serif,
@@ -130,10 +188,7 @@ class _Hero extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            'assets/images/header/${getPathImage(context)}header_winter.webp',
-            fit: BoxFit.cover,
-          ),
+          const _HeroCarousel(),
           // Subtle vignette
           Container(
             decoration: BoxDecoration(
