@@ -115,7 +115,12 @@ class DogRacketNight extends StatelessWidget {
                   text: 'Le Corbier\n',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                TextSpan(text: 'Certaines dates, prochainement communiquées'),
+                TextSpan(
+                  text:
+                      '23 et 30 décembre\n'
+                      '10, 17 et 24 février\n'
+                      '3 et 10 mars',
+                ),
               ],
             ),
           ),
