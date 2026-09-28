@@ -59,7 +59,7 @@ class SleighBaptism extends StatelessWidget {
       prices: const [
         PriceCard(
           text: '30 min : 160€\n'
-              '25 min de balade + 5 min de prestation\n'
+              '25 min de balade + 5 min de présentation\n'
               'Traineau pour 1 à 2 personnes',
         ),
       ],
