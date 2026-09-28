@@ -11,8 +11,9 @@ class DogRacketNight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = ResponsiveBreakpoints.of(context).isMobile;
-    final imageName =
-        isMobile ? 'cani_raquette_nocturne.webp' : 'cani_nocturne.webp';
+    final imageName = isMobile
+        ? 'cani_raquette_nocturne.webp'
+        : 'cani_nocturne.webp';
     final pathPrefix = isMobile ? 'mobile/' : 'web/';
 
     return ActivitySection(
@@ -30,16 +31,17 @@ class DogRacketNight extends StatelessWidget {
               text: 'mardi soir ',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            TextSpan(text: ', le '),
-            TextSpan(
-              text: 'mercredi soir ',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
             TextSpan(text: 'ou le '),
             TextSpan(
-              text: 'jeudi soir',
+              text: 'jeudi soir ',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            TextSpan(text: "tout l'hiver, et certains "),
+            TextSpan(
+              text: 'mercredis soir',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            TextSpan(text: ' au Corbier'),
             TextSpan(
               text:
                   ", venez découvrir la cani-nocturne ! Équipé d'une ceinture et relié à un chien de traineau, cette randonnée vous laissera ",
@@ -77,12 +79,14 @@ class DogRacketNight extends StatelessWidget {
       ),
       prices: const [
         PriceCard(
-          text: '90€ / Adulte\n'
+          text:
+              '90€ / Adulte\n'
               "Comprend : l'activité + repas\n"
               '(apéritif, plat, dessert, café)',
         ),
         PriceCard(
-          text: '85€ / Enfant de -12 ans\n'
+          text:
+              '85€ / Enfant de -12 ans\n'
               "Comprend : l'activité + repas\n"
               '(apéritif, plat, dessert, café)',
         ),
@@ -93,24 +97,25 @@ class DogRacketNight extends StatelessWidget {
           icon: Icons.location_on_outlined,
           content: const Text.rich(
             TextSpan(
-              style:
-                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
               children: [
                 TextSpan(text: 'Mardi soir 17h30 — '),
                 TextSpan(
                   text: 'La Toussuire\n',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
+                TextSpan(text: 'Jeudi soir 18h00 — '),
+                TextSpan(
+                  text: "Saint-Sorlin-d'Arves\n",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: 'Toute la saison hivernale\n\n'),
                 TextSpan(text: 'Mercredi soir 17h30 — '),
                 TextSpan(
                   text: 'Le Corbier\n',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                TextSpan(text: 'Jeudi soir 18h00 — '),
-                TextSpan(
-                  text: "Saint-Sorlin-d'Arves",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+                TextSpan(text: 'Certaines dates, prochainement communiquées'),
               ],
             ),
           ),
@@ -120,8 +125,7 @@ class DogRacketNight extends StatelessWidget {
           icon: Icons.checkroom_outlined,
           content: Text.rich(
             TextSpan(
-              style:
-                  TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
+              style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
               children: [
                 TextSpan(
                   text: 'Tenue chaude ',
@@ -138,7 +142,7 @@ class DogRacketNight extends StatelessWidget {
           title: 'Nos partenaires',
           icon: Icons.restaurant_outlined,
           content: Text(
-            'Restaurant :\nChalet 2000',
+            "Restaurants :\nChez Bib\nL'éTable des Prés Plan\nChalet 2000 (Le Corbier)",
             style: TextStyle(fontFamily: 'Roboto', fontSize: 14, height: 1.5),
           ),
         ),
