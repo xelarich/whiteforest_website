@@ -17,7 +17,6 @@ linter:
     prefer_single_quotes: true
     require_trailing_commas: true
     unawaited_futures: true
-    unnecessary_await_in_return: true
     unnecessary_lambdas: true
     unnecessary_parenthesis: true
 
@@ -30,5 +29,7 @@ analyzer:
     - lib/localUrl.dart
     - test/integration_test/integration_test.mocks.dart
     - test/view/execution/execution/widget/scan_ticket_modal_test.mocks.dart
+    - build/**
+    - web/**
   errors:
     todo: ignore
