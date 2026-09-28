@@ -26,7 +26,7 @@ class DogKennel extends StatelessWidget {
                   'Un endroit conçu pour nos partenaires canins, environ 1 heure avec plus ou moins ',
             ),
             TextSpan(
-              text: '80 loulous ',
+              text: '35 loulous ',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             TextSpan(
