@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart' hide NavigationDrawer;
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:whiteforest_website/component/drawer/drawer_mobile.dart';
+import 'package:whiteforest_website/component/footer/footer.dart';
+import 'package:whiteforest_website/page/booking/booking_page.dart';
 import 'package:whiteforest_website/page/home/home_page.dart';
+import 'package:whiteforest_website/page/summer/activity/activity_summer_page.dart';
+import 'package:whiteforest_website/page/winter/activity/activity_winter_page.dart';
 import 'package:whiteforest_website/shared/utils.dart';
 
 class MagazineHome extends StatelessWidget {
@@ -76,6 +81,7 @@ class MagazineHome extends StatelessWidget {
             accent: _accent,
           ),
           _ClosingCTA(serif: _serif, sans: _sans, ink: _ink, accent: _accent),
+          const Footer(),
         ],
       ),
     );
@@ -100,14 +106,16 @@ class _Hero extends StatelessWidget {
     double? height,
     FontStyle? style,
     double? letterSpacing,
-  }) serif;
+  })
+  serif;
   final TextStyle Function({
     double size,
     FontWeight weight,
     Color? color,
     double? letterSpacing,
     double? height,
-  }) sans;
+  })
+  sans;
   final Color ink;
   final Color accent;
 
@@ -209,11 +217,7 @@ class _Hero extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 24),
-                Container(
-                  width: 48,
-                  height: 1,
-                  color: accent,
-                ),
+                Container(width: 48, height: 1, color: accent),
                 const SizedBox(height: 16),
                 ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 380),
@@ -237,25 +241,39 @@ class _Hero extends StatelessWidget {
             left: 0,
             right: 0,
             child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'DÉCOUVRIR',
-                    style: sans(
-                      size: 10,
-                      color: Colors.white.withValues(alpha: 0.7),
-                      letterSpacing: 4,
-                      weight: FontWeight.w500,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () => Scrollable.of(context).position.animateTo(
+                    h,
+                    duration: const Duration(milliseconds: 600),
+                    curve: Curves.easeInOut,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'DÉCOUVRIR',
+                          style: sans(
+                            size: 10,
+                            color: Colors.white.withValues(alpha: 0.7),
+                            letterSpacing: 4,
+                            weight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Container(
+                          width: 1,
+                          height: 28,
+                          color: Colors.white.withValues(alpha: 0.5),
+                        ),
+                      ],
                     ),
                   ),
-                  const SizedBox(height: 8),
-                  Container(
-                    width: 1,
-                    height: 28,
-                    color: Colors.white.withValues(alpha: 0.5),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
@@ -284,14 +302,16 @@ class _StoryIntro extends StatelessWidget {
     double? height,
     FontStyle? style,
     double? letterSpacing,
-  }) serif;
+  })
+  serif;
   final TextStyle Function({
     double size,
     FontWeight weight,
     Color? color,
     double? letterSpacing,
     double? height,
-  }) sans;
+  })
+  sans;
   final Color ink;
   final Color accent;
   final Color cream;
@@ -448,14 +468,16 @@ class _FullBleedQuote extends StatelessWidget {
     double? height,
     FontStyle? style,
     double? letterSpacing,
-  }) serif;
+  })
+  serif;
   final TextStyle Function({
     double size,
     FontWeight weight,
     Color? color,
     double? letterSpacing,
     double? height,
-  }) sans;
+  })
+  sans;
 
   @override
   Widget build(BuildContext context) {
@@ -516,6 +538,17 @@ class _FullBleedQuote extends StatelessWidget {
                         letterSpacing: 3,
                       ),
                     ),
+                    const SizedBox(height: 32),
+                    Text(
+                      '35 chiens de traineau, pour la plupart rescapés '
+                      "d'abandon, quelques-uns nés à la maison.",
+                      textAlign: TextAlign.center,
+                      style: sans(
+                        size: isMobile ? 15 : 17,
+                        color: Colors.white.withValues(alpha: 0.9),
+                        height: 1.6,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -545,14 +578,16 @@ class _ActivitiesPreview extends StatelessWidget {
     double? height,
     FontStyle? style,
     double? letterSpacing,
-  }) serif;
+  })
+  serif;
   final TextStyle Function({
     double size,
     FontWeight weight,
     Color? color,
     double? letterSpacing,
     double? height,
-  }) sans;
+  })
+  sans;
   final Color ink;
   final Color accent;
 
@@ -562,26 +597,35 @@ class _ActivitiesPreview extends StatelessWidget {
 
     final activities = [
       _ActivityData(
-        kicker: 'HIVER · 30 / 50 MIN',
+        kicker: 'HIVER · 30 MIN',
         title: 'Baptême en traineau',
-        excerpt:
-            'Assis dans le traineau, guidé par dix chiens, vivez un moment de partage hors du temps.',
+        excerpt: 'Assis dans le traineau, guidé par dix chiens, vivez un moment de partage hors du temps.',
         image:
             'assets/images/winter/${getPathImage(context)}bapteme_traineau.webp',
+        onTap: () => context.go(
+          ActivityWinterPage.routeName,
+          extra: {ActivityWinterPage.indexAnchorKey: 0},
+        ),
       ),
       _ActivityData(
         kicker: 'ÉTÉ · 1H30 / 2H',
         title: 'Cani-randonnée',
-        excerpt:
-            'Tracté par un chien, parcourez les sentiers et créez un lien unique avec votre compagnon.',
+        excerpt: 'Tracté par un chien, parcourez les sentiers et créez un lien unique avec votre compagnon.',
         image: 'assets/images/summer/${getPathImage(context)}cani_rando.webp',
+        onTap: () => context.go(
+          ActivitySummerPage.routeName,
+          extra: {ActivitySummerPage.indexAnchorKey: 1},
+        ),
       ),
       _ActivityData(
         kicker: 'TOUTE L\'ANNÉE · 1H',
         title: 'Visite du chenil',
-        excerpt:
-            'Une heure auprès de quatre-vingts chiens, à l\'écoute du métier de musher.',
+        excerpt: 'Une heure auprès de trente-cinq chiens, à l\'écoute du métier de musher.',
         image: 'assets/images/summer/${getPathImage(context)}chenil.webp',
+        onTap: () => context.go(
+          ActivitySummerPage.routeName,
+          extra: {ActivitySummerPage.indexAnchorKey: 3},
+        ),
       ),
     ];
 
@@ -679,12 +723,14 @@ class _ActivityData {
     required this.title,
     required this.excerpt,
     required this.image,
+    required this.onTap,
   });
 
   final String kicker;
   final String title;
   final String excerpt;
   final String image;
+  final VoidCallback onTap;
 }
 
 class _EditorialRow extends StatelessWidget {
@@ -709,14 +755,16 @@ class _EditorialRow extends StatelessWidget {
     double? height,
     FontStyle? style,
     double? letterSpacing,
-  }) serif;
+  })
+  serif;
   final TextStyle Function({
     double size,
     FontWeight weight,
     Color? color,
     double? letterSpacing,
     double? height,
-  }) sans;
+  })
+  sans;
   final Color ink;
   final Color accent;
   final bool isMobile;
@@ -786,21 +834,28 @@ class _EditorialRow extends StatelessWidget {
           // Editorial CTA — no button, just underlined link
           MouseRegion(
             cursor: SystemMouseCursors.click,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'LIRE LA SUITE',
-                  style: sans(
-                    size: 11,
-                    color: ink,
-                    weight: FontWeight.w700,
-                    letterSpacing: 3,
-                  ),
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: data.onTap,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'LIRE LA SUITE',
+                      style: sans(
+                        size: 11,
+                        color: ink,
+                        weight: FontWeight.w700,
+                        letterSpacing: 3,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    Container(width: 40, height: 1, color: ink),
+                  ],
                 ),
-                const SizedBox(width: 10),
-                Container(width: 40, height: 1, color: ink),
-              ],
+              ),
             ),
           ),
         ],
@@ -841,14 +896,16 @@ class _ClosingCTA extends StatelessWidget {
     double? height,
     FontStyle? style,
     double? letterSpacing,
-  }) serif;
+  })
+  serif;
   final TextStyle Function({
     double size,
     FontWeight weight,
     Color? color,
     double? letterSpacing,
     double? height,
-  }) sans;
+  })
+  sans;
   final Color ink;
   final Color accent;
 
@@ -899,20 +956,25 @@ class _ClosingCTA extends StatelessWidget {
           // Editorial CTA
           MouseRegion(
             cursor: SystemMouseCursors.click,
-            child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
-              decoration: Border(
-                bottom: BorderSide(color: accent, width: 1),
-                top: BorderSide(color: accent, width: 1),
-              ).toBoxDecoration(),
-              child: Text(
-                'RÉSERVER VOTRE EXPÉRIENCE',
-                style: sans(
-                  size: 12,
-                  color: Colors.white,
-                  weight: FontWeight.w600,
-                  letterSpacing: 4,
+            child: GestureDetector(
+              onTap: () => context.go(BookingPage.routeName),
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 32,
+                  vertical: 18,
+                ),
+                decoration: Border(
+                  bottom: BorderSide(color: accent, width: 1),
+                  top: BorderSide(color: accent, width: 1),
+                ).toBoxDecoration(),
+                child: Text(
+                  'RÉSERVER VOTRE EXPÉRIENCE',
+                  style: sans(
+                    size: 12,
+                    color: Colors.white,
+                    weight: FontWeight.w600,
+                    letterSpacing: 4,
+                  ),
                 ),
               ),
             ),
